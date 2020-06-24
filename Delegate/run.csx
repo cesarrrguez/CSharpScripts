@@ -1,4 +1,4 @@
-#load "util.csx"
+#load "utils.csx"
 
 // Create 4 Person objects
 Person person1 = new Person() { Name = "John", Age = 41 };
