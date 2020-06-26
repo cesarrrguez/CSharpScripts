@@ -15,7 +15,7 @@ public static void Clear<T>(this T[] target)
 {
     if (target == null) return;
 
-    for (int i = 0; i < target.Length; i++)
+    for (var i = 0; i < target.Length; i++)
     {
         target[i] = default(T);
     }
@@ -30,10 +30,27 @@ public static double? SumSlow(this double[] array)
 {
     var total = 0d;
 
-    for (int i = 0; i < array.Length; i++)
+    for (var i = 0; i < array.Length; i++)
     {
         total += array[i];
     }
 
     return total;
+}
+
+public static T[] Slice<T>(this T[] source, int start, int end)
+{
+    if (end < 0)
+    {
+        end = source.Length + end;
+    }
+
+    var result = new T[end - start];
+
+    for (var i = 0; i < result.Length; i++)
+    {
+        result[i] = source[i + start];
+    }
+
+    return result;
 }
