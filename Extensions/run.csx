@@ -18,3 +18,6 @@ Console.WriteLine($"Array 2: {array2.Contains(21)}");
 Console.WriteLine("\nSumSlow:");
 Console.WriteLine($"Array 1: {array1.SumSlow()}");
 Console.WriteLine($"Array 2: {array2.SumSlow()}");
+
+Console.WriteLine("\nSlice:");
+Console.WriteLine($"SubArray 1: {string.Join(", ", array1.Slice(0, 3))}");
