@@ -1,8 +1,6 @@
 #load "entities.csx"
 #load "interfaces.csx"
 
-#r "nuget: Microsoft.EntityFrameworkCore.Sqlite, 3.1.0-preview3.19554.8"
-
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
 
@@ -15,17 +13,7 @@ public class DataContext : DbContext
     public DbSet<UserAddress> UserAddresses { get; set; }
     public DbSet<UserEmail> UserEmails { get; set; }
 
-    public DataContext()
-    {
-        this.Database.EnsureCreated();
-    }
-
-    protected override void OnConfiguring(DbContextOptionsBuilder options)
-    {
-        options.UseSqlite("Filename=EntityFrameworkCore/database.db");
-
-        base.OnConfiguring(options);
-    }
+    public DataContext(DbContextOptions<DataContext> options) : base(options) { }
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
