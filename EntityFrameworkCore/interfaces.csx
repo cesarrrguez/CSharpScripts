@@ -1,23 +1,27 @@
 #load "entities.csx"
 
+public interface IDataContext
+{
+}
+
 public interface IRepository<T> where T : IAggregateRoot
 {
 }
 
-public interface IUserRepository : IRepository<User>
+public interface IUserRepository : IRepository<User>, IDisposable
 {
-    void Add(User user);
-    void Update(User user);
-    void Delete(User user);
-    List<User> GetAll();
-    User Get(int userId);
+    Task Add(User user);
+    Task Update(User user);
+    Task Remove(User user);
+    Task<IEnumerable<User>> GetAll();
+    Task<User> Get(int userId);
 }
 
-public interface IUserService
+public interface IUserService : IDisposable
 {
-    void RegisterNewUser(User user);
-    void EditUser(User user);
-    void DeleteUser(User user);
-    List<User> GetAllUsers();
-    User GetUser(int userId);
+    Task RegisterNewUser(User user);
+    Task EditUser(User user);
+    Task DeleteUser(User user);
+    Task<IEnumerable<User>> GetAllUsers();
+    Task<User> GetUser(int userId);
 }

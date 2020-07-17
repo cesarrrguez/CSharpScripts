@@ -5,7 +5,7 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
 
 // Context
-public class DataContext : DbContext
+public class DataContext : DbContext, IDataContext
 {
     public const string DEFAULT_SCHEMA = "data";
 
@@ -113,51 +113,42 @@ public class UserRepository : IUserRepository
         _context = context ?? throw new ArgumentNullException(nameof(context));
     }
 
-    public void Add(User user)
+    public async Task Add(User user)
     {
-        var entity = _context.Users.Add(user);
-        entity.State = EntityState.Added;
-
-        _context.SaveChanges();
+        await _context.Users.AddAsync(user);
+        await _context.SaveChangesAsync();
     }
 
-    public void Update(User user)
+    public Task Update(User user)
     {
-        var entity = _context.Users.Update(user);
-        entity.State = EntityState.Modified;
-
-        _context.SaveChanges();
+        _context.Users.Update(user).State = EntityState.Modified;
+        return _context.SaveChangesAsync();
     }
 
-    public void Delete(User user)
+    public Task Remove(User user)
     {
-        var entity = _context.Users.Remove(user);
-        entity.State = EntityState.Deleted;
-
-        _context.SaveChanges();
+        _context.Users.Remove(user).State = EntityState.Deleted;
+        return _context.SaveChangesAsync();
     }
 
-    public List<User> GetAll()
+    public async Task<IEnumerable<User>> GetAll()
     {
-        var users = _context.Users
+        return await _context.Users
             .Include(u => u.Addresses)
             .Include(u => u.Emails)
-            .ToList();
-
-        return users;
+            .ToListAsync();
     }
 
-    public User Get(int userId)
+    public async Task<User> Get(int userId)
     {
-        var user = _context.Users.Find(userId);
+        return await _context.Users
+            .Include(u => u.Addresses)
+            .Include(u => u.Emails)
+            .SingleOrDefaultAsync(u => u.Id == userId);
+    }
 
-        if (user != null)
-        {
-            _context.Users
-                .Include(u => u.Addresses)
-                .Include(u => u.Emails);
-        }
-
-        return user;
+    public void Dispose()
+    {
+        _context.Dispose();
     }
 }

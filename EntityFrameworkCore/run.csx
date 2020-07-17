@@ -1,14 +1,14 @@
 #load "entities.csx"
-#load "services.csx"
-#load "data.csx"
+#load "middleware.csx"
 
-#r "nuget: Microsoft.EntityFrameworkCore.Sqlite, 3.1.0-preview3.19554.8"
+#r "nuget: Microsoft.EntityFrameworkCore.Sqlite, 3.1.0"
 
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.DependencyInjection;
 
 var separator = new string(Enumerable.Repeat('-', 15).ToArray());
 
+// Create user
 var user = new User("James", "Wilson", 30);
 user.AddAddress("Wall Street", "New York", "New York State", "0123456789");
 user.AddEmail("james.wilson@gmail.com");
@@ -17,40 +17,40 @@ user.AddEmail("james.wilson@gmail.com");
 var services = new ServiceCollection();
 ConfigureServices(services);
 
-// Get data context
-var dataContext = services.BuildServiceProvider().GetService<DataContext>();
-dataContext.Database.EnsureCreated();
+// Build service provider
+var serviceProvider = services.BuildServiceProvider();
+Configure(serviceProvider);
 
-// Create service
-var userService = new UserService(new UserRepository(dataContext));
+// Get user service
+var userService = serviceProvider.GetService<IUserService>();
 
-// Add
+// Add User
 Console.WriteLine("Add User:");
 Console.WriteLine(separator);
-userService.RegisterNewUser(user);
-var users = userService.GetAllUsers();
+await userService.RegisterNewUser(user);
+var users = await userService.GetAllUsers();
 PrintUsers(users);
 
-// Update
+// Update User
 Console.WriteLine("\nUpdate User:");
 Console.WriteLine(separator);
 user.UpdateAge(33);
 user.AddEmail("james.wilson_33.@hotmail.com");
-userService.EditUser(user);
-users = userService.GetAllUsers();
+await userService.EditUser(user);
+users = await userService.GetAllUsers();
 PrintUsers(users);
 
-// Get
+// Get User
 Console.WriteLine("\nGet User:");
 Console.WriteLine(separator);
-user = userService.GetUser(user.Id);
+user = await userService.GetUser(user.Id);
 Console.WriteLine(user);
 
-// Delete
+// Delete User
 Console.WriteLine("\nDelete User:");
 Console.WriteLine(separator);
-userService.DeleteUser(user);
-users = userService.GetAllUsers();
+await userService.DeleteUser(user);
+users = await userService.GetAllUsers();
 PrintUsers(users);
 
 public void ConfigureServices(IServiceCollection services)
@@ -59,9 +59,17 @@ public void ConfigureServices(IServiceCollection services)
     {
         options.UseSqlite("Filename=EntityFrameworkCore/database.db");
     });
+
+    IoC.AddRegistration(services);
 }
 
-public void PrintUsers(List<User> users)
+public void Configure(ServiceProvider serviceProvider)
+{
+    var dataContext = serviceProvider.GetService<DataContext>();
+    dataContext.Database.EnsureCreated();
+}
+
+public void PrintUsers(IEnumerable<User> users)
 {
     if (users == null || !users.Any())
     {

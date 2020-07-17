@@ -9,28 +9,34 @@ public class UserService : IUserService
         _userRepository = userRepository;
     }
 
-    public void RegisterNewUser(User user)
+    public async Task RegisterNewUser(User user)
     {
-        _userRepository.Add(user);
+        await _userRepository.Add(user);
     }
 
-    public void EditUser(User user)
+    public async Task EditUser(User user)
     {
-        _userRepository.Update(user);
+        await _userRepository.Update(user);
     }
 
-    public void DeleteUser(User user)
+    public async Task DeleteUser(User user)
     {
-        _userRepository.Delete(user);
+        await _userRepository.Remove(user);
     }
 
-    public List<User> GetAllUsers()
+    public async Task<IEnumerable<User>> GetAllUsers()
     {
-        return _userRepository.GetAll();
+        return await _userRepository.GetAll();
     }
-    
-    public User GetUser(int userId)
+
+    public async Task<User> GetUser(int userId)
     {
-        return _userRepository.Get(userId);
+        return await _userRepository.Get(userId);
+    }
+
+    public void Dispose()
+    {
+        _userRepository.Dispose();
+        GC.SuppressFinalize(this);
     }
 }
