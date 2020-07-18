@@ -1,5 +1,5 @@
-#load "interfaces.csx"
 #load "entities.csx"
+#load "interfaces.csx"
 
 // Context
 public class DataContext : IDataContext

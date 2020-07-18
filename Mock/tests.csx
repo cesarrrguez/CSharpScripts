@@ -2,17 +2,13 @@
 #load "entities.csx"
 #load "services.csx"
 
-#r "nuget: MSTest.TestFramework, 2.1.2"
-#r "nuget: FluentAssertions, 5.10.3"
-#r "nuget: Moq, 4.14.5"
-
-using Microsoft.VisualStudio.TestTools.UnitTesting;
-using FluentAssertions;
 using Moq;
+using FluentAssertions;
+using Microsoft.VisualStudio.TestTools.UnitTesting;
 
-// Test
+// Application Tests
 [TestClass]
-public class UserServiceTest
+public class UserServiceTests
 {
     private static IUserService _userService;
 

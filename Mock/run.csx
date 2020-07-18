@@ -1,8 +1,12 @@
 #load "tests.csx"
 
+#r "nuget: Moq, 4.14.5"
+#r "nuget: FluentAssertions, 5.10.3"
+#r "nuget: MSTest.TestFramework, 2.1.2"
+
 // Build test service
-var testService = new UserServiceTest();
-UserServiceTest.Setup(null);
+var testService = new UserServiceTests();
+UserServiceTests.Setup(null);
 
 // Test 1
 var test_1 = testService.Given_UserId_100_Expected_UserId_1();
