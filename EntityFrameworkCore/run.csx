@@ -1,12 +1,11 @@
 #load "entities.csx"
+#load "controllers.csx"
 #load "middleware.csx"
 
 #r "nuget: Microsoft.EntityFrameworkCore.Sqlite, 3.1.0"
 
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.DependencyInjection;
-
-var separator = new string(Enumerable.Repeat('-', 15).ToArray());
 
 // Create user
 var user = new User("James", "Wilson", 30);
@@ -24,34 +23,28 @@ Configure(serviceProvider);
 // Get user service
 var userService = serviceProvider.GetService<IUserService>();
 
+// Create user controller
+var userController = new UserController(userService);
+
 // Add User
-Console.WriteLine("Add User:");
-Console.WriteLine(separator);
-await userService.RegisterNewUser(user);
-var users = await userService.GetAllUsers();
-PrintUsers(users);
+await userController.Create(user);
+await userController.Index();
 
 // Update User
-Console.WriteLine("\nUpdate User:");
-Console.WriteLine(separator);
 user.UpdateAge(33);
 user.AddEmail("james.wilson_33.@hotmail.com");
-await userService.EditUser(user);
-users = await userService.GetAllUsers();
-PrintUsers(users);
+await userController.Edit(user);
+await userController.Index();
 
 // Get User
-Console.WriteLine("\nGet User:");
-Console.WriteLine(separator);
-user = await userService.GetUser(user.Id);
-Console.WriteLine(user);
+await userController.Details(user.Id);
 
 // Delete User
-Console.WriteLine("\nDelete User:");
-Console.WriteLine(separator);
-await userService.DeleteUser(user);
-users = await userService.GetAllUsers();
-PrintUsers(users);
+await userController.Delete(user);
+await userController.Index();
+
+// Dispose user service
+userService.Dispose();
 
 public void ConfigureServices(IServiceCollection services)
 {
@@ -60,7 +53,7 @@ public void ConfigureServices(IServiceCollection services)
         options.UseSqlite("Filename=EntityFrameworkCore/database.db");
     });
 
-    IoC.AddRegistration(services);
+    IoC.RegisterServices(services);
 }
 
 public void Configure(ServiceProvider serviceProvider)
@@ -69,17 +62,4 @@ public void Configure(ServiceProvider serviceProvider)
     dataContext.Database.EnsureCreated();
 }
 
-public void PrintUsers(IEnumerable<User> users)
-{
-    if (users == null || !users.Any())
-    {
-        Console.WriteLine("No users");
-    }
-    else
-    {
-        foreach (var user in users)
-        {
-            Console.WriteLine(user);
-        }
-    }
-}
+

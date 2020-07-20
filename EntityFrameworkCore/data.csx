@@ -5,7 +5,7 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
 
 // Context
-public class DataContext : DbContext, IDataContext
+public class DataContext : DbContext, IUnitOfWork
 {
     public const string DEFAULT_SCHEMA = "data";
 
@@ -22,6 +22,11 @@ public class DataContext : DbContext, IDataContext
         modelBuilder.ApplyConfiguration(new UserEmailMap());
 
         base.OnModelCreating(modelBuilder);
+    }
+
+    public async Task<bool> Commit()
+    {
+        return await SaveChangesAsync() > 0;
     }
 }
 
@@ -107,6 +112,7 @@ public class UserEmailMap : IEntityTypeConfiguration<UserEmail>
 public class UserRepository : IUserRepository
 {
     private readonly DataContext _context;
+    public IUnitOfWork UnitOfWork => _context;
 
     public UserRepository(DataContext context)
     {
@@ -116,19 +122,16 @@ public class UserRepository : IUserRepository
     public async Task Add(User user)
     {
         await _context.Users.AddAsync(user);
-        await _context.SaveChangesAsync();
     }
 
-    public Task Update(User user)
+    public void Update(User user)
     {
-        _context.Users.Update(user).State = EntityState.Modified;
-        return _context.SaveChangesAsync();
+        _context.Users.Update(user);
     }
 
-    public Task Remove(User user)
+    public void Remove(User user)
     {
-        _context.Users.Remove(user).State = EntityState.Deleted;
-        return _context.SaveChangesAsync();
+        _context.Users.Remove(user);
     }
 
     public async Task<IEnumerable<User>> GetAll()

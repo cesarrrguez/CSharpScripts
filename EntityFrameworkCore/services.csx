@@ -6,22 +6,25 @@ public class UserService : IUserService
 
     public UserService(IUserRepository userRepository)
     {
-        _userRepository = userRepository;
+        _userRepository = userRepository ?? throw new ArgumentNullException(nameof(userRepository));
     }
 
     public async Task RegisterNewUser(User user)
     {
         await _userRepository.Add(user);
+        await _userRepository.UnitOfWork.Commit();
     }
 
     public async Task EditUser(User user)
     {
-        await _userRepository.Update(user);
+        _userRepository.Update(user);
+        await _userRepository.UnitOfWork.Commit();
     }
 
     public async Task DeleteUser(User user)
     {
-        await _userRepository.Remove(user);
+        _userRepository.Remove(user);
+        await _userRepository.UnitOfWork.Commit();
     }
 
     public async Task<IEnumerable<User>> GetAllUsers()

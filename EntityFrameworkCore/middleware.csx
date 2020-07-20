@@ -6,11 +6,14 @@ using Microsoft.Extensions.DependencyInjection;
 
 public static class IoC
 {
-    public static IServiceCollection AddRegistration(IServiceCollection services)
+    public static IServiceCollection RegisterServices(IServiceCollection services)
     {
-        services.AddScoped<IDataContext, DataContext>();
-        services.AddScoped<IUserRepository, UserRepository>();
+        // Application
         services.AddScoped<IUserService, UserService>();
+
+        // Infrastructure
+        services.AddScoped<IUnitOfWork, DataContext>();
+        services.AddScoped<IUserRepository, UserRepository>();
 
         return services;
     }
