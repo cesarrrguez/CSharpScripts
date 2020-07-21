@@ -1,5 +1,5 @@
 #load "entities.csx"
-#load "middleware.csx"
+#load "configurations.csx"
 #load "data.csx"
 
 #r "nuget: Microsoft.EntityFrameworkCore.Sqlite, 3.1.0"
@@ -37,5 +37,5 @@ public void ConfigureServices(IServiceCollection services)
         options.UseSqlite("Filename=UnitOfWork/database.db");
     });
 
-    IoC.RegisterServices(services);
+    DependencyInjectionConfig.AddDependencyInjectionConfiguration(services);
 }
