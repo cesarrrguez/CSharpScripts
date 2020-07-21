@@ -1,4 +1,4 @@
-#load "middleware.csx"
+#load "configurations.csx"
 #load "controllers.csx"
 
 #r "nuget: Microsoft.Extensions.DependencyInjection, 3.1.0"
@@ -20,5 +20,5 @@ Console.WriteLine(userController.Get());
 
 public void ConfigureServices(IServiceCollection services)
 {
-    IoC.AddRegistration(services);
+    DependencyInjectionConfig.AddDependencyInjectionConfiguration(services);
 }
