@@ -134,20 +134,20 @@ public class UserRepository : IUserRepository
         _context.Users.Remove(user);
     }
 
+    public async Task<User> GetById(int id)
+    {
+        return await _context.Users
+            .Include(u => u.Addresses)
+            .Include(u => u.Emails)
+            .SingleOrDefaultAsync(u => u.Id == id);
+    }
+
     public async Task<IEnumerable<User>> GetAll()
     {
         return await _context.Users
             .Include(u => u.Addresses)
             .Include(u => u.Emails)
             .ToListAsync();
-    }
-
-    public async Task<User> Get(int userId)
-    {
-        return await _context.Users
-            .Include(u => u.Addresses)
-            .Include(u => u.Emails)
-            .SingleOrDefaultAsync(u => u.Id == userId);
     }
 
     public void Dispose()

@@ -1,6 +1,6 @@
 #load "interfaces.csx"
 
-public class UserController
+public class UserController : IUserController
 {
     private readonly IUserService _userService;
     private string _separator = new string(Enumerable.Repeat('-', 15).ToArray());
@@ -10,46 +10,52 @@ public class UserController
         _userService = userService ?? throw new ArgumentNullException(nameof(userService));
     }
 
-    public async Task Create(User user)
+    public async Task Create(UserViewModel userViewModel)
     {
-        Console.WriteLine("Add User:");
+        Console.WriteLine("Create User:");
         Console.WriteLine(_separator);
 
-        await _userService.RegisterNewUser(user);
+        await _userService.Register(userViewModel);
     }
 
-    public async Task Edit(User user)
+    public async Task<UserViewModel> Get(int id)
     {
-        Console.WriteLine("\nUpdate User:");
+        var userViewModel = await _userService.GetById(id);
+        return userViewModel;
+    }
+
+    public async Task Edit(UserViewModel userViewModel)
+    {
+        Console.WriteLine("\nEdit User:");
         Console.WriteLine(_separator);
 
-        await _userService.EditUser(user);
+        await _userService.Update(userViewModel);
     }
 
-    public async Task Delete(User user)
+    public async Task Delete(int id)
     {
         Console.WriteLine("\nDelete User:");
         Console.WriteLine(_separator);
 
-        await _userService.DeleteUser(user);
+        await _userService.Remove(id);
     }
 
-    public async Task Details(int userId)
+    public async Task Details(int id)
     {
-        Console.WriteLine("\nGet User:");
+        Console.WriteLine("\nDetails User:");
         Console.WriteLine(_separator);
 
-        var user = await _userService.GetUser(userId);
-        PrintUser(user);
+        var userViewModel = await _userService.GetById(id);
+        PrintUser(userViewModel);
     }
 
     public async Task Index()
     {
-        var users = await _userService.GetAllUsers();
+        var users = await _userService.GetAll();
         PrintUsers(users);
     }
 
-    private void PrintUsers(IEnumerable<User> users)
+    private void PrintUsers(IEnumerable<UserViewModel> users)
     {
         if (users == null || !users.Any())
         {
@@ -64,8 +70,14 @@ public class UserController
         }
     }
 
-    private void PrintUser(User user)
+    private void PrintUser(UserViewModel userViewModel)
     {
-        Console.WriteLine(user);
+        Console.WriteLine(userViewModel);
+    }
+
+    public void Dispose()
+    {
+        _userService.Dispose();
+        GC.SuppressFinalize(this);
     }
 }

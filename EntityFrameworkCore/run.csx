@@ -1,65 +1,104 @@
-#load "entities.csx"
+#load "viewModels.csx"
 #load "controllers.csx"
-#load "middleware.csx"
+#load "configurations.csx"
 
+#r "nuget: AutoMapper, 10.0.0"
 #r "nuget: Microsoft.EntityFrameworkCore.Sqlite, 3.1.0"
+#r "nuget: AutoMapper.Extensions.Microsoft.DependencyInjection, 8.0.1"
 
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.DependencyInjection;
 
-// Create user
-var user = new User("James", "Wilson", 30);
-user.AddAddress("Wall Street", "New York", "New York State", "0123456789");
-user.AddEmail("james.wilson@gmail.com");
+// Call App entry point
+await App.Run();
 
-// Configure services
-var services = new ServiceCollection();
-ConfigureServices(services);
-
-// Build service provider
-var serviceProvider = services.BuildServiceProvider();
-Configure(serviceProvider);
-
-// Get user service
-var userService = serviceProvider.GetService<IUserService>();
-
-// Create user controller
-var userController = new UserController(userService);
-
-// Add User
-await userController.Create(user);
-await userController.Index();
-
-// Update User
-user.UpdateAge(33);
-user.AddEmail("james.wilson_33.@hotmail.com");
-await userController.Edit(user);
-await userController.Index();
-
-// Get User
-await userController.Details(user.Id);
-
-// Delete User
-await userController.Delete(user);
-await userController.Index();
-
-// Dispose user service
-userService.Dispose();
-
-public void ConfigureServices(IServiceCollection services)
+public class App
 {
-    services.AddDbContext<DataContext>(options =>
+    private static IServiceProvider _serviceProvider;
+
+    public async static Task Run()
     {
-        options.UseSqlite("Filename=EntityFrameworkCore/database.db");
-    });
+        RegisterServices();
 
-    IoC.RegisterServices(services);
+        // Ensure the database is created
+        _serviceProvider.GetService<DataContext>().Database.EnsureCreated();
+
+        await CallServices();
+
+        DisposeServices();
+    }
+
+    private static void RegisterServices()
+    {
+        IServiceCollection services = new ServiceCollection();
+
+        services.AddDbContext<DataContext>(options =>
+        {
+            options.UseSqlite("Filename=EntityFrameworkCore/database.db");
+        }, ServiceLifetime.Transient);
+
+        AutoMapperConfig.AddAutoMapperConfiguration(services);
+
+        DependencyInjectionConfig.AddDependencyInjectionConfiguration(services);
+
+        _serviceProvider = services.BuildServiceProvider();
+    }
+
+    private static void DisposeServices()
+    {
+        if (_serviceProvider == null)
+        {
+            return;
+        }
+        if (_serviceProvider is IDisposable)
+        {
+            ((IDisposable)_serviceProvider).Dispose();
+        }
+    }
+
+    private static async Task CallServices()
+    {
+        // Create user view model object
+        var userViewModel = CreateUserViewModel();
+
+        // Create User
+        await _serviceProvider.GetService<IUserController>().Create(userViewModel);
+        await _serviceProvider.GetService<IUserController>().Index();
+
+        // Update User
+        userViewModel = _serviceProvider.GetService<IUserController>().Get(1).Result;
+        userViewModel.Age = 21;
+        userViewModel.Emails.Add(new UserEmailViewModel { EmailAddress = "james.wilson_33.@hotmail.com" });
+        await _serviceProvider.GetService<IUserController>().Edit(userViewModel);
+        await _serviceProvider.GetService<IUserController>().Index();
+
+        // Details User
+        await _serviceProvider.GetService<IUserController>().Details(userViewModel.Id);
+
+        // Delete User
+        await _serviceProvider.GetService<IUserController>().Delete(userViewModel.Id);
+        await _serviceProvider.GetService<IUserController>().Index();
+    }
+
+    private static UserViewModel CreateUserViewModel()
+    {
+        return new UserViewModel
+        {
+            FirstName = "James",
+            LastName = "Wilson",
+            Age = 30,
+            Addresses = new List<UserAddressViewModel>(new UserAddressViewModel[] {
+            new UserAddressViewModel {
+                Street= "Wall Street",
+                City= "New York",
+                State="New York State",
+                ZipCode="0123456789"},
+         }),
+            Emails = new List<UserEmailViewModel>(new UserEmailViewModel[] {
+            new UserEmailViewModel {
+                EmailAddress= "james.wilson@gmail.com"
+            },
+         })
+        };
+    }
 }
-
-public void Configure(ServiceProvider serviceProvider)
-{
-    var dataContext = serviceProvider.GetService<DataContext>();
-    dataContext.Database.EnsureCreated();
-}
-
-
