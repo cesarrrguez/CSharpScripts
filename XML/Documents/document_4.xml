@@ -1,0 +1,11 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Students>
+  <Student Name="James">
+    <Course>POO</Course>
+    <Average>10</Average>
+  </Student>
+  <Student Name="Olivia">
+    <Course>UML</Course>
+    <Average>9</Average>
+  </Student>
+</Students>

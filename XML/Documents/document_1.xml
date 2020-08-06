@@ -1,0 +1,6 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <Element1 attribute="value">
+    <nested>content</nested>
+  </Element1>
+</root>

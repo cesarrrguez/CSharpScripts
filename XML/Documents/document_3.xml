@@ -1,0 +1,13 @@
+﻿<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<!--List of students-->
+<?xml-stylesheet href='styles.css' title='Compact' type='text/css'?>
+<Students>
+  <James ID="10100">
+    <Course>POO</Course>
+    <Average>10</Average>
+  </James>
+  <Olivia ID="25350">
+    <Course>UML</Course>
+    <Average>9.5</Average>
+  </Olivia>
+</Students>
