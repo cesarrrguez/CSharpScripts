@@ -5,7 +5,7 @@ var stopwatch = new Stopwatch();
 void BeginSection(int number, string title)
 {
     Console.WriteLine($"{number}) {title}");
-    Console.WriteLine(new string(Enumerable.Repeat('-', 40).ToArray()));
+    Console.WriteLine(new string(Enumerable.Repeat('-', 67).ToArray()));
 }
 
 // Sequential For Loop
