@@ -18,3 +18,5 @@ document.Add(codeQRImage);
 
 document.Close();
 stream.Close();
+
+Console.WriteLine("QR code generated successfully");
