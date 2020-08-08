@@ -1,4 +1,5 @@
 #load "entities.csx"
+#load "DTO.csx"
 
 #r "nuget: AutoMapper, 10.0.0"
 
