@@ -42,3 +42,7 @@ user2.SetAge(15);
 Console.WriteLine("\nDeep Clone:");
 Console.WriteLine($"User 1: {user1}");
 Console.WriteLine($"User 2: {user2}");
+
+// Property List
+Console.WriteLine("\nPropertyList:");
+Console.WriteLine(user2.PropertyList());
