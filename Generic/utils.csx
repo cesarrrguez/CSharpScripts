@@ -1,7 +1,6 @@
 #load "interfaces.csx"
 
-static void TestGeneric<T>(T entity)
-where T : IEntity
+static void TestGeneric<T>(T entity) where T : IEntity
 {
     if (entity == null)
     {
