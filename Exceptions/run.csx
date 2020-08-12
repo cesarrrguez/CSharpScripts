@@ -58,6 +58,7 @@ catch (Exception e)
 finally
 {
     // We can close and dispose objects here
+    Console.ResetColor();
     Console.WriteLine();
     heating.TurnOff();
 }
