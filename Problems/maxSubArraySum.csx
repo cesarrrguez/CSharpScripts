@@ -6,7 +6,8 @@
 
 int[] array = { -2, -3, 4, -1, -2, 1, 5, -3 };
 
-Console.WriteLine($"Maximum contiguous sum is {MaxSubArraySum(array)}");
+var result = MaxSubArraySum(array);
+Console.WriteLine($"Maximum contiguous sum is: {result}");
 
 public static int MaxSubArraySum(int[] array)
 {
