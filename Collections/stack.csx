@@ -1,5 +1,7 @@
-// Stack is a LIFO (last in first out) data structure
-// --------------------------------------------------
+// Stack
+// ----------------------------------------
+// LIFO (last in first out) data structure.
+// ----------------------------------------
 
 using System.Collections;
 
