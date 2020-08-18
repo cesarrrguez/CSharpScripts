@@ -1,5 +1,7 @@
-// Queue is a FIFO (first in first out) data structure
-// ---------------------------------------------------
+// Queue
+// -----------------------------------------
+// FIFO (first in first out) data structure.
+// -----------------------------------------
 
 using System.Collections;
 
@@ -17,5 +19,5 @@ Console.WriteLine($"\nPeek: {queue.Peek()}\n");
 // Dequeue
 while (queue.Count > 0)
 {
-    Console.WriteLine($"Pop: {queue.Dequeue()}");
+    Console.WriteLine($"Dequeue: {queue.Dequeue()}");
 }
