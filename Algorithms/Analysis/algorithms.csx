@@ -1,5 +1,5 @@
 
-public class Algorithms
+public static class Algorithms
 {
     // MaxSubArraySum Linear. 4n+2
     public static int MaxSubArraySumLinear(int[] array)
