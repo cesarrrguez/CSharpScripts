@@ -23,6 +23,13 @@ Console.WriteLine($"Array 2: {array2.SumSlow()}");
 Console.WriteLine("\nSlice:");
 Console.WriteLine($"SubArray 1: {string.Join(", ", array1.Slice(0, 3))}");
 
+// Set
+Console.WriteLine("\nSwap:");
+array1[0] = 55;
+Console.WriteLine($"Array 1 before swap: {string.Join(", ", array1)}");
+array1.Swap(0, 1);
+Console.WriteLine($"Array 1 after swap: {string.Join(", ", array1)}");
+
 // Clone
 var list1 = new List<string> { "Hello", "World", "Every", "Body", "From", "List 1" };
 var list2 = list1.Clone();

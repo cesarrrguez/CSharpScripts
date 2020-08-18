@@ -58,6 +58,14 @@ public static T[] Slice<T>(this T[] source, int start, int end)
     return result;
 }
 
+public static void Swap<T>(this T[] array, int i1, int i2)
+{
+    var temp = array[i1];
+
+    array[i1] = array[i2];
+    array[i2] = temp;
+}
+
 public static List<T> Clone<T>(this List<T> list)
 {
     return list.ToList();
