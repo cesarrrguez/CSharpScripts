@@ -1,5 +1,4 @@
 #load "entities.csx"
-#load "utils.csx"
 
 // (6) --> (4) --> (5) --> (1)
 //          |       |       ^
@@ -13,12 +12,12 @@ var node4 = new Node<int>(4);
 var node5 = new Node<int>(5);
 var node6 = new Node<int>(6);
 
-node6.NodeList.Add(node4);
-node4.NodeList.Add(node5);
-node4.NodeList.Add(node3);
-node3.NodeList.Add(node2);
-node5.NodeList.Add(node2);
-node5.NodeList.Add(node1);
-node2.NodeList.Add(node1);
+node6.Nodes.Add(node4);
+node4.Nodes.Add(node5);
+node4.Nodes.Add(node3);
+node3.Nodes.Add(node2);
+node5.Nodes.Add(node2);
+node5.Nodes.Add(node1);
+node2.Nodes.Add(node1);
 
-GetNodePath(node6);
+Console.WriteLine(node6.GetPath());
