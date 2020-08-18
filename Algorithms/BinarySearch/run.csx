@@ -8,7 +8,7 @@
 // If the search ends with the remaining half being empty, the target is not in the array.
 // ---------------------------------------------------------------------------------
 
-#load "utils.csx"
+#load "algorithms.csx"
 
 using System.Threading;
 
@@ -32,13 +32,13 @@ int position = 0;
 
 // Recursive implementation
 StartImplementation("Recursive implementation:");
-position = BinarySearch(array, 0, array.Length - 1, target);
+position = Algorithms.BinarySearch(array, 0, array.Length - 1, target);
 PrintBinarySearchResult(array, position);
 FinishImplementation();
 
 // Iterative implementation
 StartImplementation("Iterative implementation");
-position = BinarySearch(array, target);
+position = Algorithms.BinarySearch(array, target);
 PrintBinarySearchResult(array, position);
 FinishImplementation();
 
@@ -48,15 +48,24 @@ position = Array.BinarySearch(array, target);
 PrintBinarySearchResult(array, position);
 FinishImplementation();
 
-void StartImplementation(string title)
+public void StartImplementation(string title)
 {
     Console.WriteLine($"\n{title}");
     Console.WriteLine(separator);
     stopwatch.Restart();
 }
 
-void FinishImplementation()
+public void FinishImplementation()
 {
     stopwatch.Stop();
     Console.WriteLine($"Time elapsed: {stopwatch.Elapsed}");
+}
+
+// Print Binary Search result
+public void PrintBinarySearchResult(int[] array, int position)
+{
+    if (position >= 0)
+        Console.WriteLine($"Item {array[position].ToString()} found at position {position + 1}");
+    else
+        Console.WriteLine("Item not found");
 }
