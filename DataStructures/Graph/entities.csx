@@ -1,32 +1,75 @@
-public class Node<T>
+public class Graph
 {
-    public T Value { get; set; }
-    public List<Node<T>> Nodes { get; set; }
+    public int[,] Adjacency { get; private set; }
+    public int[] Indigree { get; private set; } // Indigree: edge number to node
+    public int Nodes { get; private set; }
 
-    public Node(T value)
+    public Graph(int nodes)
     {
-        Value = value;
-        Nodes = new List<Node<T>>();
+        Nodes = nodes;
+        Adjacency = new int[nodes, nodes];
+        Indigree = new int[nodes];
     }
 
-    public string GetPath(string tab = "")
+    public void AddEdge(int start, int end)
     {
-        var sb = new StringBuilder();
+        Adjacency[start, end] = 1;
+    }
 
-        // Append current node value
-        sb.Append($"{tab}{this}\n");
+    public void AddEdge(int start, int end, int weight)
+    {
+        Adjacency[start, end] = weight;
+    }
 
-        // Loop children
-        foreach (var node in Nodes)
+    public int GetAdjacency(int start, int end)
+    {
+        return Adjacency[start, end];
+    }
+
+    public void ShowAdjacency()
+    {
+        // Row headers
+        for (var i = 0; i < Nodes; i++)
         {
-            sb.Append(node.GetPath($"{tab}\t"));
+            Console.Write($"\t({i})");
         }
 
-        return sb.ToString();
+        Console.WriteLine();
+
+        for (var i = 0; i < Nodes; i++)
+        {
+            // Column headers
+            Console.Write($"({i})");
+
+            // Adjacency values
+            for (var j = 0; j < Nodes; j++)
+            {
+                Console.Write($"\t {Adjacency[i, j]}");
+            }
+
+            Console.WriteLine();
+        }
     }
 
-    public override string ToString()
+    public void IndigreeCalculation()
     {
-        return $"({Value})";
+        for (var i = 0; i < Nodes; i++)
+        {
+            for (var j = 0; j < Nodes; j++)
+            {
+                if (Adjacency[j, i] == 1)
+                {
+                    Indigree[i]++;
+                }
+            }
+        }
+    }
+
+    public void ShowIndigree()
+    {
+        for (var i = 0; i < Nodes; i++)
+        {
+            Console.WriteLine($"({i}): {Indigree[i]}");
+        }
     }
 }

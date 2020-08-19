@@ -1,23 +1,23 @@
 #load "entities.csx"
 
-// (6) --> (4) --> (5) --> (1)
-//          |       |       ^
-//          v       v       |
-//         (3) --> (2) ----- 
+var graph = new Graph(7);
 
-var node1 = new Node<int>(1);
-var node2 = new Node<int>(2);
-var node3 = new Node<int>(3);
-var node4 = new Node<int>(4);
-var node5 = new Node<int>(5);
-var node6 = new Node<int>(6);
+graph.AddEdge(0, 1);
+graph.AddEdge(0, 2);
+graph.AddEdge(0, 3);
+graph.AddEdge(1, 3);
+graph.AddEdge(1, 4);
+graph.AddEdge(2, 5);
+graph.AddEdge(3, 2);
+graph.AddEdge(3, 5);
+graph.AddEdge(3, 6);
+graph.AddEdge(4, 3);
+graph.AddEdge(4, 6);
+graph.AddEdge(6, 5);
+graph.IndigreeCalculation();
 
-node6.Nodes.Add(node4);
-node4.Nodes.Add(node5);
-node4.Nodes.Add(node3);
-node3.Nodes.Add(node2);
-node5.Nodes.Add(node2);
-node5.Nodes.Add(node1);
-node2.Nodes.Add(node1);
+Console.WriteLine("Adjacency:");
+graph.ShowAdjacency();
 
-Console.WriteLine(node6.GetPath());
+Console.WriteLine("\nIndigree:");
+graph.ShowIndigree();
