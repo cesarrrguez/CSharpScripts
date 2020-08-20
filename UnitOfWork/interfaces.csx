@@ -1,8 +1,6 @@
 #load "entities.csx"
 
-public interface IDataContext
-{
-}
+public interface IDataContext { }
 
 public interface IUnitOfWork : IDisposable
 {
@@ -11,9 +9,7 @@ public interface IUnitOfWork : IDisposable
     bool Commit();
 }
 
-public interface IRepository<T> where T : IAggregateRoot
-{
-}
+public interface IRepository<T> where T : IAggregateRoot { }
 
 public interface IOrderRepository : IRepository<Order>
 {

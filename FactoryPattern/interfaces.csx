@@ -1,4 +1,1 @@
-public interface IVehicle
-{
-
-}
+public interface IVehicle { }

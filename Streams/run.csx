@@ -3,6 +3,7 @@ var path = "Streams/data.txt";
 var stream = new FileStream(path, FileMode.Open, FileAccess.Read, FileShare.None);
 
 Console.WriteLine("Read:");
+
 // Read byte by byte
 for (var i = 0; i < stream.Length; i++)
 {

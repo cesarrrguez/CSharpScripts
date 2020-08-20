@@ -2,9 +2,7 @@
 #load "interfaces.csx"
 
 // Context
-public class DataContext : IDataContext
-{
-}
+public class DataContext : IDataContext { }
 
 // Repositories
 public class UserRepository : IUserRepository
