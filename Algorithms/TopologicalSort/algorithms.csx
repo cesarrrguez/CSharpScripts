@@ -2,11 +2,6 @@
 
 public static class Algorithms
 {
-    // Topological Sort
-    // ------------------------------------------------------------------------
-    // Linear ordering of its vertices such that for every directed edge uv 
-    // from vertex u to vertex v, u comes before v in the ordering.
-    // ------------------------------------------------------------------------
     public static List<int> TopologicalSort(Graph graph)
     {
         var result = new List<int>();

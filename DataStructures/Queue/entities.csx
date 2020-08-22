@@ -1,8 +1,3 @@
-// Queue
-// -----------------------------------------
-// FIFO (first in first out) data structure.
-// -----------------------------------------
-
 public class Queue<T>
 {
     public Node<T> Head { get; set; }

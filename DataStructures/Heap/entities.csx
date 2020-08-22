@@ -1,8 +1,3 @@
-// Heap
-// ---------------
-// Priority queue.
-// ----------------
-
 public class Heap<T>
 {
     public int Capacity { get; private set; }

@@ -2,10 +2,6 @@
 
 public static class Algorithms
 {
-    // Dijkstra
-    // --------------------------------------------------------------
-    //  Find the shortest path between nodes in a graph with weights.
-    // --------------------------------------------------------------
     public static List<int> Dijkstra(Graph graph, int start, int end)
     {
         var path = new List<int>();

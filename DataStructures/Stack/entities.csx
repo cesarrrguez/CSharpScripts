@@ -1,8 +1,3 @@
-// Stack
-// ----------------------------------------
-// LIFO (last in first out) data structure.
-// ----------------------------------------
-
 public class Stack<T>
 {
     public Node<T> Top { get; set; }

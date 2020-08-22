@@ -1,3 +1,8 @@
+// Dijkstra
+// --------------------------------------------------------------
+//  Find the shortest path between nodes in a graph with weights.
+// --------------------------------------------------------------
+
 #load "../../DataStructures/Graph/entities.csx"
 #load "algorithms.csx"
 

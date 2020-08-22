@@ -1,5 +1,7 @@
-// Queue is a FIFO (first in first out) data structure
-// ---------------------------------------------------
+// Queue
+// -----------------------------------------
+// FIFO (first in first out) data structure.
+// -----------------------------------------
 
 #load "entities.csx"
 
