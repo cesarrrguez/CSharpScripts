@@ -1,4 +1,4 @@
-var path = "Streams/data.txt";
+var path = "Files/FileStream/data.txt";
 
 var stream = new FileStream(path, FileMode.Open, FileAccess.Read, FileShare.None);
 
