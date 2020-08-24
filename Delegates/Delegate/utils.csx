@@ -34,3 +34,11 @@ public static class PersonUtil
         return person.Age >= 65;
     }
 }
+
+// Extensions
+// ------------------------------------------------------------
+
+public static string ToYesNoString(this bool value)
+{
+    return value ? "Yes" : "No";
+}
