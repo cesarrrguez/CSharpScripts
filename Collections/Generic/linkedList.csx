@@ -13,6 +13,23 @@ values.AddLast(15);
 // Print
 Console.WriteLine($"List: {String.Join(", ", values)}");
 
+// Nodes
+ Console.Write("Nodes: ");
+for (LinkedListNode<int> node = values.First; node != null; node = node.Next)
+{
+    int value = node.Value;
+    Console.Write($"({value})");
+
+    if (node.Next != null)
+    {
+        Console.Write(" -> ");
+    }
+    else
+    {
+        Console.WriteLine();
+    }
+}
+
 // Contains
 Console.WriteLine($"Contains 5: {values.Contains(5)}");
 
