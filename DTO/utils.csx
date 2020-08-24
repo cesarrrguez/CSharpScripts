@@ -1,3 +1,6 @@
+// Extensions
+// ------------------------------------------------------------
+
 public static string PropertyList(this object obj)
 {
     var properties = obj.GetType().GetProperties();

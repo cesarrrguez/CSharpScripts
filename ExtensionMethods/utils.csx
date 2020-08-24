@@ -1,6 +1,9 @@
 using System.Runtime.Serialization;
 using System.Runtime.Serialization.Formatters.Binary;
 
+// Extensions
+// ------------------------------------------------------------
+
 public static void Populate<T>(this T[] array, T value)
 {
     for (var i = 0; i < array.Length; i++)

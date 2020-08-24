@@ -1,3 +1,6 @@
+// Extensions
+// ------------------------------------------------------------
+
 public static void Swap(this int[] array, int i1, int i2)
 {
     var temp = array[i1];
