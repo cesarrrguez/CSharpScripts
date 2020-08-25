@@ -1,6 +1,6 @@
 public interface IEntity
 {
-    string Description { get; }
+    string Name { get; }
 
     bool IsValid();
 }

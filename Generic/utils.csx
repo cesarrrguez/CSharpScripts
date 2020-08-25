@@ -8,7 +8,7 @@ static void TestGeneric<T>(T entity) where T : IEntity
     }
     else
     {
-        Console.WriteLine(entity.Description);
+        Console.WriteLine(entity.Name);
 
         if (entity.IsValid())
         {

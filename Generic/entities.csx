@@ -2,20 +2,36 @@
 
 public class Company : IEntity
 {
-    public string Description { get; set; }
+    public string Name { get; set; }
 
-    public bool IsValid()
-    {
-        return true;
-    }
+    public Company(string name) => Name = name;
+
+    public bool IsValid() => true;
+
+    public override string ToString() => $"{GetType().Name} ({Name})";
 }
 
 public class Person : IEntity
 {
-    public string Description { get; set; }
+    public string Name { get; set; }
 
-    public bool IsValid()
+    public Person(string name) => Name = name;
+
+    public bool IsValid() => false;
+
+    public override string ToString() => $"{GetType().Name} ({Name})";
+}
+
+public class MyList<T> where T : IEntity
+{
+    public List<T> Items { get; private set; }
+    public int Counter { get; set; }
+
+    public MyList() => Items = new List<T>();
+
+    public void AddItem(T item)
     {
-        return false;
+        Items.Add(item);
+        Counter++;
     }
 }
