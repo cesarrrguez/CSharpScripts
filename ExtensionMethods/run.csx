@@ -53,3 +53,7 @@ Console.WriteLine($"User 2: {user2}");
 // Property List
 Console.WriteLine("\nPropertyList:");
 Console.WriteLine(user2.PropertyList());
+
+// Bool to string
+var display = true;
+Console.WriteLine($"Display bool: {display.ToYesNoString()}");
