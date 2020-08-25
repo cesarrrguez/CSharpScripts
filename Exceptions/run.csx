@@ -48,6 +48,13 @@ catch (ArgumentException e)
 
     Console.WriteLine("Message: {0}", e.Message);
 }
+catch (Exception e) when (e.GetType() != typeof(FormatException))
+{
+    Console.WriteLine("\nException (Not FormatException) succeed");
+    Console.WriteLine(separator);
+
+    Console.WriteLine("Message: {0}", e.Message);
+}
 catch (Exception e)
 {
     Console.WriteLine("\nException succeed");
