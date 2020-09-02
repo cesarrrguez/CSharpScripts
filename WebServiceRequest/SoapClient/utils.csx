@@ -4,13 +4,13 @@ using System.IO;
 
 public class SoapClient
 {
+    private const string _url = @"http://www.dneonline.com/calculator.asmx";
+    private const string _action = @"http://tempuri.org/Add";
+
     public static Tuple<XmlDocument, XmlDocument> CallWebService(int value1, int value2)
     {
-        var url = @"http://www.dneonline.com/calculator.asmx";
-        var action = @"http://tempuri.org/Add";
-
         var soapEnvelopeXml = CreateSoapEnvelope(value1, value2);
-        var webRequest = CreateWebRequest(url, action);
+        var webRequest = CreateWebRequest(_url, _action);
         InsertSoapEnvelopeIntoWebRequest(soapEnvelopeXml, webRequest);
 
         // Begin async call to web request
