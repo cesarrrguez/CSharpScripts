@@ -4,10 +4,9 @@ public class EncryptionUtil
 {
     public static string GetSHA1(string text)
     {
-        string result = "";
-        SHA1 sha1 = SHA1.Create();
+        var result = "";
 
-        using (sha1)
+        using (var sha1 = SHA1.Create())
         {
             StringBuilder sb = new StringBuilder();
 
@@ -25,10 +24,9 @@ public class EncryptionUtil
 
     public static string GetSHA256(string text)
     {
-        string result = "";
-        SHA256 sha256 = SHA256Managed.Create();
+        var result = "";
 
-        using (sha256)
+        using (var sha256 = SHA256Managed.Create())
         {
             StringBuilder sb = new StringBuilder();
 
