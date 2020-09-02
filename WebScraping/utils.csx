@@ -144,6 +144,24 @@ public class Utils
             }
         }
     }
+
+    public static void LoginForm()
+    {
+        var browser = new ScrapingBrowser();
+        browser.AllowAutoRedirect = true;
+        browser.AllowMetaRedirect = true;
+
+        var web = browser.NavigateToPage(new Uri("https://micuenta.lne.es/login"));
+        var form = web.FindFormById("login-form");
+        form["email"] = "XXXXXXXXX";
+        form["password"] = "XXXXXXXXX";
+        form["remember_me"] = "1";
+
+        form.Method = HttpVerb.Post;
+        var result = form.Submit();
+
+        Console.WriteLine($"Status response: {result.RawResponse.StatusCode} - {result.RawResponse.StatusDescription}");
+    }
 }
 
 public class FolderUtil
