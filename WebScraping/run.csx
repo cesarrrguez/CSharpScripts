@@ -1,3 +1,5 @@
+// HAPPY SCRAPING! :)
+
 #load "utils.csx"
 #load "entities.csx"
 

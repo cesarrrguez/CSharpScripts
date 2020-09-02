@@ -3,6 +3,7 @@
 using Flurl;
 using HtmlAgilityPack;
 using ScrapySharp.Extensions;
+using ScrapySharp.Network;
 using System.Globalization;
 using System.Net;
 using System.Text.Json;
@@ -10,7 +11,7 @@ using System.Threading;
 
 public class Utils
 {
-    private const string domain = @"https://www.lne.es";
+    private const string _domain = @"https://www.lne.es";
 
     public static async Task SaveNews(DateTime startDate, DateTime endDate, string path)
     {
@@ -19,7 +20,7 @@ public class Utils
 
         for (var day = endDate; day.Date >= startDate; day = day.AddDays(-1))
         {
-            var url = Url.Combine(domain, $"asturias/{day.Year}/{day.Month.ToString().PadLeft(2, '0')}/{day.Day.ToString().PadLeft(2, '0')}");
+            var url = Url.Combine(_domain, $"asturias/{day.Year}/{day.Month.ToString().PadLeft(2, '0')}/{day.Day.ToString().PadLeft(2, '0')}");
             var doc = await web.LoadFromWebAsync(url);
 
             // Check no data
@@ -55,13 +56,13 @@ public class Utils
             // Add domain to link if necessary
             if (!string.IsNullOrEmpty(link) && !link.StartsWith("http"))
             {
-                link = Url.Combine(domain, link);
+                link = Url.Combine(_domain, link);
             }
 
             // Add domain to image url if necessary
             if (!string.IsNullOrEmpty(imageUrl) && !imageUrl.StartsWith("http"))
             {
-                imageUrl = Url.Combine(domain, imageUrl);
+                imageUrl = Url.Combine(_domain, imageUrl);
             }
 
             // Remove parameters from image url if necessary
@@ -93,7 +94,7 @@ public class Utils
 
         for (var day = endDate; day.Date >= startDate; day = day.AddDays(-1))
         {
-            var url = Url.Combine(domain, $"asturias/{day.Year}/{day.Month.ToString().PadLeft(2, '0')}/{day.Day.ToString().PadLeft(2, '0')}");
+            var url = Url.Combine(_domain, $"asturias/{day.Year}/{day.Month.ToString().PadLeft(2, '0')}/{day.Day.ToString().PadLeft(2, '0')}");
             var doc = await web.LoadFromWebAsync(url);
 
             // Check no data
@@ -126,7 +127,7 @@ public class Utils
             // Add domain to image url if necessary
             if (!imageUrl.StartsWith("http"))
             {
-                imageUrl = Url.Combine(domain, imageUrl);
+                imageUrl = Url.Combine(_domain, imageUrl);
             }
 
             // Remove parameters from image url if necessary
