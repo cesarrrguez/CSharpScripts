@@ -4,6 +4,7 @@
 
 #r "nuget: AutoMapper, 10.0.0"
 #r "nuget: Microsoft.EntityFrameworkCore.Sqlite, 3.1.0"
+//#r "nuget: Microsoft.EntityFrameworkCore.SqlServer, 3.1.0"
 #r "nuget: AutoMapper.Extensions.Microsoft.DependencyInjection, 8.0.1"
 
 using Microsoft.EntityFrameworkCore;
@@ -35,6 +36,7 @@ public class App
         services.AddDbContext<DataContext>(options =>
         {
             options.UseSqlite("Filename=EntityFrameworkCore/database.db");
+            //options.UseSqlServer("Server=localhost;Database=EntityFrameworkCore;Trusted_Connection=True;");
         }, ServiceLifetime.Transient);
 
         AutoMapperConfig.AddAutoMapperConfiguration(services);
