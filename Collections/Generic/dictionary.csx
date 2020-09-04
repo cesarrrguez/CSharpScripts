@@ -4,18 +4,15 @@ var dictionary = new Dictionary<int, string>();
 dictionary.Add(34, "Hello");
 
 var key = 34;
-string value = null;
 
 // ContainsKey option
 if (dictionary.ContainsKey(key))
 {
-    value = dictionary[key];
+    Console.WriteLine($"ContainsKey: {dictionary[key]}");
 }
-Console.WriteLine(value);
 
 // TryGetValue option
-if (dictionary.TryGetValue(key, out value))
+if (dictionary.TryGetValue(key, out var value))
 {
-    // ...
+    Console.WriteLine($"TryGetValue: {value}");
 }
-Console.WriteLine(value);
