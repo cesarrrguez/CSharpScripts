@@ -46,10 +46,8 @@ public class App
 
     private static void DisposeServices()
     {
-        if (_serviceProvider == null)
-        {
-            return;
-        }
+        if (_serviceProvider == null) return;
+
         if (_serviceProvider is IDisposable)
         {
             ((IDisposable)_serviceProvider).Dispose();
