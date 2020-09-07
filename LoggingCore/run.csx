@@ -8,9 +8,10 @@
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
 
-Program.Run();
+// Call App entry point
+App.Run();
 
-public class Program
+public class App
 {
     private static IServiceProvider _serviceProvider;
 
@@ -18,14 +19,16 @@ public class Program
     {
         ConfigureServices();
 
-        var logger = _serviceProvider.GetRequiredService<ILogger<Program>>();
+        var logger = _serviceProvider.GetRequiredService<ILogger<App>>();
         logger.LogInformation("The application has started");
 
         var userController = _serviceProvider.GetRequiredService<IUserController>();
         Console.WriteLine(userController.Get());
+
+        DisposeServices();
     }
 
-    public static void ConfigureServices()
+    private static void ConfigureServices()
     {
         var services = new ServiceCollection();
 
@@ -40,5 +43,15 @@ public class Program
         services.AddScoped<IUserController, UserController>();
 
         _serviceProvider = services.BuildServiceProvider();
+    }
+
+    private static void DisposeServices()
+    {
+        if (_serviceProvider == null) return;
+
+        if (_serviceProvider is IDisposable)
+        {
+            ((IDisposable)_serviceProvider).Dispose();
+        }
     }
 }
