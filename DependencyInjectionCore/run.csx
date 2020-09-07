@@ -38,9 +38,9 @@ public class App
     {
         if (_serviceProvider == null) return;
 
-        if (_serviceProvider is IDisposable)
+        if (_serviceProvider is IDisposable disposable)
         {
-            ((IDisposable)_serviceProvider).Dispose();
+            disposable.Dispose();
         }
     }
 }
