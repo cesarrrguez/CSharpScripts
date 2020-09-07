@@ -73,10 +73,7 @@ public class App
         var services = new ServiceCollection();
 
         // Logging
-        services.AddLogging(options =>
-        {
-            options.AddSerilog();
-        });
+        services.AddLogging(options => options.AddSerilog());
 
         // IoC
         services.AddScoped<IHomeController, HomeController>();

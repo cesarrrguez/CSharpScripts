@@ -33,10 +33,7 @@ public class App
         var services = new ServiceCollection();
 
         // Logging
-        services.AddLogging(options =>
-        {
-            options.AddConsole();
-        });
+        services.AddLogging(options => options.AddConsole());
 
         // IoC
         services.AddScoped<IUserService, UserService>();
