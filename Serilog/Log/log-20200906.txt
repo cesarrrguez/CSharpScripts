@@ -1,0 +1,7 @@
+2020-09-06 01:32:57.478 +02:00 [INF] Application is starting
+2020-09-06 01:32:57.581 +02:00 [INF] Home controller is running
+2020-09-06 01:32:57.612 +02:00 [WRN] Dividing 10 by 0
+2020-09-06 01:32:57.614 +02:00 [ERR] Something went wrong
+System.DivideByZeroException: Attempted to divide by zero.
+   at Submission#0.App.Run() in d:\Workspace\CSharpScripts\Serilog\run.csx:line 56
+2020-09-06 01:32:57.626 +02:00 [INF] Application is Closing!
