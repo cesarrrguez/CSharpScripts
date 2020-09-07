@@ -11,27 +11,28 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.DependencyInjection;
 
 // Call App entry point
-await App.Run();
+App.Run();
 
 public class App
 {
     private static IServiceProvider _serviceProvider;
 
-    public async static Task Run()
+    public static void Run()
     {
-        RegisterServices();
+        ConfigureServices();
 
         // Ensure the database is created
         _serviceProvider.GetService<DataContext>().Database.EnsureCreated();
 
-        await CallServices();
+        var servicesTask = CallServices();
+        servicesTask.Wait();
 
         DisposeServices();
     }
 
-    private static void RegisterServices()
+    private static void ConfigureServices()
     {
-        IServiceCollection services = new ServiceCollection();
+        var services = new ServiceCollection();
 
         services.AddDbContext<DataContext>(options =>
         {
