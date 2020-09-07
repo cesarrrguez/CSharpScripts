@@ -5,14 +5,11 @@
 #r "nuget: Microsoft.Extensions.Configuration.Binder, 3.1.0"
 
 using Microsoft.Extensions.Configuration;
-using Microsoft.Extensions.Configuration.Json;
-using Microsoft.Extensions.Configuration.Binder;
 
-var rootPath = @"D:\Workspace\CSharpScripts\Configuration";
-
+var path = Path.Combine(Directory.GetCurrentDirectory(), "Configuration");
 var configuration = new ConfigurationBuilder()
-                .SetBasePath(rootPath)
-                .AddJsonFile("appsettings.json", true, true)
+                .SetBasePath(path)
+                .AddJsonFile("appsettings.json", optional: false, reloadOnChange: true)
                 .Build();
 
 var appConfig = configuration.GetSection("application").Get<AppConfig>();
