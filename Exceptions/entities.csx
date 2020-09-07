@@ -10,10 +10,11 @@ public class Heating
 
     public Heating(string name, int temperature)
     {
-        Name = name;
+        Name = name ?? throw new ArgumentNullException(name);
         Temperature = temperature;
         Works = true;
     }
+    public bool IsOk() => throw new NotImplementedException();
 
     public void TurnOff()
     {
