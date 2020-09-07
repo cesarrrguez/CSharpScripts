@@ -82,24 +82,22 @@ public static T DeepClone<T>(this T obj)
     if (Object.ReferenceEquals(obj, null))
         return default(T);
 
-    using (var stream = new MemoryStream())
+    using var stream = new MemoryStream();
+    try
     {
-        try
-        {
-            var formatter = new BinaryFormatter();
-            formatter.Serialize(stream, obj);
-            stream.Seek(0, SeekOrigin.Begin);
+        var formatter = new BinaryFormatter();
+        formatter.Serialize(stream, obj);
+        stream.Seek(0, SeekOrigin.Begin);
 
-            return (T)formatter.Deserialize(stream);
-        }
-        catch (SerializationException ex)
-        {
-            throw new SerializationException(ex.Message, ex);
-        }
-        catch
-        {
-            throw;
-        }
+        return (T)formatter.Deserialize(stream);
+    }
+    catch (SerializationException ex)
+    {
+        throw new SerializationException(ex.Message, ex);
+    }
+    catch
+    {
+        throw;
     }
 }
 

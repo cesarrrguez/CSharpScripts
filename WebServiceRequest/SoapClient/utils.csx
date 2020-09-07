@@ -23,13 +23,9 @@ public class SoapClient
         // Get the response from the completed web request
         var xmlResponse = new XmlDocument();
 
-        using (var webResponse = webRequest.EndGetResponse(asyncResult))
-        {
-            using (var stream = new StreamReader(webResponse.GetResponseStream()))
-            {
-                xmlResponse.Load(stream);
-            }
-        }
+        using var webResponse = webRequest.EndGetResponse(asyncResult);
+        using var stream = new StreamReader(webResponse.GetResponseStream());
+        xmlResponse.Load(stream);
 
         return new Tuple<XmlDocument, XmlDocument>(soapEnvelopeXml, xmlResponse);
     }
@@ -69,9 +65,7 @@ public class SoapClient
 
     private static void InsertSoapEnvelopeIntoWebRequest(XmlDocument soapEnvelopeXml, HttpWebRequest webRequest)
     {
-        using (var stream = webRequest.GetRequestStream())
-        {
-            soapEnvelopeXml.Save(stream);
-        }
+        using var stream = webRequest.GetRequestStream();
+        soapEnvelopeXml.Save(stream);
     }
 }

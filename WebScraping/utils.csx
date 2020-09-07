@@ -78,14 +78,12 @@ public class Utils
 
     private static async Task WriteNews(List<News> news, string path)
     {
-        using (var stream = File.Create(path))
+        using var stream = File.Create(path);
+        await JsonSerializer.SerializeAsync<List<News>>(stream, news, new JsonSerializerOptions
         {
-            await JsonSerializer.SerializeAsync<List<News>>(stream, news, new JsonSerializerOptions
-            {
-                WriteIndented = true,
-                Encoder = System.Text.Encodings.Web.JavaScriptEncoder.UnsafeRelaxedJsonEscaping
-            });
-        }
+            WriteIndented = true,
+            Encoder = System.Text.Encodings.Web.JavaScriptEncoder.UnsafeRelaxedJsonEscaping
+        });
     }
 
     public static async Task SaveImages(DateTime startDate, DateTime endDate, string path)
@@ -137,11 +135,9 @@ public class Utils
                 imageUrl = imageUrl.Substring(0, imageUrlIndex);
             }
 
-            using (var client = new WebClient())
-            {
-                var imagePath = Path.Combine(folderPath, Path.GetFileName(imageUrl));
-                await client.DownloadFileTaskAsync(new Uri(imageUrl), imagePath);
-            }
+            using var client = new WebClient();
+            var imagePath = Path.Combine(folderPath, Path.GetFileName(imageUrl));
+            await client.DownloadFileTaskAsync(new Uri(imageUrl), imagePath);
         }
     }
 

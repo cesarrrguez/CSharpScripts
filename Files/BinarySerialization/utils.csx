@@ -7,21 +7,17 @@ public class SerializationUtil
     {
         var formater = new BinaryFormatter();
 
-        using (var stream = new FileStream(path, FileMode.Create, FileAccess.Write, FileShare.None))
-        {
-            formater.Serialize(stream, obj);
-        }
+        using var stream = new FileStream(path, FileMode.Create, FileAccess.Write, FileShare.None);
+        formater.Serialize(stream, obj);
     }
 
     public static T DeserializeBinaryData<T>(string path)
     {
         var formater = new BinaryFormatter();
 
-        using (var stream = new FileStream(path, FileMode.Open, FileAccess.Read, FileShare.None))
-        {
-            var result = formater.Deserialize(stream);
+        using var stream = new FileStream(path, FileMode.Open, FileAccess.Read, FileShare.None);
+        var result = formater.Deserialize(stream);
 
-            return (T)result;
-        }
+        return (T)result;
     }
 }
