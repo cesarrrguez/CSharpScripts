@@ -4,7 +4,7 @@ public class Rectangle
     public double Height { get; set; }
 }
 
-public class AreaCalculator
+public static class AreaCalculator
 {
     public static void CalculateArea(Rectangle rectangle)
     {

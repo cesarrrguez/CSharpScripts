@@ -1,6 +1,6 @@
 using System.Threading;
 
-public class Chef
+public static class Chef
 {
     public async static Task<bool> MakePizza()
     {

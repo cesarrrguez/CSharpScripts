@@ -3,7 +3,7 @@
 using System.Net.Http;
 using System.Text.Json;
 
-public class Utils
+public static class Utils
 {
     public static async Task<List<Post>> GetPosts()
     {

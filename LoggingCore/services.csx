@@ -27,7 +27,7 @@ public class UserService : IUserService
     }
 }
 
-public class LoggingId
+public static class LoggingId
 {
     public const int DemoCode = 1001;
 }

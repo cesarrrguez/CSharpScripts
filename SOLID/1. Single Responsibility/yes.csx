@@ -2,7 +2,7 @@
 
 using System.Security.Cryptography;
 
-public class PasswordEncrypter
+public static class PasswordEncrypter
 {
     public static string Encrypt(string password)
     {

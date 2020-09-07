@@ -1,6 +1,6 @@
 using System.IO;
 
-public class FileUtil
+public static class FileUtil
 {
     public static void WriteData<T>(T obj, string path)
     {

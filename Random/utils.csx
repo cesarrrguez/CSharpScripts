@@ -1,4 +1,4 @@
-public class RandomUtil
+public static class RandomUtil
 {
     // Generate a random number between two numbers
     public static int GetRandomNumber(int min, int max)

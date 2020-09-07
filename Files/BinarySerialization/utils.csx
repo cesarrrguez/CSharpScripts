@@ -1,7 +1,7 @@
 
 using System.Runtime.Serialization.Formatters.Binary;
 
-public class SerializationUtil
+public static class SerializationUtil
 {
     public static void SerializeBinaryData<T>(T obj, string path)
     {

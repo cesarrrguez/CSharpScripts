@@ -37,7 +37,7 @@ public class UserRepositoryTests
 }
 
 [TestClass]
-public class InitRepositoryTests
+public static class InitRepositoryTests
 {
     [AssemblyInitialize()]
     public static void Setup(TestContext context)
@@ -47,7 +47,7 @@ public class InitRepositoryTests
 }
 
 // Test Context
-public class TestDataContext
+public static class TestDataContext
 {
     public static DataContext Context;
 

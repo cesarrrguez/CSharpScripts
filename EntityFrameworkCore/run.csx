@@ -13,7 +13,7 @@ using Microsoft.Extensions.DependencyInjection;
 // Call App entry point
 App.Run();
 
-public class App
+public static class App
 {
     private static IServiceProvider _serviceProvider;
 

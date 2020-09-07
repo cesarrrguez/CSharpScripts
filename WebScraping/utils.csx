@@ -9,7 +9,7 @@ using System.Net;
 using System.Text.Json;
 using System.Threading;
 
-public class Utils
+public static class Utils
 {
     private const string _domain = @"https://www.lne.es";
 
@@ -160,7 +160,7 @@ public class Utils
     }
 }
 
-public class FolderUtil
+public static class FolderUtil
 {
     public static void CreateFolder(string path)
     {

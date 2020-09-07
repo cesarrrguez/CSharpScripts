@@ -1,6 +1,6 @@
 using System.Security.Cryptography;
 
-public class EncryptionUtil
+public static class EncryptionUtil
 {
     public static string GetSHA1(string text)
     {

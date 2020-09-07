@@ -20,7 +20,7 @@ saveImagesTask.Wait();
 
 Console.WriteLine("\nScraping finished!");
 
-public class App
+public static class App
 {
     public async static Task RunSaveNews(DateTime startDate, DateTime endDate)
     {

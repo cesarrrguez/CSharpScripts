@@ -2,7 +2,7 @@ using System.Xml;
 using System.Net;
 using System.IO;
 
-public class SoapClient
+public static class SoapClient
 {
     private const string _url = @"http://www.dneonline.com/calculator.asmx";
     private const string _action = @"http://tempuri.org/Add";

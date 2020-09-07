@@ -15,7 +15,7 @@ public class Circle : IShape
     public double GetArea() => Math.Round(Math.PI * Math.Pow(Radius, 2), 2);
 }
 
-public class AreaCalculator_OCP
+public static class AreaCalculator_OCP
 {
     public static void CalculateArea(IShape shape)
     {
