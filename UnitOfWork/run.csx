@@ -7,35 +7,57 @@
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.DependencyInjection;
 
-// Configure services
-var services = new ServiceCollection();
-ConfigureServices(services);
+// Call App entry point
+App.Run();
 
-// Build service provider
-var serviceProvider = services.BuildServiceProvider();
-
-// Get data context
-var dataContext = serviceProvider.GetService<DataContext>();
-dataContext.Database.EnsureCreated();
-
-// Create Unit of Work 
-using (var unitOfWork = new UnitOfWork(dataContext))
+public class App
 {
-    var order = new Order("Laptop", 3);
-    unitOfWork.OrderRepository.Add(order);
+    private static IServiceProvider _serviceProvider;
 
-    var customer = new Customer("James", "Brown");
-    unitOfWork.CustomerRepository.Add(customer);
-
-    unitOfWork.Commit();
-}  // Dispose
-
-public void ConfigureServices(IServiceCollection services)
-{
-    services.AddDbContext<DataContext>(options =>
+    public static void Run()
     {
-        options.UseSqlite("Filename=UnitOfWork/database.db");
-    });
+        ConfigureServices();
 
-    DependencyInjectionConfig.AddDependencyInjectionConfiguration(services);
+        // Get data context
+        var dataContext = _serviceProvider.GetService<DataContext>();
+        dataContext.Database.EnsureCreated();
+
+        // Create Unit of Work 
+        using (var unitOfWork = new UnitOfWork(dataContext))
+        {
+            var order = new Order("Laptop", 3);
+            unitOfWork.OrderRepository.Add(order);
+
+            var customer = new Customer("James", "Brown");
+            unitOfWork.CustomerRepository.Add(customer);
+
+            unitOfWork.Commit();
+        }  // Dispose
+
+        DisposeServices();
+    }
+
+    private static void ConfigureServices()
+    {
+        var services = new ServiceCollection();
+
+        services.AddDbContext<DataContext>(options =>
+      {
+          options.UseSqlite("Filename=UnitOfWork/database.db");
+      });
+
+        DependencyInjectionConfig.AddDependencyInjectionConfiguration(services);
+
+        _serviceProvider = services.BuildServiceProvider();
+    }
+
+    private static void DisposeServices()
+    {
+        if (_serviceProvider == null) return;
+
+        if (_serviceProvider is IDisposable)
+        {
+            ((IDisposable)_serviceProvider).Dispose();
+        }
+    }
 }
