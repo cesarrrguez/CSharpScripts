@@ -5,20 +5,42 @@
 
 using Microsoft.Extensions.DependencyInjection;
 
-// Configure services
-var services = new ServiceCollection();
-ConfigureServices(services);
+// Call App entry point
+App.Run();
 
-// Build service provider
-var serviceProvider = services.BuildServiceProvider();
-
-// Get user controller
-var userController = serviceProvider.GetService<IUserController>();
-
-// Print output
-Console.WriteLine(userController.Get());
-
-public void ConfigureServices(IServiceCollection services)
+public class App
 {
-    DependencyInjectionConfig.AddDependencyInjectionConfiguration(services);
+    private static IServiceProvider _serviceProvider;
+
+    public static void Run()
+    {
+        ConfigureServices();
+
+        // Get user controller
+        var userController = _serviceProvider.GetService<IUserController>();
+
+        // Print output
+        Console.WriteLine(userController.Get());
+
+        DisposeServices();
+    }
+
+    private static void ConfigureServices()
+    {
+        var services = new ServiceCollection();
+
+        DependencyInjectionConfig.AddDependencyInjectionConfiguration(services);
+
+        _serviceProvider = services.BuildServiceProvider();
+    }
+
+    private static void DisposeServices()
+    {
+        if (_serviceProvider == null) return;
+
+        if (_serviceProvider is IDisposable)
+        {
+            ((IDisposable)_serviceProvider).Dispose();
+        }
+    }
 }
