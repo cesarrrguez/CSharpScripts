@@ -1,6 +1,6 @@
 public class Student : ICloneable
 {
-    public string Name { get; private set; }
+    public string Name { get; }
     public double Average { get; private set; }
 
     public Student(string name)

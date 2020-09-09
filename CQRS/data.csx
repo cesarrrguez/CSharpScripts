@@ -12,7 +12,7 @@ public class ProductReadRepository : IProductReadRepository
 {
     public IEnumerable<Product> GetAll()
     {
-        Console.WriteLine($"Getting all products from db");
+        Console.WriteLine("Getting all products from db");
 
         return new List<Product>()
         {

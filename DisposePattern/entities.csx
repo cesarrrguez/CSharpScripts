@@ -37,10 +37,10 @@ public class BaseClass : IDisposable
 
 public class DerivedClass : BaseClass
 {
-    private int _number;
+    private readonly int _number;
 
     // To detect redundant calls
-    private bool _disposed = false;
+    private bool _disposed;
 
     ~DerivedClass() => Dispose(false);
 

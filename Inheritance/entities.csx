@@ -4,7 +4,7 @@ public abstract class Shape
     public abstract double Area { get; }
     public abstract double Perimeter { get; }
 
-    public Shape(int id)
+    protected Shape(int id)
     {
         Id = id;
     }
@@ -36,7 +36,7 @@ public class Rectangle : Shape
     public double Width { get; }
     public double Diagonal => Math.Round(Math.Sqrt(Math.Pow(Length, 2) + Math.Pow(Width, 2)), 2);
     public override double Area => Length * Width;
-    public override double Perimeter => 2 * Length + 2 * Width;
+    public override double Perimeter => (2 * Length) + (2 * Width);
 
     public Rectangle(int id, double length, double width) : base(id)
     {

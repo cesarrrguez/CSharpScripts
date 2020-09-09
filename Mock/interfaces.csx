@@ -1,7 +1,5 @@
 #load "entities.csx"
 
-public interface IDataContext { }
-
 public interface IUserRepository
 {
     Task<IEnumerable<User>> GetAll();

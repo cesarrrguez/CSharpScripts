@@ -3,12 +3,12 @@
 using System.ComponentModel;
 
 var user = new User("George", 34);
-user.PropertyChanged += new PropertyChangedEventHandler(user_PropertyChanged);
+user.PropertyChanged += User_PropertyChanged;
 
 user.Name = "James";
 user.Age = 21;
 
-public static void user_PropertyChanged(object sender, PropertyChangedEventArgs e)
+public static void User_PropertyChanged(object sender, PropertyChangedEventArgs e)
 {
     var user = (User)sender;
     var value = typeof(User).GetProperty(e.PropertyName).GetValue(user, null);

@@ -3,7 +3,7 @@
 public class UserController : IUserController
 {
     private readonly IUserService _userService;
-    private string _separator = new string(Enumerable.Repeat('-', 15).ToArray());
+    private readonly string _separator = new string(Enumerable.Repeat('-', 15).ToArray());
 
     public UserController(IUserService userService)
     {
@@ -15,13 +15,12 @@ public class UserController : IUserController
         Console.WriteLine("Create User:");
         Console.WriteLine(_separator);
 
-        await _userService.Register(userViewModel);
+        await _userService.Register(userViewModel).ConfigureAwait(false);
     }
 
     public async Task<UserViewModel> Get(int id)
     {
-        var userViewModel = await _userService.GetById(id);
-        return userViewModel;
+        return await _userService.GetById(id).ConfigureAwait(false);
     }
 
     public async Task Edit(UserViewModel userViewModel)
@@ -29,7 +28,7 @@ public class UserController : IUserController
         Console.WriteLine("\nEdit User:");
         Console.WriteLine(_separator);
 
-        await _userService.Update(userViewModel);
+        await _userService.Update(userViewModel).ConfigureAwait(false);
     }
 
     public async Task Delete(int id)
@@ -37,7 +36,7 @@ public class UserController : IUserController
         Console.WriteLine("\nDelete User:");
         Console.WriteLine(_separator);
 
-        await _userService.Remove(id);
+        await _userService.Remove(id).ConfigureAwait(false);
     }
 
     public async Task Details(int id)
@@ -45,19 +44,19 @@ public class UserController : IUserController
         Console.WriteLine("\nDetails User:");
         Console.WriteLine(_separator);
 
-        var userViewModel = await _userService.GetById(id);
+        var userViewModel = await _userService.GetById(id).ConfigureAwait(false);
         PrintUser(userViewModel);
     }
 
     public async Task Index()
     {
-        var users = await _userService.GetAll();
+        var users = await _userService.GetAll().ConfigureAwait(false);
         PrintUsers(users);
     }
 
     private void PrintUsers(IEnumerable<UserViewModel> users)
     {
-        if (users == null || !users.Any())
+        if (users?.Any() != true)
         {
             Console.WriteLine("No users");
         }

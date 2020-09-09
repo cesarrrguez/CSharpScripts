@@ -35,7 +35,7 @@ public class BinaryTree<T>
 
         var sb = new StringBuilder();
 
-        sb.Append(node + " ");
+        sb.Append(node).Append(' ');
         sb.Append(TraversePreOrder(node.Left));
         sb.Append(TraversePreOrder(node.Right));
 
@@ -49,7 +49,7 @@ public class BinaryTree<T>
         var sb = new StringBuilder();
 
         sb.Append(TraverseInOrder(node.Left));
-        sb.Append(node + " ");
+        sb.Append(node).Append(' ');
         sb.Append(TraverseInOrder(node.Right));
 
         return sb.ToString();
@@ -63,7 +63,7 @@ public class BinaryTree<T>
 
         sb.Append(TraversePostOrder(node.Left));
         sb.Append(TraversePostOrder(node.Right));
-        sb.Append(node + " ");
+        sb.Append(node).Append(' ');
 
         return sb.ToString();
     }
@@ -133,12 +133,10 @@ public class BinaryTree<T>
         {
             node.Left = Remove(node.Left, value);
         }
-
         else if (Comparer<T>.Default.Compare(value, node.Value) > 0)
         {
             node.Right = Remove(node.Right, value);
         }
-
         else
         {
             // Node with only one child or no child  

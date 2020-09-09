@@ -4,8 +4,8 @@ using System.IO;
 
 public static class SoapClient
 {
-    private const string _url = @"http://www.dneonline.com/calculator.asmx";
-    private const string _action = @"http://tempuri.org/Add";
+    private const string _url = "http://www.dneonline.com/calculator.asmx";
+    private const string _action = "http://tempuri.org/Add";
 
     public static Tuple<XmlDocument, XmlDocument> CallWebService(int value1, int value2)
     {

@@ -8,7 +8,7 @@ private void NumberDetection(string text)
     int ri = 0;
     double rd = 0.0;
 
-    if (text == string.Empty)
+    if (string.IsNullOrEmpty(text))
     {
         Console.WriteLine("There is no data");
     }

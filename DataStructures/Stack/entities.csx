@@ -4,9 +4,10 @@ public class Stack<T>
 
     public void Push(T value)
     {
-        var node = new Node<T>(value);
-        node.Next = Top;
-        Top = node;
+        Top = new Node<T>(value)
+        {
+            Next = Top
+        };
     }
 
     public T Pop()

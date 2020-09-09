@@ -1,9 +1,9 @@
 public class UserDTO
 {
     public Guid Id { get; private set; }
-    public string Name { get; private set; }
-    public string Street { get; private set; }
-    public string City { get; private set; }
+    public string Name { get; }
+    public string Street { get; }
+    public string City { get; }
 
     public override string ToString()
     {

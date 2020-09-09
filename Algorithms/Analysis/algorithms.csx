@@ -16,7 +16,6 @@ public static class Algorithms
             {
                 currentSum = 0; // 1
             }
-
             else if (currentSum > maxSum) // 1 + 1 = 2
             {
                 maxSum = currentSum; // 1

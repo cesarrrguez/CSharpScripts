@@ -3,7 +3,7 @@
 using iTextSharp.text;
 using iTextSharp.text.pdf;
 
-var path = @"QR/QR.pdf";
+var path = "QR/QR.pdf";
 
 var document = new Document(PageSize.A4);
 var stream = new FileStream(path, FileMode.Create);

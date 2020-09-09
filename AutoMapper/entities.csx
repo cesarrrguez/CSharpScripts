@@ -1,8 +1,8 @@
 public class User
 {
     public Guid Id { get; private set; }
-    public string FirstName { get; private set; }
-    public string LastName { get; private set; }
+    public string FirstName { get; }
+    public string LastName { get; }
     public Address Address { get; private set; }
 
     public User(string firstName, string lastName)
@@ -30,8 +30,8 @@ public class User
 
 public class Address
 {
-    public string Street { get; private set; }
-    public string City { get; private set; }
+    public string Street { get; }
+    public string City { get; }
 
     public Address(string street, string city)
     {

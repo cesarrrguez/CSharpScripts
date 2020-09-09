@@ -4,7 +4,7 @@ public class Heating
 {
     private const int MAX_TEMPERATURE = 120;
 
-    public string Name { get; private set; }
+    public string Name { get; }
     public int Temperature { get; private set; }
     public bool Works { get; private set; }
 
@@ -28,7 +28,9 @@ public class Heating
             throw new ArgumentException("Increase", "Increase can´t be a negative number");
 
         if (!Works)
+        {
             Console.WriteLine("Heating '{0}' doesn't works", Name);
+        }
         else
         {
             Temperature += temperatureIncrease;
@@ -40,8 +42,10 @@ public class Heating
                 Temperature = MAX_TEMPERATURE;
                 Works = false;
 
-                var ex = new HeatingException(string.Format("Heating '{0}' overheats", Name), "Has worked too long", DateTime.Now);
-                ex.HelpLink = "https://cesarrrguez.github.io/";
+                var ex = new HeatingException(string.Format("Heating '{0}' overheats", Name), "Has worked too long", DateTime.Now)
+                {
+                    HelpLink = "https://cesarrrguez.github.io/"
+                };
 
                 // Create data exception
                 ex.Data.Add("Current temperature:", String.Format("{0} degrees", Temperature));

@@ -14,7 +14,7 @@ public class Node<T>
         var sb = new StringBuilder();
 
         // Append current node value
-        sb.Append($"{tab}{this}\n");
+        sb.Append(tab).Append(this).Append('\n');
 
         // Loop children
         foreach (var node in Nodes)

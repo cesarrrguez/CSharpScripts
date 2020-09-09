@@ -65,7 +65,7 @@ public void FinishImplementation()
 public void PrintBinarySearchResult(int[] array, int position)
 {
     if (position >= 0)
-        Console.WriteLine($"Item {array[position].ToString()} found at position {position + 1}");
+        Console.WriteLine($"Item {array[position]} found at position {position + 1}");
     else
         Console.WriteLine("Item not found");
 }

@@ -5,53 +5,50 @@
 // value that the type can handle, the operation proceeds anyway.
 // ----------------------------------------------------------------
 
-TestDefault();
-// TestUnchecked();
-// TestInlineUnchecked();
-// TestChecked();
-// TestInlineChecked();
+int number = int.MaxValue; // 2147483647
 
-public void TestDefault()
+TestDefault(number);
+// TestUnchecked(number);
+// TestInlineUnchecked(number);
+// TestChecked(number);
+// TestInlineChecked(number);
+
+public void TestDefault(int number)
 {
-    int number = int.MaxValue; // 2147483647
     int result = number + 20; // -2147483629
 
     Console.WriteLine(result);
 }
 
-public void TestUnchecked()
+public void TestUnchecked(int number)
 {
     unchecked
     {
-        int number = int.MaxValue; // 2147483647
         int result = number + 20; // -2147483629
 
         Console.WriteLine(result);
     }
 }
 
-public void TestInlineUnchecked()
+public void TestInlineUnchecked(int number)
 {
-    int number = int.MaxValue; // 2147483647
     int result = unchecked(number + 20); // -2147483629
 
     Console.WriteLine(result);
 }
 
-public void TestChecked()
+public void TestChecked(int number)
 {
     checked
     {
-        int number = int.MaxValue; // 2147483647
         int result = number + 20; // Throw OverflowException
 
         Console.WriteLine(result);
     }
 }
 
-public void TestInlineChecked()
+public void TestInlineChecked(int number)
 {
-    int number = int.MaxValue; // 2147483647
     int result = checked(number + 20); // Throw OverflowException
 
     Console.WriteLine(result);

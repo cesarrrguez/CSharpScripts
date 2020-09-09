@@ -16,13 +16,16 @@ public class UserRepositoryTests
     [ClassInitialize()]
     public static void Setup(TestContext context)
     {
+        if (context == null)
+            throw new ArgumentNullException(nameof(context));
+
         _userRepository = new UserRepository(TestDataContext.Context);
     }
 
     [TestMethod]
     public async Task Given_UserId_1_Expected_NotNull()
     {
-        var result = await _userRepository.Get(1);
+        var result = await _userRepository.Get(1).ConfigureAwait(false);
 
         result.Should().NotBeNull();
     }
@@ -30,7 +33,7 @@ public class UserRepositoryTests
     [TestMethod]
     public async Task Given_UserId_2_Expected_Null()
     {
-        var result = await _userRepository.Get(2);
+        var result = await _userRepository.Get(2).ConfigureAwait(false);
 
         result.Should().BeNull();
     }
@@ -42,6 +45,9 @@ public static class InitRepositoryTests
     [AssemblyInitialize()]
     public static void Setup(TestContext context)
     {
+        if (context == null)
+            throw new ArgumentNullException(nameof(context));
+
         TestDataContext.PrepareContext();
     }
 }

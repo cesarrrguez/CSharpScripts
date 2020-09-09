@@ -1,7 +1,7 @@
 [Serializable]
 public class User
 {
-    public string Name { get; private set; }
+    public string Name { get; }
     public double Age { get; private set; }
 
     public User(string name)

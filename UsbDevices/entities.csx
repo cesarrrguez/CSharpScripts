@@ -8,7 +8,7 @@ public class Usb
 
         ManagementObjectCollection collection;
 
-        using (var searcher = new ManagementObjectSearcher(@"select * from Win32_USBHub"))
+        using (var searcher = new ManagementObjectSearcher("select * from Win32_USBHub"))
         {
             collection = searcher.Get();
         }

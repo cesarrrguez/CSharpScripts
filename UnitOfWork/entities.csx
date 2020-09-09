@@ -2,13 +2,13 @@ public interface IAggregateRoot { }
 
 public class Entity
 {
-    public int Id { get; private set; }
+    public int Id { get; }
 }
 
 public class Order : Entity, IAggregateRoot
 {
-    public string Product { get; private set; }
-    public int Units { get; private set; }
+    public string Product { get; }
+    public int Units { get; }
 
     public Order(string product, int units)
     {
@@ -27,8 +27,8 @@ public class Order : Entity, IAggregateRoot
 
 public class Customer : Entity, IAggregateRoot
 {
-    public string FirstName { get; private set; }
-    public string LastName { get; private set; }
+    public string FirstName { get; }
+    public string LastName { get; }
 
     public Customer(string firstName, string lastName)
     {

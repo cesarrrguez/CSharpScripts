@@ -26,10 +26,7 @@ foreach (var property in company.GetType().GetProperties())
 {
     var propertyInfo = person.GetType().GetProperty(property.Name);
 
-    if (propertyInfo != null)
-    {
-        propertyInfo.SetValue(person, property.GetValue(company));
-    }
+    propertyInfo?.SetValue(person, property.GetValue(company));
 }
 
 Console.WriteLine(company);

@@ -17,9 +17,10 @@ public class Test2
     }
 }
 
+[AttributeUsage(AttributeTargets.All, AllowMultiple = false)]
 public sealed class DataAttribute : System.Attribute
 {
-    public string Data { get; private set; }
+    public string Data { get; }
 
     public DataAttribute() { }
 

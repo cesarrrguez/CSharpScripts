@@ -31,7 +31,6 @@ public class Group
     public List<Meeting> Meetings { get; set; }
 }
 
-
 [Table("Meeting")]
 public class Meeting
 {

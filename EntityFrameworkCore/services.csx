@@ -18,8 +18,8 @@ public class UserService : IUserService
     {
         var user = _mapper.Map<User>(userViewModel);
 
-        await _userRepository.Add(user);
-        await _userRepository.UnitOfWork.Commit();
+        await _userRepository.Add(user).ConfigureAwait(false);
+        await _userRepository.UnitOfWork.Commit().ConfigureAwait(false);
     }
 
     public async Task Update(UserViewModel userViewModel)
@@ -27,27 +27,27 @@ public class UserService : IUserService
         var user = _mapper.Map<User>(userViewModel);
 
         _userRepository.Update(user);
-        await _userRepository.UnitOfWork.Commit();
+        await _userRepository.UnitOfWork.Commit().ConfigureAwait(false);
     }
 
     public async Task Remove(int id)
     {
-        var user = await _userRepository.GetById(id);
+        var user = await _userRepository.GetById(id).ConfigureAwait(false);
 
         _userRepository.Remove(user);
-        await _userRepository.UnitOfWork.Commit();
+        await _userRepository.UnitOfWork.Commit().ConfigureAwait(false);
     }
 
     public async Task<UserViewModel> GetById(int id)
     {
-        var user = await _userRepository.GetById(id);
+        var user = await _userRepository.GetById(id).ConfigureAwait(false);
 
         return _mapper.Map<UserViewModel>(user);
     }
 
     public async Task<IEnumerable<UserViewModel>> GetAll()
     {
-        var users = await _userRepository.GetAll();
+        var users = await _userRepository.GetAll().ConfigureAwait(false);
 
         return _mapper.Map<IEnumerable<UserViewModel>>(users);
     }

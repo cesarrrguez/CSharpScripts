@@ -4,9 +4,10 @@ public class HashTable<T1, T2>
 
     public void Add(T1 key, T2 value)
     {
-        var node = new Node<T1, T2>(key, value);
-        node.Next = Head;
-        Head = node;
+        Head = new Node<T1, T2>(key, value)
+        {
+            Next = Head
+        };
     }
 
     public Node<T1, T2> FindByKey(T1 key)

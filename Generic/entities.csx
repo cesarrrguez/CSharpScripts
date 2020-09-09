@@ -24,7 +24,7 @@ public class Person : IEntity
 
 public class MyList<T> where T : IEntity
 {
-    public List<T> Items { get; private set; }
+    public List<T> Items { get; }
     public int Counter { get; set; }
 
     public MyList() => Items = new List<T>();

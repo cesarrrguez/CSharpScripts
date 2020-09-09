@@ -9,7 +9,7 @@ public async static Task<TOutput> ExecuteProcess<TInput, TOutput>(this IProcess<
 {
     try
     {
-        TOutput output = await Task.Run(() => process.Execute(input));
+        TOutput output = await Task.Run(() => process.Execute(input)).ConfigureAwait(false);
         return output;
     }
     catch (Exception e)

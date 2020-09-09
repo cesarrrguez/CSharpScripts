@@ -1,6 +1,6 @@
 public class Test
 {
-    private int _number;
+    private readonly int _number;
 
     public Test(int number)
     {

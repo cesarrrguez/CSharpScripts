@@ -8,11 +8,8 @@ CalculateOperation(2, 6.3, 3.4);
 
 Console.WriteLine();
 
-// Check if class implements an interface by exception
-CheckInterfaceImplementationByException();
-
-// Check if class implements an interface by as
-CheckInterfaceImplementationByAs();
+// Check if class implements an interface
+CheckInterfaceImplementation();
 
 // Create an array of operations
 var operations = new IOperation[] { new Sum(), new Subtract() };
@@ -47,30 +44,11 @@ public void CalculateOperation(int option, double a, double b)
     operation.Show();
 }
 
-public void CheckInterfaceImplementationByException()
+public void CheckInterfaceImplementation()
 {
     var sum = new Sum();
-    IOperation operation = null;
 
-    try
-    {
-        operation = sum;
-        operation.Check();
-    }
-    catch (System.InvalidCastException e)
-    {
-        Console.WriteLine(e.Message);
-    }
-}
-
-public void CheckInterfaceImplementationByAs()
-{
-    var sum = new Sum();
-    IOperation operation = null;
-
-    operation = sum as IOperation;
-
-    if (operation != null)
+    if (sum is IOperation operation)
         operation.Check();
     else
         Console.WriteLine("Don´t implements IOperation");

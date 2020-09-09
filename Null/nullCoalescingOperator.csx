@@ -18,10 +18,4 @@ ListOfNumbers.Add(5);
 Console.WriteLine(String.Join(", ", ListOfNumbers));
 
 private IList<int> _listOfNumbers;
-public IList<int> ListOfNumbers
-{
-    get
-    {
-        return _listOfNumbers ?? (_listOfNumbers = new List<int>());
-    }
-}
+public IList<int> ListOfNumbers => _listOfNumbers ??= new List<int>();

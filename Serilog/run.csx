@@ -9,6 +9,7 @@
 using Serilog;
 using Serilog.Events;
 using Microsoft.Extensions.DependencyInjection;
+using System.Diagnostics.CodeAnalysis;
 
 // Call App entry point
 App.Run();
@@ -17,6 +18,7 @@ public static class App
 {
     private static IServiceProvider _serviceProvider;
 
+    [SuppressMessage("csharp", "RCS1118", Justification = "Intentional error")]
     public static void Run()
     {
         ConfigureServices();
@@ -35,7 +37,7 @@ public static class App
         homeController.Run();
 
         // Simple values
-        var count = 456;
+        const int count = 456;
         Log.Debug("Retrieved {Count} records", count);
 
         // Collections

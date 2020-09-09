@@ -1,6 +1,7 @@
 #load "entities.csx"
 
-var test = new Test();  // Warning shown
+[Obsolete]
+var test = new Test();
 
 var test2 = new Test2();
 

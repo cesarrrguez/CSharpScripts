@@ -47,7 +47,7 @@ public static class Algorithms
     private static void FillGraphInfo(Graph graph, int start, int[,] info)
     {
         var node = start;
-        var distance = 0;
+        int distance;
 
         do
         {

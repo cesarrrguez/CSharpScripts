@@ -16,6 +16,9 @@ public class ManualMeetingMapper
 
     public Meeting CreateEntity(MeetingDTO meetingDTO)
     {
+        if (meetingDTO == null)
+            throw new ArgumentNullException(nameof(meetingDTO));
+
         throw new NotImplementedException();
     }
 }

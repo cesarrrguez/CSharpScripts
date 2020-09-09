@@ -1,3 +1,5 @@
+using System.Diagnostics.CodeAnalysis;
+
 var list = new List<int>();
 
 for (var i = 0; i < 10000000; i++)
@@ -5,6 +7,7 @@ for (var i = 0; i < 10000000; i++)
 
 // Count() > 0
 var s1 = Stopwatch.StartNew();
+[SuppressMessage("csharp", "RCS1077", Justification = "Performance test")]
 var r1 = list.Count() > 0;
 s1.Stop();
 
@@ -15,6 +18,7 @@ s2.Stop();
 
 // Any()
 var s3 = Stopwatch.StartNew();
+[SuppressMessage("csharp", "RCS1080", Justification = "Performance test")]
 var r3 = list.Any();
 s3.Stop();
 

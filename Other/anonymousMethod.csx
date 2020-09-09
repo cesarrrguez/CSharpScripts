@@ -1,19 +1,13 @@
 var user = new User();
 
 // Create anonymous method
-user.Message += delegate ()
-{
-    Console.WriteLine("Writting from anonymous method");
-};
+user.Message += () => Console.WriteLine("Writting from anonymous method");
 
 // Invoke anonymous method
 user.Message();
 
 // Create anonymous method again
-user.Message += delegate ()
-{
-    Console.WriteLine("Writting from another anonymous method");
-};
+user.Message += () => Console.WriteLine("Writting from another anonymous method");
 
 Console.WriteLine();
 

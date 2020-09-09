@@ -54,6 +54,6 @@ public class UserRepository : IUserRepository
 
     public async Task<User> Get(int userId)
     {
-        return await _context.Users.SingleOrDefaultAsync(u => u.Id == userId);
+        return await _context.Users.SingleOrDefaultAsync(u => u.Id == userId).ConfigureAwait(false);
     }
 }

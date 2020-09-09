@@ -21,5 +21,5 @@ FileUtil.WriteData<User>(user2, path);
 
 // Reading
 Console.WriteLine("Reading ...\n");
-var userData = FileUtil.ReadData<User>(path);
+var userData = FileUtil.ReadData(path);
 Console.WriteLine(userData);

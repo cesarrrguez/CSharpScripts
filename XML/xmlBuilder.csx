@@ -73,7 +73,7 @@ public void BuildXMLDocumentFromArrayData()
 
 public void BuildXMLDocumentFromStringData()
 {
-    var students = @"<Students>
+    const string students = @"<Students>
   <Student Name='James'>
     <Course>POO</Course>
     <Average>10</Average>

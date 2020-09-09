@@ -6,7 +6,7 @@
 
 // Build test service
 var testService = new UserServiceTests();
-UserServiceTests.Setup(null);
+UserServiceTests.Setup();
 
 // Test 1
 var test_1 = testService.Given_UserId_100_Expected_UserId_1();

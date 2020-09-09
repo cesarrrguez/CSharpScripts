@@ -22,7 +22,6 @@ public static int MaxSubArraySum(int[] array)
         {
             currentSum = 0;
         }
-
         else if (currentSum > maxSum)
         {
             maxSum = currentSum;

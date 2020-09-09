@@ -11,11 +11,11 @@ public class UserService : IUserService
 
     public async Task<IEnumerable<User>> GetAllUsers()
     {
-        return await _userRepository.GetAll();
+        return await _userRepository.GetAll().ConfigureAwait(false);
     }
 
     public async Task<User> GetUser(int userId)
     {
-        return await _userRepository.Get(userId);
+        return await _userRepository.Get(userId).ConfigureAwait(false);
     }
 }

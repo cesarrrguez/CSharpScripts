@@ -10,7 +10,7 @@ public class EmailClient
 
 public class NewsLetterService
 {
-    private EmailClient _emailClient = new EmailClient();
+    private readonly EmailClient _emailClient = new EmailClient();
 
     public void SendNewsLetter(User user, Newsletter newsletter)
     {

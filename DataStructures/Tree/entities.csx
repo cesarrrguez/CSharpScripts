@@ -4,8 +4,10 @@ public class Tree<T>
 
     public Node<T> Add(Node<T> parent, T value)
     {
-        var node = new Node<T>(value);
-        node.Parent = parent;
+        var node = new Node<T>(value)
+        {
+            Parent = parent
+        };
 
         if (parent == null)
         {
@@ -48,7 +50,7 @@ public class Tree<T>
         var sb = new StringBuilder();
 
         // Append current node value
-        sb.Append($"{tab}{node}\n");
+        sb.Append(tab).Append(node).Append('\n');
 
         // Loop children
         foreach (var child in node.Children)
@@ -64,7 +66,7 @@ public class Node<T>
 {
     public T Value { get; set; }
     public Node<T> Parent { get; set; }
-    public ICollection<Node<T>> Children { get; private set; }
+    public ICollection<Node<T>> Children { get; }
 
     public Node(T value)
     {

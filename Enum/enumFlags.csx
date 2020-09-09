@@ -7,6 +7,7 @@ Console.WriteLine((Reptile)snakes);
 [Flags]
 enum Reptile
 {
+    None = 0,
     BlackMamba = 2,
     CottonMouth = 4,
     Wiper = 8,

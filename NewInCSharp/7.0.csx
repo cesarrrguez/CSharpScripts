@@ -68,5 +68,5 @@ public int GetValue1()
 {
     return 1 + GetValue2();
 
-    int GetValue2() => 2;
+    static int GetValue2() => 2;
 }

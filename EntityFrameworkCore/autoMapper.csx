@@ -25,12 +25,16 @@ public class ViewModelToDomainMappingProfile : Profile
             .AfterMap((uvm, u) =>
             {
                 if (uvm.Addresses != null)
+                {
                     foreach (var ua in uvm.Addresses)
                         u.AddAddress(ua.Id, ua.Street, ua.City, ua.State, ua.ZipCode);
+                }
 
                 if (uvm.Emails != null)
+                {
                     foreach (var ue in uvm.Emails)
                         u.AddEmail(ue.Id, ue.EmailAddress);
+                }
             });
     }
 }

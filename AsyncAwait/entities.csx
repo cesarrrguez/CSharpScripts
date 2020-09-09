@@ -6,7 +6,7 @@ public static class Chef
     {
         Console.WriteLine("Put the pizza in the oven");
 
-        await Task.Delay(4000);
+        await Task.Delay(4000).ConfigureAwait(false);
 
         Console.WriteLine("Take the pizza out of the oven");
 

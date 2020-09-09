@@ -4,9 +4,10 @@ public class SingleLinkedList<T>
 
     public void AddFirst(T value)
     {
-        var node = new Node<T>(value);
-        node.Next = Head;
-        Head = node;
+        Head = new Node<T>(value)
+        {
+            Next = Head
+        };
     }
 
     public void AddLast(T value)
@@ -27,9 +28,10 @@ public class SingleLinkedList<T>
     {
         if (previousNode == null) return;
 
-        var node = new Node<T>(value);
-        node.Next = previousNode.Next;
-        previousNode.Next = node;
+        previousNode.Next = new Node<T>(value)
+        {
+            Next = previousNode.Next
+        };
     }
 
     public void AddBefore(Node<T> nextNode, T value)
@@ -42,8 +44,10 @@ public class SingleLinkedList<T>
             return;
         }
 
-        var node = new Node<T>(value);
-        node.Next = nextNode;
+        var node = new Node<T>(value)
+        {
+            Next = nextNode
+        };
 
         var beforeNode = GetBeforeNode(nextNode);
         beforeNode.Next = node;
@@ -178,7 +182,7 @@ public class SingleLinkedList<T>
     {
         Node<T> previous = null;
         Node<T> current = Head;
-        Node<T> temp = null;
+        Node<T> temp;
 
         while (current != null)
         {

@@ -1,4 +1,4 @@
-public class Pizza
+public sealed class Pizza
 {
     public int SizeDiameterCM { get; private set; }
 

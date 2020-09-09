@@ -21,8 +21,8 @@ public class Course
 
 public class Student
 {
-    public string Name { get; private set; }
-    public double Average { get; private set; }
+    public string Name { get; }
+    public double Average { get; }
 
     public Student(string name, double average)
     {

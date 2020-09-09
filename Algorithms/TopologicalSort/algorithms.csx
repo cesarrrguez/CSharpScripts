@@ -5,7 +5,7 @@ public static class Algorithms
     public static List<int> TopologicalSort(Graph graph)
     {
         var result = new List<int>();
-        var node = 0;
+        int node;
 
         while ((node = FindIndigree0(graph)) != -1)
         {

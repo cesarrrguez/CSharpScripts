@@ -7,9 +7,9 @@ public class Entity
 
 public class User : Entity, IAggregateRoot
 {
-    public string FirstName { get; private set; }
-    public string LastName { get; private set; }
-    public int Age { get; private set; }
+    public string FirstName { get; }
+    public string LastName { get; }
+    public int Age { get; }
 
     private readonly List<UserAddress> _addresses;
     public IReadOnlyCollection<UserAddress> Addresses => _addresses;
@@ -58,24 +58,23 @@ public class User : Entity, IAggregateRoot
 
 public class UserAddress : Entity
 {
-    public string Street { get; private set; }
-    public string City { get; private set; }
-    public string State { get; private set; }
-    public string ZipCode { get; private set; }
-    public User User { get; private set; }
+    public string Street { get; }
+    public string City { get; }
+    public string State { get; }
+    public string ZipCode { get; }
+    public User User { get; }
 
     // Empty constructor for EF
     protected UserAddress() { }
 
     public UserAddress(User user, int id, string street, string city, string state, string zipCode)
     {
-        if (user == null) throw new ArgumentNullException(nameof(user));
         if (string.IsNullOrWhiteSpace(street)) throw new ArgumentNullException(nameof(street));
         if (string.IsNullOrWhiteSpace(city)) throw new ArgumentNullException(nameof(city));
         if (string.IsNullOrWhiteSpace(state)) throw new ArgumentNullException(nameof(state));
         if (string.IsNullOrWhiteSpace(zipCode)) throw new ArgumentNullException(nameof(zipCode));
 
-        User = user;
+        User = user ?? throw new ArgumentNullException(nameof(user));
         Id = id;
         Street = street;
         City = city;
@@ -86,18 +85,17 @@ public class UserAddress : Entity
 
 public class UserEmail : Entity
 {
-    public string EmailAddress { get; private set; }
-    public User User { get; private set; }
+    public string EmailAddress { get; }
+    public User User { get; }
 
     // Empty constructor for EF
     protected UserEmail() { }
 
     public UserEmail(User user, int id, string emailAddress)
     {
-        if (user == null) throw new ArgumentNullException(nameof(user));
         if (string.IsNullOrWhiteSpace(emailAddress)) throw new ArgumentNullException(nameof(emailAddress));
 
-        User = user;
+        User = user ?? throw new ArgumentNullException(nameof(user));
         Id = id;
         EmailAddress = emailAddress;
     }

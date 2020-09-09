@@ -70,13 +70,13 @@ public class UnitOfWork : IUnitOfWork
     private IOrderRepository _orderRepository;
     public IOrderRepository OrderRepository
     {
-        get { return _orderRepository = _orderRepository ?? new OrderRepository(_context); }
+        get { return _orderRepository ??= new OrderRepository(_context); }
     }
 
     private ICustomerRepository _customerRepository;
     public ICustomerRepository CustomerRepository
     {
-        get { return _customerRepository = _customerRepository ?? new CustomerRepository(_context); }
+        get { return _customerRepository ??= new CustomerRepository(_context); }
     }
 
     public UnitOfWork(DataContext context)

@@ -8,7 +8,7 @@ public static string PropertyList(this object obj)
 
     foreach (var property in properties)
     {
-        sb.AppendLine(property.Name + ": " + property.GetValue(obj, null));
+        sb.Append(property.Name).Append(": ").Append(property.GetValue(obj, null)).AppendLine();
     }
 
     return sb.ToString();

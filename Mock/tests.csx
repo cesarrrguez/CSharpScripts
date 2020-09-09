@@ -13,7 +13,7 @@ public class UserServiceTests
     private static IUserService _userService;
 
     [ClassInitialize()]
-    public static void Setup(TestContext context)
+    public static void Setup()
     {
         Mock<IUserRepository> userRepository = new UserRepositoryMock().UserRepository;
         _userService = new UserService(userRepository.Object);
@@ -22,7 +22,7 @@ public class UserServiceTests
     [TestMethod]
     public async Task Given_UserId_100_Expected_UserId_1()
     {
-        var result = await _userService.GetUser(100);
+        var result = await _userService.GetUser(100).ConfigureAwait(false);
 
         result.Id.Should().Be(1);
     }
@@ -30,7 +30,7 @@ public class UserServiceTests
     [TestMethod]
     public async Task Given_UserId_2_Expected_UserId_2()
     {
-        var result = await _userService.GetUser(2);
+        var result = await _userService.GetUser(2).ConfigureAwait(false);
 
         result.Id.Should().Be(2);
     }
@@ -38,7 +38,7 @@ public class UserServiceTests
     [TestMethod]
     public async Task GetAllUsersCount_Expected_2()
     {
-        var result = await _userService.GetAllUsers();
+        var result = await _userService.GetAllUsers().ConfigureAwait(false);
 
         result.Count().Should().Be(2);
     }
@@ -47,7 +47,7 @@ public class UserServiceTests
 // Mock Repositories
 public class UserRepositoryMock
 {
-    public Mock<IUserRepository> UserRepository { get; private set; }
+    public Mock<IUserRepository> UserRepository { get; }
 
     public UserRepositoryMock()
     {

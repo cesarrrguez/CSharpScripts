@@ -1,7 +1,7 @@
 public class Rectangle : IComparable
 {
-    public double Length { get; private set; }
-    public double Width { get; private set; }
+    public double Length { get; }
+    public double Width { get; }
     public double Area => Length * Width;
 
     public Rectangle(double length, double width)

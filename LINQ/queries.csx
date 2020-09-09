@@ -1,4 +1,6 @@
 // Int array
+using System.Diagnostics.CodeAnalysis;
+
 var intArray = new int[] { 1, 2, 10, 3, 2, 55, 666, 18, 2, 100, 2, 41 };
 Console.WriteLine($"Int array: {string.Join(", ", intArray)}");
 Console.WriteLine(new string(Enumerable.Repeat('-', 67).ToArray()));
@@ -12,7 +14,7 @@ var methodSyntax = intArray.Where(x => x % 2 == 0).OrderBy(x => x).ToList();
 Console.WriteLine($"Method syntax: {string.Join(", ", methodSyntax)}");
 
 // Filter by index
-var indexFilter = intArray.Where((x, i) => i % 2 == 0).ToList();
+var indexFilter = intArray.Where((_, i) => i % 2 == 0).ToList();
 Console.WriteLine($"Filter by index: {string.Join(", ", indexFilter)}");
 
 // Reverse
@@ -44,14 +46,17 @@ var orderByDescending = intArray.OrderByDescending(x => x).ToList();
 Console.WriteLine($"Order by descending: {string.Join(", ", orderByDescending)}");
 
 // Element at
+[SuppressMessage("csharp", "RCS1246", Justification = "ElementAt method use test")]
 var elementAt = intArray.ElementAt(3);
 Console.WriteLine($"Element at 3: {elementAt}");
 
 // First
+[SuppressMessage("csharp", "RCS1246", Justification = "First method use test")]
 var first = intArray.First();
 Console.WriteLine($"First: {first}");
 
 // First or default
+[SuppressMessage("csharp", "RCS1077", Justification = "FirstOrDefault method use test")]
 var firstOrDefault = intArray.FirstOrDefault(x => x % 57 == 0);
 Console.WriteLine($"First or default: {firstOrDefault}");
 
@@ -71,7 +76,7 @@ try
 }
 catch (System.Exception)
 {
-    Console.WriteLine($"Single: Exception trowed");
+    Console.WriteLine("Single: Exception trowed");
 }
 
 // Single or default
@@ -79,6 +84,7 @@ var singleOrDefault = intArray.SingleOrDefault(x => x % 57 == 0);
 Console.WriteLine($"Single or default: {singleOrDefault}");
 
 // Count
+[SuppressMessage("csharp", "RCS1077", Justification = "Count method use test")]
 var count = intArray.Count();
 Console.WriteLine($"Count: {count}");
 
@@ -107,6 +113,7 @@ var contains = intArray.Contains(17);
 Console.WriteLine($"Contains 17: {contains}");
 
 // Any
+[SuppressMessage("csharp", "RCS1080", Justification = "Any method use test")]
 var any = intArray.Any();
 Console.WriteLine($"Any: {any}");
 

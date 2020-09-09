@@ -76,12 +76,12 @@ public class NewsLetterService_DI3
 
 // Interface injection
 // ------------------------
-public interface ImessageSenderInjector
+public interface IMessageSenderInjector
 {
     void Inject(IMessageSender messageSender);
 }
 
-public class NewsLetterService_DI4 : ImessageSenderInjector
+public class NewsLetterService_DI4 : IMessageSenderInjector
 {
     private IMessageSender _messageSender;
 

@@ -1,7 +1,7 @@
 public class Car
 {
-    private string _name;
-    private Engine _engine;
+    private readonly string _name;
+    private readonly Engine _engine;
 
     public Car(string name)
     {
@@ -22,8 +22,8 @@ public class Car
 
 public class Engine
 {
-    private string _type;
-    private int _power;
+    private readonly string _type;
+    private readonly int _power;
 
     public Engine(string type, int power)
     {

@@ -2,19 +2,19 @@ int n = 5;
 PrintData(n);
 
 // Shift to left 1 bit
-n = n << 1;
+n <<= 1;
 PrintData(n);
 
 // Shift to left 3 bit
-n = n << 3;
+n <<= 3;
 PrintData(n);
 
 // Shift to right 2 bit
-n = n >> 2;
+n >>= 2;
 PrintData(n);
 
 // Shift to right 3 bit
-n = n >> 3;
+n >>= 3;
 PrintData(n);
 
 private void PrintData(int number)

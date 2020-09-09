@@ -2,7 +2,7 @@ public class User
 {
     public string FirstName { get; set; }
     public string LastName { get; set; }
-    private string[] emails = new string[10];
+    private readonly string[] emails = new string[10];
 
     // Read-only property. C# 6.0
     public string Name => FirstName + " " + LastName;
@@ -12,7 +12,7 @@ public class User
     public int Age
     {
         get => _age;
-        set => _age = value;
+        set => _age = value * 10;
     }
 
     // Constructor. C# 7.0

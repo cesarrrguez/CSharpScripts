@@ -1,6 +1,6 @@
 public class Customer
 {
-    private string _name;
+    private readonly string _name;
     private Order _order;
 
     public Customer(string name)
@@ -30,7 +30,7 @@ public class Customer
 public class Order
 {
     private Guid _id;
-    private DateTime _date;
+    private readonly DateTime _date;
 
     public Order(Guid id, DateTime date)
     {

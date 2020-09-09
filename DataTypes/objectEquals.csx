@@ -1,7 +1,7 @@
 string x = "Hello";
 string y = "Hello";
 
-if ((x == y) || ((x != null && y != null) && x.Equals(y)))
+if ((x == y) || (x != null && y != null && x.Equals(y)))
 {
     Console.WriteLine("Are Equals");
 }

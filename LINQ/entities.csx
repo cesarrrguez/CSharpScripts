@@ -1,8 +1,8 @@
 public class User
 {
-    public int Id { get; private set; }
-    public string FullName { get; private set; }
-    public int CourseId { get; private set; }
+    public int Id { get; }
+    public string FullName { get; }
+    public int CourseId { get; }
 
     public User(int id, string fullName, int courseId)
     {
@@ -19,8 +19,8 @@ public class User
 
 public class Course
 {
-    public int Id { get; private set; }
-    public string Title { get; private set; }
+    public int Id { get; }
+    public string Title { get; }
 
     public Course(int id, string city)
     {

@@ -4,9 +4,11 @@ public class DoubleLinkedList<T>
 
     public void AddFirst(T value)
     {
-        var node = new Node<T>(value);
-        node.Next = Head;
-        node.Previous = null;
+        var node = new Node<T>(value)
+        {
+            Next = Head,
+            Previous = null
+        };
 
         if (Head != null)
         {
@@ -36,8 +38,10 @@ public class DoubleLinkedList<T>
     {
         if (previousNode == null) return;
 
-        var node = new Node<T>(value);
-        node.Next = previousNode.Next;
+        var node = new Node<T>(value)
+        {
+            Next = previousNode.Next
+        };
         previousNode.Next = node;
         node.Previous = previousNode;
 

@@ -32,8 +32,7 @@ foreach (var shape in shapes)
     Console.WriteLine($"Name: {shape.GetName()}");
 
     // Rectangle
-    var rectangle = shape as Rectangle;
-    if (rectangle != null)
+    if (shape is Rectangle rectangle)
     {
         Console.WriteLine($"Is Square: {rectangle.IsSquare()}");
         Console.WriteLine($"Diagonal: {rectangle.Diagonal}");
@@ -43,8 +42,7 @@ foreach (var shape in shapes)
     }
 
     // Square
-    var square = shape as Square;
-    if (square != null)
+    if (shape is Square square)
     {
         Console.WriteLine($"Diagonal: {square.Diagonal}");
         Console.WriteLine();
@@ -53,12 +51,9 @@ foreach (var shape in shapes)
     }
 
     // Circle
-    var circle = shape as Circle;
-    if (circle != null)
+    if (shape is Circle circle)
     {
         Console.WriteLine($"Name: {circle.GetName()}"); // New
         Console.WriteLine();
-
-        continue;
     }
 }

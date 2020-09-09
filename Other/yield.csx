@@ -13,8 +13,10 @@ public List<int> GetValuesGreaterThan100_1(List<int> masterCollection)
     var result = new List<int>();
 
     foreach (var value in masterCollection)
+    {
         if (value > 100)
             result.Add(value);
+    }
 
     return result;
 }
@@ -22,6 +24,8 @@ public List<int> GetValuesGreaterThan100_1(List<int> masterCollection)
 public IEnumerable<int> GetValuesGreaterThan100_2(List<int> masterCollection)
 {
     foreach (var value in masterCollection)
+    {
         if (value > 100)
             yield return value;
+    }
 }

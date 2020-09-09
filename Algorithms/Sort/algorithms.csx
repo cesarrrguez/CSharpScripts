@@ -28,17 +28,17 @@ public static class Algorithms
     // ------------------------------------------------------------------------
     public static void InsertionSort(int[] array)
     {
-        var hole = 0;
+        int hole;
 
         for (var i = 1; i < array.Length; i++)
         {
             hole = i;
 
-            // we go through the elements to the hole
+            // We go through the elements to the hole
             while (hole > 0 && array[hole - 1] > array[i])
             {
                 array[hole] = array[hole - 1];
-                hole -= 1;
+                hole--;
             }
 
             array[hole] = array[i];
@@ -53,7 +53,7 @@ public static class Algorithms
     // ------------------------------------------------------------------------
     public static void SelectionSort(int[] array)
     {
-        var min = 0;
+        int min;
 
         for (var i = 0; i < array.Length - 1; i++)
         {

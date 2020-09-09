@@ -1,8 +1,8 @@
 public class Graph
 {
-    public int[,] Adjacency { get; private set; }
-    public int[] Indigree { get; private set; } // Indigree: edge number to node
-    public int Nodes { get; private set; }
+    public int[,] Adjacency { get; }
+    public int[] Indigree { get; } // Indigree: edge number to node
+    public int Nodes { get; }
 
     public Graph(int nodes)
     {

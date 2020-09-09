@@ -10,7 +10,7 @@ public static class FileUtil
         writter.Write(obj.ToString());
     }
 
-    public static string ReadData<T>(string path)
+    public static string ReadData(string path)
     {
         using var stream = new FileStream(path, FileMode.Open, FileAccess.Read, FileShare.None);
         var reader = new BinaryReader(stream);
@@ -18,7 +18,7 @@ public static class FileUtil
 
         while (reader.PeekChar() >= 0)
         {
-            stringBuilder.Append(reader.ReadString() + "\n");
+            stringBuilder.Append(reader.ReadString()).Append('\n');
         }
 
         return stringBuilder.ToString();

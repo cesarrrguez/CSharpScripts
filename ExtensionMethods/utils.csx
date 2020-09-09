@@ -23,7 +23,7 @@ public static void Clear<T>(this T[] array)
 
     for (var i = 0; i < array.Length; i++)
     {
-        array[i] = default(T);
+        array[i] = default;
     }
 }
 
@@ -79,8 +79,8 @@ public static T DeepClone<T>(this T obj)
     if (!typeof(T).IsSerializable)
         throw new ArgumentException("The class " + typeof(T).ToString() + " is not serializable");
 
-    if (Object.ReferenceEquals(obj, null))
-        return default(T);
+    if (obj == null)
+        return default;
 
     using var stream = new MemoryStream();
     try
@@ -108,7 +108,7 @@ public static string PropertyList(this object obj)
 
     foreach (var property in properties)
     {
-        sb.AppendLine(property.Name + ": " + property.GetValue(obj, null));
+        sb.Append(property.Name).Append(": ").Append(property.GetValue(obj, null)).AppendLine();
     }
 
     return sb.ToString();

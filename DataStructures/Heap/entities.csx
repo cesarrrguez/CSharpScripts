@@ -1,8 +1,8 @@
 public class Heap<T>
 {
-    public int Capacity { get; private set; }
+    public int Capacity { get; }
     public int Size { get; private set; }
-    public T[] Elements { get; private set; }
+    public T[] Elements { get; }
 
     public Heap(int capacity)
     {
@@ -15,7 +15,7 @@ public class Heap<T>
         // Full Heap
         if (Size >= Capacity) return;
 
-        var i = 0;
+        int i;
         for (i = Size + 1; Comparer<T>.Default.Compare(Elements[i / 2], value) > 0; i /= 2)
         {
             Elements[i] = Elements[i / 2];
@@ -26,15 +26,12 @@ public class Heap<T>
 
     public T RemoveMin()
     {
-        var index = 0;
-        int sonIndex = 0;
-        T minElement = default(T);
-        T lastElement = default(T);
+        if (Size <= 0) return default;
 
-        if (Size <= 0) return default(T);
-
-        minElement = Elements[1];
-        lastElement = Elements[Size--];
+        int index;
+        int sonIndex;
+        T minElement = Elements[1];
+        T lastElement = Elements[Size--];
 
         for (index = 1; index * 2 <= Size; index = sonIndex)
         {

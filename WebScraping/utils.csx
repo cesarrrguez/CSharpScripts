@@ -11,7 +11,7 @@ using System.Threading;
 
 public static class Utils
 {
-    private const string _domain = @"https://www.lne.es";
+    private const string _domain = "https://www.lne.es";
 
     public static async Task SaveNews(DateTime startDate, DateTime endDate, string path)
     {
@@ -21,7 +21,7 @@ public static class Utils
         for (var day = endDate; day.Date >= startDate; day = day.AddDays(-1))
         {
             var url = Url.Combine(_domain, $"asturias/{day.Year}/{day.Month.ToString().PadLeft(2, '0')}/{day.Day.ToString().PadLeft(2, '0')}");
-            var doc = await web.LoadFromWebAsync(url);
+            var doc = await web.LoadFromWebAsync(url).ConfigureAwait(false);
 
             // Check no data
             if (!doc.DocumentNode.CssSelect(".noticias").Any()) continue;
@@ -35,7 +35,7 @@ public static class Utils
             Console.WriteLine($"{day.ToShortDateString()}");
         }
 
-        await WriteNews(news, path);
+        await WriteNews(news, path).ConfigureAwait(false);
     }
 
     private static void BuildNews(HtmlDocument doc, string expression, List<News> news, DateTime day)
@@ -83,7 +83,7 @@ public static class Utils
         {
             WriteIndented = true,
             Encoder = System.Text.Encodings.Web.JavaScriptEncoder.UnsafeRelaxedJsonEscaping
-        });
+        }).ConfigureAwait(false);
     }
 
     public static async Task SaveImages(DateTime startDate, DateTime endDate, string path)
@@ -93,7 +93,7 @@ public static class Utils
         for (var day = endDate; day.Date >= startDate; day = day.AddDays(-1))
         {
             var url = Url.Combine(_domain, $"asturias/{day.Year}/{day.Month.ToString().PadLeft(2, '0')}/{day.Day.ToString().PadLeft(2, '0')}");
-            var doc = await web.LoadFromWebAsync(url);
+            var doc = await web.LoadFromWebAsync(url).ConfigureAwait(false);
 
             // Check no data
             if (!doc.DocumentNode.CssSelect(".noticias").Any()) continue;
@@ -101,7 +101,7 @@ public static class Utils
             var blocks = new string[] { ".noticia_destacada_portada", ".bloque_izquierdo", ".bloque_derecho" };
             foreach (var item in blocks)
             {
-                await DownloadImages(doc, item, day, path);
+                await DownloadImages(doc, item, day, path).ConfigureAwait(false);
             }
 
             Console.WriteLine($"\t\t{day.ToShortDateString()}");
@@ -112,7 +112,7 @@ public static class Utils
     {
         var nodes = doc.DocumentNode.CssSelect(expression);
 
-        var folderPath = Path.Combine(path, $"{day.ToString("yyyy_MM_dd")}/{expression.Replace(".", "")}");
+        var folderPath = Path.Combine(path, $"{day:yyyy_MM_dd}/{expression.Replace(".", "")}");
         FolderUtil.CreateFolder(folderPath);
 
         foreach (var node in nodes.CssSelect(".noticia"))
@@ -137,15 +137,17 @@ public static class Utils
 
             using var client = new WebClient();
             var imagePath = Path.Combine(folderPath, Path.GetFileName(imageUrl));
-            await client.DownloadFileTaskAsync(new Uri(imageUrl), imagePath);
+            await client.DownloadFileTaskAsync(new Uri(imageUrl), imagePath).ConfigureAwait(false);
         }
     }
 
     public static void LoginForm()
     {
-        var browser = new ScrapingBrowser();
-        browser.AllowAutoRedirect = true;
-        browser.AllowMetaRedirect = true;
+        var browser = new ScrapingBrowser
+        {
+            AllowAutoRedirect = true,
+            AllowMetaRedirect = true
+        };
 
         var web = browser.NavigateToPage(new Uri("https://micuenta.lne.es/login"));
         var form = web.FindFormById("login-form");
@@ -181,7 +183,7 @@ public static class FolderUtil
                 var directoryInfo = new DirectoryInfo(path);
                 var directories = directoryInfo.GetDirectories();
 
-                if (!directories.Any()) continue;
+                if (directories.Length == 0) continue;
 
                 foreach (var directory in directories)
                 {

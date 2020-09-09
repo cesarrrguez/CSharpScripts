@@ -7,7 +7,7 @@ using System.Windows.Input;
 
 public class MainViewModel : INotifyPropertyChanged
 {
-    private ProcessController _processController;
+    private readonly ProcessController _processController;
 
     // Bindings
     private bool _canClose;
@@ -26,10 +26,10 @@ public class MainViewModel : INotifyPropertyChanged
     }
 
     // Commands
-    private DelegateCommand runCommand;
+    private readonly DelegateCommand runCommand;
     public ICommand RunCommand => runCommand;
 
-    private DelegateCommand<CancelEventArgs> closeCommand;
+    private readonly DelegateCommand<CancelEventArgs> closeCommand;
     public ICommand CloseCommand => closeCommand;
 
     public MainViewModel()
@@ -50,7 +50,7 @@ public class MainViewModel : INotifyPropertyChanged
         try
         {
             var input = new RunInput { Value1 = 5, Value2 = 7 };
-            var output = await _processController.Specific.Run.ExecuteProcess(input);
+            var output = await _processController.Specific.Run.ExecuteProcess(input).ConfigureAwait(false);
 
             if (output != null)
             {
@@ -75,7 +75,7 @@ public class MainViewModel : INotifyPropertyChanged
     // Close
     public void ExecuteClose(CancelEventArgs e)
     {
-        var close = true;
+        bool close = new Random().Next(0, 2) > 0;
 
         if (!close)
         {
