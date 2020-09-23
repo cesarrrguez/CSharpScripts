@@ -15,6 +15,6 @@ public void Create(object data)
 
     using var sw = new StreamWriter(filePath);
     sw.WriteLine(message);
-    
+
     WriteLine(message);
 }
