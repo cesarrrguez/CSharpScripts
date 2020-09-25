@@ -22,7 +22,5 @@ finally
 }
 
 // Automatic dispose invoked
-using (var obj2 = new DerivedClass(7))
-{
-    Console.WriteLine(obj2);
-}
+using var obj2 = new DerivedClass(7);
+Console.WriteLine(obj2);
