@@ -6,12 +6,8 @@ public class Usb
     {
         var result = new List<UsbInfo>();
 
-        ManagementObjectCollection collection;
-
-        using (var searcher = new ManagementObjectSearcher("select * from Win32_USBHub"))
-        {
-            collection = searcher.Get();
-        }
+        using var searcher = new ManagementObjectSearcher("select * from Win32_USBHub");
+        using var collection = searcher.Get();
 
         foreach (var device in collection)
         {
@@ -20,8 +16,6 @@ public class Usb
                 (string)device.GetPropertyValue("PNPDeviceID"),
                 (string)device.GetPropertyValue("Description")));
         }
-
-        collection.Dispose();
 
         return result;
     }

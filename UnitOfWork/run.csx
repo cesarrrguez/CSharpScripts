@@ -23,16 +23,14 @@ public static class App
         dataContext.Database.EnsureCreated();
 
         // Create Unit of Work 
-        using (var unitOfWork = new UnitOfWork(dataContext))
-        {
-            var order = new Order("Laptop", 3);
-            unitOfWork.OrderRepository.Add(order);
+        using var unitOfWork = new UnitOfWork(dataContext);
+        var order = new Order("Laptop", 3);
+        unitOfWork.OrderRepository.Add(order);
 
-            var customer = new Customer("James", "Brown");
-            unitOfWork.CustomerRepository.Add(customer);
+        var customer = new Customer("James", "Brown");
+        unitOfWork.CustomerRepository.Add(customer);
 
-            unitOfWork.Commit();
-        }  // Dispose
+        unitOfWork.Commit();
 
         DisposeServices();
     }

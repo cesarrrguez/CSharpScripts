@@ -55,5 +55,6 @@ public class UserService : IUserService
     public void Dispose()
     {
         _userRepository.Dispose();
+        GC.SuppressFinalize(this);
     }
 }

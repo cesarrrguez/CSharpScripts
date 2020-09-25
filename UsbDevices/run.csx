@@ -9,5 +9,5 @@ var usbDevices = usb.GetUsbDevices();
 
 foreach (var usbInfo in usbDevices)
 {
-    Console.WriteLine(usbInfo);
+    WriteLine(usbInfo);
 }
