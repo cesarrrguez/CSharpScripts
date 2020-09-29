@@ -11,7 +11,7 @@ public static class IoC
 {
     public static IServiceCollection RegisterServices(IServiceCollection services)
     {
-        services.AddScoped<IDbSettings>(sp =>
+        services.AddSingleton<IDbSettings>(sp =>
            sp.GetRequiredService<IOptions<DbSettings>>().Value);
 
         services.AddScoped<DataContext>();
