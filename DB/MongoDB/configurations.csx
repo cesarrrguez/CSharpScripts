@@ -21,7 +21,7 @@ public static class SettingsConfig
     {
         if (services == null) throw new ArgumentNullException(nameof(services));
 
-        var path = Path.Combine(Directory.GetCurrentDirectory(), "MongoDB");
+        var path = Path.Combine(Directory.GetCurrentDirectory(), "DB/MongoDB");
         var configuration = new ConfigurationBuilder()
                         .SetBasePath(path)
                         .AddJsonFile("appsettings.json", optional: false, reloadOnChange: true)
