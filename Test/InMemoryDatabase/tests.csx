@@ -16,8 +16,7 @@ public class UserRepositoryTests
     [ClassInitialize()]
     public static void Setup(TestContext context)
     {
-        if (context == null)
-            throw new ArgumentNullException(nameof(context));
+        if (context == null) throw new ArgumentNullException(nameof(context));
 
         _userRepository = new UserRepository(TestDataContext.Context);
     }

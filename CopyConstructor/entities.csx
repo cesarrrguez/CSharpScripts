@@ -6,13 +6,15 @@ public class User
     // Instance constructor
     public User(string name, int age)
     {
-        Name = name;
+        Name = name ?? throw new ArgumentNullException(nameof(name));
         Age = age;
     }
 
     // Copy constructor
     public User(User user)
     {
+        if (user == null) throw new ArgumentNullException(nameof(user));
+
         Name = user.Name;
         Age = user.Age;
     }

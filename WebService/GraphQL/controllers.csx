@@ -14,6 +14,8 @@ public class PostController : IPostController
 
     public void GetAllPosts(PostOptionsInput postOptionsInput)
     {
+        if (postOptionsInput == null) throw new ArgumentNullException(nameof(postOptionsInput));
+
         WriteLine("\nGet all Posts:");
         WriteLine(_separator);
 
@@ -38,6 +40,8 @@ public class PostController : IPostController
 
     public void CreatePost(PostInput postToCreate)
     {
+        if (postToCreate == null) throw new ArgumentNullException(nameof(postToCreate));
+
         WriteLine("\nCreate a Post:");
         WriteLine(_separator);
 
@@ -48,6 +52,8 @@ public class PostController : IPostController
 
     public void UpdatePost(int id, PostInput postToUpdate)
     {
+        if (postToUpdate == null) throw new ArgumentNullException(nameof(postToUpdate));
+
         WriteLine("\nUpdate a Post:");
         WriteLine(_separator);
 

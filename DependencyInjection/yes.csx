@@ -38,7 +38,7 @@ public class NewsLetterService_DI
 
     public NewsLetterService_DI(IMessageSender messageSender)
     {
-        _messageSender = messageSender;
+        _messageSender = messageSender ?? throw new ArgumentNullException(nameof(messageSender));
     }
 
     public void SendNewsLetter(User user, Newsletter newsletter)
@@ -53,9 +53,9 @@ public class NewsLetterService_DI2
 {
     private IMessageSender _messageSender;
 
-    public void SetmessageSender(IMessageSender messageSender)
+    public void SetMessageSender(IMessageSender messageSender)
     {
-        _messageSender = messageSender;
+        _messageSender = messageSender ?? throw new ArgumentNullException(nameof(messageSender));
     }
 
     public void SendNewsLetter(User user, Newsletter newsletter)
@@ -87,7 +87,7 @@ public class NewsLetterService_DI4 : IMessageSenderInjector
 
     public void Inject(IMessageSender messageSender)
     {
-        _messageSender = messageSender;
+        _messageSender = messageSender ?? throw new ArgumentNullException(nameof(messageSender));
     }
 
     public void SendNewsLetter(User user, Newsletter newsletter)

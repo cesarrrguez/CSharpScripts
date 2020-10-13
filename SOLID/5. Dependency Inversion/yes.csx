@@ -25,7 +25,7 @@ public class Logic_DIP
 
     public Logic_DIP(IDatabase database)
     {
-        _database = database;
+        _database = database ?? throw new ArgumentNullException(nameof(database));
     }
 
     public void RegisterData(string data)

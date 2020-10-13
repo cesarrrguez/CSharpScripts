@@ -9,11 +9,11 @@ public class News
 
     public News(string title, string description, string author, string date, string link, string imageUrl)
     {
-        Title = title;
-        Description = description;
-        Author = author;
-        Date = date;
-        Link = link;
-        ImageUrl = imageUrl;
+        Title = title ?? throw new ArgumentNullException(nameof(title));
+        Description = description ?? throw new ArgumentNullException(nameof(description));
+        Author = author ?? throw new ArgumentNullException(nameof(author));
+        Date = date ?? throw new ArgumentNullException(nameof(date));
+        Link = link ?? throw new ArgumentNullException(nameof(link));
+        ImageUrl = imageUrl ?? throw new ArgumentNullException(nameof(imageUrl));
     }
 }

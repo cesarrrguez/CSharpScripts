@@ -4,7 +4,7 @@ public class Company : IEntity
 {
     public string Name { get; set; }
 
-    public Company(string name) => Name = name;
+    public Company(string name) => Name = name ?? throw new ArgumentNullException(nameof(name));
 
     public bool IsValid() => true;
 
@@ -15,7 +15,7 @@ public class Person : IEntity
 {
     public string Name { get; set; }
 
-    public Person(string name) => Name = name;
+    public Person(string name) => Name = name ?? throw new ArgumentNullException(nameof(name));
 
     public bool IsValid() => false;
 

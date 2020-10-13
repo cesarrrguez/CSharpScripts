@@ -29,9 +29,9 @@ public class UsbInfo
 
     public UsbInfo(string deviceId, string pnPDeviceId, string description)
     {
-        DeviceId = deviceId;
-        PnPDeviceId = pnPDeviceId;
-        Description = description;
+        DeviceId = deviceId ?? throw new ArgumentNullException(nameof(deviceId));
+        PnPDeviceId = pnPDeviceId ?? throw new ArgumentNullException(nameof(pnPDeviceId));
+        Description = description ?? throw new ArgumentNullException(nameof(description));
     }
 
     public override string ToString()

@@ -32,7 +32,7 @@ newsletterService_DI.SendNewsLetter(user, newsletter);
 
 // Setter injection
 var newsletterService_DI2 = new NewsLetterService_DI2();
-newsletterService_DI2.SetmessageSender(messageSender);
+newsletterService_DI2.SetMessageSender(messageSender);
 newsletterService_DI2.SendNewsLetter(user, newsletter);
 
 // Method injection 

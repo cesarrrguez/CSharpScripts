@@ -6,11 +6,13 @@ public class ProductWriteService : IProductWriteService
 
     public ProductWriteService(IProductWriteRepository productWriteRepository)
     {
-        _productWriteRepository = productWriteRepository;
+        _productWriteRepository = productWriteRepository ?? throw new ArgumentNullException(nameof(productWriteRepository));
     }
 
     public void CreateProduct(Product product)
     {
+        if (product == null) throw new ArgumentNullException(nameof(product));
+
         _productWriteRepository.Add(product);
     }
 }
@@ -21,7 +23,7 @@ public class ProductReadService : IProductReadService
 
     public ProductReadService(IProductReadRepository productReadRepository)
     {
-        _productReadRepository = productReadRepository;
+        _productReadRepository = productReadRepository ?? throw new ArgumentNullException(nameof(productReadRepository));
     }
 
     public IEnumerable<Product> GetAllProducts()

@@ -19,7 +19,7 @@ public class UserService_SRP
 
     public UserService_SRP(IUserRepository userRepository)
     {
-        _userRepository = userRepository;
+        _userRepository = userRepository ?? throw new ArgumentNullException(nameof(userRepository));
     }
 
     public void RegisterNewUser(string email, string password)

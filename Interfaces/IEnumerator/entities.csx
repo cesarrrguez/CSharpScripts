@@ -25,7 +25,7 @@ public class Student
 
     public Student(string name, double average)
     {
-        Name = name;
+        Name = name ?? throw new ArgumentNullException(nameof(name));
         Average = average;
     }
 

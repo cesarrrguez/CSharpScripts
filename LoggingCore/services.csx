@@ -9,7 +9,7 @@ public class UserService : IUserService
 
     public UserService(ILogger<UserService> logger)
     {
-        _logger = logger;
+        _logger = logger ?? throw new ArgumentNullException(nameof(logger));
     }
 
     public string GetName()

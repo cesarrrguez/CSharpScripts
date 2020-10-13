@@ -8,7 +8,7 @@ public class User
 
     public User(string name, int age)
     {
-        Name = name;
+        Name = name ?? throw new ArgumentNullException(nameof(name));
         Age = age;
     }
 

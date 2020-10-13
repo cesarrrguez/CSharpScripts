@@ -4,6 +4,8 @@ public class ProductWriteRepository : IProductWriteRepository
 {
     public void Add(Product product)
     {
+        if (product == null) throw new ArgumentNullException(nameof(product));
+        
         Console.WriteLine($"Adding product {product.Id} - {product.Description} into db");
     }
 }

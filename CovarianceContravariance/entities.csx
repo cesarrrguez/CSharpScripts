@@ -9,8 +9,7 @@ public class MailingList
 {
     public void Add(IEnumerable<Person> people)
     {
-        if (people == null)
-            throw new ArgumentNullException(nameof(people));
+        if (people == null) throw new ArgumentNullException(nameof(people));
     }
 }
 
