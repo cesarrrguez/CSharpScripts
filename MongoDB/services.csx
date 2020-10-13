@@ -16,7 +16,7 @@ public class UserService : IUserService
     public User Get(string id) =>
         _userRepository.Get(id);
 
-    public void Create(User user) =>
+    public User Create(User user) =>
         _userRepository.Create(user);
 
     public void Update(string id, User user) =>

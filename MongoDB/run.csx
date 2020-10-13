@@ -34,6 +34,10 @@ public static class App
         // Get
         userController.Get(user1.Id);
 
+        // Update
+        user1.Age = 12;
+        userController.Update(user1.Id, user1);
+
         // Create
         var user2 = new User() { Name = "Olivia", Age = 36 };
         userController.Create(user2);

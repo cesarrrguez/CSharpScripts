@@ -21,7 +21,7 @@ public interface IUserService
 {
     List<User> Get();
     User Get(string id);
-    void Create(User user);
+    User Create(User user);
     void Update(string id, User user);
     void Remove(User user);
     void Remove(string id);

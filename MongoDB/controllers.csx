@@ -17,7 +17,11 @@ public class UserController : IUserController
         WriteLine(_separator);
 
         var users = _userService.Get();
-        PrintUsers(users);
+
+        if (users?.Count > 0)
+            users.ForEach(user => WriteLine(user));
+        else
+            WriteLine("No users");
     }
 
     public void Get(string id)
@@ -28,47 +32,42 @@ public class UserController : IUserController
         var user = _userService.Get(id);
         if (user == null) throw new ArgumentException(nameof(id));
 
-        PrintUser(user);
+        WriteLine(user);
     }
 
     public void Create(User user)
     {
+        WriteLine("\nCreate User:");
+        WriteLine(_separator);
+
         _userService.Create(user);
+
+        WriteLine(user);
     }
 
     public void Update(string id, User userIn)
     {
+        WriteLine("\nUpdate User:");
+        WriteLine(_separator);
+
         var user = _userService.Get(id);
         if (user == null) throw new ArgumentException(nameof(id));
 
         _userService.Update(id, userIn);
+
+        WriteLine(userIn);
     }
 
     public void Delete(string id)
     {
+        WriteLine("\nDelete User:");
+        WriteLine(_separator);
+
         var user = _userService.Get(id);
         if (user == null) throw new ArgumentException(nameof(id));
 
         _userService.Remove(user.Id);
-    }
 
-    private void PrintUsers(IEnumerable<User> users)
-    {
-        if (users?.Any() != true)
-        {
-            WriteLine("No users");
-        }
-        else
-        {
-            foreach (var user in users)
-            {
-                PrintUser(user);
-            }
-        }
-    }
-
-    private void PrintUser(User user)
-    {
         WriteLine(user);
     }
 }
