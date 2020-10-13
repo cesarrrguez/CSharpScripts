@@ -39,7 +39,7 @@ public static class App
     {
         var services = new ServiceCollection();
 
-        services.AddDbContext<DataContext>(options => options.UseSqlite("Filename=UnitOfWork/database.db"));
+        services.AddDbContext<DataContext>(options => options.UseSqlite("Filename=DB/UnitOfWork/database.db"));
 
         DependencyInjectionConfig.AddDependencyInjectionConfiguration(services);
 
