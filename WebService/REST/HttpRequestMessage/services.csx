@@ -3,13 +3,13 @@
 using System.Net.Http;
 using System.Net.Http.Json;
 
-public class WeatherData
+public class WeatherService : IDisposable
 {
     public WeatherForecastModel Forecast { get; set; }
     public string Error { get; set; }
     private readonly HttpClient _client;
 
-    public WeatherData()
+    public WeatherService()
     {
         _client = new HttpClient();
     }
@@ -31,5 +31,11 @@ public class WeatherData
         {
             Error = $"There was an error getting our forecast {response.ReasonPhrase}";
         }
+    }
+
+    public void Dispose()
+    {
+        _client.Dispose();
+        GC.SuppressFinalize(this);
     }
 }

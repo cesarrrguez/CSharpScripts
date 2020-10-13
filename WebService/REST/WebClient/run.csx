@@ -13,3 +13,5 @@ foreach (var post in posts)
 {
     Console.WriteLine(post.id + ": " + post.title);
 }
+
+client.Dispose();
