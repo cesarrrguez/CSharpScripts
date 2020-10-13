@@ -36,7 +36,7 @@ public static class App
 
         services.AddDbContext<DataContext>(options =>
         {
-            options.UseSqlite("Filename=EntityFrameworkCore/database.db");
+            options.UseSqlite("Filename=DB/EntityFrameworkCore/database.db");
             //options.UseSqlServer("Server=localhost;Database=EntityFrameworkCore;Trusted_Connection=True;");
         }, ServiceLifetime.Transient);
 
