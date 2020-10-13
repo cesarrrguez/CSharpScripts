@@ -7,10 +7,15 @@ This repository contains _C#_ scripts.
 ## Scripts
 
 - Object Oriented Programming
-- Inheritance, Interfaces, Composition, Aggregation
+- Inheritance, Interfaces, Aggregation, Composition
 - Encapsulation, Cohesion, Coupling
-- Collections, Data Types, Data Structures, Algorithms
-- Delegates
+- Collections, Data Types, Generics, Structs, Enums
+- Data Structures, Algorithms
+- Delegates, Action, Func, Predicate
+- Exceptions
+- Extension Methods
+- Functional programming
+- GC
 - SOLID Principles
 - Entity Framework, Unit of Work, Moq, InMemoryDatabase, CQRS, LINQ
 - Sqlite, SqlServer, MongoDB
@@ -19,7 +24,7 @@ This repository contains _C#_ scripts.
 - Configuration
 - AutoMapper
 - Web Scrapping
-- Web Service Requests
+- Web Service, SOAP, REST, GraphQL
 - Encryption
 - Files
 - Threads, Asynchronous Calls
