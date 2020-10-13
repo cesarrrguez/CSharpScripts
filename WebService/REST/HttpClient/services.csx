@@ -25,7 +25,7 @@ public class PostService
             );
         }
 
-        return null;
+        throw new Exception((int)response.StatusCode + " - " + response.StatusCode.ToString());
     }
 
     // POST
@@ -51,7 +51,7 @@ public class PostService
             );
         }
 
-        return null;
+        throw new Exception((int)response.StatusCode + " - " + response.StatusCode.ToString());
     }
 
     // PUT
@@ -77,7 +77,7 @@ public class PostService
             );
         }
 
-        return null;
+        throw new Exception((int)response.StatusCode + " - " + response.StatusCode.ToString());
     }
 
     // DELETE
