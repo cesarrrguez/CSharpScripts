@@ -16,11 +16,8 @@ public static class App
     {
         ConfigureServices();
 
-        // Get user controller
         var userController = _serviceProvider.GetService<IUserController>();
-
-        // Print output
-        Console.WriteLine(userController.Get());
+        userController.Get();
 
         DisposeServices();
     }

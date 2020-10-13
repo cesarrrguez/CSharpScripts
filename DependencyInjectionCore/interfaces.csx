@@ -1,6 +1,6 @@
 public interface IUserController
 {
-    string Get();
+    void Get();
 }
 
 public interface IUserService

@@ -9,8 +9,9 @@ public class UserController : IUserController
         _userService = userService;
     }
 
-    public string Get()
+    public void Get()
     {
-        return _userService.GetName();
+        var name = _userService.GetName();
+        WriteLine(name);
     }
 }
