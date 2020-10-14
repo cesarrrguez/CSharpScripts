@@ -31,14 +31,14 @@ public class OrderMap : IEntityTypeConfiguration<Order>
         builder.ToTable("Orders", DataContext.DEFAULT_SCHEMA);
 
         // Primary Key
-        builder.HasKey(u => u.Id);
+        builder.HasKey(o => o.Id);
 
         // Properties
-        builder.Property(u => u.Product)
+        builder.Property(o => o.Product)
             .IsRequired()
             .HasMaxLength(100);
 
-        builder.Property(u => u.Units).IsRequired();
+        builder.Property(o => o.Units).IsRequired();
     }
 }
 
@@ -49,14 +49,14 @@ public class CustomerMap : IEntityTypeConfiguration<Customer>
         builder.ToTable("Customers", DataContext.DEFAULT_SCHEMA);
 
         // Primary Key
-        builder.HasKey(u => u.Id);
+        builder.HasKey(c => c.Id);
 
         // Properties
-        builder.Property(u => u.FirstName)
+        builder.Property(c => c.FirstName)
             .IsRequired()
             .HasMaxLength(50);
 
-        builder.Property(u => u.LastName)
+        builder.Property(c => c.LastName)
             .IsRequired()
             .HasMaxLength(50);
     }
@@ -92,6 +92,8 @@ public class UnitOfWork : IUnitOfWork
     public void Dispose()
     {
         _context.Dispose();
+        _orderRepository.Dispose();
+        _customerRepository.Dispose();
         GC.SuppressFinalize(this);
     }
 }
@@ -110,6 +112,12 @@ public class OrderRepository : IOrderRepository
     {
         _context.Orders.Add(order);
     }
+
+    public void Dispose()
+    {
+        _context.Dispose();
+        GC.SuppressFinalize(this);
+    }
 }
 
 public class CustomerRepository : ICustomerRepository
@@ -124,5 +132,11 @@ public class CustomerRepository : ICustomerRepository
     public void Add(Customer customer)
     {
         _context.Customers.Add(customer);
+    }
+
+    public void Dispose()
+    {
+        _context.Dispose();
+        GC.SuppressFinalize(this);
     }
 }

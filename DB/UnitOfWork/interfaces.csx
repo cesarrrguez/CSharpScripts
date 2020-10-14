@@ -11,12 +11,12 @@ public interface IUnitOfWork : IDisposable
 
 public interface IRepository<T> where T : IAggregateRoot { }
 
-public interface IOrderRepository : IRepository<Order>
+public interface IOrderRepository : IRepository<Order>, IDisposable
 {
     void Add(Order order);
 }
 
-public interface ICustomerRepository : IRepository<Customer>
+public interface ICustomerRepository : IRepository<Customer>, IDisposable
 {
     void Add(Customer customer);
 }

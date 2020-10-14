@@ -2,7 +2,7 @@ public interface IAggregateRoot { }
 
 public class Entity
 {
-    public int Id { get; }
+    public int Id { get; protected set; }
 }
 
 public class Order : Entity, IAggregateRoot
