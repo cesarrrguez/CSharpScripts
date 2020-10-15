@@ -38,7 +38,7 @@ public class App
         // IoC
         services.AddScoped<IUserService, UserService>();
         services.AddScoped<IUserController, UserController>();
-
+        
         _serviceProvider = services.BuildServiceProvider();
     }
 

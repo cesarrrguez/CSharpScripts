@@ -12,7 +12,7 @@ public class ProductService : IProductService
     public void RegisterNewProduct(Product product)
     {
         if (product == null) throw new ArgumentNullException(nameof(product));
-        
+
         _productRepository.Add(product);
     }
 }
