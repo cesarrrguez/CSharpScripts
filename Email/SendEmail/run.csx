@@ -6,16 +6,18 @@ var body = "This is the <strong>body</strong>";
 var from = "cesar.rrguez@gmail.com";
 var to = "cesar.rrguez@gmail.com";
 var password = "XXXXXXXXX"; // This is not the real password :)
+var smtp = "smtp.gmail.com";
 
 var mailMessage = new MailMessage(from, to, subject, body);
 mailMessage.IsBodyHtml = true;
 
-var smtpClient = new SmtpClient("smtp.gmail.com");
+var smtpClient = new SmtpClient(smtp);
 smtpClient.EnableSsl = true;
 smtpClient.UseDefaultCredentials = false;
+smtpClient.Port = 587;
 smtpClient.Credentials = new NetworkCredential(from, password);
 
 smtpClient.Send(mailMessage);
 smtpClient.Dispose();
 
-Console.WriteLine("Email sent successfully");
+WriteLine("Email sent successfully");
