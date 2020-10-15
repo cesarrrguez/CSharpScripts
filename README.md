@@ -14,15 +14,16 @@ This repository contains _C#_ scripts.
 - Delegates, Action, Func, Predicate
 - Exceptions
 - Extension Methods
-- Functional programming
+- Functional programming, LINQ
 - GC
 - SOLID Principles
-- Entity Framework, Unit of Work, Moq, InMemoryDatabase, CQRS, LINQ
+- Entity Framework, Unit of Work, Transactions, CQRS
 - Sqlite, SqlServer, MongoDB
+- Test, Moq, InMemoryDatabase
 - Dependency Injection, IoC
 - Logging, Serilog
 - Configuration
-- AutoMapper
+- Mapping, DTO, AutoMapper
 - Web Scrapping
 - Web Service, SOAP, REST, GraphQL
 - Encryption
@@ -30,6 +31,7 @@ This repository contains _C#_ scripts.
 - Threads, Asynchronous Calls
 - Reflection
 - Twilio
+- Email, SMTP, POP3, OpenPop
 - XML, JSON, CSV, Zip, QR, USB
 - ...
 
