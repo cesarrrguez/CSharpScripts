@@ -3,14 +3,16 @@
 
 public class ManualMeetingMapper
 {
-    public MeetingDTO CreateDTO(Meeting entity)
+    public MeetingDTO CreateDTO(Meeting meeting)
     {
+        if (meeting == null) throw new ArgumentNullException(nameof(meeting));
+
         return new MeetingDTO
         {
-            GroupName = entity.Organizer.Name,
-            MeetingName = entity.Name,
-            ConfirmedAttendeeCount = entity.ConfirmedAttendees.Count,
-            UnconfirmedAttendeeCount = entity.UnconfirmedAttendees.Count
+            GroupName = meeting.Organizer.Name,
+            MeetingName = meeting.Name,
+            ConfirmedAttendeeCount = meeting.ConfirmedAttendees.Count,
+            UnconfirmedAttendeeCount = meeting.UnconfirmedAttendees.Count
         };
     }
 
