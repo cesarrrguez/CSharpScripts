@@ -1,3 +1,8 @@
+// IDisposable
+// -------------------------------------------------------
+// Provides a mechanism for releasing unmanaged resources.
+// -------------------------------------------------------
+
 #load "entities.csx"
 
 var obj = new DerivedClass(5);

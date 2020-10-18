@@ -1,3 +1,8 @@
+// ICloneable
+// ------------------------------------------------------------------------------------------------------
+// Supports cloning, which creates a new instance of a class with the same value as an existing instance.
+// ------------------------------------------------------------------------------------------------------
+
 #load "entities.csx"
 
 var student1 = new Student("James");

@@ -1,3 +1,9 @@
+// IEquatable
+// -----------------------------------------------------------------------
+// Defines a generalized method that a value type or class implements 
+// to create a type-specific method for determining equality of instances.
+// -----------------------------------------------------------------------
+
 #load "entities.csx"
 
 var listOfObjects = new List<MyObject>();
