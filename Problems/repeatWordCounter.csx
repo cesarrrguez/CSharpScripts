@@ -12,13 +12,16 @@ WriteLine($"{word}: {result} times");
 public static int GetWordCounter(string text, string searchWord)
 {
     var result = 0;
-    char[] separators = { '.', '?', '!', ' ', ';', ':', ',' };
+
+    var separators = new char[] { '.', '?', '!', ' ', ';', ':', ',' };
     var words = text.ToLower().Split(separators, StringSplitOptions.RemoveEmptyEntries);
 
     foreach (var word in words)
     {
         if (word.Equals(searchWord))
+        {
             result++;
+        }
     }
 
     return result;
