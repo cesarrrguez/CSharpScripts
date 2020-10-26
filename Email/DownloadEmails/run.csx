@@ -1,9 +1,9 @@
-#load "utils.csx"
+#load "services.csx"
 
 #r "nuget: OpenPop.NET, 2.0.6.1120"
 
-var pop3 = new Pop3Util();
-var messages = pop3.GetMessages();
+var pop3Service = new Pop3Service();
+var messages = pop3Service.GetMessages();
 
 foreach (var message in messages)
 {

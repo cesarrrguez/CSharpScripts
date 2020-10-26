@@ -1,6 +1,6 @@
 using OpenPop.Pop3;
 
-public class Pop3Util
+public class Pop3Service
 {
     private readonly string _username = "cesar.rrguez@gmail.com";
     private readonly string _pass = "XXXXXXXXX"; // This is not the real password :)
