@@ -26,11 +26,11 @@ This repository contains _C#_ scripts.
 - Mapping, DTO, AutoMapper
 - Web Scrapping
 - Web Service, SOAP, REST, GraphQL
+- Twilio, Telegram
 - Encryption
 - Files
 - Threads, Asynchronous Calls
 - Reflection
-- Twilio
 - Email, SMTP, POP3, OpenPop
 - XML, JSON, CSV, Zip, QR, USB
 - ...
