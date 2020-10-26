@@ -4,9 +4,9 @@
 using System.Globalization;
 using CsvHelper;
 
-public static class CsvUtil
+public class CsvService
 {
-    public static List<User> ImportUsersFromCsv(string path)
+    public List<User> ImportUsersFromCsv(string path)
     {
         using var reader = new StreamReader(path);
         using var csv = new CsvReader(reader, CultureInfo.InvariantCulture);
@@ -14,7 +14,7 @@ public static class CsvUtil
         return csv.GetRecords<User>().ToList();
     }
 
-    public static void ExportUsersToCsv(List<User> users, string path)
+    public void ExportUsersToCsv(List<User> users, string path)
     {
         using var writer = new StreamWriter(path);
         using var csv = new CsvWriter(writer, CultureInfo.InvariantCulture);
