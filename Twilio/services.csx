@@ -2,7 +2,7 @@ using Twilio;
 using Twilio.Exceptions;
 using Twilio.Rest.Api.V2010.Account;
 
-public static class TwilioController
+public static class TwilioService
 {
     private const string ACCOUNT_SID = "XXXXXXXXX";
     private const string AUTH_TOKEN = "XXXXXXXXX";
