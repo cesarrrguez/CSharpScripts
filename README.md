@@ -19,7 +19,7 @@ This repository contains _C#_ scripts.
 - SOLID Principles
 - Entity Framework, Unit of Work, Transactions, CQRS
 - Sqlite, SqlServer, MongoDB
-- Test, Moq, InMemoryDatabase
+- Test, Moq, InMemoryDatabase, MSTest, FluentAssertions
 - Dependency Injection, IoC
 - Logging, Serilog
 - Configuration
