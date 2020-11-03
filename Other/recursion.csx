@@ -6,7 +6,7 @@ Console.WriteLine($"Fibonacci 7: {Fibonacci(7)}");
 
 public static double Factorial(int number)
 {
-    if (number == 1) return 1;  // Base case
+    if (number == 0) return 1;  // Base case
     return number * Factorial(number - 1); // Inductive case
 }
 
