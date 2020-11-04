@@ -1,5 +1,10 @@
-
+using System.Runtime.CompilerServices;
 using System.Runtime.Serialization.Formatters.Binary;
+
+public static class FolderUtil
+{
+    public static string GetCurrentDirectoryName([CallerFilePath] string fileName = null) => Path.GetDirectoryName(fileName);
+}
 
 public static class SerializationUtil
 {

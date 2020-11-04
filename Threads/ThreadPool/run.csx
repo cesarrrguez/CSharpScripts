@@ -4,6 +4,8 @@
 // process asynchronous I/O, wait on behalf of other threads, and process timers.
 // ------------------------------------------------------------------------------
 
+#load "utils.csx"
+
 using System.Threading;
 
 for (int i = 0; i < 10; i++)
@@ -16,7 +18,7 @@ while (ThreadPool.PendingWorkItemCount > 0) ;
 public void Create(object data)
 {
     int i = (int)data;
-    var filePath = $"Threads/ThreadPooling/Files/{i}.txt";
+    var filePath = Path.Combine(FolderUtil.GetCurrentDirectoryName(), "Files/{i}.txt");
     var message = $"i: {i}, thread: {Thread.CurrentThread.ManagedThreadId}";
 
     using var sw = new StreamWriter(filePath);

@@ -1,9 +1,11 @@
+#load "utils.csx"
+
 using System.IO.Compression;
 using System.IO;
 
-var folderPath = "Zip/files";
-var zipPath = "Zip/files.zip";
-var destinationFolderPath = "Zip/files2";
+var folderPath = Path.Combine(FolderUtil.GetCurrentDirectoryName(), "files");
+var zipPath = Path.Combine(FolderUtil.GetCurrentDirectoryName(), "files.zip");
+var destinationFolderPath = Path.Combine(FolderUtil.GetCurrentDirectoryName(), "files2");
 
 // Clean
 File.Delete(zipPath);

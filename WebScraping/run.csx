@@ -24,13 +24,13 @@ public static class App
 {
     public async static Task RunSaveNews(DateTime startDate, DateTime endDate)
     {
-        const string path = "WebScraping/news.json";
+        var path = Path.Combine(FolderUtil.GetCurrentDirectoryName(), "news.json");
         await Utils.SaveNews(startDate, endDate, path).ConfigureAwait(false);
     }
 
     public async static Task RunSaveImages(DateTime startDate, DateTime endDate)
     {
-        const string path = "WebScraping/Images";
+        var path = Path.Combine(FolderUtil.GetCurrentDirectoryName(), "Images");
         FolderUtil.CleanupDirectory(path);
         await Utils.SaveImages(startDate, endDate, path).ConfigureAwait(false);
     }

@@ -2,6 +2,7 @@
 #load "configurations.csx"
 #load "data.csx"
 #load "controllers.csx"
+#load "utils.csx"
 
 #r "nuget: Microsoft.EntityFrameworkCore.Sqlite, 3.1.0"
 
@@ -36,7 +37,7 @@ public static class App
     {
         var services = new ServiceCollection();
 
-        services.AddDbContext<DataContext>(options => options.UseSqlite("Filename=DB/Transactions/database.db"));
+        services.AddDbContext<DataContext>(options => options.UseSqlite($"Filename={FolderUtil.GetCurrentDirectoryName()}/database.db"));
 
         DependencyInjectionConfig.AddDependencyInjectionConfiguration(services);
 

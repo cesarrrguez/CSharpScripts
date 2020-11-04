@@ -4,9 +4,11 @@
 // * Less memory consuming
 // -----------------------
 
+#load "utils.csx"
+
 using System.Xml;
 
-var path = "XML/XmlReader/document.xml";
+var path = Path.Combine(FolderUtil.GetCurrentDirectoryName(), "document.xml");
 
 var xmlReader = XmlReader.Create(path);
 

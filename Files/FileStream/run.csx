@@ -1,4 +1,6 @@
-var path = "Files/FileStream/data.txt";
+#load "utils.csx"
+
+var path = Path.Combine(FolderUtil.GetCurrentDirectoryName(), "data.txt");
 
 var stream = new FileStream(path, FileMode.Open, FileAccess.Read, FileShare.None);
 

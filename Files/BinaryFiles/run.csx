@@ -9,7 +9,7 @@ var user2 = new User("Olivia");
 user2.SetAge(15);
 Console.WriteLine(user2);
 
-var path = "Files/BinaryFiles/users.data";
+var path = Path.Combine(FolderUtil.GetCurrentDirectoryName(), "users.data");
 
 // Delete file
 File.Delete(path);

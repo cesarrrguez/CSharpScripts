@@ -1,4 +1,5 @@
 #load "controllers.csx"
+#load "utils.csx"
 
 #r "nuget: Microsoft.Extensions.DependencyInjection, 3.1.0"
 #r "nuget: Microsoft.Extensions.Logging, 3.1.0"
@@ -23,7 +24,7 @@ public static class App
     {
         ConfigureServices();
 
-        var path = Path.Combine(Directory.GetCurrentDirectory(), @"Serilog\Log\log-.txt");
+        var path = Path.Combine(FolderUtil.GetCurrentDirectoryName(), @"Log\log-.txt");
 
         Log.Logger = new LoggerConfiguration()
              .MinimumLevel.Debug()

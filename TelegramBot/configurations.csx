@@ -1,6 +1,7 @@
 #load "interfaces.csx"
 #load "crossCutting.csx"
 #load "settings.csx"
+#load "utils.csx"
 
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
@@ -21,9 +22,8 @@ public static class SettingsConfig
     {
         if (services == null) throw new ArgumentNullException(nameof(services));
 
-        var path = Path.Combine(Directory.GetCurrentDirectory(), "TelegramBot");
         var configuration = new ConfigurationBuilder()
-                        .SetBasePath(path)
+                        .SetBasePath(FolderUtil.GetCurrentDirectoryName())
                         .AddJsonFile("appsettings.json", optional: false, reloadOnChange: true)
                         .Build();
 

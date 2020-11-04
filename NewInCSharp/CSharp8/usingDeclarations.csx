@@ -1,4 +1,6 @@
-var path = "NewInCSharp/CSharp8/usingDeclarations.txt";
+#load "utils.csx"
+
+var path = Path.Combine(FolderUtil.GetCurrentDirectoryName(), "usingDeclarations.txt");
 var lines = new List<string>() { "Hello", "World", "Everybody" };
 WriteLinesToFile(lines, path);
 

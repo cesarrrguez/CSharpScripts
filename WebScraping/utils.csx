@@ -6,6 +6,7 @@ using ScrapySharp.Extensions;
 using ScrapySharp.Network;
 using System.Globalization;
 using System.Net;
+using System.Runtime.CompilerServices;
 using System.Text.Json;
 using System.Threading;
 
@@ -164,6 +165,8 @@ public static class Utils
 
 public static class FolderUtil
 {
+    public static string GetCurrentDirectoryName([CallerFilePath] string fileName = null) => Path.GetDirectoryName(fileName);
+
     public static void CreateFolder(string path)
     {
         if (Directory.Exists(path)) return;

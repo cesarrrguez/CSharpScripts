@@ -1,4 +1,10 @@
 using System.IO;
+using System.Runtime.CompilerServices;
+
+public static class FolderUtil
+{
+    public static string GetCurrentDirectoryName([CallerFilePath] string fileName = null) => Path.GetDirectoryName(fileName);
+}
 
 public static class FileUtil
 {

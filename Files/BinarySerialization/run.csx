@@ -5,7 +5,7 @@ var user1 = new User("James");
 user1.SetAge(18);
 Console.WriteLine(user1);
 
-var path = "Files/BinarySerialization/users.data";
+var path = Path.Combine(FolderUtil.GetCurrentDirectoryName(), "users.data");
 
 // Serialization
 Console.WriteLine("\nSerializing ...");

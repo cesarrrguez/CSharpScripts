@@ -1,4 +1,5 @@
 #load "entities.csx"
+#load "utils.csx"
 
 #r "nuget: Microsoft.Extensions.Configuration, 3.1.0"
 #r "nuget: Microsoft.Extensions.Configuration.Json, 3.1.0"
@@ -6,9 +7,8 @@
 
 using Microsoft.Extensions.Configuration;
 
-var path = Path.Combine(Directory.GetCurrentDirectory(), "Configuration");
 var configuration = new ConfigurationBuilder()
-                .SetBasePath(path)
+                .SetBasePath(FolderUtil.GetCurrentDirectoryName())
                 .AddJsonFile("appsettings.json", optional: false, reloadOnChange: true)
                 .Build();
 

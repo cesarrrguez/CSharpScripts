@@ -1,3 +1,5 @@
+#load "utils.csx"
+
 using System.Net.Mail;
 using System.Net;
 
@@ -11,7 +13,7 @@ var smtp = "smtp.gmail.com";
 var mailMessage = new MailMessage(from, to, subject, body);
 mailMessage.IsBodyHtml = true;
 
-var filePath = Path.Combine(Directory.GetCurrentDirectory(), "Email\\SendEmailAttachment\\file.txt");
+var filePath = Path.Combine(FolderUtil.GetCurrentDirectoryName(), "file.txt");
 mailMessage.Attachments.Add(new Attachment(filePath));
 
 var smtpClient = new SmtpClient(smtp);

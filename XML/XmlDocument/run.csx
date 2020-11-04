@@ -4,9 +4,11 @@
 // * XPath
 // -----------------------
 
+#load "utils.csx"
+
 using System.Xml;
 
-var path = "XML/XmlDocument/document.xml";
+var path = Path.Combine(FolderUtil.GetCurrentDirectoryName(), "document.xml");
 
 var xmlDocument = new XmlDocument();
 xmlDocument.Load(path);

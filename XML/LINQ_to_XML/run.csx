@@ -1,11 +1,12 @@
 #load "xmlBuilder.csx"
 #load "xmlParser.csx"
+#load "utils.csx"
 
 int section;
 var separator = new string(Enumerable.Repeat('-', 67).ToArray());
 Action<string> beginSection = title => WriteLine($"\n{++section}) {title}:\n{separator}");
 
-var documentsPath = "XML/LINQ_to_XML/Documents";
+var documentsPath = Path.Combine(FolderUtil.GetCurrentDirectoryName(), "Documents");
 
 var xmlBuilder = new XMLBuilder(documentsPath);
 
