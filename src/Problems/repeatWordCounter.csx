@@ -9,7 +9,7 @@ var word = "love";
 var result = GetWordCounter(text, word);
 WriteLine($"{word}: {result} times");
 
-public static int GetWordCounter(string text, string searchWord)
+public int GetWordCounter(string text, string searchWord)
 {
     var result = 0;
 

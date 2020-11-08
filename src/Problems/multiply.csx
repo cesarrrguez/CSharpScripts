@@ -9,11 +9,11 @@ var b = 9;
 
 WriteLine($"{a} * {b} = {Multiply(a, b)}");
 
-public static int Multiply(int a, int b)
+public int Multiply(int a, int b)
 {
     int result = 0;
 
-    for (int i = 0; i < Math.Abs(b); i++)
+    for (var i = 0; i < Math.Abs(b); i++)
     {
         result = b > 0 ? result + a : result - a;
     }
