@@ -7,7 +7,7 @@ var entity = new ExternalEntity()
     LastName = "Johnson"
 };
 
-Console.WriteLine(entity);
+WriteLine(entity);
 
 MyEntity convertedEntity = entity;
-Console.WriteLine(convertedEntity);
+WriteLine(convertedEntity);

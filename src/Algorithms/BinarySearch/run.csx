@@ -22,7 +22,7 @@ var array = new int[] { 1, 43, 5, 202, 101, 10 };
 Array.Sort(array);
 
 // Print the values of the array
-Console.WriteLine($"Values: {String.Join(", ", array)}");
+WriteLine($"Values: {String.Join(", ", array)}");
 
 // Value to search for
 var target = 101;
@@ -50,22 +50,22 @@ FinishImplementation();
 
 public void StartImplementation(string title)
 {
-    Console.WriteLine($"\n{title}");
-    Console.WriteLine(separator);
+    WriteLine($"\n{title}");
+    WriteLine(separator);
     stopwatch.Restart();
 }
 
 public void FinishImplementation()
 {
     stopwatch.Stop();
-    Console.WriteLine($"Time elapsed: {stopwatch.Elapsed}");
+    WriteLine($"Time elapsed: {stopwatch.Elapsed}");
 }
 
 // Print Binary Search result
 public void PrintBinarySearchResult(int[] array, int position)
 {
     if (position >= 0)
-        Console.WriteLine($"Item {array[position]} found at position {position + 1}");
+        WriteLine($"Item {array[position]} found at position {position + 1}");
     else
-        Console.WriteLine("Item not found");
+        WriteLine("Item not found");
 }

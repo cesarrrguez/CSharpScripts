@@ -1,4 +1,4 @@
-Console.WriteLine(Round(535));
+WriteLine(Round(535));
 
 private static int Round(int n)
 {

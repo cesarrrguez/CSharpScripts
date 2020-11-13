@@ -3,15 +3,15 @@
 // By default, primitive types are passed by value
 var text = "Unmodified text";
 ChangeTextByValue(text);
-Console.WriteLine(text);
+WriteLine(text);
 
 ChangeTextByRef(ref text);
-Console.WriteLine(text);
+WriteLine(text);
 
 // By default, objects are passed by reference
 var person = new Person { Name = "James" };
 SetName(person, "Michael");
-Console.WriteLine(person);
+WriteLine(person);
 
 public static void ChangeTextByValue(string text)
 {

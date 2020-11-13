@@ -16,15 +16,15 @@ public class AllInOnePrinter_ISP : IPrinter, IFax, IScanner
 {
     public void Print()
     {
-        Console.WriteLine("Printing ...");
+        WriteLine("Printing ...");
     }
     public void Fax()
     {
-        Console.WriteLine("Faxing ...");
+        WriteLine("Faxing ...");
     }
     public void Scan()
     {
-        Console.WriteLine("Scanning ...");
+        WriteLine("Scanning ...");
     }
 }
 
@@ -32,6 +32,6 @@ public class EconomicPrinter_ISP : IPrinter
 {
     public void Print()
     {
-        Console.WriteLine("Printing ...");
+        WriteLine("Printing ...");
     }
 }

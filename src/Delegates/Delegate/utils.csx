@@ -6,17 +6,17 @@ public static class PersonUtil
 
     public static void DisplayPeople(string title, List<Person> people, FilterDelegate filter)
     {
-        Console.WriteLine($"- {title}");
+        WriteLine($"- {title}");
 
         foreach (Person person in people)
         {
             if (filter(person))
             {
-                Console.WriteLine($"  * {person}");
+                WriteLine($"  * {person}");
             }
         }
 
-        Console.WriteLine();
+        WriteLine();
     }
 
     public static bool IsChild(Person person)

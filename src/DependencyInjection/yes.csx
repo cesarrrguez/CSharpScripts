@@ -9,7 +9,7 @@ public class EmailSender : IMessageSender
 {
     public void Send(User user, string message)
     {
-        Console.WriteLine($"Email sent\n------------\nTo: {user.Email}\nMessage: {message}\n");
+        WriteLine($"Email sent\n------------\nTo: {user.Email}\nMessage: {message}\n");
     }
 }
 
@@ -17,7 +17,7 @@ public class SmsSender : IMessageSender
 {
     public void Send(User user, string message)
     {
-        Console.WriteLine($"Sms sent\n------------\nTo: {user.Phone}\nMessage: {message}\n");
+        WriteLine($"Sms sent\n------------\nTo: {user.Phone}\nMessage: {message}\n");
     }
 }
 

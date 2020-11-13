@@ -25,18 +25,18 @@ Shape[] shapes = { new Rectangle(1, 10, 12), new Square(2, 5), new Circle(3, 3) 
 
 foreach (var shape in shapes)
 {
-    Console.WriteLine(shape);
-    Console.WriteLine($"Area: {Shape.GetArea(shape)}");
-    Console.WriteLine($"Perimeter: {Shape.GetPerimeter(shape)}");
-    Console.WriteLine($"Draw: {shape.Draw()}"); // Virtual
-    Console.WriteLine($"Name: {shape.GetName()}");
+    WriteLine(shape);
+    WriteLine($"Area: {Shape.GetArea(shape)}");
+    WriteLine($"Perimeter: {Shape.GetPerimeter(shape)}");
+    WriteLine($"Draw: {shape.Draw()}"); // Virtual
+    WriteLine($"Name: {shape.GetName()}");
 
     // Rectangle
     if (shape is Rectangle rectangle)
     {
-        Console.WriteLine($"Is Square: {rectangle.IsSquare()}");
-        Console.WriteLine($"Diagonal: {rectangle.Diagonal}");
-        Console.WriteLine();
+        WriteLine($"Is Square: {rectangle.IsSquare()}");
+        WriteLine($"Diagonal: {rectangle.Diagonal}");
+        WriteLine();
 
         continue;
     }
@@ -44,8 +44,8 @@ foreach (var shape in shapes)
     // Square
     if (shape is Square square)
     {
-        Console.WriteLine($"Diagonal: {square.Diagonal}");
-        Console.WriteLine();
+        WriteLine($"Diagonal: {square.Diagonal}");
+        WriteLine();
 
         continue;
     }
@@ -53,7 +53,7 @@ foreach (var shape in shapes)
     // Circle
     if (shape is Circle circle)
     {
-        Console.WriteLine($"Name: {circle.GetName()}"); // New
-        Console.WriteLine();
+        WriteLine($"Name: {circle.GetName()}"); // New
+        WriteLine();
     }
 }

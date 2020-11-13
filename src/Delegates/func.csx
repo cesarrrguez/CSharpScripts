@@ -11,7 +11,7 @@ var value2 = 9;
 
 // Call function
 var result = function(value1, value2);
-Console.WriteLine($"{value1} + {value2} = {result}");
+WriteLine($"{value1} + {value2} = {result}");
 
 public static int Sum(int a, int b)
 {

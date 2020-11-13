@@ -10,15 +10,15 @@
 var startDate = new DateTime(2020, 08, 28);
 var endDate = DateTime.Now;
 
-Console.WriteLine("News\t\tImages");
-Console.WriteLine("----\t\t------");
+WriteLine("News\t\tImages");
+WriteLine("----\t\t------");
 var saveNewsTask = App.RunSaveNews(startDate, endDate);
 var saveImagesTask = App.RunSaveImages(startDate, endDate);
 
 saveNewsTask.Wait();
 saveImagesTask.Wait();
 
-Console.WriteLine("\nScraping finished!");
+WriteLine("\nScraping finished!");
 
 public static class App
 {

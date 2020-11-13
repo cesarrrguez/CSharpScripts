@@ -14,7 +14,7 @@ public async static Task<TOutput> ExecuteProcess<TInput, TOutput>(this IProcess<
     }
     catch (Exception e)
     {
-        Console.WriteLine(e.Message);
+        WriteLine(e.Message);
         throw;
     }
 }

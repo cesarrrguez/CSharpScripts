@@ -11,11 +11,11 @@
 Car car = new Car("Tesla");
 
 // Print Car
-Console.WriteLine(car);
+WriteLine(car);
 
 // Remove Car
 car = null;
 GC.Collect();
 
 // Print Car
-Console.WriteLine(car);
+WriteLine(car);

@@ -11,7 +11,7 @@ dynamic posts = JsonConvert.DeserializeObject(json);
 
 foreach (var post in posts)
 {
-    Console.WriteLine(post.id + ": " + post.title);
+    WriteLine(post.id + ": " + post.title);
 }
 
 client.Dispose();

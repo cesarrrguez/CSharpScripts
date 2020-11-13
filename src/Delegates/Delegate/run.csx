@@ -19,13 +19,13 @@ PersonUtil.FilterDelegate filterDelegate = null;
 
 // Is person 1 a child?
 filterDelegate = new PersonUtil.FilterDelegate(PersonUtil.IsChild);
-Console.WriteLine($"Is person 1 a child? {filterDelegate(person1).ToYesNoString()}");
+WriteLine($"Is person 1 a child? {filterDelegate(person1).ToYesNoString()}");
 
 // Is person 4 an adult?
 filterDelegate = new PersonUtil.FilterDelegate(PersonUtil.IsAdult);
-Console.WriteLine($"Is person 4 an adult? {filterDelegate(person4).ToYesNoString()}");
+WriteLine($"Is person 4 an adult? {filterDelegate(person4).ToYesNoString()}");
 
 // Is person 2 a senior?
 filterDelegate = new PersonUtil.FilterDelegate(PersonUtil.IsSenior);
-Console.WriteLine($"Is person 2 a senior? {filterDelegate(person2).ToYesNoString()}");
+WriteLine($"Is person 2 a senior? {filterDelegate(person2).ToYesNoString()}");
 

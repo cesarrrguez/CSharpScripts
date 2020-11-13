@@ -14,11 +14,11 @@ TestGeneric(otherPerson);
 var companies = new MyList<Company>();
 companies.AddItem(new Company("Google"));
 companies.AddItem(new Company("Microsoft"));
-Console.WriteLine($"{companies.Counter} Items: {String.Join(", ", companies.Items)}");
+WriteLine($"{companies.Counter} Items: {String.Join(", ", companies.Items)}");
 
 // My list of people
 var people = new MyList<Person>();
 people.AddItem(new Person("James"));
 people.AddItem(new Person("Kevin"));
 people.AddItem(new Person("Olivia"));
-Console.WriteLine($"{people.Counter} Items: {String.Join(", ", people.Items)}");
+WriteLine($"{people.Counter} Items: {String.Join(", ", people.Items)}");

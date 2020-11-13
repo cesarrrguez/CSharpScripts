@@ -11,5 +11,5 @@ student1.SetAverage(9.7);
 var student2 = (Student)student1.Clone();
 student2.SetAverage(4);
 
-Console.WriteLine(student1);
-Console.WriteLine(student2);
+WriteLine(student1);
+WriteLine(student2);

@@ -15,19 +15,19 @@ var stopwatch = new Stopwatch();
 stopwatch.Start();
 var linearResult = Algorithms.MaxSubArraySumLinear(array);
 stopwatch.Stop();
-Console.WriteLine($"Linear function maximum contiguous sum is: {linearResult}");
-Console.WriteLine($"Time elapsed: {stopwatch.ElapsedMilliseconds} milliseconds\n");
+WriteLine($"Linear function maximum contiguous sum is: {linearResult}");
+WriteLine($"Time elapsed: {stopwatch.ElapsedMilliseconds} milliseconds\n");
 
 // Cuadratic
 stopwatch.Restart();
 var cuadraticResult = Algorithms.MaxSubArraySumCuadratic(array);
 stopwatch.Stop();
-Console.WriteLine($"Cuadratic function maximum contiguous sum is: {cuadraticResult}");
-Console.WriteLine($"Time elapsed: {stopwatch.ElapsedMilliseconds} milliseconds\n");
+WriteLine($"Cuadratic function maximum contiguous sum is: {cuadraticResult}");
+WriteLine($"Time elapsed: {stopwatch.ElapsedMilliseconds} milliseconds\n");
 
 // Cubic
 stopwatch.Restart();
 var cubicResult = Algorithms.MaxSubArraySumCubic(array);
 stopwatch.Stop();
-Console.WriteLine($"Cubic function maximum contiguous sum is: {cubicResult}");
-Console.WriteLine($"Time elapsed: {stopwatch.ElapsedMilliseconds} milliseconds\n");
+WriteLine($"Cubic function maximum contiguous sum is: {cubicResult}");
+WriteLine($"Time elapsed: {stopwatch.ElapsedMilliseconds} milliseconds\n");

@@ -23,7 +23,7 @@ public class App
         logger.LogInformation("The application has started");
 
         var userController = _serviceProvider.GetRequiredService<IUserController>();
-        Console.WriteLine(userController.Get());
+        WriteLine(userController.Get());
 
         DisposeServices();
     }

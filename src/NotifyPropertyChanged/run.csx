@@ -13,5 +13,5 @@ public static void User_PropertyChanged(object sender, PropertyChangedEventArgs 
     var user = (User)sender;
     var value = typeof(User).GetProperty(e.PropertyName).GetValue(user, null);
 
-    Console.WriteLine("Value of property '{0}' was changed! New value is '{1}'", e.PropertyName, value);
+    WriteLine("Value of property '{0}' was changed! New value is '{1}'", e.PropertyName, value);
 }

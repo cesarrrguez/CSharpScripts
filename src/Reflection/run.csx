@@ -2,18 +2,18 @@
 
 var type = Type.GetType("System.Collections.ArrayList");
 
-Console.WriteLine($"Base class: {type.BaseType}");
-Console.WriteLine($"Class: {type.IsClass}");
-Console.WriteLine($"Abstract: {type.IsAbstract}");
-Console.WriteLine($"Sealed: {type.IsSealed}");
-Console.WriteLine($"Generic: {type.IsGenericTypeDefinition}");
-Console.WriteLine($"\nFields: {String.Join(", ", type.GetFields().ToList())}");
-Console.WriteLine($"\nProperties: {String.Join(", ", type.GetProperties().ToList())}");
-Console.WriteLine($"\nMethods: {String.Join(", ", type.GetMethods().ToList())}");
-Console.WriteLine($"\nInterfaces: {String.Join(", ", type.GetInterfaces().ToList())}");
+WriteLine($"Base class: {type.BaseType}");
+WriteLine($"Class: {type.IsClass}");
+WriteLine($"Abstract: {type.IsAbstract}");
+WriteLine($"Sealed: {type.IsSealed}");
+WriteLine($"Generic: {type.IsGenericTypeDefinition}");
+WriteLine($"\nFields: {String.Join(", ", type.GetFields().ToList())}");
+WriteLine($"\nProperties: {String.Join(", ", type.GetProperties().ToList())}");
+WriteLine($"\nMethods: {String.Join(", ", type.GetMethods().ToList())}");
+WriteLine($"\nInterfaces: {String.Join(", ", type.GetInterfaces().ToList())}");
 
 // Company properties to Person properties
-Console.WriteLine("\nCompany properties to Person properties:");
+WriteLine("\nCompany properties to Person properties:");
 
 var company = new Company
 {
@@ -29,5 +29,5 @@ foreach (var property in company.GetType().GetProperties())
     propertyInfo?.SetValue(person, property.GetValue(company));
 }
 
-Console.WriteLine(company);
-Console.WriteLine(person);
+WriteLine(company);
+WriteLine(person);

@@ -1,9 +1,9 @@
 var hello = "Hello";
 var world = "World";
 var obj = new { hello, world };
-Console.WriteLine("{0} {1}!", obj.hello, obj.world);
+WriteLine("{0} {1}!", obj.hello, obj.world);
 
-Console.WriteLine();
+WriteLine();
 
 // Array of anonymous types
 var users = new[] {
@@ -14,5 +14,5 @@ var users = new[] {
 // Anonymous types loop for
 foreach (var user in users)
 {
-    Console.WriteLine($"Name: {user.Name}, Age: {user.Age}");
+    WriteLine($"Name: {user.Name}, Age: {user.Age}");
 }

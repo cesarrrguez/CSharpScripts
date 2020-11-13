@@ -17,7 +17,7 @@ public void TestDefault(int number)
 {
     int result = number + 20; // -2147483629
 
-    Console.WriteLine(result);
+    WriteLine(result);
 }
 
 public void TestUnchecked(int number)
@@ -26,7 +26,7 @@ public void TestUnchecked(int number)
     {
         int result = number + 20; // -2147483629
 
-        Console.WriteLine(result);
+        WriteLine(result);
     }
 }
 
@@ -34,7 +34,7 @@ public void TestInlineUnchecked(int number)
 {
     int result = unchecked(number + 20); // -2147483629
 
-    Console.WriteLine(result);
+    WriteLine(result);
 }
 
 public void TestChecked(int number)
@@ -43,7 +43,7 @@ public void TestChecked(int number)
     {
         int result = number + 20; // Throw OverflowException
 
-        Console.WriteLine(result);
+        WriteLine(result);
     }
 }
 
@@ -51,5 +51,5 @@ public void TestInlineChecked(int number)
 {
     int result = checked(number + 20); // Throw OverflowException
 
-    Console.WriteLine(result);
+    WriteLine(result);
 }

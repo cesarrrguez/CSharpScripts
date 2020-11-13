@@ -6,10 +6,10 @@
 #load "entities.csx"
 
 var obj = new DerivedClass(5);
-Console.WriteLine(obj);
+WriteLine(obj);
 obj.Dispose();
 
-Console.WriteLine();
+WriteLine();
 
 // Best use of dispose
 if (obj is IDisposable)
@@ -18,16 +18,16 @@ if (obj is IDisposable)
 // A way to guarantee that dispose is invoked
 try
 {
-    Console.WriteLine(obj);
+    WriteLine(obj);
 }
 finally
 {
-    Console.WriteLine();
+    WriteLine();
     obj.Dispose();
 }
 
 // Automatic dispose invoked
 using (var obj2 = new DerivedClass(7))
 {
-    Console.WriteLine(obj2);
+    WriteLine(obj2);
 }

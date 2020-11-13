@@ -20,7 +20,7 @@ public class User
     public User(int age) => Age = age;
 
     // Destructor. C# 7.0
-    ~User() => Console.WriteLine($"The {GetType().Name} destructor is executing");
+    ~User() => WriteLine($"The {GetType().Name} destructor is executing");
 
     // Method. C# 6.0
     public override string ToString() => $"User. Name: {Name}, Age: {Age}, Emails: {String.Join(", ", emails.Where(x => !String.IsNullOrWhiteSpace(x)))}";

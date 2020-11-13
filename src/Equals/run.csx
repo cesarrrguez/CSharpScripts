@@ -8,5 +8,5 @@ listOfObjects.Add(new MyObject { Property1 = 1, Property2 = 1, Property3 = 1 });
 
 foreach (var item in listOfObjects.Distinct())
 {
-    Console.WriteLine(item);
+    WriteLine(item);
 }

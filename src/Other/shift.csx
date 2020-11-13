@@ -20,5 +20,5 @@ PrintData(n);
 private void PrintData(int number)
 {
     string binary = Convert.ToString(number, 2).PadLeft(8, '0');
-    Console.WriteLine("Bin: {0}, Dec: {1}", binary, number);
+    WriteLine("Bin: {0}, Dec: {1}", binary, number);
 }

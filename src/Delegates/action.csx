@@ -15,5 +15,5 @@ action(text, times);
 public static void RepeatMessage(string message, int times)
 {
     for (int i = 0; i < times; i++)
-        Console.WriteLine(message);
+        WriteLine(message);
 }

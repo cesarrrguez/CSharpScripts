@@ -18,54 +18,54 @@ try
 }
 catch (HeatingException e)
 {
-    Console.WriteLine("\nHeatingException succeed");
-    Console.WriteLine(separator);
+    WriteLine("\nHeatingException succeed");
+    WriteLine(separator);
     Console.ForegroundColor = ConsoleColor.Red;
 
-    Console.WriteLine("Class: {0}", e.TargetSite.DeclaringType);
-    Console.WriteLine("Type: {0}", e.TargetSite.MemberType);
-    Console.WriteLine("Method: {0}", e.TargetSite);
-    Console.WriteLine("Source: {0}", e.Source);
-    Console.WriteLine("Stack: {0}", e.StackTrace);
-    Console.WriteLine("Help link: {0}", e.HelpLink);
+    WriteLine("Class: {0}", e.TargetSite.DeclaringType);
+    WriteLine("Type: {0}", e.TargetSite.MemberType);
+    WriteLine("Method: {0}", e.TargetSite);
+    WriteLine("Source: {0}", e.Source);
+    WriteLine("Stack: {0}", e.StackTrace);
+    WriteLine("Help link: {0}", e.HelpLink);
 
-    Console.WriteLine("Message: {0}", e.Message);
-    Console.WriteLine("Time: {0}", e.Time);
-    Console.WriteLine("Reason: {0}", e.Reason);
+    WriteLine("Message: {0}", e.Message);
+    WriteLine("Time: {0}", e.Time);
+    WriteLine("Reason: {0}", e.Reason);
 
     if (e.Data != null)
     {
         foreach (DictionaryEntry item in e.Data)
         {
-            Console.WriteLine("{0} {1}", item.Key, item.Value);
+            WriteLine("{0} {1}", item.Key, item.Value);
         }
     }
 }
 catch (ArgumentException e)
 {
-    Console.WriteLine("\nArgument Exception succeed");
-    Console.WriteLine(separator);
+    WriteLine("\nArgument Exception succeed");
+    WriteLine(separator);
 
-    Console.WriteLine("Message: {0}", e.Message);
+    WriteLine("Message: {0}", e.Message);
 }
 catch (Exception e) when (e.GetType() != typeof(FormatException))
 {
-    Console.WriteLine("\nException (Not FormatException) succeed");
-    Console.WriteLine(separator);
+    WriteLine("\nException (Not FormatException) succeed");
+    WriteLine(separator);
 
-    Console.WriteLine("Message: {0}", e.Message);
+    WriteLine("Message: {0}", e.Message);
 }
 catch (Exception e)
 {
-    Console.WriteLine("\nException succeed");
-    Console.WriteLine(separator);
+    WriteLine("\nException succeed");
+    WriteLine(separator);
 
-    Console.WriteLine("Message: {0}", e.Message);
+    WriteLine("Message: {0}", e.Message);
 }
 finally
 {
     // We can close and dispose objects here
     Console.ResetColor();
-    Console.WriteLine();
+    WriteLine();
     heating.TurnOff();
 }

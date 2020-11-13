@@ -23,11 +23,11 @@ graph.AddEdge(4, 6);
 graph.AddEdge(6, 5);
 graph.IndigreeCalculation();
 
-Console.WriteLine("Adjacency:");
+WriteLine("Adjacency:");
 graph.ShowAdjacency();
 
-Console.WriteLine("\nIndigree:");
+WriteLine("\nIndigree:");
 graph.ShowIndigree();
 
 var sort = Algorithms.TopologicalSort(graph);
-Console.WriteLine($"\nTopological sort: {string.Join(", ", sort)}");
+WriteLine($"\nTopological sort: {string.Join(", ", sort)}");

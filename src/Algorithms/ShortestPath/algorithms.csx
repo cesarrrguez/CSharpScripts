@@ -72,11 +72,11 @@ public static class Algorithms
 
     // private static void ShowGraphInfo(int[,] info)
     // {
-    //     Console.WriteLine("\nGraph info:");
+    //     WriteLine("\nGraph info:");
 
     //     for (var i = 0; i < info.GetLength(0); i++)
     //     {
-    //         Console.WriteLine("{0} -> {1}\t{2}\t{3}", i, info[i, 0], info[i, 1], info[i, 2]);
+    //         WriteLine("{0} -> {1}\t{2}\t{3}", i, info[i, 0], info[i, 1], info[i, 2]);
     //     }
     // }
 }

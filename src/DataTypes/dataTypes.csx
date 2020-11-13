@@ -7,12 +7,12 @@ string hello = "Hello world";
 bool flag = false;
 DateTime date = DateTime.MinValue;
 
-Console.WriteLine("The value of i is: {0}", i);
-Console.WriteLine("The value of ui is: {0}", ui);
-Console.WriteLine("The value of x is: {0:C}", x);
-Console.WriteLine("The value of f is: {0:F2}", f);
-Console.WriteLine("The value of d is: {0:F2}", d);
-Console.WriteLine("The value of hello is: " + hello);
-Console.WriteLine("The value of flag is: " + flag.ToString());
-Console.WriteLine("The value of date is: {0}", date.ToShortDateString());
+WriteLine("The value of i is: {0}", i);
+WriteLine("The value of ui is: {0}", ui);
+WriteLine("The value of x is: {0:C}", x);
+WriteLine("The value of f is: {0:F2}", f);
+WriteLine("The value of d is: {0:F2}", d);
+WriteLine("The value of hello is: " + hello);
+WriteLine("The value of flag is: " + flag.ToString());
+WriteLine("The value of date is: {0}", date.ToShortDateString());
 

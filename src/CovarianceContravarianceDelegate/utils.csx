@@ -8,7 +8,7 @@ public static class Utils
     {
         if (teacher == null) throw new ArgumentNullException(nameof(teacher));
 
-        Console.WriteLine("Get teacher from teacher method");
+        WriteLine("Get teacher from teacher method");
 
         return new Teacher();
     }
@@ -17,7 +17,7 @@ public static class Utils
     {
         if (teacher == null) throw new ArgumentNullException(nameof(teacher));
 
-        Console.WriteLine("Get person from teacher method");
+        WriteLine("Get person from teacher method");
 
         return new Person();
     }
@@ -26,7 +26,7 @@ public static class Utils
     {
         if (person == null) throw new ArgumentNullException(nameof(person));
 
-        Console.WriteLine("Get person from person method");
+        WriteLine("Get person from person method");
 
         return new Person();
     }

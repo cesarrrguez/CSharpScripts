@@ -18,5 +18,5 @@ user2.FirstName = "James";
 user2.LastName = "Miller";
 user2[0] = "james.miller@gmail.com";
 
-Console.WriteLine(user1);
-Console.WriteLine(user2);
+WriteLine(user1);
+WriteLine(user2);

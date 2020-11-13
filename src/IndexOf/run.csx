@@ -10,5 +10,5 @@ var listOfObjects = new List<MyObject>
 
 foreach (var item in listOfObjects)
 {
-    Console.WriteLine(listOfObjects.IndexOf(item));
+    WriteLine(listOfObjects.IndexOf(item));
 }

@@ -3,15 +3,15 @@
 
 var user1 = new User("James");
 user1.SetAge(18);
-Console.WriteLine(user1);
+WriteLine(user1);
 
 var path = Path.Combine(FolderUtil.GetCurrentDirectoryName(), "users.data");
 
 // Serialization
-Console.WriteLine("\nSerializing ...");
+WriteLine("\nSerializing ...");
 SerializationUtil.SerializeBinaryData<User>(user1, path);
 
 // Deserialization
-Console.WriteLine("Deserializing ...\n");
+WriteLine("Deserializing ...\n");
 var user2 = SerializationUtil.DeserializeBinaryData<User>(path);
-Console.WriteLine(user2);
+WriteLine(user2);

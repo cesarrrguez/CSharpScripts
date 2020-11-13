@@ -12,8 +12,8 @@ public class UserController : IUserController
 
     public async Task Create(UserViewModel userViewModel)
     {
-        Console.WriteLine("Create User:");
-        Console.WriteLine(_separator);
+        WriteLine("Create User:");
+        WriteLine(_separator);
 
         await _userService.Register(userViewModel).ConfigureAwait(false);
     }
@@ -25,24 +25,24 @@ public class UserController : IUserController
 
     public async Task Edit(UserViewModel userViewModel)
     {
-        Console.WriteLine("\nEdit User:");
-        Console.WriteLine(_separator);
+        WriteLine("\nEdit User:");
+        WriteLine(_separator);
 
         await _userService.Update(userViewModel).ConfigureAwait(false);
     }
 
     public async Task Delete(int id)
     {
-        Console.WriteLine("\nDelete User:");
-        Console.WriteLine(_separator);
+        WriteLine("\nDelete User:");
+        WriteLine(_separator);
 
         await _userService.Remove(id).ConfigureAwait(false);
     }
 
     public async Task Details(int id)
     {
-        Console.WriteLine("\nDetails User:");
-        Console.WriteLine(_separator);
+        WriteLine("\nDetails User:");
+        WriteLine(_separator);
 
         var userViewModel = await _userService.GetById(id).ConfigureAwait(false);
         PrintUser(userViewModel);
@@ -58,7 +58,7 @@ public class UserController : IUserController
     {
         if (users?.Any() != true)
         {
-            Console.WriteLine("No users");
+            WriteLine("No users");
         }
         else
         {
@@ -71,7 +71,7 @@ public class UserController : IUserController
 
     private void PrintUser(UserViewModel userViewModel)
     {
-        Console.WriteLine(userViewModel);
+        WriteLine(userViewModel);
     }
 
     public void Dispose()

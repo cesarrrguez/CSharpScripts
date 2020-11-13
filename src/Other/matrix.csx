@@ -22,8 +22,8 @@ public void PrintMatrix(int[,] matrix)
     {
         for (var j = 0; j < 2; j++)
         {
-            Console.Write("{0} ", matrix[i, j]);
+            Write("{0} ", matrix[i, j]);
         }
-        Console.WriteLine();
+        WriteLine();
     }
 }

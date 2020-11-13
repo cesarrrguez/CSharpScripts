@@ -12,6 +12,6 @@ public static class AreaCalculator
 
         var area = rectangle.Width * rectangle.Height;
 
-        Console.WriteLine($"Rectangle area: {area}");
+        WriteLine($"Rectangle area: {area}");
     }
 }

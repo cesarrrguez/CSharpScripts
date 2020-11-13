@@ -4,7 +4,7 @@ public class EmailClient
 {
     public void Send(string email, string message)
     {
-        Console.WriteLine($"Email sent\n------------\nTo: {email}\nMessage: {message}\n");
+        WriteLine($"Email sent\n------------\nTo: {email}\nMessage: {message}\n");
     }
 }
 

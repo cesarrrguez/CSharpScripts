@@ -5,7 +5,7 @@ Utils.CovarianceDelegate covarianceDelegate = null;
 Person person = null;
 
 // Covariance with Delegate
-Console.WriteLine("Covariance with Delegate");
+WriteLine("Covariance with Delegate");
 
 // Get Teacher from teacher
 covarianceDelegate = Utils.GetTeacherFromTeacher;
@@ -16,7 +16,7 @@ covarianceDelegate = Utils.GetPersonFromTeacher;
 person = covarianceDelegate(new Teacher());
 
 // Contravariance with Delegate
-Console.WriteLine("\nContravariance with Delegate");
+WriteLine("\nContravariance with Delegate");
 
 // Get Person from person
 covarianceDelegate = Utils.GetPersonFromPerson;

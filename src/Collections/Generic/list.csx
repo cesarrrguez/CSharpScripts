@@ -6,37 +6,37 @@ var values = new List<int>() { 7, 5, 4, 3, 8 };
 values.Add(9);
 
 // Print
-Console.WriteLine($"List: {String.Join(", ", values)}");
+WriteLine($"List: {String.Join(", ", values)}");
 
 // Count
-Console.WriteLine($"Count: {values.Count}");
+WriteLine($"Count: {values.Count}");
 
 // Contains
-Console.WriteLine($"Contains 5: {values.Contains(5)}");
+WriteLine($"Contains 5: {values.Contains(5)}");
 
 // Index of
-Console.WriteLine($"Index of 5: {values.IndexOf(5)}");
+WriteLine($"Index of 5: {values.IndexOf(5)}");
 
 // Insert
 values.Insert(3, 33);
-Console.WriteLine($"Insert 33 at 3: {String.Join(", ", values)}");
+WriteLine($"Insert 33 at 3: {String.Join(", ", values)}");
 
 // Remove at
 values.RemoveAt(5);
-Console.WriteLine($"Remove at 5: {String.Join(", ", values)}");
+WriteLine($"Remove at 5: {String.Join(", ", values)}");
 
 // Remove
 values.Remove(5);
-Console.WriteLine($"Remove 5: {String.Join(", ", values)}");
+WriteLine($"Remove 5: {String.Join(", ", values)}");
 
 // Reverse
 values.Reverse();
-Console.WriteLine($"Reverse: {String.Join(", ", values)}");
+WriteLine($"Reverse: {String.Join(", ", values)}");
 
 // Sort
 values.Sort();
-Console.WriteLine($"Sort: {String.Join(", ", values)}");
+WriteLine($"Sort: {String.Join(", ", values)}");
 
 // List - Array - list
 var array = values.ToArray();
-Console.WriteLine($"To array: {String.Join(", ", array.ToList())}");
+WriteLine($"To array: {String.Join(", ", array.ToList())}");

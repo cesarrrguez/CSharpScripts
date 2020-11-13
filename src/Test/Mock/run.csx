@@ -23,5 +23,5 @@ PrintTestResult(test_3);
 public void PrintTestResult(Task test)
 {
     var result = test.IsCompletedSuccessfully ? "Test passed" : "Test failed";
-    Console.WriteLine(result);
+    WriteLine(result);
 }

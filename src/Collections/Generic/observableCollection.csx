@@ -15,12 +15,12 @@ collection.Remove(21);
 
 static void Collection_CollectionChanged(object sender, NotifyCollectionChangedEventArgs e)
 {
-    Console.Write("{0} event. ", e.Action);
+    Write("{0} event. ", e.Action);
 
     // Add
     if (e.Action == NotifyCollectionChangedAction.Add)
     {
-        Console.Write("New items: ");
+        Write("New items: ");
 
         var sb = new StringBuilder();
         var separator = String.Empty;
@@ -31,14 +31,14 @@ static void Collection_CollectionChanged(object sender, NotifyCollectionChangedE
             separator = ", ";
         }
 
-        Console.Write(sb.ToString());
-        Console.WriteLine();
+        Write(sb.ToString());
+        WriteLine();
     }
 
     // Remove
     if (e.Action == NotifyCollectionChangedAction.Remove)
     {
-        Console.Write("Old items: ");
+        Write("Old items: ");
 
         var sb = new StringBuilder();
         var separator = String.Empty;
@@ -49,7 +49,7 @@ static void Collection_CollectionChanged(object sender, NotifyCollectionChangedE
             separator = ", ";
         }
 
-        Console.Write(sb.ToString());
-        Console.WriteLine();
+        Write(sb.ToString());
+        WriteLine();
     }
 }

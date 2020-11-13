@@ -8,11 +8,11 @@ var key = 34;
 // ContainsKey option
 if (dictionary.ContainsKey(key))
 {
-    Console.WriteLine($"ContainsKey: {dictionary[key]}");
+    WriteLine($"ContainsKey: {dictionary[key]}");
 }
 
 // TryGetValue option
 if (dictionary.TryGetValue(key, out var value))
 {
-    Console.WriteLine($"TryGetValue: {value}");
+    WriteLine($"TryGetValue: {value}");
 }

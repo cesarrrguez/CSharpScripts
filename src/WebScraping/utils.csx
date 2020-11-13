@@ -33,7 +33,7 @@ public static class Utils
                 BuildNews(doc, item, news, day);
             }
 
-            Console.WriteLine($"{day.ToShortDateString()}");
+            WriteLine($"{day.ToShortDateString()}");
         }
 
         await WriteNews(news, path).ConfigureAwait(false);
@@ -105,7 +105,7 @@ public static class Utils
                 await DownloadImages(doc, item, day, path).ConfigureAwait(false);
             }
 
-            Console.WriteLine($"\t\t{day.ToShortDateString()}");
+            WriteLine($"\t\t{day.ToShortDateString()}");
         }
     }
 
@@ -159,7 +159,7 @@ public static class Utils
         form.Method = HttpVerb.Post;
         var result = form.Submit();
 
-        Console.WriteLine($"Status response: {result.RawResponse.StatusCode} - {result.RawResponse.StatusDescription}");
+        WriteLine($"Status response: {result.RawResponse.StatusCode} - {result.RawResponse.StatusDescription}");
     }
 }
 

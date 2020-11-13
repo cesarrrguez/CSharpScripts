@@ -14,5 +14,5 @@ user2.Age = 41;
 user2.Name = "Charles";
 
 // Print users
-Console.WriteLine(user1);
-Console.WriteLine(user2);
+WriteLine(user1);
+WriteLine(user2);

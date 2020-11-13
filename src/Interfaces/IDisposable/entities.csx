@@ -19,7 +19,7 @@ public class BaseClass : IDisposable
 
         if (disposing)
         {
-            Console.WriteLine("Disposing {0} ...", nameof(BaseClass));
+            WriteLine("Disposing {0} ...", nameof(BaseClass));
 
             // Dispose managed state (managed objects)
             // ...
@@ -61,7 +61,7 @@ public class DerivedClass : BaseClass
 
         if (disposing)
         {
-            Console.WriteLine("Disposing {0} ...", nameof(DerivedClass));
+            WriteLine("Disposing {0} ...", nameof(DerivedClass));
 
             // Dispose managed state (managed objects)
             // ...

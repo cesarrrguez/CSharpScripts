@@ -15,7 +15,7 @@ public class Test
     ~Test()
     {
         Console.ForegroundColor = ConsoleColor.Red;
-        Console.WriteLine("Here we set free the object");
+        WriteLine("Here we set free the object");
         Console.Beep(600, 500);
         Console.ResetColor();
     }

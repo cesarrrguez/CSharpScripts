@@ -1,8 +1,8 @@
 public class Duck
 {
-    public virtual void Fly() => Console.WriteLine("Fly");
-    public virtual void Swim() => Console.WriteLine("Swim");
-    public virtual void Cuack() => Console.WriteLine("Cuack");
+    public virtual void Fly() => WriteLine("Fly");
+    public virtual void Swim() => WriteLine("Swim");
+    public virtual void Cuack() => WriteLine("Cuack");
 }
 
 public class RubberDuck : Duck

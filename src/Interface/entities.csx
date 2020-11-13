@@ -13,12 +13,12 @@ public class Sum : IOperation
 
     public void Show()
     {
-        Console.WriteLine("The result of sum is: {0}", r);
+        WriteLine("The result of sum is: {0}", r);
     }
 
     public void Check()
     {
-        Console.WriteLine("I´m inside {0}", nameof(Sum));
+        WriteLine("I´m inside {0}", nameof(Sum));
     }
 }
 
@@ -33,11 +33,11 @@ public class Subtract : IOperation
 
     public void Show()
     {
-        Console.WriteLine("The result of substraction is: {0}", r);
+        WriteLine("The result of substraction is: {0}", r);
     }
 
     public void Check()
     {
-        Console.WriteLine("I´m inside {0}", nameof(Subtract));
+        WriteLine("I´m inside {0}", nameof(Subtract));
     }
 }

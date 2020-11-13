@@ -7,9 +7,9 @@ var entity = new ExternalEntity()
     LastName = "Johnson"
 };
 
-Console.WriteLine(entity);
+WriteLine(entity);
 
 //MyEntity convertedEntity = entity; // Error
 
 var convertedEntity = (MyEntity)entity;
-Console.WriteLine(convertedEntity);
+WriteLine(convertedEntity);

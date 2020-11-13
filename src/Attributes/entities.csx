@@ -4,7 +4,7 @@ public class Test
 {
     public Test()
     {
-        Console.WriteLine("Version 1");
+        WriteLine("Version 1");
     }
 }
 
@@ -13,7 +13,7 @@ public class Test2
 {
     public Test2()
     {
-        Console.WriteLine("Version 2");
+        WriteLine("Version 2");
     }
 }
 

@@ -17,4 +17,4 @@ for (int i = 0; i < 1000; i++)
 stopwatch.Stop();
 
 // Write result
-Console.WriteLine($"Time elapsed: {stopwatch.Elapsed}");
+WriteLine($"Time elapsed: {stopwatch.Elapsed}");

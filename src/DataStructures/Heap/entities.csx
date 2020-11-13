@@ -59,8 +59,8 @@ public class Heap<T>
     public void Print()
     {
         for (var i = 0; i <= Size; i++)
-            Console.Write($"{Elements[i]}, ");
+            Write($"{Elements[i]}, ");
 
-        Console.WriteLine();
+        WriteLine();
     }
 }

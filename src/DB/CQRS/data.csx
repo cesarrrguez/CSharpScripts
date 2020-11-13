@@ -6,7 +6,7 @@ public class ProductWriteRepository : IProductWriteRepository
     {
         if (product == null) throw new ArgumentNullException(nameof(product));
 
-        Console.WriteLine($"Adding product {product.Id} - {product.Description} into db");
+        WriteLine($"Adding product {product.Id} - {product.Description} into db");
     }
 }
 
@@ -14,7 +14,7 @@ public class ProductReadRepository : IProductReadRepository
 {
     public IEnumerable<Product> GetAll()
     {
-        Console.WriteLine("Getting all products from db");
+        WriteLine("Getting all products from db");
 
         return new List<Product>()
         {

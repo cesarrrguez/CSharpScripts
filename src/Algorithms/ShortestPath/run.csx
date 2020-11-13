@@ -16,9 +16,9 @@ graph.AddEdge(3, 6);
 graph.AddEdge(4, 6);
 graph.AddEdge(6, 5);
 
-Console.WriteLine("Adjacency:");
+WriteLine("Adjacency:");
 graph.ShowAdjacency();
 
 // Shortest path
 var path = Algorithms.ShortestPath(graph, 2, 6);
-Console.WriteLine($"\nShortest path [2 - 6]: {string.Join(", ", path)}");
+WriteLine($"\nShortest path [2 - 6]: {string.Join(", ", path)}");

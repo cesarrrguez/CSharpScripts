@@ -2,7 +2,7 @@
 // When the flags attribute is removed, the output will remain 14.
 
 int snakes = 14;
-Console.WriteLine((Reptile)snakes);
+WriteLine((Reptile)snakes);
 
 [Flags]
 enum Reptile

@@ -7,24 +7,24 @@ list.Add(234, "World");
 list.Add(45, "Everybody");
 
 // Print
-Console.WriteLine("Print:");
+WriteLine("Print:");
 foreach (DictionaryEntry item in list)
-    Console.WriteLine("[{0}] = {1}", item.Key, item.Value);
+    WriteLine("[{0}] = {1}", item.Key, item.Value);
 
 // Count
-Console.WriteLine($"\nCount: {list.Count}");
+WriteLine($"\nCount: {list.Count}");
 
 // Contains
-Console.WriteLine($"Contains 300: {list.Contains(300)}");
+WriteLine($"Contains 300: {list.Contains(300)}");
 
 // Contains key
-Console.WriteLine($"Contains key 45: {list.ContainsKey(45)}");
+WriteLine($"Contains key 45: {list.ContainsKey(45)}");
 
 // Contains value
-Console.WriteLine($"Contains value 'Hello': {list.ContainsValue("Hello")}");
+WriteLine($"Contains value 'Hello': {list.ContainsValue("Hello")}");
 
 // Get key
-Console.WriteLine($"Get key 2: {list.GetKey(2)}");
+WriteLine($"Get key 2: {list.GetKey(2)}");
 
 // Get by index
-Console.WriteLine($"Get by index 2: {list.GetByIndex(2)}");
+WriteLine($"Get by index 2: {list.GetByIndex(2)}");

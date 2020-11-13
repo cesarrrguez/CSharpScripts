@@ -19,7 +19,7 @@ public class Heating
     public void TurnOff()
     {
         Temperature = 0;
-        Console.WriteLine("Heating '{0}' is off", Name);
+        WriteLine("Heating '{0}' is off", Name);
     }
 
     public void Work(int temperatureIncrease)
@@ -29,16 +29,16 @@ public class Heating
 
         if (!Works)
         {
-            Console.WriteLine("Heating '{0}' doesn't works", Name);
+            WriteLine("Heating '{0}' doesn't works", Name);
         }
         else
         {
             Temperature += temperatureIncrease;
-            Console.WriteLine("Current temperature is {0}", Temperature);
+            WriteLine("Current temperature is {0}", Temperature);
 
             if (Temperature > MAX_TEMPERATURE)
             {
-                Console.WriteLine("Heating '{0}' exceed the maximun temperature, has {1}", Name, Temperature);
+                WriteLine("Heating '{0}' exceed the maximun temperature, has {1}", Name, Temperature);
                 Temperature = MAX_TEMPERATURE;
                 Works = false;
 

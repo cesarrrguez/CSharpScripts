@@ -45,7 +45,7 @@ public class MainViewModel : INotifyPropertyChanged
     // Run
     public async void ExecuteRun()
     {
-        Console.WriteLine("Running!");
+        WriteLine("Running!");
 
         try
         {
@@ -54,12 +54,12 @@ public class MainViewModel : INotifyPropertyChanged
 
             if (output != null)
             {
-                Console.WriteLine(output);
+                WriteLine(output);
             }
         }
         catch (Exception e)
         {
-            Console.WriteLine(e.Message);
+            WriteLine(e.Message);
         }
         finally
         {
@@ -80,12 +80,12 @@ public class MainViewModel : INotifyPropertyChanged
         if (!close)
         {
             e.Cancel = true;
-            Console.WriteLine("Not yet!");
+            WriteLine("Not yet!");
         }
         else
         {
             e.Cancel = false;
-            Console.WriteLine("Goodbye!");
+            WriteLine("Goodbye!");
         }
     }
 

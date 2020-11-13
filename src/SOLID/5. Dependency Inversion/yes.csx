@@ -7,7 +7,7 @@ public class MySqlDatabase : IDatabase
 {
     public void Add(string data)
     {
-        Console.WriteLine($"Data \"{data}\" added to MySQL database");
+        WriteLine($"Data \"{data}\" added to MySQL database");
     }
 }
 
@@ -15,7 +15,7 @@ public class OracleDatabase : IDatabase
 {
     public void Add(string data)
     {
-        Console.WriteLine($"Data \"{data}\" added to Oracle database");
+        WriteLine($"Data \"{data}\" added to Oracle database");
     }
 }
 

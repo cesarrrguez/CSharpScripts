@@ -31,23 +31,23 @@ public class Graph
         // Row headers
         for (var i = 0; i < Nodes; i++)
         {
-            Console.Write($"\t({i})");
+            Write($"\t({i})");
         }
 
-        Console.WriteLine();
+        WriteLine();
 
         for (var i = 0; i < Nodes; i++)
         {
             // Column headers
-            Console.Write($"({i})");
+            Write($"({i})");
 
             // Adjacency values
             for (var j = 0; j < Nodes; j++)
             {
-                Console.Write($"\t {Adjacency[i, j]}");
+                Write($"\t {Adjacency[i, j]}");
             }
 
-            Console.WriteLine();
+            WriteLine();
         }
     }
 
@@ -69,7 +69,7 @@ public class Graph
     {
         for (var i = 0; i < Nodes; i++)
         {
-            Console.WriteLine($"({i}): {Indigree[i]}");
+            WriteLine($"({i}): {Indigree[i]}");
         }
     }
 }

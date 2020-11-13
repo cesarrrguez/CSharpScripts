@@ -2,7 +2,7 @@ public class MongoDB
 {
     public void Add(string data)
     {
-        Console.WriteLine($"Data \"{data}\" added to MongoDB database");
+        WriteLine($"Data \"{data}\" added to MongoDB database");
     }
 }
 

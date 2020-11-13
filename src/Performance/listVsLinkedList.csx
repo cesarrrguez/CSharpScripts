@@ -1,22 +1,22 @@
 var stopwatch = new Stopwatch();
 
 // List performance test
-Console.WriteLine("List performance test ...");
+WriteLine("List performance test ...");
 stopwatch.Start();
 ListPerformanceTest();
 stopwatch.Stop();
-Console.WriteLine($"Time elapsed: {stopwatch.ElapsedMilliseconds} milliseconds\n");
+WriteLine($"Time elapsed: {stopwatch.ElapsedMilliseconds} milliseconds\n");
 
 // Linked list performance test
-Console.WriteLine("Linked list performance test ...");
+WriteLine("Linked list performance test ...");
 stopwatch.Restart();
 LinkedListPerformanceTest();
 stopwatch.Stop();
-Console.WriteLine($"Time elapsed: {stopwatch.ElapsedMilliseconds} milliseconds\n");
+WriteLine($"Time elapsed: {stopwatch.ElapsedMilliseconds} milliseconds\n");
 
 public void ListPerformanceTest()
 {
-   List<Temp> list = new List<Temp>(); // 2.4 seconds
+    List<Temp> list = new List<Temp>(); // 2.4 seconds
 
     for (var i = 0; i < 12345678; i++)
     {

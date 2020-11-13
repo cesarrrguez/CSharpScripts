@@ -14,5 +14,5 @@ var configuration = new ConfigurationBuilder()
 
 var appConfig = configuration.GetSection("application").Get<AppConfig>();
 
-Console.WriteLine($"Application Name: {appConfig.Name}");
-Console.WriteLine($"Application Version: {appConfig.Version}");
+WriteLine($"Application Name: {appConfig.Name}");
+WriteLine($"Application Version: {appConfig.Version}");

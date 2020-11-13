@@ -24,10 +24,10 @@ var node_S = tree.Add(node_R, 'S');
 var node_T = tree.Add(node_S, 'T');
 
 // Root path
-Console.WriteLine("Root path:");
-Console.WriteLine(tree.GetPath(tree.Root));
+WriteLine("Root path:");
+WriteLine(tree.GetPath(tree.Root));
 
 // Find
-Console.WriteLine("\nFind F:");
+WriteLine("\nFind F:");
 var node = tree.Find(tree.Root, 'F');
-Console.WriteLine(tree.GetPath(node));
+WriteLine(tree.GetPath(node));

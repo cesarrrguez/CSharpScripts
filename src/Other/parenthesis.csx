@@ -1,12 +1,12 @@
 var byDefaultPrecedence = Operand("A", true) || (Operand("B", true) && Operand("C", false));
-Console.WriteLine(byDefaultPrecedence);
-Console.WriteLine();
+WriteLine(byDefaultPrecedence);
+WriteLine();
 // Output:
 // Operand A is evaluated
 // True
 
 var changedOrder = (Operand("A", true) || Operand("B", true)) && Operand("C", false);
-Console.WriteLine(changedOrder);
+WriteLine(changedOrder);
 // Output:
 // Operand A is evaluated
 // Operand C is evaluated
@@ -14,6 +14,6 @@ Console.WriteLine(changedOrder);
 
 public bool Operand(string name, bool value)
 {
-    Console.WriteLine($"Operand {name} is evaluated");
+    WriteLine($"Operand {name} is evaluated");
     return value;
 }

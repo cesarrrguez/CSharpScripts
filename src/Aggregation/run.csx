@@ -14,20 +14,20 @@ Customer customer = new Customer("James");
 Order order = new Order(new Guid(), DateTime.Now);
 
 // Print Customer
-Console.WriteLine(customer);
+WriteLine(customer);
 
 // Add order
 customer.AddOrder(order);
 
 // Print Customer
-Console.WriteLine(customer);
+WriteLine(customer);
 
 // Remove Customer
 customer = null;
 GC.Collect();
 
 // Print Customer
-Console.WriteLine(customer);
+WriteLine(customer);
 
 // Print Order
-Console.WriteLine(order);
+WriteLine(order);

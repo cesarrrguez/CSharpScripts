@@ -6,6 +6,6 @@ public class ProductRepository : IProductRepository
     {
         if (product == null) throw new ArgumentNullException(nameof(product));
 
-        Console.WriteLine($"Adding product {product.Id} - {product.Description} into db");
+        WriteLine($"Adding product {product.Id} - {product.Description} into db");
     }
 }

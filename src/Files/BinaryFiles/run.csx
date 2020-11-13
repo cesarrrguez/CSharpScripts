@@ -3,11 +3,11 @@
 
 var user1 = new User("James");
 user1.SetAge(18);
-Console.WriteLine(user1);
+WriteLine(user1);
 
 var user2 = new User("Olivia");
 user2.SetAge(15);
-Console.WriteLine(user2);
+WriteLine(user2);
 
 var path = Path.Combine(FolderUtil.GetCurrentDirectoryName(), "users.data");
 
@@ -15,11 +15,11 @@ var path = Path.Combine(FolderUtil.GetCurrentDirectoryName(), "users.data");
 File.Delete(path);
 
 // Writing
-Console.WriteLine("\nWriting ...");
+WriteLine("\nWriting ...");
 FileUtil.WriteData<User>(user1, path);
 FileUtil.WriteData<User>(user2, path);
 
 // Reading
-Console.WriteLine("Reading ...\n");
+WriteLine("Reading ...\n");
 var userData = FileUtil.ReadData(path);
-Console.WriteLine(userData);
+WriteLine(userData);

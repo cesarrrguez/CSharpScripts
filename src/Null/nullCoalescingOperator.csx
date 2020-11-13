@@ -7,15 +7,15 @@ string message = string.Empty;
 
 variable = "Not null";
 message = variable ?? "Default message if variable is null";
-Console.WriteLine($"{message}");
+WriteLine($"{message}");
 
 variable = null;
 message = variable ?? "Default message if variable is null";
-Console.WriteLine($"{message}");
+WriteLine($"{message}");
 
 // Using the null coalesce operator and parentheses to automatically instantiate collections
 ListOfNumbers.Add(5);
-Console.WriteLine(String.Join(", ", ListOfNumbers));
+WriteLine(String.Join(", ", ListOfNumbers));
 
 private IList<int> _listOfNumbers;
 public IList<int> ListOfNumbers => _listOfNumbers ??= new List<int>();

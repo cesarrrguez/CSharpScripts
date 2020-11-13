@@ -10,18 +10,18 @@ private void NumberDetection(string text)
 
     if (string.IsNullOrEmpty(text))
     {
-        Console.WriteLine("There is no data");
+        WriteLine("There is no data");
     }
     else if (int.TryParse(text, out ri))
     {
-        Console.WriteLine("Is an integer number");
+        WriteLine("Is an integer number");
     }
     else if (double.TryParse(text, out rd))
     {
-        Console.WriteLine("Is a float number");
+        WriteLine("Is a float number");
     }
     else
     {
-        Console.WriteLine("Is a string");
+        WriteLine("Is a string");
     }
 }

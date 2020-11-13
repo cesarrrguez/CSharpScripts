@@ -19,10 +19,10 @@ public static class AreaCalculator_OCP
 {
     public static void CalculateArea(IShape shape)
     {
-       if (shape == null) throw new ArgumentNullException(nameof(shape));
+        if (shape == null) throw new ArgumentNullException(nameof(shape));
 
         var area = shape.GetArea();
 
-        Console.WriteLine($"{shape.GetType().Name} area: {area}");
+        WriteLine($"{shape.GetType().Name} area: {area}");
     }
 }

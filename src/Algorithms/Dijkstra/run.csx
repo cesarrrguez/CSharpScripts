@@ -21,9 +21,9 @@ graph.AddEdge(3, 6, 4);
 graph.AddEdge(4, 6, 6);
 graph.AddEdge(6, 5, 1);
 
-Console.WriteLine("Adjacency:");
+WriteLine("Adjacency:");
 graph.ShowAdjacency();
 
 // Dijkstra
 var path = Algorithms.Dijkstra(graph, 0, 5);
-Console.WriteLine($"\nDijkstra [0 - 5]: {string.Join(", ", path)}");
+WriteLine($"\nDijkstra [0 - 5]: {string.Join(", ", path)}");

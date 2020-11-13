@@ -18,7 +18,7 @@ try
 }
 catch (NotSupportedException e)
 {
-    Console.WriteLine(e);
+    WriteLine(e);
 }
 
 // Yes

@@ -22,11 +22,11 @@ var user = new User("James", "Wilson");
 user.AddAddress("My Street", "My City");
 
 // Print model object
-Console.WriteLine(user);
+WriteLine(user);
 
 // Mapping object model to DTO
 var userMap = mapper.Map<User, UserDTO>(user);
 
 // Print DTO
-Console.WriteLine();
-Console.WriteLine(userMap);
+WriteLine();
+WriteLine(userMap);

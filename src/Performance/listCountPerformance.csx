@@ -22,6 +22,6 @@ var s3 = Stopwatch.StartNew();
 var r3 = list.Any();
 s3.Stop();
 
-Console.WriteLine($"Count() = {s1.Elapsed.TotalMilliseconds}");
-Console.WriteLine($"Count = {s2.Elapsed.TotalMilliseconds}");
-Console.WriteLine($"Any() = {s3.Elapsed.TotalMilliseconds}");
+WriteLine($"Count() = {s1.Elapsed.TotalMilliseconds}");
+WriteLine($"Count = {s2.Elapsed.TotalMilliseconds}");
+WriteLine($"Any() = {s3.Elapsed.TotalMilliseconds}");

@@ -6,7 +6,7 @@ CalculateOperation(1, 4.5, 6.7);
 // Calculate Substract
 CalculateOperation(2, 6.3, 3.4);
 
-Console.WriteLine();
+WriteLine();
 
 // Check if class implements an interface
 CheckInterfaceImplementation();
@@ -17,10 +17,10 @@ var operations = new IOperation[] { new Sum(), new Subtract() };
 foreach (var operation in operations)
 {
     if (operation is Sum)
-        Console.WriteLine("\nIs a Sum");
+        WriteLine("\nIs a Sum");
 
     if (operation is Subtract)
-        Console.WriteLine("\nIs a Subtract");
+        WriteLine("\nIs a Subtract");
 
     operation.Calculate(8, 3);
     operation.Show();
@@ -51,5 +51,5 @@ public void CheckInterfaceImplementation()
     if (sum is IOperation operation)
         operation.Check();
     else
-        Console.WriteLine("Don´t implements IOperation");
+        WriteLine("Don´t implements IOperation");
 }

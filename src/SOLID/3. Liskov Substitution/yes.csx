@@ -15,13 +15,13 @@ public interface ICuack
 
 public class Duck_LSP : IFly, ISwim, ICuack
 {
-    public void Fly() => Console.WriteLine("Fly");
-    public void Swim() => Console.WriteLine("Swim");
-    public void Cuack() => Console.WriteLine("Cuack");
+    public void Fly() => WriteLine("Fly");
+    public void Swim() => WriteLine("Swim");
+    public void Cuack() => WriteLine("Cuack");
 }
 
 public class RubberDuck_LSP : ISwim, ICuack
 {
-    public void Swim() => Console.WriteLine("Swim");
-    public void Cuack() => Console.WriteLine("Cuack");
+    public void Swim() => WriteLine("Swim");
+    public void Cuack() => WriteLine("Cuack");
 }

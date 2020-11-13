@@ -9,15 +9,15 @@ public class AllInOnePrinter : ISmartDevice
 {
     public void Print()
     {
-        Console.WriteLine("Printing ...");
+        WriteLine("Printing ...");
     }
     public void Fax()
     {
-        Console.WriteLine("Fax ...");
+        WriteLine("Fax ...");
     }
     public void Scan()
     {
-        Console.WriteLine("Scanning ...");
+        WriteLine("Scanning ...");
     }
 }
 
@@ -25,7 +25,7 @@ public class EconomicPrinter : ISmartDevice
 {
     public void Print()
     {
-        Console.WriteLine("Printing ...");
+        WriteLine("Printing ...");
     }
     public void Fax()
     {

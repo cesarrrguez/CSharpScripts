@@ -5,12 +5,12 @@ public class SqlContext : IDataContext
 {
     public void AddRow(string table, object value)
     {
-        Console.WriteLine($"{table} [{value}] added to sql database");
+        WriteLine($"{table} [{value}] added to sql database");
     }
 
     public void DeleteRow(string table, Guid value)
     {
-        Console.WriteLine($"{table} [{value}] deleted from sql database");
+        WriteLine($"{table} [{value}] deleted from sql database");
     }
 }
 
@@ -18,12 +18,12 @@ public class XmlContext : IDataContext
 {
     public void AddRow(string table, object value)
     {
-        Console.WriteLine($"{table} [{value}] added to XML document");
+        WriteLine($"{table} [{value}] added to XML document");
     }
 
     public void DeleteRow(string table, Guid value)
     {
-        Console.WriteLine($"{table} [{value}] deleted from XML document");
+        WriteLine($"{table} [{value}] deleted from XML document");
     }
 }
 

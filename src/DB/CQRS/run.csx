@@ -18,7 +18,7 @@ var product = new Product
 
 productWriteService.CreateProduct(product);
 
-Console.WriteLine();
+WriteLine();
 
 // Read all Products
 var productReadService = new ProductReadService(new ProductReadRepository());
@@ -26,5 +26,5 @@ var productReadService = new ProductReadService(new ProductReadRepository());
 var products = productReadService.GetAllProducts();
 foreach (var product in products)
 {
-    Console.WriteLine(product);
+    WriteLine(product);
 }

@@ -1,8 +1,8 @@
 using System.Threading;
 
-Console.WriteLine("Processes:");
+WriteLine("Processes:");
 PrintProcesses();
-Console.WriteLine();
+WriteLine();
 
 PrintProcessById(15000);
 
@@ -15,7 +15,7 @@ public void PrintProcesses()
     var processes = Process.GetProcesses().OrderBy(x => x.Id).ToList();
 
     foreach (var process in processes)
-        Console.WriteLine("PID: {0}, Name: {1}", process.Id, process.ProcessName);
+        WriteLine("PID: {0}, Name: {1}", process.Id, process.ProcessName);
 }
 
 public void PrintProcessById(int pid)
@@ -25,17 +25,17 @@ public void PrintProcessById(int pid)
     try
     {
         process = Process.GetProcessById(pid);
-        Console.WriteLine("PID: {0}, Name: {1}", process.Id, process.ProcessName);
+        WriteLine("PID: {0}, Name: {1}", process.Id, process.ProcessName);
 
         // Get process threads
         var threads = process.Threads;
 
         foreach (ProcessThread thread in threads)
-            Console.WriteLine("Thread ID: {0}, Start: {1}, Priority: {2}", thread.Id, thread.StartTime, thread.PriorityLevel);
+            WriteLine("Thread ID: {0}, Start: {1}, Priority: {2}", thread.Id, thread.StartTime, thread.PriorityLevel);
     }
     catch (ArgumentException ex)
     {
-        Console.WriteLine(ex.Message);
+        WriteLine(ex.Message);
     }
 }
 
@@ -49,7 +49,7 @@ public Process InitProcess()
     }
     catch (InvalidOperationException ex)
     {
-        Console.WriteLine(ex.Message);
+        WriteLine(ex.Message);
     }
 
     return process;
@@ -63,6 +63,6 @@ public void KillProcess(Process process)
     }
     catch (InvalidOperationException ex)
     {
-        Console.WriteLine(ex.Message);
+        WriteLine(ex.Message);
     }
 }

@@ -56,7 +56,7 @@ public static class App
         try
         {
             Log.Warning("Dividing {A} by {B}", a, b);
-            Console.WriteLine(a / b);
+            WriteLine(a / b);
         }
         catch (Exception ex)
         {

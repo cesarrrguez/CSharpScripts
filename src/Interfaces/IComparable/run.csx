@@ -16,18 +16,18 @@ var rectangles = new Rectangle[]
 };
 
 foreach (var rectangle in rectangles)
-    Console.WriteLine(rectangle);
+    WriteLine(rectangle);
 
-Console.WriteLine("\nSort:");
+WriteLine("\nSort:");
 Array.Sort(rectangles);
 
 foreach (var rectangle in rectangles)
-    Console.WriteLine(rectangle);
+    WriteLine(rectangle);
 
-Console.WriteLine("\nOperators:");
+WriteLine("\nOperators:");
 if (rectangles[1] < rectangles[2])
-    Console.WriteLine("Rectangle 1 is smaller");
+    WriteLine("Rectangle 1 is smaller");
 
 if (rectangles[2] > rectangles[1])
-    Console.WriteLine("Rectangle 2 is greatter");
+    WriteLine("Rectangle 2 is greatter");
 

@@ -11,44 +11,44 @@ values.AddLast(11);
 values.AddLast(15);
 
 // Print
-Console.WriteLine($"List: {String.Join(", ", values)}");
+WriteLine($"List: {String.Join(", ", values)}");
 
 // Nodes
- Console.Write("Nodes: ");
+Write("Nodes: ");
 for (LinkedListNode<int> node = values.First; node != null; node = node.Next)
 {
     int value = node.Value;
-    Console.Write($"({value})");
+    Write($"({value})");
 
     if (node.Next != null)
     {
-        Console.Write(" -> ");
+        Write(" -> ");
     }
     else
     {
-        Console.WriteLine();
+        WriteLine();
     }
 }
 
 // Contains
-Console.WriteLine($"Contains 5: {values.Contains(5)}");
+WriteLine($"Contains 5: {values.Contains(5)}");
 
 // Remove node
 values.Remove(values.First);
-Console.WriteLine($"Remove node: {String.Join(", ", values)}");
+WriteLine($"Remove node: {String.Join(", ", values)}");
 
 // Remove value
 values.Remove(5);
-Console.WriteLine($"Remove value: {String.Join(", ", values)}");
+WriteLine($"Remove value: {String.Join(", ", values)}");
 
 // Remove first
 values.RemoveFirst();
-Console.WriteLine($"Remove first: {String.Join(", ", values)}");
+WriteLine($"Remove first: {String.Join(", ", values)}");
 
 // Remove last
 values.RemoveLast();
-Console.WriteLine($"Remove last: {String.Join(", ", values)}");
+WriteLine($"Remove last: {String.Join(", ", values)}");
 
 // Clear
 values.Clear();
-Console.WriteLine($"Clear: {String.Join(", ", values)}");
+WriteLine($"Clear: {String.Join(", ", values)}");

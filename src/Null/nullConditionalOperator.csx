@@ -9,7 +9,7 @@ Person person = new Person
 };
 
 int? numberOfShoes = person.Shoes?.Count ?? 0;
-Console.WriteLine(numberOfShoes);
+WriteLine(numberOfShoes);
 
 public class Person
 {

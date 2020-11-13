@@ -17,7 +17,7 @@ heap.Print();
 // Remove min
 for (int i = 1; i < 7; i++)
 {
-    Console.WriteLine($"Remove min: {heap.RemoveMin()}");
+    WriteLine($"Remove min: {heap.RemoveMin()}");
 
     heap.Print();
 }

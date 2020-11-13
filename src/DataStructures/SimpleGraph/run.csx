@@ -20,4 +20,4 @@ node5.Nodes.Add(node2);
 node5.Nodes.Add(node1);
 node2.Nodes.Add(node1);
 
-Console.WriteLine(node6.GetPath());
+WriteLine(node6.GetPath());

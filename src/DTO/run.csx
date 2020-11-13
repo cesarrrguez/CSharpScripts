@@ -42,4 +42,4 @@ var manualMeetingMapper = new ManualMeetingMapper();
 var meetingDTO = manualMeetingMapper.CreateDTO(meeting);
 
 // Print DTO
-Console.WriteLine(meetingDTO.PropertyList());
+WriteLine(meetingDTO.PropertyList());
