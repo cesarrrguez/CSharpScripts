@@ -31,6 +31,7 @@ This repository contains _C#_ scripts.
 - Files
 - Threads, Asynchronous Calls
 - Reflection
+- Refactoring
 - Email, SMTP, POP3, OpenPop
 - XML, JSON, CSV, Zip, QR, USB
 - ...
