@@ -1,8 +1,3 @@
-// Stack
-// ----------------------------------------
-// LIFO (last in first out) data structure.
-// ----------------------------------------
-
 using System.Collections;
 
 var stack = new Stack();

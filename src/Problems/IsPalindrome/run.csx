@@ -1,8 +1,3 @@
-// Is palindrome
-// ---------------------------------
-// Verify if a text is a palindrome.
-// ---------------------------------
-
 var text = "Eva, can I see bees in a cave?";
 
 var result = IsPalindrome(text);

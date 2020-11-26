@@ -1,9 +1,3 @@
-// Func
-// -----------------------------------------------------------
-// Is a generic delegate type.
-// It has zero or more input parameters and one out parameter.
-// -----------------------------------------------------------
-
 // Declare function
 var function = new Func<int, int, int>(Sum);
 var value1 = 5;

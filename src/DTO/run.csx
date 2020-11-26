@@ -1,6 +1,3 @@
-// DTO: Data Transfer Object
-// ---------------------------------
-
 #load "entities.csx"
 #load "DTO.csx"
 #load "mapper.csx"

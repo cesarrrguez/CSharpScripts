@@ -1,9 +1,3 @@
-// CQRS = Command Query Responsability Segregation
-// ----------------------------------------------
-// Commands = Change the state
-// Queries = Results return
-// ----------------------------------------------
-
 #load "data.csx"
 #load "services.csx"
 

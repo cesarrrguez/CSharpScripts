@@ -1,8 +1,3 @@
-// IEnumerator
-// ----------------------------------------------------------
-// Supports a simple iteration over a non-generic collection.
-// ----------------------------------------------------------
-
 #load "entities.csx"
 
 var course = new Course();

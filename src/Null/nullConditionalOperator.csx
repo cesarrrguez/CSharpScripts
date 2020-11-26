@@ -1,7 +1,3 @@
-// The null conditional is a form of a member access operator. With a null conditional operator, 
-// the expression A?.B evaluates to B if the left operand (A) is non-null; 
-// otherwise, it evaluates to null.
-
 Person person = new Person
 {
     Name = "Joe",

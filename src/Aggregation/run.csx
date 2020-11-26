@@ -1,10 +1,3 @@
-// Aggregation
-// ---------------------------------
-// Description: 'has-a' relationship
-// ---------------------------------
-// UML: Customer <> ----- Order
-// ---------------------------------
-
 #load "entities.csx"
 
 // Create Customer

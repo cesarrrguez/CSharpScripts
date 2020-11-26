@@ -1,8 +1,3 @@
-// Queue
-// -----------------------------------------
-// FIFO (first in first out) data structure.
-// -----------------------------------------
-
 #load "entities.csx"
 
 var queue = new Queue<string>();

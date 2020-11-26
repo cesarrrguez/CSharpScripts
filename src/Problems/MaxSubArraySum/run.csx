@@ -1,9 +1,3 @@
-// Max SubArray Sum
-// -----------------------------------------------------------------------------------
-// You are given a one dimensional array that may contain both positive and negative 
-// integers, find the sum of contiguous subarray of numbers which has the largest sum.
-// -----------------------------------------------------------------------------------
-
 int[] array = { -2, -3, 4, -1, -2, 1, 5, -3 };
 
 var result = MaxSubArraySum(array);

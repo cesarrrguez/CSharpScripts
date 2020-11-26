@@ -1,9 +1,3 @@
-// Enum
-// -----------------------------------------------------
-// An enum (or enumeration type) is used to assign 
-// constant names to a group of numeric integer values.
-// -----------------------------------------------------
-
 enum Tendency { None, Grow, Fall };
 enum Transition { Same = 0, Soft = 23, Hard = 65, Invalid = 78 };
 

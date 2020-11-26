@@ -1,8 +1,3 @@
-// Common ancestor
-// ----------------------------------------
-// Get common ancestor for two graph nodes.
-// ----------------------------------------
-
 var tree = BuildTree();
 
 WriteLine($"The common ancestor is {tree.GetCommonAncestor(10, 6).Value}");

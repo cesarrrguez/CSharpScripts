@@ -1,8 +1,3 @@
-// Stack
-// ----------------------------------------
-// LIFO (last in first out) data structure.
-// ----------------------------------------
-
 #load "entities.csx"
 
 var stack = new Stack<string>();

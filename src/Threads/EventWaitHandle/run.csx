@@ -1,8 +1,3 @@
-// Event Wait Handle
-// ------------------------------------------
-// Represents a thread synchronization event.
-// ------------------------------------------
-
 using System.Threading;
 
 EventWaitHandle handler = new AutoResetEvent(false);

@@ -1,7 +1,3 @@
-// The Conditional operator provides a fast and simple way of writing if-else statements:
-// condition ? first_expression : second_expression;
-// If the condition is true, return the first expression, and if the condition is false, 
-// return the second expression.
 var number = 6;
 ConditionalOperatorMethod1(number);
 ConditionalOperatorMethod2(number);

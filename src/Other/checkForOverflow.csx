@@ -1,10 +1,3 @@
-// Checked
-// ----------------------------------------------------------------
-// Block keyword that enables arithmetic overflow checking. 
-// Normally, if an integer operation exceeds the maximum or minimum 
-// value that the type can handle, the operation proceeds anyway.
-// ----------------------------------------------------------------
-
 int number = int.MaxValue; // 2147483647
 
 TestDefault(number);

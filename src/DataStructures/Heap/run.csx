@@ -1,8 +1,3 @@
-// Heap
-// ---------------
-// Priority queue.
-// ----------------
-
 #load "entities.csx"
 
 var heap = new Heap<int>(13);

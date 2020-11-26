@@ -1,8 +1,3 @@
-// Deadlock
-// ----------------------------------------------------------
-//  State in which each thread is waiting for another thread.
-// ----------------------------------------------------------
-
 using System.Threading;
 
 var control1 = new object();

@@ -1,9 +1,3 @@
-// Binary Tree
-// ------------------------------------------------------------
-// Data structure in which each node has at most two children, 
-// which are referred to as the left child and the right child.
-// ------------------------------------------------------------
-
 #load "entities.csx"
 
 var tree = new BinaryTree<int>();

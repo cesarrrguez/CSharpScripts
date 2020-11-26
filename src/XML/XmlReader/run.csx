@@ -1,9 +1,3 @@
-// XmlReader
-// -----------------------
-// * Faster
-// * Less memory consuming
-// -----------------------
-
 #load "utils.csx"
 
 using System.Xml;

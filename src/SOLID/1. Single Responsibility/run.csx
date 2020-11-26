@@ -1,8 +1,3 @@
-// SRP (Single Responsibility Principle)
-// -------------------------------------------------
-// A class should only have a single responsibility.
-// -------------------------------------------------
-
 #load "no.csx"
 #load "yes.csx"
 #load "data.csx"

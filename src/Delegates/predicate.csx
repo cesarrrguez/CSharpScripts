@@ -1,10 +1,3 @@
-// Predicate
-// --------------------------------------------------------------
-// It represents a method containing a set of criteria and checks 
-// whether the passed parameter meets those criteria.
-// Must take one input parameter and return a boolean.
-// --------------------------------------------------------------
-
 var numbers = new List<int> { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10 };
 
 // Find all evens

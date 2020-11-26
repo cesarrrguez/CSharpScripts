@@ -1,8 +1,3 @@
-// Repeat word counter
-// -------------------------------------------
-// Get the number of times a word is repeated.
-// -------------------------------------------
-
 var text = "All you need is love, love, Love is all you need";
 var word = "love";
 

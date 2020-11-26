@@ -1,8 +1,3 @@
-// Mutex
-// -----------------------------------------------------------------------------------
-// A synchronization primitive that can also be used for interprocess synchronization.
-// -----------------------------------------------------------------------------------
-
 using System.Threading;
 
 using (var mutex = new Mutex(false, "Test"))

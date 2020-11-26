@@ -1,10 +1,3 @@
-// Paired characters
-// --------------------------------------------------------------------------------------
-// Given a string formed by (), [] and {}, verify if the corresponding pairs are correct.
-// Input: [()]{}{[()()]()} Ok
-// Input: [(]) Error
-// --------------------------------------------------------------------------------------
-
 var input = "[()]{}{[()()]()}";
 WriteLine($"{input}: {CheckPairedCharacters(input)}");
 

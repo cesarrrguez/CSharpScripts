@@ -1,9 +1,3 @@
-// XmlDocument
-// -----------------------
-// * More flexible
-// * XPath
-// -----------------------
-
 #load "utils.csx"
 
 using System.Xml;

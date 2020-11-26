@@ -1,7 +1,3 @@
-// The null coalescing operator returns left-hand operand if the operand is not null, 
-// and if it is, the right-hand operand is returned. Using this operator, we can avoid 
-// Null Reference Exception, which is thrown when we try to use something that is null.
-
 string variable = string.Empty;
 string message = string.Empty;
 

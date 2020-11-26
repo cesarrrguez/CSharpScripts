@@ -1,8 +1,3 @@
-// Queue
-// -----------------------------------------
-// FIFO (first in first out) data structure.
-// -----------------------------------------
-
 using System.Collections;
 
 var queue = new Queue();

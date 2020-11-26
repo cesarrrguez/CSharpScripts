@@ -1,8 +1,3 @@
-// Count Down Event
-// ------------------------------------------------------------------------------------
-// Represents a synchronization primitive that is signaled when its count reaches zero.
-// ------------------------------------------------------------------------------------
-
 using System.Threading;
 
 var counter = new CountdownEvent(5);

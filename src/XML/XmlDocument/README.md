@@ -1,0 +1,4 @@
+# XmlDocument
+
+- More flexible.
+- XPath.

@@ -2,12 +2,6 @@
 
 public static class Algorithms
 {
-    // Bubble sort
-    // ------------------------------------------------------------------------
-    // Repeatedly steps through the array, compares adjacent elements and swaps 
-    // them if they are in the wrong order. 
-    // The pass through the array is repeated until the array is sorted.
-    // ------------------------------------------------------------------------
     public static void BubbleSort(int[] array)
     {
         // Steps
@@ -22,10 +16,6 @@ public static class Algorithms
         }
     }
 
-    // Insertion sort
-    // ------------------------------------------------------------------------
-    // Builds the final sorted array one item at a time.
-    // ------------------------------------------------------------------------
     public static void InsertionSort(int[] array)
     {
         int hole;
@@ -45,12 +35,6 @@ public static class Algorithms
         }
     }
 
-    // Selection sort
-    // ------------------------------------------------------------------------
-    // The algorithm proceeds by finding the smallest element in the unsorted 
-    // array, swapping it with the left most unsorted element, and moving the 
-    // sublist boundaries one element to the right.
-    // ------------------------------------------------------------------------
     public static void SelectionSort(int[] array)
     {
         int min;
@@ -72,14 +56,6 @@ public static class Algorithms
         }
     }
 
-    // Merge sort
-    // ------------------------------------------------------------------------
-    // 1. Divide the unsorted list into n sublists, each containing one element 
-    // (a list of one element is considered sorted).
-    // ------------------------------------------------------------------------
-    // 2. Repeatedly merge sublists to produce new sorted sublists until there 
-    // is only one sublist remaining. This will be the sorted list.
-    // ------------------------------------------------------------------------
     public static int[] MergeSort(int[] array1, int[] array2)
     {
         var result = new int[array1.Length + array2.Length];
@@ -125,12 +101,6 @@ public static class Algorithms
         return result;
     }
 
-    // Quick sort
-    // ------------------------------------------------------------------------
-    // It works by selecting a 'pivot' element from the array and partitioning 
-    // the other elements into two sub-arrays, according to whether they are less
-    // than or greater than the pivot. The sub-arrays are then sorted recursively.
-    // ------------------------------------------------------------------------
     public static void QuickSort(int[] array)
     {
         QuickSort(array, 0, array.Length - 1);

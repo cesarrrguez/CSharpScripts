@@ -1,8 +1,3 @@
-// Words repetitions
-// --------------------------------------------------
-// Get words repetitions for all the words of a text.
-// --------------------------------------------------
-
 var text = "All you need is love, love, Love is all you need";
 
 var result = GetWordsRepetitions(text);

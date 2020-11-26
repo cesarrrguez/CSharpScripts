@@ -1,8 +1,3 @@
-// Explicit conversions require a cast operator. 
-// In addition, the destination and source variables should be compatible
-// Conversion with the assistance of a helper class such as Convert enables us 
-// to convert between non-compatible types. This does not need the use of a cast operator.  
-
 int number = 0;
 decimal money = 9500.34m;
 
