@@ -2,8 +2,5 @@
 
 public class UserService : IUserService
 {
-    public string GetName()
-    {
-        return "César Rodríguez";
-    }
+    public string GetName() => "César Rodríguez";
 }

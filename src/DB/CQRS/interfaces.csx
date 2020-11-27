@@ -19,5 +19,3 @@ public interface IProductReadService
 {
     IEnumerable<Product> GetAllProducts();
 }
-
-

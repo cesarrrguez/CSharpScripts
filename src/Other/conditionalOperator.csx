@@ -19,7 +19,7 @@ private void ConditionalOperatorMethod1(int number)
 
 private void ConditionalOperatorMethod2(int number)
 {
-    string message = string.Empty;
+    var message = string.Empty;
 
     message = number > 5 ? $"{number} is greater than 5!" : $"{number} is even or less than 5!";
     WriteLine(message);

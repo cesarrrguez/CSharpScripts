@@ -76,11 +76,9 @@ public static List<T> Clone<T>(this List<T> list)
 
 public static T DeepClone<T>(this T obj)
 {
-    if (!typeof(T).IsSerializable)
-        throw new ArgumentException("The class " + typeof(T).ToString() + " is not serializable");
+    if (!typeof(T).IsSerializable) throw new ArgumentException("The class " + typeof(T).ToString() + " is not serializable");
 
-    if (obj == null)
-        return default;
+    if (obj == null) return default;
 
     using var stream = new MemoryStream();
     try

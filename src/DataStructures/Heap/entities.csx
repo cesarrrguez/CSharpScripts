@@ -59,7 +59,9 @@ public class Heap<T>
     public void Print()
     {
         for (var i = 0; i <= Size; i++)
+        {
             Write($"{Elements[i]}, ");
+        }
 
         WriteLine();
     }

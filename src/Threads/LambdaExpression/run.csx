@@ -3,7 +3,7 @@ using System.Threading;
 var thread = new Thread(() => Sum(3, 7));
 thread.Start();
 
-for (int i = 0; i < 10; i++)
+for (var i = 0; i < 10; i++)
 {
     int temp = i;  // local variable needed
     var thread = new Thread(() => Write("{0} ", temp));

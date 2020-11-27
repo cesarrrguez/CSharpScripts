@@ -3,8 +3,6 @@
 
 public class ProcessController
 {
-    public ProcessController() { }
-
     public class SpecificController
     {
         public IRunProcess Run => new RunProcess();
@@ -36,9 +34,7 @@ public class RunProcess : IRunProcess
         var output = new RunOutput();
         var calculation = new Calculation();
 
-        var result = calculation.Sum(parameters.Value1, parameters.Value2);
-
-        output.Result = result;
+        output.Result = calculation.Sum(parameters.Value1, parameters.Value2);
 
         return output;
     }

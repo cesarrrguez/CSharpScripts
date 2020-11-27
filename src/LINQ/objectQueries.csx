@@ -56,8 +56,11 @@ var groupJoin = from u in users
                 into tempList
                 select new { User = u.FullName, tempList };
 WriteLine("Group join:");
+
 foreach (var item in groupJoin)
+{
     WriteLine($"\tUser: {item.User}, Curses: {string.Join(", ", item.tempList)}");
+}
 
 // Zip
 var zip = users.Zip(courses, (u, c) => u + " => " + c).ToList();
@@ -70,5 +73,8 @@ WriteLine($"Order by + Then by: {string.Join(", ", orderByThenBy)}");
 // Group by
 var groupBy = users.GroupBy(u => u.FullName.Split(" ")[1]).ToList();
 WriteLine("Group by:");
+
 foreach (var item in groupBy)
+{
     WriteLine($"\tLastName: {item.Key}, Users: {string.Join(", ", item)}");
+}

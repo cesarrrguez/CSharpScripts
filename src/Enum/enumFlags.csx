@@ -1,7 +1,7 @@
 // The output for this code will be "BlackMamba, CottonMouth, Wiper".
 // When the flags attribute is removed, the output will remain 14.
 
-int snakes = 14;
+var snakes = 14;
 WriteLine((Reptile)snakes);
 
 [Flags]

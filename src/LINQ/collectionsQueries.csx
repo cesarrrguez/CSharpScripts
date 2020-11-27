@@ -9,23 +9,23 @@ WriteLine(new string(Enumerable.Repeat('-', 67).ToArray()));
 
 // Except
 var except = list1.Except(list2).ToList();
-WriteLine($"Except: {String.Join(", ", except)}");
+WriteLine($"Except: {string.Join(", ", except)}");
 
 // Intersect
 var intersect = list1.Intersect(list2).ToList();
-WriteLine($"Intersect: {String.Join(", ", intersect)}");
+WriteLine($"Intersect: {string.Join(", ", intersect)}");
 
 // Union
 var union = list1.Union(list2).ToList();
-WriteLine($"Union: {String.Join(", ", union)}");
+WriteLine($"Union: {string.Join(", ", union)}");
 
 // Concat
 var concat = list1.Concat(list2).ToList();
-WriteLine($"Concat: {String.Join(", ", concat)}");
+WriteLine($"Concat: {string.Join(", ", concat)}");
 
 // Distinct
 var distinct = concat.Distinct().ToList();
-WriteLine($"Distinct: {String.Join(", ", distinct)}");
+WriteLine($"Distinct: {string.Join(", ", distinct)}");
 
 // Sequence equal
 var sequenceEqual = list1.SequenceEqual(list2);

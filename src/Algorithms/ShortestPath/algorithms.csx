@@ -56,13 +56,10 @@ public static class Algorithms
 
                     for (var k = 0; k < graph.Nodes; k++)
                     {
-                        if (graph.GetAdjacency(j, k) == 1)
+                        if (graph.GetAdjacency(j, k) == 1 && info[k, 1] == int.MaxValue)
                         {
-                            if (info[k, 1] == int.MaxValue)
-                            {
-                                info[k, 1] = i + 1;
-                                info[k, 2] = j;
-                            }
+                            info[k, 1] = i + 1;
+                            info[k, 2] = j;
                         }
                     }
                 }

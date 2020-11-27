@@ -12,13 +12,13 @@ var array = new int[] { 1, 43, 5, 202, 101, 10 };
 Array.Sort(array);
 
 // Print the values of the array
-WriteLine($"Values: {String.Join(", ", array)}");
+WriteLine($"Values: {string.Join(", ", array)}");
 
 // Value to search for
 var target = 101;
 
 // Result position
-int position = 0;
+var position = 0;
 
 // Recursive implementation
 StartImplementation("Recursive implementation:");
@@ -55,7 +55,11 @@ public void FinishImplementation()
 public void PrintBinarySearchResult(int[] array, int position)
 {
     if (position >= 0)
+    {
         WriteLine($"Item {array[position]} found at position {position + 1}");
+    }
     else
+    {
         WriteLine("Item not found");
+    }
 }

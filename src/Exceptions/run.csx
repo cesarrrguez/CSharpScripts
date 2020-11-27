@@ -9,7 +9,7 @@ var heating = new Heating("Cool Heating X", 20);
 
 try
 {
-    for (int i = 0; i < 10; i++)
+    for (var i = 0; i < 10; i++)
     {
         heating.Work(20);
     }
@@ -20,7 +20,7 @@ catch (HeatingException e)
 {
     WriteLine("\nHeatingException succeed");
     WriteLine(separator);
-    Console.ForegroundColor = ConsoleColor.Red;
+    ForegroundColor = ConsoleColor.Red;
 
     WriteLine("Class: {0}", e.TargetSite.DeclaringType);
     WriteLine("Type: {0}", e.TargetSite.MemberType);
@@ -65,7 +65,7 @@ catch (Exception e)
 finally
 {
     // We can close and dispose objects here
-    Console.ResetColor();
+    ResetColor();
     WriteLine();
     heating.TurnOff();
 }

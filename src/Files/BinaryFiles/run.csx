@@ -16,8 +16,8 @@ File.Delete(path);
 
 // Writing
 WriteLine("\nWriting ...");
-FileUtil.WriteData<User>(user1, path);
-FileUtil.WriteData<User>(user2, path);
+FileUtil.WriteData(user1, path);
+FileUtil.WriteData(user2, path);
 
 // Reading
 WriteLine("Reading ...\n");

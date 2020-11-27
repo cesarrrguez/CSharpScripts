@@ -28,8 +28,5 @@ public sealed class Pizza
         };
     }
 
-    public override string ToString()
-    {
-        return String.Format("A Pizza with a diameter of {0} cm", SizeDiameterCM);
-    }
+    public override string ToString() => string.Format("A Pizza with a diameter of {0} cm", SizeDiameterCM);
 }

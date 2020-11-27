@@ -44,6 +44,10 @@ var dateString = "7/6/2020";
 DateTime userDate;
 WriteLine("Building dates");
 if (DateTime.TryParse(dateString, usCulture.DateTimeFormat, System.Globalization.DateTimeStyles.None, out userDate))
+{
     WriteLine("Valid date entered (long date format): " + userDate.ToLongDateString());
+}
 else
+{
     WriteLine("Invalid date specified!");
+}

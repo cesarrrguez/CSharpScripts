@@ -7,8 +7,5 @@ public class Duck
 
 public class RubberDuck : Duck
 {
-    public override void Fly()
-    {
-        throw new NotSupportedException();
-    }
+    public override void Fly() => throw new NotSupportedException();
 }

@@ -3,10 +3,7 @@ public class MyEntity
     public int Id { get; set; }
     public string FullName { get; set; }
 
-    public override string ToString()
-    {
-        return $"MyEntity. Id: {Id}, FullName: {FullName}";
-    }
+    public override string ToString() => $"MyEntity. Id: {Id}, FullName: {FullName}";
 }
 
 public class ExternalEntity
@@ -24,8 +21,5 @@ public class ExternalEntity
         };
     }
 
-    public override string ToString()
-    {
-        return $"ExternalEntity. Id: {Id}, FirstName: {FirstName}, LastName: {LastName}";
-    }
+    public override string ToString() => $"ExternalEntity. Id: {Id}, FirstName: {FirstName}, LastName: {LastName}";
 }

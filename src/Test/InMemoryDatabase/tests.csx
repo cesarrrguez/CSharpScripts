@@ -44,8 +44,7 @@ public static class InitRepositoryTests
     [AssemblyInitialize()]
     public static void Setup(TestContext context)
     {
-        if (context == null)
-            throw new ArgumentNullException(nameof(context));
+        if (context == null) throw new ArgumentNullException(nameof(context));
 
         TestDataContext.PrepareContext();
     }

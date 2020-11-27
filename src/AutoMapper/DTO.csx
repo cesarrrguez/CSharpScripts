@@ -5,8 +5,5 @@ public class UserDTO
     public string Street { get; }
     public string City { get; }
 
-    public override string ToString()
-    {
-        return $"User. Id: {Id}, Name: {Name}, Street: {Street}, City: {City}";
-    }
+    public override string ToString() => $"User. Id: {Id}, Name: {Name}, Street: {Street}, City: {City}";
 }

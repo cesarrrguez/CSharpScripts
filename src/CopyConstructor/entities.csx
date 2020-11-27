@@ -22,8 +22,5 @@ public class User
     // Copy constructor alternative
     //public User(User user) : this(user.Name, user.Age) { }
 
-    public override string ToString()
-    {
-        return $"User. Name: {Name}, Age: {Age}";
-    }
+    public override string ToString() => $"User. Name: {Name}, Age: {Age}";
 }

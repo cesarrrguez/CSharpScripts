@@ -22,9 +22,13 @@ public class PostController : IPostController
         var posts = _postService.GetAllPosts(postOptionsInput).Result;
 
         if (posts?.Count > 0)
+        {
             posts.ForEach(post => WriteLine($"{post}\n"));
+        }
         else
+        {
             WriteLine("No posts");
+        }
     }
 
     public void GetPost(int id)

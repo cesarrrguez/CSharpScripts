@@ -2,7 +2,7 @@
 
 using System.Threading;
 
-for (int i = 0; i < 10; i++)
+for (var i = 0; i < 10; i++)
 {
     ThreadPool.QueueUserWorkItem(Create, i);
 }

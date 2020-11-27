@@ -2,7 +2,7 @@
 
 var count = 1000;
 var array = new int[count];
-Random random = new Random();
+var random = new Random();
 
 for (var i = 0; i < count; i++)
 {

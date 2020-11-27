@@ -49,10 +49,7 @@ public class DerivedClass : BaseClass
         _number = number;
     }
 
-    public override string ToString()
-    {
-        return string.Format("Number format is {0}", _number);
-    }
+    public override string ToString() => string.Format("Number format is {0}", _number);
 
     // Protected implementation of Dispose pattern
     protected override void Dispose(bool disposing)

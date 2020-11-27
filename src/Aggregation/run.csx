@@ -1,10 +1,10 @@
 #load "entities.csx"
 
 // Create Customer
-Customer customer = new Customer("James");
+var customer = new Customer("James");
 
 // Create Order
-Order order = new Order(new Guid(), DateTime.Now);
+var order = new Order(new Guid(), DateTime.Now);
 
 // Print Customer
 WriteLine(customer);

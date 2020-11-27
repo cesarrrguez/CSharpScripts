@@ -1,6 +1,6 @@
 // Null-coalescing assignment
-List<int> numbers = null;
-int? i = null;
+List<int> numbers;
+int? i;
 
 numbers ??= new List<int>();
 numbers.Add(i ??= 17);

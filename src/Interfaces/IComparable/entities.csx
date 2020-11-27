@@ -10,10 +10,7 @@ public class Rectangle : IComparable
         Width = width;
     }
 
-    public override string ToString()
-    {
-        return $"Rectangle. Length={Length}, Width={Width}, Area={Area}";
-    }
+    public override string ToString() => $"Rectangle. Length={Length}, Width={Width}, Area={Area}";
 
     public int CompareTo(object obj)
     {

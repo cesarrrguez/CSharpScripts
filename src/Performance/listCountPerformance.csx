@@ -3,7 +3,9 @@ using System.Diagnostics.CodeAnalysis;
 var list = new List<int>();
 
 for (var i = 0; i < 10000000; i++)
+{
     list.Add(i);
+}
 
 // Count() > 0
 var s1 = Stopwatch.StartNew();

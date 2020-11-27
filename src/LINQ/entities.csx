@@ -7,14 +7,11 @@ public class User
     public User(int id, string fullName, int courseId)
     {
         Id = id;
-        FullName = fullName;
+        FullName = fullName ?? throw new ArgumentNullException(nameof(fullName));
         CourseId = courseId;
     }
 
-    public override string ToString()
-    {
-        return $"User (Id: {Id}, FullName: {FullName}, CourseId: {CourseId})";
-    }
+    public override string ToString() => $"User (Id: {Id}, FullName: {FullName}, CourseId: {CourseId})";
 }
 
 public class Course
@@ -28,8 +25,5 @@ public class Course
         Title = city;
     }
 
-    public override string ToString()
-    {
-        return $"Course (Id: {Id}, Title: {Title})";
-    }
+    public override string ToString() => $"Course (Id: {Id}, Title: {Title})";
 }

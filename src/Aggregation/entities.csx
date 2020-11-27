@@ -16,7 +16,7 @@ public class Customer
 
     public override string ToString()
     {
-        string result = $"Customer. Name: {_name}";
+        var result = $"Customer. Name: {_name}";
 
         if (_order != null)
             result += $"\n{_order}";

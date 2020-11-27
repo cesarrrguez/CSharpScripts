@@ -6,19 +6,14 @@ public class MyObject
 
     public override bool Equals(object obj)
     {
-        if (obj == null)
-            return false;
+        if (obj == null) return false;
 
-        if (GetType() != obj.GetType())
-            return false;
+        if (GetType() != obj.GetType()) return false;
 
         return (MyObject)obj == this;
     }
 
-    public override int GetHashCode()
-    {
-        return Property1 ^ Property2 ^ Property3;
-    }
+    public override int GetHashCode() => Property1 ^ Property2 ^ Property3;
 
     public static bool operator ==(MyObject obj1, MyObject obj2)
     {

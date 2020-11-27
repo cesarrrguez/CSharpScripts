@@ -20,8 +20,7 @@ while (!exit)
     Thread.Sleep(100);
     WriteLine("Main - {0}", i++);
 
-    if (i == 10)
-        exit = true;
+    if (i == 10) exit = true;
 }
 
 public void ThreadMessage()

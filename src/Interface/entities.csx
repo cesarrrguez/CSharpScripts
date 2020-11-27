@@ -24,7 +24,7 @@ public class Sum : IOperation
 
 public class Subtract : IOperation
 {
-    private double r = 0;
+    private double r;
 
     public void Calculate(double a, double b)
     {

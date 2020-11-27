@@ -11,7 +11,7 @@ values.AddLast(11);
 values.AddLast(15);
 
 // Print
-WriteLine($"List: {String.Join(", ", values)}");
+WriteLine($"List: {string.Join(", ", values)}");
 
 // Nodes
 Write("Nodes: ");
@@ -35,20 +35,20 @@ WriteLine($"Contains 5: {values.Contains(5)}");
 
 // Remove node
 values.Remove(values.First);
-WriteLine($"Remove node: {String.Join(", ", values)}");
+WriteLine($"Remove node: {string.Join(", ", values)}");
 
 // Remove value
 values.Remove(5);
-WriteLine($"Remove value: {String.Join(", ", values)}");
+WriteLine($"Remove value: {string.Join(", ", values)}");
 
 // Remove first
 values.RemoveFirst();
-WriteLine($"Remove first: {String.Join(", ", values)}");
+WriteLine($"Remove first: {string.Join(", ", values)}");
 
 // Remove last
 values.RemoveLast();
-WriteLine($"Remove last: {String.Join(", ", values)}");
+WriteLine($"Remove last: {string.Join(", ", values)}");
 
 // Clear
 values.Clear();
-WriteLine($"Clear: {String.Join(", ", values)}");
+WriteLine($"Clear: {string.Join(", ", values)}");

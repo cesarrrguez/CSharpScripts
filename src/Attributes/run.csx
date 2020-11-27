@@ -9,4 +9,6 @@ var type = typeof(Test2);
 var customAttributes = type.GetCustomAttributes(false);
 
 foreach (DataAttribute item in customAttributes)
+{
     WriteLine("{0}", item.Data);
+}

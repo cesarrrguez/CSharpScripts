@@ -6,7 +6,7 @@ var values = new List<int>() { 7, 5, 4, 3, 8 };
 values.Add(9);
 
 // Print
-WriteLine($"List: {String.Join(", ", values)}");
+WriteLine($"List: {string.Join(", ", values)}");
 
 // Count
 WriteLine($"Count: {values.Count}");
@@ -19,24 +19,24 @@ WriteLine($"Index of 5: {values.IndexOf(5)}");
 
 // Insert
 values.Insert(3, 33);
-WriteLine($"Insert 33 at 3: {String.Join(", ", values)}");
+WriteLine($"Insert 33 at 3: {string.Join(", ", values)}");
 
 // Remove at
 values.RemoveAt(5);
-WriteLine($"Remove at 5: {String.Join(", ", values)}");
+WriteLine($"Remove at 5: {string.Join(", ", values)}");
 
 // Remove
 values.Remove(5);
-WriteLine($"Remove 5: {String.Join(", ", values)}");
+WriteLine($"Remove 5: {string.Join(", ", values)}");
 
 // Reverse
 values.Reverse();
-WriteLine($"Reverse: {String.Join(", ", values)}");
+WriteLine($"Reverse: {string.Join(", ", values)}");
 
 // Sort
 values.Sort();
-WriteLine($"Sort: {String.Join(", ", values)}");
+WriteLine($"Sort: {string.Join(", ", values)}");
 
 // List - Array - list
 var array = values.ToArray();
-WriteLine($"To array: {String.Join(", ", array.ToList())}");
+WriteLine($"To array: {string.Join(", ", array.ToList())}");

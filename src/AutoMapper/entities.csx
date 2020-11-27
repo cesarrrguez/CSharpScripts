@@ -39,8 +39,5 @@ public class Address
         City = city;
     }
 
-    public override string ToString()
-    {
-        return $"Address. Street: {Street}, City: {City}";
-    }
+    public override string ToString() => $"Address. Street: {Street}, City: {City}";
 }

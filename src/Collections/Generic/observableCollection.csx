@@ -23,7 +23,7 @@ static void Collection_CollectionChanged(object sender, NotifyCollectionChangedE
         Write("New items: ");
 
         var sb = new StringBuilder();
-        var separator = String.Empty;
+        var separator = string.Empty;
 
         foreach (var item in e.NewItems)
         {
@@ -41,7 +41,7 @@ static void Collection_CollectionChanged(object sender, NotifyCollectionChangedE
         Write("Old items: ");
 
         var sb = new StringBuilder();
-        var separator = String.Empty;
+        var separator = string.Empty;
 
         foreach (var item in e.OldItems)
         {

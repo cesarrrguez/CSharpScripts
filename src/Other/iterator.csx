@@ -13,7 +13,9 @@ IEnumerable<int> Fibonacci()
     }
 }
 
-IEnumerable<int> fibonacci = Fibonacci().Take(5);
+var fibonacci = Fibonacci().Take(5);
 
 foreach (int i in fibonacci)
+{
     WriteLine(i);
+}

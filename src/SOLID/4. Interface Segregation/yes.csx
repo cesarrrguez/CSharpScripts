@@ -14,24 +14,12 @@ public interface IScanner
 
 public class AllInOnePrinter_ISP : IPrinter, IFax, IScanner
 {
-    public void Print()
-    {
-        WriteLine("Printing ...");
-    }
-    public void Fax()
-    {
-        WriteLine("Faxing ...");
-    }
-    public void Scan()
-    {
-        WriteLine("Scanning ...");
-    }
+    public void Print() => WriteLine("Printing ...");
+    public void Fax() => WriteLine("Faxing ...");
+    public void Scan() => WriteLine("Scanning ...");
 }
 
 public class EconomicPrinter_ISP : IPrinter
 {
-    public void Print()
-    {
-        WriteLine("Printing ...");
-    }
+    public void Print() => WriteLine("Printing ...");
 }

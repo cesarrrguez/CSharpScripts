@@ -11,7 +11,9 @@ public static class EncryptionUtil
         var hash = sha1.ComputeHash(data);
 
         foreach (byte b in hash)
+        {
             sb.Append(b.ToString("x2").ToLower());
+        }
 
         return sb.ToString();
     }
@@ -25,7 +27,9 @@ public static class EncryptionUtil
         var hash = sha256.ComputeHash(data);
 
         foreach (byte b in hash)
+        {
             sb.Append(b.ToString("x2").ToLower());
+        }
 
         return sb.ToString();
     }

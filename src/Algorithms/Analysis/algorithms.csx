@@ -52,7 +52,7 @@ public static class Algorithms
     {
         var maxSum = 0; // 1
 
-        for (int i = 0; i < array.Length; i++) // (2n2+3n)*n = 2n3+3n2
+        for (var i = 0; i < array.Length; i++) // (2n2+3n)*n = 2n3+3n2
         {
             for (var j = 0; j < array.Length; j++) // (2n+3)*n = 2n2+3n
             {

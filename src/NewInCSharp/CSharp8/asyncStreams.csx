@@ -5,7 +5,7 @@ await foreach (var number in GenerateSequence())
 
 public async IAsyncEnumerable<int> GenerateSequence()
 {
-    for (int i = 0; i < 10; i++)
+    for (var i = 0; i < 10; i++)
     {
         WriteLine($"Before add number {i}");
         await Task.Delay(1000).ConfigureAwait(false);

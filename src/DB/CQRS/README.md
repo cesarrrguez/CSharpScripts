@@ -1,4 +1,4 @@
-# CQRS = Command Query Responsability Segregation
+# CQRS (Command Query Responsability Segregation)
 
 ## Commands
 

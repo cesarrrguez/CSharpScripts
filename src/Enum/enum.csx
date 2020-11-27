@@ -6,8 +6,12 @@ WriteLine($"Tendency: {tendency} ({(int)tendency})\n");
 
 WriteLine($"The values of the '{nameof(Tendency)}' Enum are:");
 foreach (var i in Enum.GetValues(typeof(Tendency)))
+{
     WriteLine($"{i} = {(int)i}");
+}
 
 WriteLine($"\nThe values of the '{nameof(Transition)}' Enum are:");
 foreach (var i in Enum.GetValues(typeof(Transition)))
+{
     WriteLine($"{i} = {(int)i}");
+}

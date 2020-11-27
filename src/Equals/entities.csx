@@ -20,8 +20,5 @@ public class MyObject
         return Property1.GetHashCode() ^ Property2.GetHashCode() ^ Property3.GetHashCode();
     }
 
-    public override string ToString()
-    {
-        return $"Property1: {Property1}, Property2: {Property2}, Property3: {Property3}";
-    }
+    public override string ToString() => $"Property1: {Property1}, Property2: {Property2}, Property3: {Property3}";
 }

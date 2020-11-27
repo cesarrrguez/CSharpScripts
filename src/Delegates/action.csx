@@ -7,6 +7,8 @@ action(text, times);
 
 public static void RepeatMessage(string message, int times)
 {
-    for (int i = 0; i < times; i++)
+    for (var i = 0; i < times; i++)
+    {
         WriteLine(message);
+    }
 }

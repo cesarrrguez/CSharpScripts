@@ -14,6 +14,7 @@ public class Heating
         Temperature = temperature;
         Works = true;
     }
+
     public bool IsOk() => throw new NotImplementedException();
 
     public void TurnOff()
@@ -48,8 +49,8 @@ public class Heating
                 };
 
                 // Create data exception
-                ex.Data.Add("Current temperature:", String.Format("{0} degrees", Temperature));
-                ex.Data.Add("Temperature increase:", String.Format("{0} degrees", temperatureIncrease));
+                ex.Data.Add("Current temperature:", string.Format("{0} degrees", Temperature));
+                ex.Data.Add("Temperature increase:", string.Format("{0} degrees", temperatureIncrease));
 
                 // Throw exception
                 throw ex;

@@ -12,4 +12,6 @@ WriteLine(student2);
 
 WriteLine("\nAll students:");
 for (var i = 0; i < 2; i++)
+{
     WriteLine(course[i]);
+}

@@ -173,8 +173,5 @@ public class Node<T>
         Right = null;
     }
 
-    public override string ToString()
-    {
-        return $"[{Value}]";
-    }
+    public override string ToString() => $"[{Value}]";
 }

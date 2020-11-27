@@ -11,4 +11,4 @@ set.Add(8);
 set.Add(9);
 
 // Print
-WriteLine($"Set: {String.Join(", ", set)}");
+WriteLine($"Set: {string.Join(", ", set)}");

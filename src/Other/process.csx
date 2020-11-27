@@ -15,7 +15,9 @@ public void PrintProcesses()
     var processes = Process.GetProcesses().OrderBy(x => x.Id).ToList();
 
     foreach (var process in processes)
+    {
         WriteLine("PID: {0}, Name: {1}", process.Id, process.ProcessName);
+    }
 }
 
 public void PrintProcessById(int pid)
@@ -31,7 +33,9 @@ public void PrintProcessById(int pid)
         var threads = process.Threads;
 
         foreach (ProcessThread thread in threads)
+        {
             WriteLine("Thread ID: {0}, Start: {1}, Priority: {2}", thread.Id, thread.StartTime, thread.PriorityLevel);
+        }
     }
     catch (ArgumentException ex)
     {

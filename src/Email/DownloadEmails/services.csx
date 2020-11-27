@@ -18,7 +18,7 @@ public class Pop3Service
         var messageCount = client.GetMessageCount();
         var messages = new List<OpenPop.Mime.Message>(messageCount);
 
-        for (int i = messageCount; i > 0; i--)
+        for (var i = messageCount; i > 0; i--)
         {
             messages.Add(client.GetMessage(i));
         }

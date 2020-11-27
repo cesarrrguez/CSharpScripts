@@ -12,8 +12,5 @@ public class User
         return _id;
     }
 
-    public override string ToString()
-    {
-        return $"Id: {_id}";
-    }
+    public override string ToString() => $"Id: {_id}";
 }

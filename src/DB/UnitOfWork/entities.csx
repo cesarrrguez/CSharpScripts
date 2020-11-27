@@ -19,10 +19,7 @@ public class Order : Entity, IAggregateRoot
         Units = units;
     }
 
-    public override string ToString()
-    {
-        return $"Order. Id: {Id}, Product: {Product}, Units: {Units}";
-    }
+    public override string ToString() => $"Order. Id: {Id}, Product: {Product}, Units: {Units}";
 }
 
 public class Customer : Entity, IAggregateRoot
@@ -39,8 +36,5 @@ public class Customer : Entity, IAggregateRoot
         LastName = lastName;
     }
 
-    public override string ToString()
-    {
-        return $"User. Id: {Id}, FirstName: {FirstName}, LastName: {LastName}";
-    }
+    public override string ToString() => $"User. Id: {Id}, FirstName: {FirstName}, LastName: {LastName}";
 }

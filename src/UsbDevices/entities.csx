@@ -34,8 +34,5 @@ public class UsbInfo
         Description = description ?? throw new ArgumentNullException(nameof(description));
     }
 
-    public override string ToString()
-    {
-        return $"UsbInfo. DeviceId: {DeviceId}, PnPDeviceId: {PnPDeviceId}, Description: {Description}\n";
-    }
+    public override string ToString() => $"UsbInfo. DeviceId: {DeviceId}, PnPDeviceId: {PnPDeviceId}, Description: {Description}\n";
 }

@@ -11,7 +11,9 @@ public static class Algorithms
             for (var j = 0; j < array.Length - i; j++)
             {
                 if (array[j] > array[j + 1])
+                {
                     array.Swap(j, j + 1);
+                }
             }
         }
     }

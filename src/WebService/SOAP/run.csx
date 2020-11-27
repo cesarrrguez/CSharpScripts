@@ -18,13 +18,13 @@ var response = SoapClient.CallWebService(value1, value2);
 var soapEnvelope = response.Item1;
 WriteLine("SOAP envelope:");
 WriteLine(separator);
-soapEnvelope.Save(Console.Out);
+soapEnvelope.Save(Out);
 
 // Print XML response
 var xmlResponse = response.Item2;
 WriteLine("\n\nXML response:");
 WriteLine(separator);
-xmlResponse.Save(Console.Out);
+xmlResponse.Save(Out);
 
 // Print result
 var result = xmlResponse.GetElementsByTagName("AddResult")?[0]?.InnerText;

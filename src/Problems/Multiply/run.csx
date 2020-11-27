@@ -5,7 +5,7 @@ WriteLine($"{a} * {b} = {Multiply(a, b)}");
 
 public int Multiply(int a, int b)
 {
-    int result = 0;
+    var result = 0;
 
     for (var i = 0; i < Math.Abs(b); i++)
     {

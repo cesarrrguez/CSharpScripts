@@ -8,8 +8,11 @@ list.Add(45, "Everybody");
 
 // Print
 WriteLine("Print:");
+
 foreach (DictionaryEntry item in list)
+{
     WriteLine("[{0}] = {1}", item.Key, item.Value);
+}
 
 // Count
 WriteLine($"\nCount: {list.Count}");

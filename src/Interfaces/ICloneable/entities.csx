@@ -17,10 +17,7 @@ public class Student : ICloneable
         Average = average;
     }
 
-    public override string ToString()
-    {
-        return $"Student. Name: {Name}, Average: {Average}";
-    }
+    public override string ToString() => $"Student. Name: {Name}, Average: {Average}";
 
     public object Clone()
     {

@@ -7,16 +7,13 @@ public class Test
         _number = number;
     }
 
-    public override string ToString()
-    {
-        return string.Format("Number format is {0}", _number);
-    }
+    public override string ToString() => string.Format("Number format is {0}", _number);
 
     ~Test()
     {
-        Console.ForegroundColor = ConsoleColor.Red;
+        ForegroundColor = ConsoleColor.Red;
         WriteLine("Here we set free the object");
-        Console.Beep(600, 500);
-        Console.ResetColor();
+        Beep(600, 500);
+        ResetColor();
     }
 }

@@ -17,10 +17,14 @@ var operations = new IOperation[] { new Sum(), new Subtract() };
 foreach (var operation in operations)
 {
     if (operation is Sum)
+    {
         WriteLine("\nIs a Sum");
+    }
 
     if (operation is Subtract)
+    {
         WriteLine("\nIs a Subtract");
+    }
 
     operation.Calculate(8, 3);
     operation.Show();
@@ -49,7 +53,11 @@ public void CheckInterfaceImplementation()
     var sum = new Sum();
 
     if (sum is IOperation operation)
+    {
         operation.Check();
+    }
     else
+    {
         WriteLine("Don´t implements IOperation");
+    }
 }

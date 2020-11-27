@@ -17,8 +17,5 @@ public class User
         Age = age;
     }
 
-    public override string ToString()
-    {
-        return $"User. Name: {Name}, Age: {Age}";
-    }
+    public override string ToString() => $"User. Name: {Name}, Age: {Age}";
 }

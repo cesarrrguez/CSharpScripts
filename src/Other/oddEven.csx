@@ -3,5 +3,5 @@ var query = "A446-5488844 9.19 A446-5488877 6.63 A449-5488844 9.19 A449-5488877 
 var resultOdd = query.Split(' ').Where((_, i) => i % 2 == 0);
 var resultEven = query.Split(' ').Where((_, i) => i % 2 != 0);
 
-WriteLine($"Odd: {String.Join(", ", resultOdd)}\n");
-WriteLine($"Even: {String.Join(", ", resultEven)}");
+WriteLine($"Odd: {string.Join(", ", resultOdd)}\n");
+WriteLine($"Even: {string.Join(", ", resultEven)}");

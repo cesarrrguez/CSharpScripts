@@ -3,7 +3,7 @@ using System.Threading;
 var semaphore = new Semaphore(3, 3);
 int counter;
 
-for (int i = 0; i < 8; i++)
+for (var i = 0; i < 8; i++)
 {
     new Thread(Method).Start(i);
 }

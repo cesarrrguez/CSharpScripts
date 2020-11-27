@@ -25,8 +25,5 @@ public class Node<T>
         return sb.ToString();
     }
 
-    public override string ToString()
-    {
-        return $"({Value})";
-    }
+    public override string ToString() => $"({Value})";
 }

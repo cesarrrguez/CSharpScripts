@@ -22,6 +22,8 @@ public static IEnumerable<string> GetFlyingAnimals()
     foreach (var animal in animals)
     {
         if (animal is Animal { IsFlying: true, Name: string name })
+        {
             yield return animal.Name;
+        }
     }
 }

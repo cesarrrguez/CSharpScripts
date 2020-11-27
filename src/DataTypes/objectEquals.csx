@@ -7,7 +7,7 @@ if ((x == y) || (x != null && y != null && x.Equals(y)))
 }
 
 // Object.Equals method
-if (Object.Equals(x, y))
+if (Equals(x, y))
 {
     WriteLine("Are Equals");
 }

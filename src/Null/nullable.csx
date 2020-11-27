@@ -1,4 +1,4 @@
-int? value = null;
+int? value;
 
 // Has value
 WriteLine($"Has value: {value.HasValue}");

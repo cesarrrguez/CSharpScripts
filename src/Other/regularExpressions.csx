@@ -1,7 +1,7 @@
 using System.Text.RegularExpressions;
 
-string text = "The carpenter's car";
-string exp = "";
+var text = "The carpenter's car";
+var exp = "";
 MatchCollection founded;
 
 // Method 1
@@ -69,6 +69,6 @@ WriteLine($"Split: {string.Join(", ", words)}");
 // Replace
 exp = "car$";
 expReg = new Regex(exp);
-string replace = "tree";
-string result = expReg.Replace(text, replace);
+var replace = "tree";
+var result = expReg.Replace(text, replace);
 WriteLine($"Replace: {string.Join(", ", result)}");

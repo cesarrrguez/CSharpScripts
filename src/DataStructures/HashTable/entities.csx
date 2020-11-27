@@ -148,8 +148,5 @@ public class Node<T1, T2>
         Next = null;
     }
 
-    public override string ToString()
-    {
-        return $"[{Key}, {Value}]";
-    }
+    public override string ToString() => $"[{Key}, {Value}]";
 }

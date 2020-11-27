@@ -10,8 +10,7 @@ public struct Point
     public double Y { get; set; } // readonly by default
     public readonly double Distance => Math.Sqrt((X * X) + (Y * Y));
 
-    public readonly override string ToString() =>
-        $"({X}, {Y}) is {Distance} from the origin";
+    public readonly override string ToString() => $"({X}, {Y}) is {Distance} from the origin";
 
     // public readonly void Translate(int xOffset, int yOffset)
     // {

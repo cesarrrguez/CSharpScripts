@@ -3,7 +3,10 @@ WriteLine("Is-expressions with patterns:");
 int value;
 object input = 7;
 if (input is int number)
+{
     value = number;
+}
+
 WriteLine(value);
 
 // Switch statements with patterns

@@ -11,12 +11,12 @@ number1 = "1";
 number2 = "3";
 Sum(number1, number2);
 
-public static void Sum(int number1, int number2)
+public void Sum(int number1, int number2)
 {
     WriteLine($"Result is (int) {number1 + number2}");
 }
 
-public static void Sum(string number1, string number2)
+public void Sum(string number1, string number2)
 {
     WriteLine($"Result is (string) {number1 + number2}");
 }

@@ -24,11 +24,9 @@ public class UserRepository : IUserRepository
         _context = context ?? throw new ArgumentNullException(nameof(context));
     }
 
-    public List<User> Get() =>
-        _context.Users.Find(_ => true).ToList();
+    public List<User> Get() => _context.Users.Find(_ => true).ToList();
 
-    public User Get(string id) =>
-        _context.Users.Find(u => u.Id == id).FirstOrDefault();
+    public User Get(string id) => _context.Users.Find(u => u.Id == id).FirstOrDefault();
 
     public User Create(User user)
     {
@@ -36,12 +34,9 @@ public class UserRepository : IUserRepository
         return user;
     }
 
-    public void Update(string id, User user) =>
-        _context.Users.ReplaceOne(u => u.Id == id, user);
+    public void Update(string id, User user) => _context.Users.ReplaceOne(u => u.Id == id, user);
 
-    public void Remove(User user) =>
-        _context.Users.DeleteOne(u => u.Id == user.Id);
+    public void Remove(User user) => _context.Users.DeleteOne(u => u.Id == user.Id);
 
-    public void Remove(string id) =>
-        _context.Users.DeleteOne(u => u.Id == id);
+    public void Remove(string id) => _context.Users.DeleteOne(u => u.Id == id);
 }

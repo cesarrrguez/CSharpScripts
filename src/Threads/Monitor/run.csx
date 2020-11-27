@@ -12,8 +12,7 @@ thread2.Start();
 
 while (!exit)
 {
-    if (counter > 10)
-        exit = true;
+    if (counter > 10) exit = true;
 }
 
 public void Increment()

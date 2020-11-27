@@ -74,7 +74,7 @@ try
     var single = intArray.Single();
     WriteLine($"Single: {single}");
 }
-catch (System.Exception)
+catch (Exception)
 {
     WriteLine("Single: Exception trowed");
 }

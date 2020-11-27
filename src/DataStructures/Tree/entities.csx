@@ -74,8 +74,5 @@ public class Node<T>
         Children = new List<Node<T>>();
     }
 
-    public override string ToString()
-    {
-        return $"({Value})";
-    }
+    public override string ToString() => $"({Value})";
 }

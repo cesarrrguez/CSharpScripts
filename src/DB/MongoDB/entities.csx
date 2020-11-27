@@ -13,6 +13,5 @@ public class User
     [BsonElement("age")]
     public int Age { get; set; }
 
-    public override string ToString() =>
-        $"User. Id: {Id}, Name: {Name}, Age: {Age}";
+    public override string ToString() => $"User. Id: {Id}, Name: {Name}, Age: {Age}";
 }

@@ -11,12 +11,6 @@ var predicate2 = new Predicate<int>(Range);
 var rangeNumbers = numbers.FindAll(predicate2);
 WriteLine($"\nFind all in range [3 - 7]: {string.Join(", ", rangeNumbers)}");
 
-public static bool Evens(int number)
-{
-    return number % 2 == 0;
-}
+public static bool Evens(int number) => number % 2 == 0;
 
-public static bool Range(int number)
-{
-    return number >= 3 && number <= 7;
-}
+public static bool Range(int number) => number >= 3 && number <= 7;

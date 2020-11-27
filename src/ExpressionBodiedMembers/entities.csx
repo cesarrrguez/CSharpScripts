@@ -23,7 +23,7 @@ public class User
     ~User() => WriteLine($"The {GetType().Name} destructor is executing");
 
     // Method. C# 6.0
-    public override string ToString() => $"User. Name: {Name}, Age: {Age}, Emails: {String.Join(", ", emails.Where(x => !String.IsNullOrWhiteSpace(x)))}";
+    public override string ToString() => $"User. Name: {Name}, Age: {Age}, Emails: {string.Join(", ", emails.Where(x => !string.IsNullOrWhiteSpace(x)))}";
 
     // Indexer. C# 7.0
     public string this[int i]

@@ -11,10 +11,12 @@ public class Car
 
     public override string ToString()
     {
-        string result = $"Car. Name: {_name}";
+        var result = $"Car. Name: {_name}";
 
         if (_engine != null)
+        {
             result += $"\n{_engine}";
+        }
 
         return result;
     }

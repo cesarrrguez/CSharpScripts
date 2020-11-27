@@ -19,9 +19,13 @@ public class UserController : IUserController
         var users = _userService.Get();
 
         if (users?.Count > 0)
+        {
             users.ForEach(user => WriteLine(user));
+        }
         else
+        {
             WriteLine("No users");
+        }
     }
 
     public void Get(string id)

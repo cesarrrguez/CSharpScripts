@@ -26,7 +26,9 @@ public void ListPerformanceTest()
 
     decimal sum = 0;
     foreach (var item in list)
+    {
         sum += item.A;
+    }
 }
 
 public void LinkedListPerformanceTest()
@@ -41,7 +43,9 @@ public void LinkedListPerformanceTest()
 
     decimal sum = 0;
     foreach (var item in list)
+    {
         sum += item.A;
+    }
 }
 
 public class Temp

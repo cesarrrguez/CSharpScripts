@@ -9,7 +9,7 @@ long maxGeneration = GC.MaxGeneration + 1;
 WriteLine("There are {0} generations", maxGeneration);
 
 // Create new instance of test class
-Test test = new Test(5);
+var test = new Test(5);
 
 // Get heap bytes quantity after instance
 heapBytes = GC.GetTotalMemory(false);

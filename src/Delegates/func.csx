@@ -7,7 +7,4 @@ var value2 = 9;
 var result = function(value1, value2);
 WriteLine($"{value1} + {value2} = {result}");
 
-public static int Sum(int a, int b)
-{
-    return a + b;
-}
+public static int Sum(int a, int b) => a + b;

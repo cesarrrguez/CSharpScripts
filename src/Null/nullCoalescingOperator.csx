@@ -11,7 +11,7 @@ WriteLine($"{message}");
 
 // Using the null coalesce operator and parentheses to automatically instantiate collections
 ListOfNumbers.Add(5);
-WriteLine(String.Join(", ", ListOfNumbers));
+WriteLine(string.Join(", ", ListOfNumbers));
 
 private IList<int> _listOfNumbers;
 public IList<int> ListOfNumbers => _listOfNumbers ??= new List<int>();

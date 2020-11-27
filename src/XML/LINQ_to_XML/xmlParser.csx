@@ -30,13 +30,17 @@ public class XmlParser
         WriteLine("\nNodes:");
         WriteLine(separator);
         foreach (var node in studentsXML.Nodes())
+        {
             WriteLine(node.ToString());
+        }
 
         // Elements
         WriteLine("\nElements:");
         WriteLine(separator);
         foreach (var element in studentsXML.Elements())
+        {
             WriteLine(element.Name + "=" + element.Value);
+        }
 
         // First node
         WriteLine("\nFirst node:");
@@ -66,7 +70,9 @@ public class XmlParser
                       select student.Value;
 
         foreach (var item in query_1)
+        {
             WriteLine(item);
+        }
 
         // Query 2
         WriteLine("\nQuery 2:");
@@ -76,7 +82,9 @@ public class XmlParser
                       select student.Name;
 
         foreach (var item in query_2)
+        {
             WriteLine(item.ToString());
+        }
 
         // Query 3
         WriteLine("\nQuery 3:");
@@ -87,7 +95,9 @@ public class XmlParser
                       select course.Value;
 
         foreach (var item in query_3)
+        {
             WriteLine(item);
+        }
 
         // Count
         WriteLine("\nCount:");
@@ -166,6 +176,8 @@ public class XmlParser
                        select a.Value;
 
         foreach (var average in averages)
+        {
             WriteLine(average);
+        }
     }
 }

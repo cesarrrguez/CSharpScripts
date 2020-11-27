@@ -1,7 +1,7 @@
 #load "entities.csx"
 
 // Create Car
-Car car = new Car("Tesla");
+var car = new Car("Tesla");
 
 // Print Car
 WriteLine(car);

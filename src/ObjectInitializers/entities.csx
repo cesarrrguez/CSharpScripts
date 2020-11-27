@@ -4,8 +4,5 @@ public class Child
     public string Name { get; set; }
     public string StreetAddress { get; set; }
 
-    public override string ToString()
-    {
-        return $"Child. Age: {Age}, Name: {Name}, StreetAddress: {StreetAddress}";
-    }
+    public override string ToString() => $"Child. Age: {Age}, Name: {Name}, StreetAddress: {StreetAddress}";
 }

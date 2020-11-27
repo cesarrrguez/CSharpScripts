@@ -60,8 +60,5 @@ public class Node<T>
         Next = null;
     }
 
-    public override string ToString()
-    {
-        return $"[{Value}]";
-    }
+    public override string ToString() => $"[{Value}]";
 }

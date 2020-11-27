@@ -8,7 +8,7 @@ Stopwatch stopwatch = new Stopwatch();
 stopwatch.Start();
 
 // Do something
-for (int i = 0; i < 1000; i++)
+for (var i = 0; i < 1000; i++)
 {
     Thread.Sleep(1);
 }

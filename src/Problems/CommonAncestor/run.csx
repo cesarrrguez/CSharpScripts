@@ -52,16 +52,14 @@ public class Tree<T>
         if (node == null) throw new ArgumentNullException(nameof(node));
 
         // Check current node value
-        if (node.Value.Equals(value))
-            return node;
+        if (node.Value.Equals(value)) return node;
 
         // Loop children
         foreach (var child in node.Children)
         {
             var target = Find(child, value);
 
-            if (target != null)
-                return target;
+            if (target != null) return target;
         }
 
         return null;

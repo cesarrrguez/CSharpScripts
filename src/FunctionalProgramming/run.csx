@@ -14,7 +14,9 @@ var enabledUserNames = new List<string>();
 foreach (var user in users)
 {
     if (user.Enabled)
+    {
         enabledUserNames.Add(user.Name);
+    }
 }
 foreach (var name in enabledUserNames)
 {

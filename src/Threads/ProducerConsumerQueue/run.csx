@@ -6,7 +6,7 @@ using (var queue = new PCQ())
 {
     WriteLine("Main starts");
 
-    for (int i = 0; i < 5; i++)
+    for (var i = 0; i < 5; i++)
     {
         queue.AddValue(i);
     }
