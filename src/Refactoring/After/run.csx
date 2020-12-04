@@ -1,6 +1,7 @@
 #load "services.csx"
 #load "data.csx"
 #load "utils.csx"
+#load "enums.csx"
 
 #r "nuget: Microsoft.AspNet.WebApi.Client, 5.2.7"
 #r "nuget: Flurl.Http, 2.4.2"

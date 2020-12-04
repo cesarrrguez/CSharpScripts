@@ -9,9 +9,3 @@ public static class EnvironmentUtil
 {
     public const string URL = "https://jsonplaceholder.typicode.com";
 }
-
-public enum Action
-{
-    Posts,
-    Photos
-}
