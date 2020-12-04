@@ -16,6 +16,7 @@ This repository contains _C#_ scripts.
 - Extension Methods
 - Functional programming, LINQ
 - GC
+- Design Patterns
 - SOLID Principles
 - Entity Framework, Unit of Work, Transactions, CQRS
 - Sqlite, SqlServer, MongoDB
