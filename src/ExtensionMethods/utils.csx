@@ -112,7 +112,4 @@ public static string PropertyList(this object obj)
     return sb.ToString();
 }
 
-public static string ToYesNoString(this bool value)
-{
-    return value ? "Yes" : "No";
-}
+public static string ToYesNoString(this bool value) => value ? "Yes" : "No";
