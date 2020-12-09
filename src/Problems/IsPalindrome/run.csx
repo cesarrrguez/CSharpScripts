@@ -5,7 +5,7 @@ WriteLine("Is palindrome: {0}", result ? "Yes" : "No");
 
 public bool IsPalindrome(string text)
 {
-    char[] separators = { '.', '?', '!', ' ', ';', ':', ',' };
+    var separators = new char[] { '.', '?', '!', ' ', ';', ':', ',' };
     var lowered = text.ToLower();
     var splitted = lowered.Split(separators, StringSplitOptions.RemoveEmptyEntries);
     var joined = string.Concat(splitted);
