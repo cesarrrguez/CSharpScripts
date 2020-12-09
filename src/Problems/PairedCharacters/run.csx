@@ -4,25 +4,28 @@ WriteLine($"{input}: {CheckPairedCharacters(input)}");
 input = "[(])";
 WriteLine($"{input}: {CheckPairedCharacters(input)}");
 
+input = "]";
+WriteLine($"{input}: {CheckPairedCharacters(input)}");
+
 public bool CheckPairedCharacters(string text)
 {
     var stack = new Stack<char>();
-    var pairs = new Dictionary<char, char>
+    var map = new Dictionary<char, char>
     {
-        { '[', ']' },
         { '(', ')' },
-        { '{', '}' }
+        { '{', '}' },
+        { '[', ']' }
     };
 
     foreach (var item in text)
     {
-        if (pairs.Keys.Contains(item))
+        if (map.ContainsKey(item))
         {
-            stack.Push(pairs[item]);
+            stack.Push(map[item]);
         }
-        else
+        else if (stack.Count == 0 || item != stack.Pop())
         {
-            if (item != stack.Pop()) return false;
+            return false;
         }
     }
 
