@@ -27,12 +27,11 @@ public static class Algorithms
     {
         var left = 0;
         var right = array.Length - 1;
-        int middle;
 
         while (left <= right)
         {
             // Get middle value
-            middle = left + ((right - left) / 2);
+            var middle = left + ((right - left) / 2);
 
             // Target value found
             if (array[middle] == target) return middle;
