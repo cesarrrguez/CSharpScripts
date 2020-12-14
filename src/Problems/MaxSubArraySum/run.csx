@@ -1,26 +1,43 @@
-int[] array = { -2, -3, 4, -1, -2, 1, 5, -3 };
+var array = new int[] { -2, -3, 4, -1, -2, 1, 5, -3 };
 
 var result = MaxSubArraySum(array);
-WriteLine($"Maximum contiguous sum is: {result}");
+WriteLine($"Maximum contiguous sum is: {result}"); // 7
 
-public static int MaxSubArraySum(int[] array)
+result = MaxSubArraySum2(array);
+WriteLine($"Maximum contiguous sum is: {result}"); // 7
+
+public int MaxSubArraySum(int[] array)
 {
-    var maxSum = 0;
-    var currentSum = 0;
+    var sum = array[0];
+    var result = array[0];
 
-    for (var i = 0; i < array.Length; i++)
+    for (var i = 1; i < array.Length; i++)
     {
-        currentSum += array[i];
+        sum += array[i];
 
-        if (currentSum < 0)
+        if (sum < 0)
         {
-            currentSum = 0;
+            sum = 0;
         }
-        else if (currentSum > maxSum)
+        else if (sum > result)
         {
-            maxSum = currentSum;
+            result = sum;
         }
     }
 
-    return maxSum;
+    return result;
+}
+
+public int MaxSubArraySum2(int[] array)
+{
+    var sum = array[0];
+    var result = array[0];
+
+    for (var i = 1; i < array.Length; i++)
+    {
+        sum = Math.Max(sum + array[i], array[i]);
+        result = Math.Max(result, sum);
+    }
+
+    return result;
 }
