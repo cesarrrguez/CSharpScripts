@@ -25,6 +25,7 @@ This repository contains _C#_ scripts.
 - Logging, Serilog
 - Configuration
 - Mapping, DTO, AutoMapper
+- FluentValidation
 - Web Scrapping
 - Web Service, SOAP, REST, GraphQL
 - Twilio, Telegram
@@ -34,7 +35,7 @@ This repository contains _C#_ scripts.
 - Reflection
 - Refactoring
 - Email, SMTP, POP3, OpenPop
-- XML, JSON, CSV, Zip, QR, USB
+- XML, JSON, CSV, Zip, PDF, QR, USB
 - ...
 
 ## License
