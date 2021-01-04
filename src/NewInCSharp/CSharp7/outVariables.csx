@@ -1,7 +1,7 @@
 var input = "7";
 
 // With type
-if (int.TryParse(input, out var result))
+if (int.TryParse(input, out int result))
 {
     WriteLine(result);
 }

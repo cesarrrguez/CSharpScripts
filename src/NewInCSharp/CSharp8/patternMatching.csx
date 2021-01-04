@@ -1,4 +1,5 @@
 // Switch expressions
+
 WriteLine("Switch expressions:");
 var value1 = 14;
 var value2 = 0;

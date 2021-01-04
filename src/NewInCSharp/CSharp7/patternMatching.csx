@@ -1,4 +1,5 @@
 // Is-expressions with patterns
+
 WriteLine("Is-expressions with patterns:");
 int value;
 object input = 7;
@@ -44,11 +45,13 @@ public abstract class Animal
     public string Name { get; }
     protected Animal(string name) => Name = name;
 }
+
 public class Bird : Animal
 {
     public Bird(string name) : base("Bird " + name) { }
     public void Fly() => WriteLine($"{Name} is flying");
 }
+
 public class Fish : Animal
 {
     public Fish(string name) : base("Fish " + name) { }
