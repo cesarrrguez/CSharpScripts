@@ -1,8 +1,16 @@
-[Serializable]
+using ProtoBuf;
+
+[Serializable, ProtoContract]
 public class User
 {
+    [ProtoMember(1)]
     public string Name { get; }
+
+    [ProtoMember(2)]
     public double Age { get; private set; }
+
+    // Empty constructor for ProtoBuf
+    protected User() { }
 
     public User(string name)
     {
