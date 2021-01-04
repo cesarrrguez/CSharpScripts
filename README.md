@@ -9,13 +9,14 @@ This repository contains _C#_ scripts.
 - Object Oriented Programming
 - Inheritance, Interfaces, Aggregation, Composition
 - Encapsulation, Cohesion, Coupling
-- Collections, Data Types, Generics, Structs, Enums
-- Data Structures, Algorithms
+- Collections, Data Types, Generics, Structs, Enums, Records
+- Data Structures, Algorithms, Problems
 - Delegates, Action, Func, Predicate
-- Exceptions
-- Extension Methods
-- Functional programming, LINQ
-- GC
+- Copy Constructor, Static Constructor, Object Initializers
+- Explicit Operator Conversion, Implicit Operator Conversion, Operator overload
+- Exceptions, GC
+- Extension Methods, Expression Bodied Members
+- Functional Programming, LINQ
 - Design Patterns
 - SOLID Principles
 - Entity Framework, Unit of Work, Transactions, CQRS
@@ -32,11 +33,12 @@ This repository contains _C#_ scripts.
 - Encryption
 - Files
 - Threads, Asynchronous Calls
-- Reflection
-- Refactoring
+- Reflection, Refactoring, Performance
+- MVVM
 - Email, SMTP, POP3, OpenPop
-- XML, JSON, CSV, Zip, PDF, QR, USB
-- ...
+- XML, JSON, Excel, CSV, Zip, PDF, QR, USB
+- New in C# 7, 8 and 9
+- Other
 
 ## License
 
