@@ -1,11 +1,11 @@
 using System.Net.Mail;
 using System.Net;
 
-var subject = "This is a subject";
-var body = "This is the <strong>body</strong>";
+var subject = "Test email subject";
+var body = "<p>Test email <strong>body</strong></p>";
 var from = "cesar.rrguez@gmail.com";
 var to = "cesar.rrguez@gmail.com";
-var password = "XXXXXXXXX"; // This is not the real password :)
+var password = "*************";
 var smtp = "smtp.gmail.com";
 
 var mailMessage = new MailMessage(from, to, subject, body);
@@ -17,7 +17,17 @@ smtpClient.UseDefaultCredentials = false;
 smtpClient.Port = 587;
 smtpClient.Credentials = new NetworkCredential(from, password);
 
-smtpClient.Send(mailMessage);
-smtpClient.Dispose();
-
-WriteLine("Email sent successfully");
+try
+{
+    smtpClient.Send(mailMessage);
+    WriteLine("Email sent successfully");
+}
+catch (Exception e)
+{
+    WriteLine("Error sending email'");
+    WriteLine(e.Message);
+}
+finally
+{
+    smtpClient.Dispose();
+}
