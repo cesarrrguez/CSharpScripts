@@ -16,11 +16,9 @@ public class Rectangle : IComparable
     {
         var temp = (Rectangle)obj;
 
-        if (Area > temp.Area)
-            return 1;
+        if (Area > temp.Area) return 1;
 
-        if (Area < temp.Area)
-            return -1;
+        if (Area < temp.Area) return -1;
 
         return 0;
     }

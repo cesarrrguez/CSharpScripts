@@ -2,11 +2,11 @@
 
 var rectangles = new Rectangle[]
 {
-    new Rectangle(7,5),
-    new Rectangle(6,4),
-    new Rectangle(4,3),
-    new Rectangle(7,6),
-    new Rectangle(5,7)
+    new Rectangle(7, 5),
+    new Rectangle(6, 4),
+    new Rectangle(4, 3),
+    new Rectangle(7, 6),
+    new Rectangle(5, 7)
 };
 
 foreach (var rectangle in rectangles)
