@@ -10,7 +10,6 @@ var path = Path.Combine(FolderUtil.GetCurrentDirectoryName(), "document.pdf");
 
 var reader = new PdfReader(path);
 var document = new PdfDocument(reader);
-var strategy = new LocationTextExtractionStrategy();
 
 for (var i = 1; i <= document.GetNumberOfPages(); i++)
 {

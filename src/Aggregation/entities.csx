@@ -5,13 +5,15 @@ public class Customer
 
     public Customer(string name)
     {
-        _name = name;
+        _name = name ?? throw new ArgumentNullException(nameof(name));
     }
 
     public void AddOrder(Order order)
     {
         if (order != null)
+        {
             _order = order;
+        }
     }
 
     public override string ToString()
@@ -19,9 +21,13 @@ public class Customer
         var result = $"Customer. Name: {_name}";
 
         if (_order != null)
+        {
             result += $"\n{_order}";
+        }
         else
+        {
             result += "\n";
+        }
 
         return result;
     }
