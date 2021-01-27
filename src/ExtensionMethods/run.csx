@@ -37,10 +37,33 @@ var list1 = new List<string> { "Hello", "World", "Every", "Body", "From", "List 
 var list2 = list1.Clone();
 list2.RemoveAt(list2.Count - 1);
 list2.Add("List 2");
+list2[0] = "Hi";
 
 WriteLine("\nClone:");
 WriteLine($"List 1: {string.Join(", ", list1)}");
 WriteLine($"List 2: {string.Join(", ", list2)}");
+
+// Clone with objects. Same reference
+var list3 = new List<User> { new User("James"), new User("John") };
+var list4 = list3.Clone();
+list4.RemoveAt(list4.Count - 1);
+list4.Add(new User("Olivia"));
+list4[0].SetAge(21);
+
+WriteLine("\nClone with objects:");
+WriteLine($"List 3: {string.Join(", ", list3)}");
+WriteLine($"List 4: {string.Join(", ", list4)}");
+
+// Clone List
+list3 = new List<User> { new User("James"), new User("John") };
+list4 = list3.CloneList();
+list4.RemoveAt(list4.Count - 1);
+list4.Add(new User("Olivia"));
+list4[0].SetAge(21);
+
+WriteLine("\nClone List:");
+WriteLine($"List 3: {string.Join(", ", list3)}");
+WriteLine($"List 4: {string.Join(", ", list4)}");
 
 // Deep Clone
 var user1 = new User("James");

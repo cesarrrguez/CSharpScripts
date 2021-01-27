@@ -74,6 +74,11 @@ public static List<T> Clone<T>(this List<T> list)
     return list.ToList();
 }
 
+public static List<T> CloneList<T>(this List<T> list) where T : ICloneable
+{
+    return list.ConvertAll(item => (T)item.Clone());
+}
+
 public static T DeepClone<T>(this T obj)
 {
     if (!typeof(T).IsSerializable) throw new ArgumentException("The class " + typeof(T).ToString() + " is not serializable");

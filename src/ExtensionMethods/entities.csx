@@ -1,7 +1,7 @@
 using ProtoBuf;
 
 [Serializable, ProtoContract]
-public class User
+public class User : ICloneable
 {
     [ProtoMember(1)]
     public string Name { get; }
@@ -24,6 +24,8 @@ public class User
 
         Age = age;
     }
+
+    public object Clone() => MemberwiseClone();
 
     public override string ToString() => $"User. Name: {Name}, Age: {Age}";
 }
