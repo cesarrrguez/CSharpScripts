@@ -14,7 +14,7 @@ This repository contains _C#_ scripts.
 - Delegates, Action, Func, Predicate
 - Copy Constructor, Static Constructor, Object Initializers
 - Explicit Operator Conversion, Implicit Operator Conversion, Operator overload
-- Exceptions, GC
+- Exceptions, GC, MemoryCache
 - Extension Methods, Expression Bodied Members
 - Functional Programming, LINQ
 - Design Patterns
@@ -38,6 +38,7 @@ This repository contains _C#_ scripts.
 - Email, SMTP, POP3, OpenPop
 - XML, JSON, Excel, CSV, Zip, PDF, QR, USB
 - New in C# 7, 8 and 9
+- Globalization, Localization
 - Other
 
 ## License
