@@ -3,7 +3,7 @@
 
 using SimpleInjector;
 
-public class IoC
+public static class IoC
 {
     public static Container Container;
 
