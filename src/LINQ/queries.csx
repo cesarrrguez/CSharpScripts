@@ -132,5 +132,3 @@ WriteLine($"Repeat: {string.Join(", ", repeat)}");
 // Range
 var range = Enumerable.Range(5, 15).ToList();
 WriteLine($"Range: {string.Join(", ", range)}");
-
-WriteLine();

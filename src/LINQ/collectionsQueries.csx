@@ -30,5 +30,3 @@ WriteLine($"Distinct: {string.Join(", ", distinct)}");
 // Sequence equal
 var sequenceEqual = list1.SequenceEqual(list2);
 WriteLine($"Sequence equal: {sequenceEqual}");
-
-WriteLine();

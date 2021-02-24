@@ -27,3 +27,10 @@ public class Course
 
     public override string ToString() => $"Course (Id: {Id}, Title: {Title})";
 }
+
+public class Sale
+{
+    public string Product { get; set; }
+    public decimal Amount { get; set; }
+    public string Brand { get; set; }
+}
