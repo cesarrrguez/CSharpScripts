@@ -20,4 +20,4 @@ public class CultureScope : IDisposable
         Thread.CurrentThread.CurrentCulture = _originalCulture;
         Thread.CurrentThread.CurrentUICulture = _originalUICulture;
     }
-} 
+}

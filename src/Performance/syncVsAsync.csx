@@ -35,9 +35,9 @@ public async void AsyncMethod()
 
     Thread.Sleep(1000);
 
-    var response1 = await response1Task;
-    var response2 = await response2Task;
-    var response3 = await response3Task;
+    var response1 = await response1Task.ConfigureAwait(false);
+    var response2 = await response2Task.ConfigureAwait(false);
+    var response3 = await response3Task.ConfigureAwait(false);
 
     stopWatch.Stop();
 

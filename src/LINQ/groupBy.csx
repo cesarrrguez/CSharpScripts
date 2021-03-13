@@ -18,8 +18,8 @@ var totalSales = from s in sales
                  } into totals
                  select new
                  {
-                     Product = totals.Key.Product,
-                     Brand = totals.Key.Brand,
+                     totals.Key.Product,
+                     totals.Key.Brand,
                      Total = totals.Sum(x => x.Amount),
                      Quantity = totals.Count(),
                      Average = totals.Average(x => x.Amount),
