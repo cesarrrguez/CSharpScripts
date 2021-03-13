@@ -1,15 +1,17 @@
 root = true
 
+# All Files
 [*]
 indent_style = space
-indent_size = 2
 charset = utf-8
 trim_trailing_whitespace = true
 insert_final_newline = true
 
 # .NET Coding Conventions
 [*.{cs,csx}]
+indent_size = 4
 dotnet_diagnostic.IDE0090.severity = silent # IDE0090: Use 'new(...)'
 
+# Markdown Files
 [*.md]
 trim_trailing_whitespace = false
