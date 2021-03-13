@@ -1,7 +1,6 @@
 #load "services.csx"
 
-#r "nuget: Microsoft.Extensions.Caching.Memory, 3.1.12"
-
+#r "nuget: Microsoft.Extensions.Caching.Memory, 3.1.0"
 var service = new PostService();
 
 // Post 1
