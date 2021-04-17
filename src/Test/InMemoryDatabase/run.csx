@@ -6,11 +6,11 @@
 #r "nuget: Microsoft.EntityFrameworkCore.InMemory, 3.1.0"
 
 // Init test repository
-InitRepositoryTests.Setup(null);
+InitRepositoryTests.Setup();
 
 // Create test repository
 var testRepository = new UserRepositoryTests();
-UserRepositoryTests.Setup(null);
+UserRepositoryTests.Setup();
 
 // Test 1
 var test_1 = testRepository.Given_UserId_1_Expected_NotNull();

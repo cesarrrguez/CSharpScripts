@@ -14,10 +14,8 @@ public class UserRepositoryTests
     private static IUserRepository _userRepository;
 
     [ClassInitialize()]
-    public static void Setup(TestContext context)
+    public static void Setup()
     {
-        if (context == null) throw new ArgumentNullException(nameof(context));
-
         _userRepository = new UserRepository(TestDataContext.Context);
     }
 
@@ -42,10 +40,8 @@ public class UserRepositoryTests
 public static class InitRepositoryTests
 {
     [AssemblyInitialize()]
-    public static void Setup(TestContext context)
+    public static void Setup()
     {
-        if (context == null) throw new ArgumentNullException(nameof(context));
-
         TestDataContext.PrepareContext();
     }
 }
