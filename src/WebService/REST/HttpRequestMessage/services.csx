@@ -14,7 +14,7 @@ public class WeatherService : IDisposable
         _client = new HttpClient();
     }
 
-    public async Task FetchData()
+    public async Task FetchDataAsync()
     {
         const string url = "https://www.metaweather.com/api/location/2487956/";
 

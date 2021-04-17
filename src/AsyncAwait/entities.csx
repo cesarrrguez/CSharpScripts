@@ -2,7 +2,7 @@ using System.Threading;
 
 public static class Chef
 {
-    public async static Task<bool> MakePizza()
+    public async static Task<bool> MakePizzaAsync()
     {
         WriteLine("Put the pizza in the oven");
 

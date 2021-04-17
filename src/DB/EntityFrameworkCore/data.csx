@@ -24,7 +24,7 @@ public class DataContext : DbContext, IUnitOfWork
         base.OnModelCreating(modelBuilder);
     }
 
-    public async Task<bool> Commit()
+    public async Task<bool> CommitAsync()
     {
         return await SaveChangesAsync().ConfigureAwait(false) > 0;
     }
@@ -119,7 +119,7 @@ public class UserRepository : IUserRepository
         _context = context ?? throw new ArgumentNullException(nameof(context));
     }
 
-    public async Task Add(User user)
+    public async Task AddAsync(User user)
     {
         await _context.Users.AddAsync(user).ConfigureAwait(false);
     }
@@ -134,7 +134,7 @@ public class UserRepository : IUserRepository
         _context.Users.Remove(user);
     }
 
-    public async Task<User> GetById(int id)
+    public async Task<User> GetByIdAsync(int id)
     {
         return await _context.Users
             .Include(u => u.Addresses)
@@ -142,7 +142,7 @@ public class UserRepository : IUserRepository
             .SingleOrDefaultAsync(u => u.Id == id).ConfigureAwait(false);
     }
 
-    public async Task<IEnumerable<User>> GetAll()
+    public async Task<IEnumerable<User>> GetAllAsync()
     {
         return await _context.Users
             .Include(u => u.Addresses)

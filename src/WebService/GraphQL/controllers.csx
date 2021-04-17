@@ -19,7 +19,7 @@ public class PostController : IPostController
         WriteLine("\nGet all Posts:");
         WriteLine(_separator);
 
-        var posts = _postService.GetAllPosts(postOptionsInput).Result;
+        var posts = _postService.GetAllPostsAsync(postOptionsInput).Result;
 
         if (posts?.Count > 0)
         {
@@ -36,7 +36,7 @@ public class PostController : IPostController
         WriteLine("\nGet a Post:");
         WriteLine(_separator);
 
-        var post = _postService.GetPost(id).Result;
+        var post = _postService.GetPostAsync(id).Result;
         if (post == null) throw new ArgumentException(nameof(id));
 
         WriteLine(post);
@@ -49,7 +49,7 @@ public class PostController : IPostController
         WriteLine("\nCreate a Post:");
         WriteLine(_separator);
 
-        var post = _postService.CreatePost(postToCreate).Result;
+        var post = _postService.CreatePostAsync(postToCreate).Result;
 
         WriteLine(post);
     }
@@ -61,10 +61,10 @@ public class PostController : IPostController
         WriteLine("\nUpdate a Post:");
         WriteLine(_separator);
 
-        var post = _postService.GetPost(id).Result;
+        var post = _postService.GetPostAsync(id).Result;
         if (post == null) throw new ArgumentException(nameof(id));
 
-        post = _postService.UpdatePost(id, postToUpdate).Result;
+        post = _postService.UpdatePostAsync(id, postToUpdate).Result;
 
         WriteLine(post);
     }
@@ -74,10 +74,10 @@ public class PostController : IPostController
         WriteLine("\nDelete a Post:");
         WriteLine(_separator);
 
-        var post = _postService.GetPost(id).Result;
+        var post = _postService.GetPostAsync(id).Result;
         if (post == null) throw new ArgumentException(nameof(id));
 
-        var response = _postService.DeletePost(id).Result;
+        var response = _postService.DeletePostAsync(id).Result;
 
         WriteLine(response.ToYesNoString());
     }

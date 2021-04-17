@@ -3,7 +3,7 @@
 #r "nuget: System.Net.Http.Json, 3.2.0"
 
 var weatherService = new WeatherService();
-await weatherService.FetchData().ConfigureAwait(false);
+await weatherService.FetchDataAsync().ConfigureAwait(false);
 
 WriteLine("Weather Data:");
 

@@ -22,7 +22,7 @@ public class UserServiceTests
     [TestMethod]
     public async Task Given_UserId_100_Expected_UserId_1()
     {
-        var result = await _userService.GetUser(100).ConfigureAwait(false);
+        var result = await _userService.GetUserAsync(100).ConfigureAwait(false);
 
         result.Id.Should().Be(1);
     }
@@ -30,7 +30,7 @@ public class UserServiceTests
     [TestMethod]
     public async Task Given_UserId_2_Expected_UserId_2()
     {
-        var result = await _userService.GetUser(2).ConfigureAwait(false);
+        var result = await _userService.GetUserAsync(2).ConfigureAwait(false);
 
         result.Id.Should().Be(2);
     }
@@ -38,7 +38,7 @@ public class UserServiceTests
     [TestMethod]
     public async Task GetAllUsersCount_Expected_2()
     {
-        var result = await _userService.GetAllUsers().ConfigureAwait(false);
+        var result = await _userService.GetAllUsersAsync().ConfigureAwait(false);
 
         result.Count().Should().Be(2);
     }
@@ -57,11 +57,11 @@ public class UserRepositoryMock
 
     private void Setup()
     {
-        UserRepository.Setup(x => x.Get(It.IsAny<int>())).ReturnsAsync(StubData.User_1);
+        UserRepository.Setup(x => x.GetAsync(It.IsAny<int>())).ReturnsAsync(StubData.User_1);
 
-        UserRepository.Setup(x => x.Get(2)).ReturnsAsync(StubData.User_2);
+        UserRepository.Setup(x => x.GetAsync(2)).ReturnsAsync(StubData.User_2);
 
-        UserRepository.Setup(x => x.GetAll()).ReturnsAsync(StubData.Users);
+        UserRepository.Setup(x => x.GetAllAsync()).ReturnsAsync(StubData.Users);
     }
 }
 

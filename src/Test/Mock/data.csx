@@ -4,7 +4,7 @@
 // Repositories
 public class UserRepository : IUserRepository
 {
-    public Task<IEnumerable<User>> GetAll() => throw new NotImplementedException();
+    public Task<IEnumerable<User>> GetAllAsync() => throw new NotImplementedException();
 
-    public Task<User> Get(int userId) => throw new NotImplementedException();
+    public Task<User> GetAsync(int userId) => throw new NotImplementedException();
 }

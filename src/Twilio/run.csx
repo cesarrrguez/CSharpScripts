@@ -2,6 +2,6 @@
 
 #r "nuget: Twilio, 5.47.0"
 
-//TwilioService.SendSms().Wait();
-//TwilioService.SendWhatsApp().Wait();
-//TwilioService.MakeCall().Wait();
+//TwilioService.SendSmsAsync().Wait();
+//TwilioService.SendWhatsAppAsync().Wait();
+//TwilioService.MakeCallAsync().Wait();

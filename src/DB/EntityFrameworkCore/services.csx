@@ -14,40 +14,40 @@ public class UserService : IUserService
         _userRepository = userRepository ?? throw new ArgumentNullException(nameof(userRepository));
     }
 
-    public async Task Register(UserViewModel userViewModel)
+    public async Task RegisterAsync(UserViewModel userViewModel)
     {
         var user = _mapper.Map<User>(userViewModel);
 
-        await _userRepository.Add(user).ConfigureAwait(false);
-        await _userRepository.UnitOfWork.Commit().ConfigureAwait(false);
+        await _userRepository.AddAsync(user).ConfigureAwait(false);
+        await _userRepository.UnitOfWork.CommitAsync().ConfigureAwait(false);
     }
 
-    public async Task Update(UserViewModel userViewModel)
+    public async Task UpdateAsync(UserViewModel userViewModel)
     {
         var user = _mapper.Map<User>(userViewModel);
 
         _userRepository.Update(user);
-        await _userRepository.UnitOfWork.Commit().ConfigureAwait(false);
+        await _userRepository.UnitOfWork.CommitAsync().ConfigureAwait(false);
     }
 
-    public async Task Remove(int id)
+    public async Task RemoveAsync(int id)
     {
-        var user = await _userRepository.GetById(id).ConfigureAwait(false);
+        var user = await _userRepository.GetByIdAsync(id).ConfigureAwait(false);
 
         _userRepository.Remove(user);
-        await _userRepository.UnitOfWork.Commit().ConfigureAwait(false);
+        await _userRepository.UnitOfWork.CommitAsync().ConfigureAwait(false);
     }
 
-    public async Task<UserViewModel> GetById(int id)
+    public async Task<UserViewModel> GetByIdAsync(int id)
     {
-        var user = await _userRepository.GetById(id).ConfigureAwait(false);
+        var user = await _userRepository.GetByIdAsync(id).ConfigureAwait(false);
 
         return _mapper.Map<UserViewModel>(user);
     }
 
-    public async Task<IEnumerable<UserViewModel>> GetAll()
+    public async Task<IEnumerable<UserViewModel>> GetAllAsync()
     {
-        var users = await _userRepository.GetAll().ConfigureAwait(false);
+        var users = await _userRepository.GetAllAsync().ConfigureAwait(false);
 
         return _mapper.Map<IEnumerable<UserViewModel>>(users);
     }

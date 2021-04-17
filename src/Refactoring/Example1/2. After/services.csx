@@ -14,7 +14,7 @@ public class ActionService<T> : IService<T>
         _action = action;
     }
 
-    public async Task<T> Get(int id)
+    public async Task<T> GetAsync(int id)
     {
         var url = Url.Combine(EnvironmentUtil.URL, _action.ToString().ToLower(), id.ToString());
 

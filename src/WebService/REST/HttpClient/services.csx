@@ -6,7 +6,7 @@ using System.Text.Json;
 public class PostService
 {
     // GET
-    public async Task<List<Post>> GetPosts()
+    public async Task<List<Post>> GetPostsAsync()
     {
         const string url = "https://jsonplaceholder.typicode.com/posts";
         using var client = new HttpClient();
@@ -29,7 +29,7 @@ public class PostService
     }
 
     // POST
-    public async Task<Post> AddPost(Post post)
+    public async Task<Post> AddPostAsync(Post post)
     {
         const string url = "https://jsonplaceholder.typicode.com/posts";
         using var client = new HttpClient();
@@ -55,7 +55,7 @@ public class PostService
     }
 
     // PUT
-    public async Task<Post> EditPost(Post post)
+    public async Task<Post> EditPostAsync(Post post)
     {
         string url = $"https://jsonplaceholder.typicode.com/posts/{post.Id}";
         using var client = new HttpClient();
@@ -81,7 +81,7 @@ public class PostService
     }
 
     // DELETE
-    public async Task<bool> DeletePost(int postId)
+    public async Task<bool> DeletePostAsync(int postId)
     {
         string url = $"https://jsonplaceholder.typicode.com/posts/{postId}";
         using var client = new HttpClient();

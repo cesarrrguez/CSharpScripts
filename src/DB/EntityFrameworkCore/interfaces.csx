@@ -3,7 +3,7 @@
 
 public interface IUnitOfWork : IDisposable
 {
-    Task<bool> Commit();
+    Task<bool> CommitAsync();
 }
 
 public interface IRepository<T> where T : IAggregateRoot
@@ -13,28 +13,28 @@ public interface IRepository<T> where T : IAggregateRoot
 
 public interface IUserRepository : IRepository<User>, IDisposable
 {
-    Task Add(User user);
+    Task AddAsync(User user);
     void Update(User user);
     void Remove(User user);
-    Task<User> GetById(int id);
-    Task<IEnumerable<User>> GetAll();
+    Task<User> GetByIdAsync(int id);
+    Task<IEnumerable<User>> GetAllAsync();
 }
 
 public interface IUserService : IDisposable
 {
-    Task Register(UserViewModel userViewModel);
-    Task Update(UserViewModel userViewModel);
-    Task Remove(int id);
-    Task<UserViewModel> GetById(int id);
-    Task<IEnumerable<UserViewModel>> GetAll();
+    Task RegisterAsync(UserViewModel userViewModel);
+    Task UpdateAsync(UserViewModel userViewModel);
+    Task RemoveAsync(int id);
+    Task<UserViewModel> GetByIdAsync(int id);
+    Task<IEnumerable<UserViewModel>> GetAllAsync();
 }
 
 public interface IUserController : IDisposable
 {
-    Task Create(UserViewModel userViewModel);
-    Task<UserViewModel> Get(int id);
-    Task Edit(UserViewModel userViewModel);
-    Task Delete(int id);
-    Task Details(int id);
-    Task Index();
+    Task CreateAsync(UserViewModel userViewModel);
+    Task<UserViewModel> GetAsync(int id);
+    Task EditAsync(UserViewModel userViewModel);
+    Task DeleteAsync(int id);
+    Task DetailsAsync(int id);
+    Task IndexAsync();
 }

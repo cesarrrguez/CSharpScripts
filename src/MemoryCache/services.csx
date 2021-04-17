@@ -14,12 +14,12 @@ public class PostService : IPostService
         _cache = new MemoryCache(new MemoryCacheOptions());
     }
 
-    public async Task<Post> GetPost(int id)
+    public async Task<Post> GetPostAsync(int id)
     {
         // Check if exists
         if (!_cache.TryGetValue(id, out Post post))
         {
-            post = await GetPostFromHttp(id).ConfigureAwait(false);
+            post = await GetPostFromHttpAsync(id).ConfigureAwait(false);
             _cache.Set(id, post);
 
             return post;
@@ -28,7 +28,7 @@ public class PostService : IPostService
         return post;
     }
 
-    private async Task<Post> GetPostFromHttp(int id)
+    private async Task<Post> GetPostFromHttpAsync(int id)
     {
         using var client = new HttpClient();
         return await client.GetFromJsonAsync<Post>($"https://jsonplaceholder.typicode.com/posts/{id}").ConfigureAwait(false);

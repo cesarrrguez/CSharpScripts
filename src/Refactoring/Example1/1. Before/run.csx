@@ -6,10 +6,10 @@ using System.Net.Http;
 using System.Net.Http.Formatting;
 
 var post = new Post();
-await post.GetInfo(1).ConfigureAwait(false);
+await post.GetInfoAsync(1).ConfigureAwait(false);
 
 var photo = new Photo();
-await photo.Save(1).ConfigureAwait(false);
+await photo.SaveAsync(1).ConfigureAwait(false);
 
 public class Post
 {
@@ -18,7 +18,7 @@ public class Post
     public string Title { get; set; }
     public string Body { get; set; }
 
-    public async Task GetInfo(int id)
+    public async Task GetInfoAsync(int id)
     {
         var url = "https://jsonplaceholder.typicode.com/posts/" + id;
         using var client = new HttpClient();
@@ -36,7 +36,7 @@ public class Photo
     public string Url { get; set; }
     public string ThumbnailUrl { get; set; }
 
-    public async Task Save(int id)
+    public async Task SaveAsync(int id)
     {
         var url = "https://jsonplaceholder.typicode.com/photos/" + id;
         var client = new HttpClient();

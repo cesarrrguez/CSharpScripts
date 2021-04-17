@@ -12,8 +12,8 @@ var endDate = DateTime.Now;
 
 WriteLine("News\t\tImages");
 WriteLine("----\t\t------");
-var saveNewsTask = App.RunSaveNews(startDate, endDate);
-var saveImagesTask = App.RunSaveImages(startDate, endDate);
+var saveNewsTask = App.RunSaveNewsAsync(startDate, endDate);
+var saveImagesTask = App.RunSaveImagesAsync(startDate, endDate);
 
 saveNewsTask.Wait();
 saveImagesTask.Wait();
@@ -22,13 +22,13 @@ WriteLine("\nScraping finished!");
 
 public static class App
 {
-    public async static Task RunSaveNews(DateTime startDate, DateTime endDate)
+    public async static Task RunSaveNewsAsync(DateTime startDate, DateTime endDate)
     {
         var path = Path.Combine(FolderUtil.GetCurrentDirectoryName(), "news.json");
         await Utils.SaveNews(startDate, endDate, path).ConfigureAwait(false);
     }
 
-    public async static Task RunSaveImages(DateTime startDate, DateTime endDate)
+    public async static Task RunSaveImagesAsync(DateTime startDate, DateTime endDate)
     {
         var path = Path.Combine(FolderUtil.GetCurrentDirectoryName(), "Images");
         FolderUtil.CleanupDirectory(path);

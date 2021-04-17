@@ -1,6 +1,6 @@
 #load "entities.csx"
 
-var pizza = Chef.MakePizza();
+var pizza = Chef.MakePizzaAsync();
 Chef.MakeDrink();
 
 pizza.Wait();

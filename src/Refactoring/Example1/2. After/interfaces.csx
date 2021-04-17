@@ -1,9 +1,9 @@
 public interface IService<T>
 {
-    Task<T> Get(int id);
+    Task<T> GetAsync(int id);
 }
 
 public interface IRepository<T>
 {
-    Task Save(string data);
+    Task SaveAsync(string data);
 }

@@ -10,47 +10,47 @@ public class UserController : IUserController
         _userService = userService ?? throw new ArgumentNullException(nameof(userService));
     }
 
-    public async Task Create(UserViewModel userViewModel)
+    public async Task CreateAsync(UserViewModel userViewModel)
     {
         WriteLine("Create User:");
         WriteLine(_separator);
 
-        await _userService.Register(userViewModel).ConfigureAwait(false);
+        await _userService.RegisterAsync(userViewModel).ConfigureAwait(false);
     }
 
-    public async Task<UserViewModel> Get(int id)
+    public async Task<UserViewModel> GetAsync(int id)
     {
-        return await _userService.GetById(id).ConfigureAwait(false);
+        return await _userService.GetByIdAsync(id).ConfigureAwait(false);
     }
 
-    public async Task Edit(UserViewModel userViewModel)
+    public async Task EditAsync(UserViewModel userViewModel)
     {
         WriteLine("\nEdit User:");
         WriteLine(_separator);
 
-        await _userService.Update(userViewModel).ConfigureAwait(false);
+        await _userService.UpdateAsync(userViewModel).ConfigureAwait(false);
     }
 
-    public async Task Delete(int id)
+    public async Task DeleteAsync(int id)
     {
         WriteLine("\nDelete User:");
         WriteLine(_separator);
 
-        await _userService.Remove(id).ConfigureAwait(false);
+        await _userService.RemoveAsync(id).ConfigureAwait(false);
     }
 
-    public async Task Details(int id)
+    public async Task DetailsAsync(int id)
     {
         WriteLine("\nDetails User:");
         WriteLine(_separator);
 
-        var userViewModel = await _userService.GetById(id).ConfigureAwait(false);
+        var userViewModel = await _userService.GetByIdAsync(id).ConfigureAwait(false);
         PrintUser(userViewModel);
     }
 
-    public async Task Index()
+    public async Task IndexAsync()
     {
-        var users = await _userService.GetAll().ConfigureAwait(false);
+        var users = await _userService.GetAllAsync().ConfigureAwait(false);
         PrintUsers(users);
     }
 

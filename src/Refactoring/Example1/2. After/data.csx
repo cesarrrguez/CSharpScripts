@@ -13,7 +13,7 @@ public class ActionRepository<T> : IRepository<T>
         _action = action;
     }
 
-    public async Task Save(string data)
+    public async Task SaveAsync(string data)
     {
         var path = Path.Combine(FolderUtil.GetCurrentDirectoryName(), "Files", $"{_action.ToString().ToLower()}.txt");
 

@@ -10,7 +10,7 @@ public static class TwilioService
     private const string SANDBOX_PHONE_NUMBER = "XXXXXXXXX";
     private const string SANDBOX_WHATSAPP_NUMBER = "XXXXXXXXX";
 
-    public static async Task SendSms()
+    public static async Task SendSmsAsync()
     {
         TwilioClient.Init(ACCOUNT_SID, AUTH_TOKEN);
 
@@ -31,7 +31,7 @@ public static class TwilioService
         }
     }
 
-    public static async Task SendWhatsApp()
+    public static async Task SendWhatsAppAsync()
     {
         TwilioClient.Init(ACCOUNT_SID, AUTH_TOKEN);
 
@@ -53,7 +53,7 @@ public static class TwilioService
         }
     }
 
-    public static async Task MakeCall()
+    public static async Task MakeCallAsync()
     {
         TwilioClient.Init(ACCOUNT_SID, AUTH_TOKEN);
 

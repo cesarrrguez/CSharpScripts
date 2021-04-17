@@ -22,7 +22,7 @@ public static class App
         // Get posts
         for (int i = 1; i <= 100; i++)
         {
-            var post = postService.GetPost(i);
+            var post = postService.GetPostAsync(i);
             WriteLine($"{post.Result}\n");
         }
 

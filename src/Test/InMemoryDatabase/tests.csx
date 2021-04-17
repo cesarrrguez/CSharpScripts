@@ -24,7 +24,7 @@ public class UserRepositoryTests
     [TestMethod]
     public async Task Given_UserId_1_Expected_NotNull()
     {
-        var result = await _userRepository.Get(1).ConfigureAwait(false);
+        var result = await _userRepository.GetAsync(1).ConfigureAwait(false);
 
         result.Should().NotBeNull();
     }
@@ -32,7 +32,7 @@ public class UserRepositoryTests
     [TestMethod]
     public async Task Given_UserId_2_Expected_Null()
     {
-        var result = await _userRepository.Get(2).ConfigureAwait(false);
+        var result = await _userRepository.GetAsync(2).ConfigureAwait(false);
 
         result.Should().BeNull();
     }

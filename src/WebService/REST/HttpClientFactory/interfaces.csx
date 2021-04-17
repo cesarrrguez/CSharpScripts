@@ -2,5 +2,5 @@
 
 public interface IPostService
 {
-    Task<Post> GetPost(int number);
+    Task<Post> GetPostAsync(int number);
 }

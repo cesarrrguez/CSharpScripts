@@ -9,13 +9,13 @@ public class UserService : IUserService
         _userRepository = userRepository ?? throw new ArgumentNullException(nameof(userRepository));
     }
 
-    public async Task<IEnumerable<User>> GetAllUsers()
+    public async Task<IEnumerable<User>> GetAllUsersAsync()
     {
-        return await _userRepository.GetAll().ConfigureAwait(false);
+        return await _userRepository.GetAllAsync().ConfigureAwait(false);
     }
 
-    public async Task<User> GetUser(int userId)
+    public async Task<User> GetUserAsync(int userId)
     {
-        return await _userRepository.Get(userId).ConfigureAwait(false);
+        return await _userRepository.GetAsync(userId).ConfigureAwait(false);
     }
 }
