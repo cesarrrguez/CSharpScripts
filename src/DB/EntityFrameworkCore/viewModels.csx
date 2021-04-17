@@ -58,9 +58,6 @@ public class UserAddressViewModel
     [MaxLength(10)]
     public string ZipCode { get; set; }
 
-    [Required(ErrorMessage = "The user is required")]
-    public UserViewModel User { get; set; }
-
     public override string ToString() => $"Address. Id: {Id}, Street: {Street}, City: {City}, State: {State}, ZipCode: {ZipCode}";
 }
 
@@ -72,9 +69,6 @@ public class UserEmailViewModel
     [Required(ErrorMessage = "The email is required")]
     [MaxLength(200)]
     public string EmailAddress { get; set; }
-
-    [Required(ErrorMessage = "The user is required")]
-    public UserViewModel User { get; set; }
 
     public override string ToString() => $"Email. Id: {Id}, EmailAddress: {EmailAddress}";
 }

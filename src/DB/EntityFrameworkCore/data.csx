@@ -10,8 +10,6 @@ public class DataContext : DbContext, IUnitOfWork
     public const string DEFAULT_SCHEMA = "data";
 
     public DbSet<User> Users { get; set; }
-    public DbSet<UserAddress> UserAddresses { get; set; }
-    public DbSet<UserEmail> UserEmails { get; set; }
 
     public DataContext(DbContextOptions<DataContext> options) : base(options) { }
 
@@ -78,7 +76,7 @@ public class UserAddressMap : IEntityTypeConfiguration<UserAddress>
         builder.Property(ua => ua.ZipCode)
             .IsRequired()
             .HasMaxLength(10)
-            .HasColumnType("varchar(100)");
+            .HasColumnType("varchar(10)");
 
         // Relationships
         builder.HasOne(ua => ua.User)
@@ -139,6 +137,7 @@ public class UserRepository : IUserRepository
         return await _context.Users
             .Include(u => u.Addresses)
             .Include(u => u.Emails)
+            .AsNoTracking()
             .SingleOrDefaultAsync(u => u.Id == id).ConfigureAwait(false);
     }
 
@@ -147,6 +146,7 @@ public class UserRepository : IUserRepository
         return await _context.Users
             .Include(u => u.Addresses)
             .Include(u => u.Emails)
+            .AsNoTracking()
             .ToListAsync().ConfigureAwait(false);
     }
 
