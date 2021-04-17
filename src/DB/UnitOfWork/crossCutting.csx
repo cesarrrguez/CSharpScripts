@@ -5,12 +5,10 @@ using Microsoft.Extensions.DependencyInjection;
 
 public static class IoC
 {
-    public static IServiceCollection RegisterServices(IServiceCollection services)
+    public static void RegisterServices(IServiceCollection services)
     {
-        // Infrastructure
+        // Infrastructure - Data
         services.AddScoped<IDataContext, DataContext>();
         services.AddScoped<IUnitOfWork, UnitOfWork>();
-
-        return services;
     }
 }

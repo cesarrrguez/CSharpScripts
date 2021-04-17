@@ -7,7 +7,7 @@ using Microsoft.Extensions.DependencyInjection;
 
 public static class IoC
 {
-    public static IServiceCollection RegisterServices(IServiceCollection services)
+    public static void RegisterServices(IServiceCollection services)
     {
         // UI
         services.AddTransient<IUserController, UserController>();
@@ -15,10 +15,8 @@ public static class IoC
         // Application
         services.AddTransient<IUserService, UserService>();
 
-        // Infrastructure
+        // Infrastructure - Data
         services.AddTransient<IUnitOfWork, DataContext>();
         services.AddTransient<IUserRepository, UserRepository>();
-
-        return services;
     }
 }

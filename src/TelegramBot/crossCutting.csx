@@ -9,7 +9,7 @@ using Microsoft.Extensions.Options;
 
 public static class IoC
 {
-    public static IServiceCollection RegisterServices(IServiceCollection services)
+    public static void RegisterServices(IServiceCollection services)
     {
         services.AddSingleton<ITelegramBotSettings>(sp =>
            sp.GetRequiredService<IOptions<TelegramBotSettings>>().Value);
@@ -18,7 +18,5 @@ public static class IoC
             new TelegramBotClient(sp.GetRequiredService<ITelegramBotSettings>().AccessToken));
 
         services.AddScoped<ITelegramBotService, TelegramBotService>();
-
-        return services;
     }
 }

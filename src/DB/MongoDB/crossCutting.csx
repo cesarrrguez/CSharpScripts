@@ -9,16 +9,19 @@ using Microsoft.Extensions.Options;
 
 public static class IoC
 {
-    public static IServiceCollection RegisterServices(IServiceCollection services)
+    public static void RegisterServices(IServiceCollection services)
     {
+        // UI
+        services.AddScoped<IUserController, UserController>();
+
+        // Application
+        services.AddScoped<IUserService, UserService>();
+
+        // Infrastructure - Data
         services.AddSingleton<IDbSettings>(sp =>
-           sp.GetRequiredService<IOptions<DbSettings>>().Value);
+            sp.GetRequiredService<IOptions<DbSettings>>().Value);
 
         services.AddScoped<DataContext>();
         services.AddScoped<IUserRepository, UserRepository>();
-        services.AddScoped<IUserService, UserService>();
-        services.AddScoped<IUserController, UserController>();
-
-        return services;
     }
 }

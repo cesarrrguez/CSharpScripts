@@ -12,17 +12,19 @@ using Microsoft.Extensions.Options;
 
 public static class IoC
 {
-    public static IServiceCollection RegisterServices(IServiceCollection services)
+    public static void RegisterServices(IServiceCollection services)
     {
+        // UI
+        services.AddScoped<IPostController, PostController>();
+
+        // Application
+        services.AddScoped<IPostService, PostService>();
+
+        // Infrastructure - Data
         services.AddSingleton<IGraphQLSettings>(sp =>
            sp.GetRequiredService<IOptions<GraphQLSettings>>().Value);
 
         services.AddScoped<IGraphQLClient>(sp =>
             new GraphQLHttpClient(sp.GetRequiredService<IGraphQLSettings>().EndPointUrl, new NewtonsoftJsonSerializer()));
-
-        services.AddScoped<IPostController, PostController>();
-        services.AddScoped<IPostService, PostService>();
-
-        return services;
     }
 }

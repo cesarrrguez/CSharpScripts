@@ -6,11 +6,12 @@ using Microsoft.Extensions.DependencyInjection;
 
 public static class IoC
 {
-    public static IServiceCollection RegisterServices(IServiceCollection services)
+    public static void RegisterServices(IServiceCollection services)
     {
-        services.AddScoped<IOrderService, OrderService>();
+        // UI
         services.AddScoped<IOrderController, OrderController>();
 
-        return services;
+        // Application
+        services.AddScoped<IOrderService, OrderService>();
     }
 }
