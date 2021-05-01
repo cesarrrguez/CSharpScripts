@@ -39,6 +39,7 @@ This repository contains _C#_ scripts.
 - XML, JSON, Excel, CSV, Zip, PDF, QR, USB
 - New in C# 7, 8 and 9
 - Globalization, Localization
+- Currying
 - Other
 
 ## License
