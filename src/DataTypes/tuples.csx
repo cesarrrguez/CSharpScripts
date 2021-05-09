@@ -7,5 +7,8 @@ WriteLine($"Employee. Id: {employee2.Item1}, First Name: {employee2.Item2}, Last
 (int Id, string FirstName, string LastName) employee3 = GetEmployee2();
 WriteLine($"Employee. Id: {employee3.Id}, First Name: {employee3.FirstName}, Last Name: {employee3.LastName}");
 
+var employee4 = (Id: 1001, FirstName: "James", LastName: "Brown");
+WriteLine($"Employee. Id: {employee4.Id}, First Name: {employee4.FirstName}, Last Name: {employee4.LastName}");
+
 public Tuple<int, string, string> GetEmployee1() => Tuple.Create(1001, "James", "Brown");
 public (int, string, string) GetEmployee2() => (1001, "James", "Brown");
