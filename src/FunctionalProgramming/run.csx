@@ -35,3 +35,21 @@ WriteLine(text);
 
 var days = Utils.Days(new DateTime(2020, 08, 15), DateTime.Now);
 WriteLine($"{days} days");
+
+WriteLine();
+
+// Functional programming and tuples
+var counter = Utils.Counter();
+counter.Increment();
+counter.Increment();
+WriteLine(counter.Get());
+
+counter.Substract();
+WriteLine(counter.Get());
+
+WriteLine();
+
+var operationsDB = Utils.OperationsDB();
+operationsDB.Add();
+operationsDB.Update();
+operationsDB.Delete();
