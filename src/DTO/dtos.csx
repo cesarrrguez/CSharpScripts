@@ -1,6 +1,4 @@
-using System.Reflection;
-
-public class MeetingDTO
+public class MeetingDto
 {
     public Guid MeetingId { get; set; }
     public string MeetingName { get; set; }

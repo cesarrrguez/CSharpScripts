@@ -1,13 +1,13 @@
 #load "entities.csx"
-#load "DTO.csx"
+#load "dtos.csx"
 
 public class ManualMeetingMapper
 {
-    public MeetingDTO CreateDTO(Meeting meeting)
+    public MeetingDto CreateDto(Meeting meeting)
     {
         if (meeting == null) throw new ArgumentNullException(nameof(meeting));
 
-        return new MeetingDTO
+        return new MeetingDto
         {
             GroupName = meeting.Organizer.Name,
             MeetingName = meeting.Name,
@@ -16,9 +16,9 @@ public class ManualMeetingMapper
         };
     }
 
-    public Meeting CreateEntity(MeetingDTO meetingDTO)
+    public Meeting CreateEntity(MeetingDto meetingDto)
     {
-        if (meetingDTO == null) throw new ArgumentNullException(nameof(meetingDTO));
+        if (meetingDto == null) throw new ArgumentNullException(nameof(meetingDto));
 
         throw new NotImplementedException();
     }

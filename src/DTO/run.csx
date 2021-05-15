@@ -1,5 +1,5 @@
 #load "entities.csx"
-#load "DTO.csx"
+#load "dtos.csx"
 #load "mapper.csx"
 #load "utils.csx"
 
@@ -34,9 +34,9 @@ var attendee = new Attendee
 };
 meeting.ConfirmedAttendees.Add(attendee);
 
-// Mapping domain model entity to DTO
+// Mapping domain model entity to Dto
 var manualMeetingMapper = new ManualMeetingMapper();
-var meetingDTO = manualMeetingMapper.CreateDTO(meeting);
+var meetingDto = manualMeetingMapper.CreateDto(meeting);
 
-// Print DTO
-WriteLine(meetingDTO.PropertyList());
+// Print Dto
+WriteLine(meetingDto.PropertyList());
