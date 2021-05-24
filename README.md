@@ -29,7 +29,7 @@ This repository contains _C#_ scripts.
 - FluentValidation
 - Web Scrapping
 - Web Service, SOAP, REST, GraphQL
-- Twilio, Telegram
+- Twilio, Telegram, Python
 - Encryption
 - Files
 - Threads, Asynchronous Calls
