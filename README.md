@@ -26,7 +26,7 @@ This repository contains _C#_ scripts.
 - Logging, Serilog
 - Configuration
 - Mapping, DTO, AutoMapper
-- FluentValidation
+- FluentValidation, Bogus
 - Web Scrapping
 - Web Service, SOAP, REST, GraphQL
 - Twilio, Telegram, Python
