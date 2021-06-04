@@ -14,7 +14,7 @@ This repository contains _C#_ scripts.
 - Delegates, Action, Func, Predicate
 - Copy Constructor, Static Constructor, Object Initializers
 - Explicit Operator Conversion, Implicit Operator Conversion, Operator overload
-- Exceptions, GC, MemoryCache
+- Exceptions, GC, MemoryCache, Redis, Memoization
 - Extension Methods, Expression Bodied Members
 - Functional Programming, LINQ
 - Design Patterns
@@ -32,7 +32,7 @@ This repository contains _C#_ scripts.
 - Twilio, Telegram, Python
 - Encryption
 - Files
-- Threads, Asynchronous Calls
+- Threads, Asynchronous Calls, Closures
 - Reflection, Refactoring, Performance
 - MVVM
 - Email, SMTP, POP3, OpenPop
