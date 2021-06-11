@@ -2,6 +2,7 @@
 
 using MongoDB.Driver;
 
+// Context
 public class DataContext
 {
     public IMongoCollection<User> Users { get; set; }
@@ -15,6 +16,7 @@ public class DataContext
     }
 }
 
+// Repositories
 public class UserRepository : IUserRepository
 {
     private readonly DataContext _context;
