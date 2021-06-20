@@ -1,5 +1,5 @@
 #load "entities.csx"
-#load "DTO.csx"
+#load "dtos.csx"
 
 #r "nuget: AutoMapper, 10.0.0"
 
@@ -8,7 +8,7 @@ using AutoMapper;
 // Create mapper config
 var config = new MapperConfiguration(cfg =>
 {
-    cfg.CreateMap<User, UserDTO>()
+    cfg.CreateMap<User, UserDto>()
     .ForMember(x => x.Name, opt => opt.MapFrom(x => x.FirstName + ' ' + x.LastName))
     .ForMember(x => x.Street, opt => opt.MapFrom(x => x.Address.Street))
     .ForMember(x => x.City, opt => opt.MapFrom(x => x.Address.City));
@@ -25,7 +25,7 @@ user.AddAddress("My Street", "My City");
 WriteLine(user);
 
 // Mapping object model to DTO
-var userMap = mapper.Map<User, UserDTO>(user);
+var userMap = mapper.Map<User, UserDto>(user);
 
 // Print DTO
 WriteLine();
