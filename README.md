@@ -25,9 +25,9 @@ This repository contains _C#_ scripts.
 - Dependency Injection, IoC
 - Logging, Serilog
 - Configuration
-- Mapping, DTO, AutoMapper
 - FluentValidation, Bogus
 - Web Scrapping
+- Mapping, DTO, AutoMapper, Mapster
 - Web Service, SOAP, REST, GraphQL
 - Twilio, Telegram, Python
 - Encryption
