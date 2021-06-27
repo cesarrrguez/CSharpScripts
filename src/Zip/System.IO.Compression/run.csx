@@ -1,7 +1,6 @@
 #load "utils.csx"
 
 using System.IO.Compression;
-using System.IO;
 
 var folderPath = Path.Combine(FolderUtil.GetCurrentDirectoryName(), "files");
 var zipPath = Path.Combine(FolderUtil.GetCurrentDirectoryName(), "files.zip");
