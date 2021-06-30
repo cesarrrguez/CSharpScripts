@@ -16,7 +16,7 @@ This repository contains _C#_ scripts.
 - Explicit Operator Conversion, Implicit Operator Conversion, Operator overload
 - Exceptions, GC, MemoryCache, Redis, Memoization
 - Extension Methods, Expression Bodied Members
-- Functional Programming, LINQ
+- Functional Programming, Reactive Programming, LINQ, PLINQ
 - Design Patterns
 - SOLID Principles
 - Entity Framework, Unit of Work, Transactions, CQRS
