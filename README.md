@@ -9,37 +9,52 @@ This repository contains _C#_ scripts.
 - Object Oriented Programming
 - Inheritance, Interfaces, Aggregation, Composition
 - Encapsulation, Cohesion, Coupling
-- Collections, Data Types, Memory Allocation, Generics, Structs, Enums, Records, Value Objects
-- Data Structures, Algorithms, Problems
+- Collections, Data Types, Memory Allocation, Generics, Structs, Enums, Records, Value Objects, Tuples
+- Data Structures, Algorithms, Problems, Recursion
 - Delegates, Action, Func, Predicate
+- Covariance, Contravariance
+- Anonymous Types, Anonymous Methods
+- Lambda Expressions, Regular Expressions
+- Currying, Closures, Boxing and Unboxing, Dynamics
 - Copy Constructor, Static Constructor, Object Initializers
-- Explicit Operator Conversion, Implicit Operator Conversion, Operator overload
+- Explicit Operator Conversion, Implicit Operator Conversion, Operator Overload
 - Exceptions, GC, MemoryCache, Redis, Memoization
 - Extension Methods, Expression Bodied Members
 - Functional Programming, Reactive Programming, LINQ, PLINQ
+- OneOf, LanguageExt
 - Design Patterns
 - SOLID Principles
-- Entity Framework, Unit of Work, Transactions, CQRS
-- Sqlite, SqlServer, MongoDB
-- Test, Moq, InMemoryDatabase, MSTest, FluentAssertions
-- Dependency Injection, IoC
+- DB, Repository, Unit of Work, Transactions, CQRS
+- Entity Framework
+- SqlServer, Sqlite, MongoDB
+- Test, MSTest, xUnit, FluentAssertions, Moq, InMemoryDatabase
+- Dependency Injection, IoC, Simple Injector, Ninject
 - Logging, Serilog
 - Configuration
-- FluentValidation, Bogus
-- Web Scrapping
 - Mapping, DTO, AutoMapper, Mapster
-- Web Service, SOAP, REST, GraphQL
-- Twilio, Telegram, Python
+- FluentValidation, Humanizer
+- Web Scrapping, ScrapySharp, HtmlAgilityPack, Flurl.Http
+- Web Service, SOAP, REST, GraphQL, RestSharp
+- Twilio
+- Telegram, Telegram.Bot
+- Python, IronPython
 - Encryption
-- Files
-- Threads, Asynchronous Calls, Closures
-- Reflection, Refactoring, Performance
+- Files, protobuf-net
+- Threads, Parallel Programming, Asynchronous Calls
+- Reflection
+- Refactoring, Performance
 - MVVM
-- Email, SMTP, POP3, OpenPop
-- XML, JSON, Excel, CSV, Zip, PDF, QR, USB
+- Email, SMTP, POP3, IMAP, System.Net.Mail, OpenPop.NET
+- XML, LINQ to XML, XmlDocument, XmlReader, XPath
+- JSON, System.Text.Json, Newtonsoft.Json
+- Excel, ExcelDataReader, SpreadsheetLight
+- CSV, CsvHelper
+- PDF, QR, itext7, iTextSharp
+- Zip, System.IO.Compression, SharpZipLib
+- USB, System.Management
 - New in C# 7, 8 and 9
-- Globalization, Localization
-- Currying
+- Atributes, Data Anotations
+- Culture, Globalization, Localization
 - Other
 
 ## License
