@@ -4,8 +4,4 @@
 
 var pop3Service = new Pop3Service();
 var messages = pop3Service.GetMessages();
-
-foreach (var message in messages)
-{
-    WriteLine(message.Headers.Subject);
-}
+messages.ForEach(message => WriteLine(message.Headers.Subject));
