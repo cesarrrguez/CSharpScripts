@@ -1,4 +1,4 @@
-public class MeetingDto
+public record MeetingDto
 {
     public Guid MeetingId { get; set; }
     public string MeetingName { get; set; }

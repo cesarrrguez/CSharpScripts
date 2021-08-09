@@ -1,4 +1,4 @@
-public class UserDto
+public record UserDto
 {
     public Guid Id { get; private set; }
     public string Name { get; set; }
