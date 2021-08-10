@@ -44,7 +44,7 @@ This repository contains _C#_ scripts.
 - Reflection
 - Refactoring, Performance
 - MVVM
-- Email, SMTP, POP3, IMAP, System.Net.Mail, OpenPop.NET
+- Email, SMTP, POP3, IMAP, System.Net.Mail, OpenPop.NET, MailKit, FluentEmail
 - XML, LINQ to XML, XmlDocument, XmlReader, XPath
 - JSON, System.Text.Json, Newtonsoft.Json
 - Excel, ExcelDataReader, SpreadsheetLight
