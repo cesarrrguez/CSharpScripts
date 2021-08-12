@@ -2,8 +2,9 @@
 
 #r "nuget: Bogus, 33.0.2"
 
+using System.Text.Encodings.Web;
 using System.Text.Json;
-
+using System.Text.Unicode;
 using Bogus;
 
 Randomizer.Seed = new Random(120);
@@ -33,7 +34,12 @@ var orders = orderFaker.Generate(10);
 
 foreach (var order in orders)
 {
-    var text = JsonSerializer.Serialize(order);
+    var text = JsonSerializer.Serialize(order,
+        new JsonSerializerOptions()
+        {
+            Encoder = JavaScriptEncoder.Create(UnicodeRanges.All)
+        });
+
     WriteLine();
     WriteLine(text);
 
