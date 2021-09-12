@@ -21,7 +21,8 @@ This repository contains _C#_ scripts.
 - Exceptions, GC, MemoryCache, Redis, Memoization
 - Extension Methods, Expression Bodied Members
 - Functional Programming, Reactive Programming, LINQ, PLINQ
-- OneOf, LanguageExt
+- OneOf, LanguageExt, CSharpFunctionalExtensions
+- Get rid of primitive obsession, Make nulls explicit with the Maybe type
 - Design Patterns
 - SOLID Principles
 - DB, Repository, Unit of Work, Transactions, CQRS
