@@ -14,7 +14,7 @@ This repository contains _C#_ scripts.
 - Delegates, Action, Func, Predicate
 - Covariance, Contravariance
 - Anonymous Types, Anonymous Methods
-- Lambda Expressions, Regular Expressions
+- Lambda Expressions, Regular Expressions, Method Changing
 - Currying, Closures, Boxing and Unboxing, Dynamics
 - Copy Constructor, Static Constructor, Object Initializers
 - Explicit Operator Conversion, Implicit Operator Conversion, Operator Overload
