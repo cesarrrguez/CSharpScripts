@@ -42,7 +42,7 @@ This repository contains _C#_ scripts.
 - Encryption
 - Files, protobuf-net
 - Threads, Parallel Programming, Asynchronous Calls
-- Reflection
+- Reflection, Fasterflect
 - Refactoring, Performance
 - MVVM
 - Email, SMTP, POP3, IMAP, System.Net.Mail, OpenPop.NET, MailKit, FluentEmail
