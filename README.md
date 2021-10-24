@@ -33,7 +33,8 @@ This repository contains _C#_ scripts.
 - Logging, Serilog
 - Configuration
 - Mapping, DTO, AutoMapper, Mapster
-- FluentValidation, Humanizer, Ben.Demystifier, GuardClauses
+- FluentValidation, Humanizer, GuardClauses
+- Polly, Ben.Demystifier, MediatR
 - Web Scrapping, ScrapySharp, HtmlAgilityPack, Flurl.Http
 - Web Service, SOAP, REST, GraphQL, RestSharp
 - Twilio
@@ -44,7 +45,6 @@ This repository contains _C#_ scripts.
 - Threads, Parallel Programming, Asynchronous Calls
 - Reflection, Fasterflect
 - Refactoring, Performance
-- Polly
 - MVVM
 - Email, SMTP, POP3, IMAP, System.Net.Mail, OpenPop.NET, MailKit, FluentEmail
 - XML, LINQ to XML, XmlDocument, XmlReader, XPath
