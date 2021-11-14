@@ -26,7 +26,7 @@ This repository contains _C#_ scripts.
 - Design Patterns
 - SOLID Principles
 - DB, Repository, Unit of Work, Transactions, CQRS
-- Entity Framework
+- Entity Framework Core, Entity Framework Core Plus, Dapper, Nhibernate
 - SqlServer, Sqlite, MongoDB
 - Test, MSTest, xUnit, FluentAssertions, Moq, InMemoryDatabase
 - Dependency Injection, IoC, Simple Injector, Ninject
