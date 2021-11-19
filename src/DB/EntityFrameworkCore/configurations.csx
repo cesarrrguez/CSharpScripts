@@ -1,5 +1,5 @@
 #load "crossCutting.csx"
-#load "autoMapper.csx"
+#load "mappers.csx"
 
 using AutoMapper;
 using Microsoft.Extensions.DependencyInjection;

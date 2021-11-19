@@ -68,7 +68,7 @@ public static class App
         await _serviceProvider.GetService<IUserController>().IndexAsync().ConfigureAwait(false);
 
         // Update User
-        userViewModel = _serviceProvider.GetService<IUserController>().GetAsync(1).Result;
+        userViewModel = await _serviceProvider.GetService<IUserController>().GetAsync(1).ConfigureAwait(false);
         userViewModel.Age = 21;
         userViewModel.Emails.Add(new UserEmailViewModel { EmailAddress = "james.wilson_33.@hotmail.com" });
         await _serviceProvider.GetService<IUserController>().EditAsync(userViewModel).ConfigureAwait(false);
