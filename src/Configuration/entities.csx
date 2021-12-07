@@ -1,5 +1,5 @@
-public class AppConfig
+public class EmailConfiguration
 {
-    public string Name { get; set; }
-    public string Version { get; set; }
+    public string SmtpServer { get; set; }
+    public string From { get; set; }
 }
