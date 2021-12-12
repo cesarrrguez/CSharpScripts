@@ -52,7 +52,7 @@ public class UserRepository : IUserRepository
         _context = context ?? throw new ArgumentNullException(nameof(context));
     }
 
-    public async Task<User> GetAsync(int userId)
+    public async Task<User> GetByIdAsync(int userId)
     {
         return await _context.Users.SingleOrDefaultAsync(u => u.Id == userId).ConfigureAwait(false);
     }

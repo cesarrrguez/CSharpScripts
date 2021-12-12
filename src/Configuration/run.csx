@@ -16,13 +16,12 @@ public static class App
     private static IServiceProvider _serviceProvider;
     private static IConfiguration _configuration;
 
-
     public static void Run()
     {
         Configure();
         ConfigureServices();
 
-        IEmailService emailService = _serviceProvider.GetService<IEmailService>();
+        var emailService = _serviceProvider.GetService<IEmailService>();
         emailService.SendEmailAsync("to@email.com", "my subject", "My body");
 
         DisposeServices();
@@ -30,7 +29,7 @@ public static class App
 
     private static void Configure()
     {
-        IConfigurationBuilder builder = new ConfigurationBuilder()
+        var builder = new ConfigurationBuilder()
                     .SetBasePath(FolderUtil.GetCurrentDirectoryName())
                     .AddJsonFile("appsettings.json", optional: false, reloadOnChange: true);
 
@@ -39,11 +38,11 @@ public static class App
 
     private static void ConfigureServices()
     {
-        ServiceCollection services = new();
+        var services = new ServiceCollection();
 
         services.AddSingleton(_ =>
         {
-            EmailConfiguration emailConfiguration = new EmailConfiguration();
+            var emailConfiguration = new EmailConfiguration();
             _configuration.Bind("emailService", emailConfiguration);
             return emailConfiguration;
         })

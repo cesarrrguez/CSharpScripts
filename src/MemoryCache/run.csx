@@ -4,18 +4,18 @@
 var service = new PostService();
 
 // Post 1
-var post1 = service.GetPostAsync(1);
-WriteLine(post1.Result);
+var post1 = await service.GetPostAsync(1).ConfigureAwait(false);
+WriteLine(post1);
 WriteLine();
 
-var post1_second_call = service.GetPostAsync(1);
-WriteLine(post1_second_call.Result);
+var post1_second_call = await service.GetPostAsync(1).ConfigureAwait(false);
+WriteLine(post1_second_call);
 WriteLine();
 
 // Post 2
-var post2 = service.GetPostAsync(2);
-WriteLine(post2.Result);
+var post2 = await service.GetPostAsync(2).ConfigureAwait(false);
+WriteLine(post2);
 WriteLine();
 
-var post2_second_call = service.GetPostAsync(2);
-WriteLine(post2_second_call.Result);
+var post2_second_call = await service.GetPostAsync(2).ConfigureAwait(false);
+WriteLine(post2_second_call);

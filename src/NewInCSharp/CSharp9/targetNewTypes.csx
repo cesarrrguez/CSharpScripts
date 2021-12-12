@@ -6,5 +6,5 @@ public class Person
     public override string ToString() => $"Name: {Name}, Age: {Age}";
 }
 
-Person person = new() { Name = "César", Age = 36 };
+var person = new Person { Name = "César", Age = 36 };
 WriteLine(person);

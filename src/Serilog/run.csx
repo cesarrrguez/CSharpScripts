@@ -12,7 +12,6 @@ using Serilog.Events;
 using Microsoft.Extensions.DependencyInjection;
 using System.Diagnostics.CodeAnalysis;
 
-// Call App entry point
 App.Run();
 
 public static class App

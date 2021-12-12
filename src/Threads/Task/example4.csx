@@ -1,7 +1,7 @@
 using System.Threading;
 
 var source = new CancellationTokenSource();
-var token = source.Token;
+CancellationToken token = source.Token;
 
 Task[] tasks = new Task[3];
 tasks[0] = Task.Run(Request1, token);
@@ -14,7 +14,7 @@ try
 {
     Task.WaitAll(tasks);
 }
-catch (System.Exception)
+catch (Exception)
 {
     WriteLine();
 }
@@ -28,12 +28,12 @@ WriteLine("End");
 
 public void Request1()
 {
-    Task.Delay(2000);
+    Task.Delay(TimeSpan.FromSeconds(2));
     WriteLine("Request 1");
 }
 
 public void Request2()
 {
-    Task.Delay(2000);
+    Task.Delay(TimeSpan.FromSeconds(2));
     WriteLine("Request 2");
 }

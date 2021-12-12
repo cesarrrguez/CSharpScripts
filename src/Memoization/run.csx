@@ -8,27 +8,27 @@ Memoization_Yes();
 
 public void Memoization_No()
 {
-    var stopWatch = Stopwatch.StartNew();
+    var stopwatch = Stopwatch.StartNew();
 
     for (var i = 0; i < 20000000; i++)
     {
         factorial(9);
     }
 
-    stopWatch.Stop();
-    WriteLine(stopWatch.ElapsedMilliseconds);
+    stopwatch.Stop();
+    WriteLine($"Elapsed time: {stopwatch.ElapsedMilliseconds} ms");
 }
 
 public void Memoization_Yes()
 {
     var factorial2 = factorial.Memoize();
-    var stopWatch2 = Stopwatch.StartNew();
+    var stopwatch = Stopwatch.StartNew();
 
     for (var i = 0; i < 20000000; i++)
     {
         factorial2(9);
     }
 
-    stopWatch2.Stop();
-    WriteLine(stopWatch2.ElapsedMilliseconds);
+    stopwatch.Stop();
+    WriteLine($"Elapsed time: {stopwatch.ElapsedMilliseconds} ms");
 }

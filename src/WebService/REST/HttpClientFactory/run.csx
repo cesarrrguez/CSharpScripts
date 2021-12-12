@@ -3,7 +3,6 @@
 #r "nuget: Microsoft.Extensions.DependencyInjection, 3.1.0"
 #r "nuget: Microsoft.Extensions.Http, 3.1.0"
 
-// Call App entry point
 using Microsoft.Extensions.DependencyInjection;
 
 App.Run();

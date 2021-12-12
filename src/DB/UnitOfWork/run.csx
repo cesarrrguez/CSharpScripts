@@ -8,7 +8,6 @@
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.DependencyInjection;
 
-// Call App entry point
 App.Run();
 
 public static class App
@@ -23,7 +22,7 @@ public static class App
         var dataContext = _serviceProvider.GetService<DataContext>();
         dataContext.Database.EnsureCreated();
 
-        // Create Unit of Work 
+        // Create Unit of Work
         using var unitOfWork = new UnitOfWork(dataContext);
         var order = new Order("Laptop", 3);
         unitOfWork.OrderRepository.Add(order);

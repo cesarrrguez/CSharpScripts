@@ -9,4 +9,4 @@ var filterNumbers = (from n in numbers.AsParallel()
                      select n
 ).ToList();
 
-WriteLine(stopwatch.ElapsedMilliseconds);
+WriteLine($"Elapsed time: {stopwatch.ElapsedMilliseconds} ms");

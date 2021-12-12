@@ -11,12 +11,12 @@ WriteLine("End");
 
 public void Request1()
 {
-    Task.Delay(2000);
+    Task.Delay(TimeSpan.FromSeconds(2));
     WriteLine("Request 1");
 }
 
 public void Request2()
 {
-    Task.Delay(2000);
+    Task.Delay(TimeSpan.FromSeconds(2));
     WriteLine("Request 2");
 }

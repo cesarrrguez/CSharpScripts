@@ -10,7 +10,8 @@ public class CustomerRepository : ICustomerRepository
           {
               Id = Guid.Parse("00000000-1111-2222-3333-000000000000"),
               FullName = "César Rodríguez"
-          }}
+          }
+        }
     };
 
     public void Create(Customer customer)

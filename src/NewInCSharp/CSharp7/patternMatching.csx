@@ -32,11 +32,11 @@ Animal animal = bird;
 
 switch (animal)
 {
-    case Bird bird1:
-        bird1.Fly();
+    case Bird b:
+        b.Fly();
         break;
-    case Fish fish1:
-        fish1.Swim();
+    case Fish f when f.Name == "Fish Shark":
+        f.Swim();
         break;
 }
 

@@ -8,7 +8,7 @@ public class MyObject
     {
         if (obj == null) return false;
 
-        if (!(obj is MyObject)) return false;
+        if (obj is not MyObject) return false;
 
         var mo = (MyObject)obj;
 

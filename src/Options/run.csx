@@ -24,7 +24,7 @@ public static class App
         Configure();
         ConfigureServices();
 
-        IEmailService emailService = _serviceProvider.GetService<IEmailService>();
+        var emailService = _serviceProvider.GetService<IEmailService>();
         emailService.SendEmailAsync("to@email.com", "my subject", "My body");
 
         DisposeServices();
@@ -32,7 +32,7 @@ public static class App
 
     private static void Configure()
     {
-        IConfigurationBuilder builder = new ConfigurationBuilder()
+        var builder = new ConfigurationBuilder()
                     .SetBasePath(FolderUtil.GetCurrentDirectoryName())
                     .AddJsonFile("appsettings.json", optional: false, reloadOnChange: true);
 
@@ -41,7 +41,7 @@ public static class App
 
     private static void ConfigureServices()
     {
-        ServiceCollection services = new();
+        var services = new ServiceCollection();
 
         services.Configure<EmailConfiguration>(_configuration.GetSection("EmailService"));
         services.PostConfigure<EmailConfiguration>(config =>

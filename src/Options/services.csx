@@ -17,7 +17,7 @@ public class EmailService : IEmailService
         WriteLine($"Email configuration server: {_emailConfiguration.SmtpServer}, from: {_emailConfiguration.From}");
         WriteLine($"Email data to: {to}, subject {subject}, body {body}");
 
-        await Task.Delay(1000).ConfigureAwait(false);
+        await Task.Delay(TimeSpan.FromSeconds(1)).ConfigureAwait(false);
 
         return true;
     }

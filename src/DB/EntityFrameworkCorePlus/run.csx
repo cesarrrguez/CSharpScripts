@@ -21,7 +21,7 @@ public void DeleteAllUsers()
     dbUtil.DeleteAllUsers();
 
     stopwatch.Stop();
-    WriteLine($"Time elapsed: {stopwatch.ElapsedMilliseconds} milliseconds");
+    WriteLine($"Elapsed time: {stopwatch.ElapsedMilliseconds} ms");
 }
 
 public void DeleteAllUsersPlus()
@@ -32,5 +32,5 @@ public void DeleteAllUsersPlus()
     dbUtil.DeleteAllUsersPlus();
 
     stopwatch.Stop();
-    WriteLine($"Time elapsed: {stopwatch.ElapsedMilliseconds} milliseconds");
+    WriteLine($"Elapsed time: {stopwatch.ElapsedMilliseconds} ms");
 }

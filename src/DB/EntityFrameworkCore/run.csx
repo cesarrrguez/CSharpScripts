@@ -11,7 +11,6 @@
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.DependencyInjection;
 
-// Call App entry point
 App.Run();
 
 public static class App

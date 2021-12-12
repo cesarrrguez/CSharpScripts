@@ -4,5 +4,5 @@ public interface IDataContext { }
 
 public interface IUserRepository
 {
-    Task<User> GetAsync(int userId);
+    Task<User> GetByIdAsync(int id);
 }

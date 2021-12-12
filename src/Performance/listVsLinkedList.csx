@@ -5,14 +5,14 @@ WriteLine("List performance test ...");
 stopwatch.Start();
 ListPerformanceTest();
 stopwatch.Stop();
-WriteLine($"Time elapsed: {stopwatch.ElapsedMilliseconds} milliseconds\n");
+WriteLine($"Elapsed time: {stopwatch.ElapsedMilliseconds} ms");
 
 // Linked list performance test
-WriteLine("Linked list performance test ...");
+WriteLine("\nLinked list performance test ...");
 stopwatch.Restart();
 LinkedListPerformanceTest();
 stopwatch.Stop();
-WriteLine($"Time elapsed: {stopwatch.ElapsedMilliseconds} milliseconds\n");
+WriteLine($"Elapsed time: {stopwatch.ElapsedMilliseconds} ms");
 
 public void ListPerformanceTest()
 {

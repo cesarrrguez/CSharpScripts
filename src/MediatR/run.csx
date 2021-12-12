@@ -23,7 +23,6 @@ using Microsoft.Extensions.DependencyInjection;
 using System.Threading;
 using FluentValidation;
 
-// Call App entry point
 App.Run();
 
 public static class App

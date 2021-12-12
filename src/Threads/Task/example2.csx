@@ -1,6 +1,6 @@
 Task task = Task.Run(() =>
 {
-    Task.Delay(1000);
+    Task.Delay(TimeSpan.FromSeconds(1));
     WriteLine("Hello");
 });
 

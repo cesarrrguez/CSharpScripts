@@ -8,7 +8,6 @@
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
 
-// Call App entry point
 App.Run();
 
 public class App

@@ -18,7 +18,7 @@ public async Task ExampleWithLoop(CancellationTokenSource cancellationTokenSourc
     while (!cancellationTokenSource.Token.IsCancellationRequested)
     {
         WriteLine("Doing some work for 3 seconds");
-        await Task.Delay(3000).ConfigureAwait(false);
+        await Task.Delay(TimeSpan.FromSeconds(3)).ConfigureAwait(false);
     }
 
     WriteLine("Token was cancelled and we exited the loop");

@@ -66,7 +66,7 @@ public static class Algorithms
         var index1 = 0;
         var index2 = 0;
 
-        // While both arrays have raw elements 
+        // While both arrays have raw elements
         while (index1 < array1.Length && index2 < array2.Length)
         {
             // If array 1 element is less or equal than array 2 we add array 1 element

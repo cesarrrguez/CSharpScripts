@@ -9,7 +9,6 @@
 #r "nuget: Microsoft.Extensions.Options, 3.1.0"
 #r "nuget: Microsoft.Extensions.Options.ConfigurationExtensions, 3.1.0"
 
-// Call App entry point
 using Microsoft.Extensions.DependencyInjection;
 
 App.Run();

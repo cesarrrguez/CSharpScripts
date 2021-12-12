@@ -19,7 +19,7 @@ public void SyncMethod()
 
     stopWatch.Stop();
 
-    WriteLine(stopWatch.ElapsedMilliseconds);
+    WriteLine($"Elapsed time: {stopWatch.ElapsedMilliseconds} ms");
 }
 
 public async void AsyncMethod()
@@ -41,5 +41,5 @@ public async void AsyncMethod()
 
     stopWatch.Stop();
 
-    WriteLine(stopWatch.ElapsedMilliseconds);
+    WriteLine($"Elapsed time: {stopWatch.ElapsedMilliseconds} ms");
 }
