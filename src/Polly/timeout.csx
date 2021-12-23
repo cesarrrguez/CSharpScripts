@@ -3,13 +3,22 @@
 using Polly;
 using Polly.Timeout;
 
-Timeout();
+Timeout().Wait();
 
-public void Timeout()
+public async Task Timeout()
 {
-    Policy
-    .Timeout(1, TimeoutStrategy.Pessimistic, onTimeout: (_, _, _) => WriteLine("Timeout"))
-    .ExecuteAndCapture(() => System.Threading.Thread.Sleep(2000));
+    await Policy
+        .TimeoutAsync(
+            seconds: 1,
+            TimeoutStrategy.Pessimistic,
+            onTimeoutAsync: async (_, _, _) =>
+            {
+                WriteLine("Timeout");
+                await Task.Delay(TimeSpan.FromSeconds(1));
+            }
+        )
+        .ExecuteAndCaptureAsync(async () => await Task.Delay(TimeSpan.FromSeconds(2)).ConfigureAwait(false))
+        .ConfigureAwait(false);
 
     WriteLine("Finish");
 }

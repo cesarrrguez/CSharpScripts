@@ -6,22 +6,22 @@ Retry();
 
 public void Retry()
 {
-    int counter = 0;
+    int retries = 1;
 
     Policy
-    .Handle<Exception>()
-    .Fallback(_ => WriteLine("Retry exceed"))
-    .Wrap(
-        Policy
         .Handle<Exception>()
-        .Retry(3)
-    )
-    .Execute(() =>
-    {
-        WriteLine(counter);
-        counter++;
-        throw new Exception();
-    });
+        .Fallback(_ => WriteLine("Retry exceed"))
+        .Wrap(
+            Policy
+                .Handle<Exception>()
+                .Retry(3)
+        )
+        .Execute(() =>
+        {
+            WriteLine(retries);
+            retries++;
+            throw new Exception();
+        });
 
     WriteLine("Finish");
 }

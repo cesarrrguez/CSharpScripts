@@ -2,28 +2,29 @@
 
 using Polly;
 
-Retry();
+Retry().Wait();
 
-public void Retry()
+public async Task Retry()
 {
-    int counter = 0;
+    int retries = 1;
 
-    try
-    {
-        Policy
-       .Handle<Exception>()
-       .Retry(3)
-       .Execute(() =>
-       {
-           WriteLine(counter);
-           counter++;
-           throw new Exception();
-       });
-    }
-    catch (Exception)
-    {
-        WriteLine("Retry exceed");
-    }
+    PolicyResult result = await Policy
+        .Handle<Exception>()
+        .WaitAndRetryAsync(
+            retryCount: 3,
+            sleepDurationProvider: retryAttempt => TimeSpan.FromSeconds(Math.Pow(2, retryAttempt)),
+            onRetry: (ex, time) =>
+            {
+                WriteLine($"Exception '{ex.GetType().Name}' with message '{ex.Message}' detected on attempt {retries} of 3.");
+                WriteLine($"Waiting {time.TotalMilliseconds}ms until next retry...\n");
+                retries++;
+            })
+        .ExecuteAndCaptureAsync(async () =>
+        {
+            WriteLine("Calling API...");
+            await Task.Delay(TimeSpan.FromSeconds(1)).ConfigureAwait(false);
+            throw new Exception("API failed.");
+        }).ConfigureAwait(false);
 
-    WriteLine("Finish");
+    WriteLine($"Retry operation completed with {result.Outcome}");
 }

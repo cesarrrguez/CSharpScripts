@@ -2,26 +2,31 @@
 
 using Polly;
 using Polly.Timeout;
+using Polly.CircuitBreaker;
 
-CircuitBreak();
+using System.Threading;
 
-public void CircuitBreak()
+CircuitBreak().Wait();
+
+public async Task CircuitBreak()
 {
-    var pol = Policy
-          .Handle<Exception>()
-          .CircuitBreaker(
-          exceptionsAllowedBeforeBreaking: 10,
-          durationOfBreak: TimeSpan.FromSeconds(5),
-          onBreak: (_, __) => WriteLine("Break"),
-          onReset: () => WriteLine("Reset"));
+    AsyncCircuitBreakerPolicy result = Policy
+        .Handle<Exception>()
+        .CircuitBreakerAsync(
+            exceptionsAllowedBeforeBreaking: 10,
+            durationOfBreak: TimeSpan.FromSeconds(5),
+            onBreak: (ex, _) => WriteLine("Circuit breaker opened because of {0}", ex.Message),
+            onReset: () => WriteLine("Circuit breaker reset"),
+            onHalfOpen: () => WriteLine("Circuit breaker half-open")
+        );
 
     while (true)
     {
-        pol.ExecuteAndCapture(() =>
+        await result.ExecuteAndCaptureAsync(async () =>
         {
-            System.Threading.Thread.Sleep(100);
-            WriteLine("Error");
-            throw new Exception();
+            WriteLine("Calling API...");
+            await Task.Delay(TimeSpan.FromSeconds(1)).ConfigureAwait(false);
+            throw new Exception("API failed.");
         });
     }
 }
