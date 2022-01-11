@@ -7,31 +7,40 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.InMemory;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
-// Data Infrastructure Tests
 [TestClass]
 public class UserRepositoryTests
 {
-    private static IUserRepository _userRepository;
+    private static IUserRepository _sut;
 
     [ClassInitialize()]
     public static void Setup()
     {
-        _userRepository = new UserRepository(TestDataContext.Context);
+        _sut = new UserRepository(TestDataContext.Context);
     }
 
     [TestMethod]
-    public async Task Given_UserId_1_Expected_NotNull()
+    public async Task GetByIdAsync_ShouldReturnUser_WhenUserExits()
     {
-        var result = await _userRepository.GetAsync(1).ConfigureAwait(false);
+        // Arrange
+        const int userId = 1;
 
+        // Act
+        var result = await _sut.GetByIdAsync(userId).ConfigureAwait(false);
+
+        // Assert
         result.Should().NotBeNull();
     }
 
     [TestMethod]
-    public async Task Given_UserId_2_Expected_Null()
+    public async Task GetByIdAsync_ShouldReturnNothing_WhenUserDoesNotExits()
     {
-        var result = await _userRepository.GetAsync(2).ConfigureAwait(false);
+        // Arrange
+        const int userId = 2;
 
+        // Act
+        var result = await _sut.GetByIdAsync(userId).ConfigureAwait(false);
+
+        // Assert
         result.Should().BeNull();
     }
 }

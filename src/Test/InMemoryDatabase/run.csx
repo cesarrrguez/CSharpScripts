@@ -5,20 +5,16 @@
 #r "nuget: Microsoft.EntityFrameworkCore.Sqlite, 3.1.0"
 #r "nuget: Microsoft.EntityFrameworkCore.InMemory, 3.1.0"
 
-// Init test repository
 InitRepositoryTests.Setup();
 
-// Create test repository
 var testRepository = new UserRepositoryTests();
 UserRepositoryTests.Setup();
 
-// Test 1
-var test_1 = testRepository.Given_UserId_1_Expected_NotNull();
-PrintTestResult(test_1);
+var test = testRepository.GetByIdAsync_ShouldReturnUser_WhenUserExits();
+PrintTestResult(test);
 
-// Test 2
-var test_2 = testRepository.Given_UserId_2_Expected_Null();
-PrintTestResult(test_2);
+test = testRepository.GetByIdAsync_ShouldReturnNothing_WhenUserDoesNotExits();
+PrintTestResult(test);
 
 public void PrintTestResult(Task test)
 {
