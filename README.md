@@ -28,10 +28,10 @@ This repository contains _C#_ scripts.
 - DB, Repository, Unit of Work, Transactions, CQRS
 - Entity Framework Core, Entity Framework Core Plus, Dapper, Nhibernate
 - SqlServer, Sqlite, MongoDB
-- Test, MSTest, xUnit, FluentAssertions, Moq, InMemoryDatabase
+- Test, MSTest, xUnit, NUnit, FluentAssertions, Moq, NSubstitute, InMemoryDatabase, Bogus, Autofixture, AutoMocker
 - Dependency Injection, IoC, Simple Injector, Ninject
 - Logging, Serilog
-- Configuration
+- Configuration, Options
 - Mapping, DTO, AutoMapper, Mapster
 - FluentValidation, Humanizer, GuardClauses
 - Polly, Ben.Demystifier, MediatR
