@@ -1,7 +1,7 @@
 #load "interfaces.csx"
 
 using System.Net.Http;
-using System.Text.Json;
+using System.Net.Http.Json;
 
 public class PostService : IPostService
 {
@@ -9,7 +9,7 @@ public class PostService : IPostService
 
     public PostService(IHttpClientFactory clientFactory)
     {
-        _clientFactory = clientFactory ?? throw new ArgumentNullException(nameof(clientFactory));
+        _clientFactory = clientFactory;
     }
 
     public async Task<Post> GetPostAsync(int number)
@@ -17,18 +17,11 @@ public class PostService : IPostService
         var url = $"/posts/{number}";
         var client = _clientFactory.CreateClient("API");
 
-        using var response = await client.GetAsync(url).ConfigureAwait(false);
+        using var response = await client.GetAsync(url);
 
         if (response.IsSuccessStatusCode)
         {
-            var result = await response.Content.ReadAsStringAsync().ConfigureAwait(false);
-
-            return JsonSerializer.Deserialize<Post>(result,
-                new JsonSerializerOptions()
-                {
-                    PropertyNameCaseInsensitive = true
-                }
-            );
+            return await response.Content.ReadFromJsonAsync<Post>();
         }
 
         throw new Exception((int)response.StatusCode + " - " + response.StatusCode.ToString());

@@ -1,4 +1,4 @@
-#load "entities.csx"
+#load "records.csx"
 
 public interface IPostService
 {

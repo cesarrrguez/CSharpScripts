@@ -12,8 +12,8 @@ public class PostService : IPostService
 
     public PostService(IGraphQLClient client, ILogger<PostService> logger)
     {
-        _client = client ?? throw new ArgumentNullException(nameof(client));
-        _logger = logger ?? throw new ArgumentNullException(nameof(logger));
+        _client = client;
+        _logger = logger;
     }
 
     public async Task<List<Post>> GetAllPostsAsync(PostOptionsInput postOptionsInput)
@@ -37,7 +37,7 @@ public class PostService : IPostService
             Variables = new { options = postOptionsInput }
         };
 
-        var response = await _client.SendQueryAsync<ResponsePostCollectionType>(query).ConfigureAwait(false);
+        var response = await _client.SendQueryAsync<ResponsePostCollectionType>(query);
 
         response.Errors?.ToList().ForEach(error => _logger.LogError(error.Message));
 
@@ -60,7 +60,7 @@ public class PostService : IPostService
             Variables = new { id }
         };
 
-        var response = await _client.SendQueryAsync<ResponsePostType>(request).ConfigureAwait(false);
+        var response = await _client.SendQueryAsync<ResponsePostType>(request);
 
         response.Errors?.ToList().ForEach(error => _logger.LogError(error.Message));
 
@@ -83,7 +83,7 @@ public class PostService : IPostService
             Variables = new { input = postToCreate }
         };
 
-        var response = await _client.SendMutationAsync<ResponseCreatePostType>(query).ConfigureAwait(false);
+        var response = await _client.SendMutationAsync<ResponseCreatePostType>(query);
 
         response.Errors?.ToList().ForEach(error => _logger.LogError(error.Message));
 
@@ -106,7 +106,7 @@ public class PostService : IPostService
             Variables = new { id, input = postToUpdate }
         };
 
-        var response = await _client.SendMutationAsync<ResponseUpdatePostType>(query).ConfigureAwait(false);
+        var response = await _client.SendMutationAsync<ResponseUpdatePostType>(query);
 
         response.Errors?.ToList().ForEach(error => _logger.LogError(error.Message));
 
@@ -125,7 +125,7 @@ public class PostService : IPostService
             Variables = new { id }
         };
 
-        var response = await _client.SendMutationAsync<ResponseDeletePostType>(query).ConfigureAwait(false);
+        var response = await _client.SendMutationAsync<ResponseDeletePostType>(query);
 
         response.Errors?.ToList().ForEach(error => _logger.LogError(error.Message));
 

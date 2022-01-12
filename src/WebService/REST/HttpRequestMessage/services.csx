@@ -20,11 +20,11 @@ public class WeatherService : IDisposable
 
         var request = new HttpRequestMessage(HttpMethod.Get, url);
 
-        var response = await _client.SendAsync(request).ConfigureAwait(false);
+        var response = await _client.SendAsync(request);
 
         if (response.IsSuccessStatusCode)
         {
-            Forecast = await response.Content.ReadFromJsonAsync<WeatherForecastModel>().ConfigureAwait(false);
+            Forecast = await response.Content.ReadFromJsonAsync<WeatherForecastModel>();
             Error = null;
         }
         else

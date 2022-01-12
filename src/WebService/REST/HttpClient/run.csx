@@ -8,7 +8,7 @@ var postService = new PostService();
 // GET
 WriteLine("GET:");
 WriteLine(separator);
-var posts = await postService.GetPostsAsync().ConfigureAwait(false);
+var posts = await postService.GetPostsAsync();
 foreach (var post in posts)
 {
     WriteLine($"{post}\n");
@@ -17,24 +17,24 @@ foreach (var post in posts)
 // POST
 WriteLine("POST:");
 WriteLine(separator);
-var post = new Post()
+var post = new Post
 {
     UserId = 50,
     Title = "Hello everybody!",
     Body = "Hello! how are you?",
 };
-post = await postService.AddPostAsync(post).ConfigureAwait(false);
+post = await postService.AddPostAsync(post);
 WriteLine($"{post}");
 
 // PUT
 WriteLine("\nPUT:");
 WriteLine(separator);
 post.Id = 99;
-post = await postService.EditPostAsync(post).ConfigureAwait(false);
+post = await postService.EditPostAsync(post);
 WriteLine($"{post}");
 
 // DELETE
 WriteLine("\nDELETE:");
 WriteLine(separator);
-var deleted = await postService.DeletePostAsync(99).ConfigureAwait(false);
+var deleted = await postService.DeletePostAsync(99);
 WriteLine($"Deleted: {deleted.ToYesNoString()}");

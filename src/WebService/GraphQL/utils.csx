@@ -8,7 +8,4 @@ public static class FolderUtil
 // Extensions
 // ------------------------------------------------------------
 
-public static string ToYesNoString(this bool value)
-{
-    return value ? "Yes" : "No";
-}
+public static string ToYesNoString(this bool value) => value ? "Yes" : "No";

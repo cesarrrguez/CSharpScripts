@@ -9,7 +9,7 @@ public class PostController : IPostController
 
     public PostController(IPostService postService)
     {
-        _postService = postService ?? throw new ArgumentNullException(nameof(postService));
+        _postService = postService;
     }
 
     public void GetAllPosts(PostOptionsInput postOptionsInput)

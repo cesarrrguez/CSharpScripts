@@ -1,6 +1,7 @@
 #load "entities.csx"
 
 using System.Net.Http;
+using System.Net.Http.Json;
 using System.Text.Json;
 
 public class PostService
@@ -11,18 +12,11 @@ public class PostService
         const string url = "https://jsonplaceholder.typicode.com/posts";
         using var client = new HttpClient();
 
-        using var response = await client.GetAsync(url).ConfigureAwait(false);
+        using var response = await client.GetAsync(url);
 
         if (response.IsSuccessStatusCode)
         {
-            var result = await response.Content.ReadAsStringAsync().ConfigureAwait(false);
-
-            return JsonSerializer.Deserialize<List<Post>>(result,
-                new JsonSerializerOptions()
-                {
-                    PropertyNameCaseInsensitive = true
-                }
-            );
+            return await response.Content.ReadFromJsonAsync<List<Post>>();
         }
 
         throw new Exception((int)response.StatusCode + " - " + response.StatusCode.ToString());
@@ -34,21 +28,14 @@ public class PostService
         const string url = "https://jsonplaceholder.typicode.com/posts";
         using var client = new HttpClient();
 
-        var data = JsonSerializer.Serialize<Post>(post);
+        var data = JsonSerializer.Serialize(post);
         var content = new StringContent(data, Encoding.UTF8, "application/json");
 
-        using var response = await client.PostAsync(url, content).ConfigureAwait(false);
+        using var response = await client.PostAsync(url, content);
 
         if (response.IsSuccessStatusCode)
         {
-            var result = await response.Content.ReadAsStringAsync().ConfigureAwait(false);
-
-            return JsonSerializer.Deserialize<Post>(result,
-                new JsonSerializerOptions()
-                {
-                    PropertyNameCaseInsensitive = true
-                }
-            );
+            return await response.Content.ReadFromJsonAsync<Post>();
         }
 
         throw new Exception((int)response.StatusCode + " - " + response.StatusCode.ToString());
@@ -57,24 +44,17 @@ public class PostService
     // PUT
     public async Task<Post> EditPostAsync(Post post)
     {
-        string url = $"https://jsonplaceholder.typicode.com/posts/{post.Id}";
+        var url = $"https://jsonplaceholder.typicode.com/posts/{post.Id}";
         using var client = new HttpClient();
 
-        var data = JsonSerializer.Serialize<Post>(post);
+        var data = JsonSerializer.Serialize(post);
         var content = new StringContent(data, Encoding.UTF8, "application/json");
 
-        using var response = await client.PutAsync(url, content).ConfigureAwait(false);
+        using var response = await client.PutAsync(url, content);
 
         if (response.IsSuccessStatusCode)
         {
-            var result = await response.Content.ReadAsStringAsync().ConfigureAwait(false);
-
-            return JsonSerializer.Deserialize<Post>(result,
-                new JsonSerializerOptions()
-                {
-                    PropertyNameCaseInsensitive = true
-                }
-            );
+            return await response.Content.ReadFromJsonAsync<Post>();
         }
 
         throw new Exception((int)response.StatusCode + " - " + response.StatusCode.ToString());
@@ -83,10 +63,10 @@ public class PostService
     // DELETE
     public async Task<bool> DeletePostAsync(int postId)
     {
-        string url = $"https://jsonplaceholder.typicode.com/posts/{postId}";
+        var url = $"https://jsonplaceholder.typicode.com/posts/{postId}";
         using var client = new HttpClient();
 
-        using var response = await client.DeleteAsync(url).ConfigureAwait(false);
+        using var response = await client.DeleteAsync(url);
 
         return response.IsSuccessStatusCode;
     }
