@@ -14,7 +14,7 @@
 
 #r "nuget: Microsoft.Extensions.Logging, 3.1.0"
 #r "nuget: Microsoft.Extensions.Logging.Console, 3.1.0"
-#r "nuget: Microsoft.Extensions.DependencyInjection, 3.1.0"
+#r "nuget: Microsoft.Extensions.DependencyInjection, 5.0.0"
 
 using MediatR;
 using AutoMapper;

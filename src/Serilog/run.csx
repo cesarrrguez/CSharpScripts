@@ -1,7 +1,7 @@
 #load "controllers.csx"
 #load "utils.csx"
 
-#r "nuget: Microsoft.Extensions.DependencyInjection, 3.1.0"
+#r "nuget: Microsoft.Extensions.DependencyInjection, 5.0.0"
 #r "nuget: Microsoft.Extensions.Logging, 3.1.0"
 #r "nuget: Serilog.Extensions.Logging, 3.0.1"
 #r "nuget: Serilog.Sinks.Console, 3.1.1"
