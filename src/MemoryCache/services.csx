@@ -7,20 +7,20 @@ using Microsoft.Extensions.Caching.Memory;
 
 public class PostService : IPostService
 {
-    private readonly MemoryCache _cache;
+    private readonly IMemoryCache _memoryCache;
 
-    public PostService()
+    public PostService(IMemoryCache memoryCache)
     {
-        _cache = new MemoryCache(new MemoryCacheOptions());
+        _memoryCache = memoryCache;
     }
 
     public async Task<Post> GetPostAsync(int id)
     {
         // Check if exists
-        if (!_cache.TryGetValue(id, out Post post))
+        if (!_memoryCache.TryGetValue(id, out Post post))
         {
-            post = await GetPostFromHttpAsync(id).ConfigureAwait(false);
-            _cache.Set(id, post);
+            post = await GetPostFromHttpAsync(id);
+            _memoryCache.Set(id, post);
 
             return post;
         }
@@ -31,6 +31,6 @@ public class PostService : IPostService
     private async Task<Post> GetPostFromHttpAsync(int id)
     {
         using var client = new HttpClient();
-        return await client.GetFromJsonAsync<Post>($"https://jsonplaceholder.typicode.com/posts/{id}").ConfigureAwait(false);
+        return await client.GetFromJsonAsync<Post>($"https://jsonplaceholder.typicode.com/posts/{id}");
     }
 }
