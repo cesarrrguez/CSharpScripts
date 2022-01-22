@@ -34,7 +34,7 @@ This repository contains _C#_ scripts.
 - Configuration, Options
 - Mapping, DTO, AutoMapper, Mapster
 - FluentValidation, Humanizer, GuardClauses
-- Polly, Ben.Demystifier, MediatR
+- Polly, Ben.Demystifier, MediatR, SmartEnum
 - Web Scrapping, ScrapySharp, HtmlAgilityPack, Flurl.Http
 - Web Service, SOAP, REST, GraphQL, RestSharp
 - Twilio
