@@ -9,8 +9,9 @@ This repository contains _C#_ scripts.
 - Object Oriented Programming
 - Inheritance, Interfaces, Aggregation, Composition
 - Encapsulation, Cohesion, Coupling
-- Collections, Data Types, Memory Allocation, Generics, Structs, Enums, Records, Value Objects, Tuples
 - Data Structures, Algorithms, Problems, Recursion
+- Collections, Data Types, Memory Allocation, Generics, Structs, Enums, Records, Tuples
+- Value Objects, ValueOf
 - Delegates, Action, Func, Predicate
 - Covariance, Contravariance
 - Anonymous Types, Anonymous Methods
