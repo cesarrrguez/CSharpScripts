@@ -1,24 +1,22 @@
-using ValueOf;
+#load "valueObject.csx"
 
-public class Celsius : ValueOf<double, Celsius>
+public class Address : ValueObject
 {
-    private const double AboluteZeroInCelsius = -273.15;
+    public string Street { get; init; }
+    public string ZipCode { get; init; }
+    public string City { get; init; }
 
-    protected override void Validate()
+    public Address(string street, string zipCode, string city)
     {
-        if (Value < AboluteZeroInCelsius)
-        {
-            throw new TemperatureBelowAboluteZeroException(Value);
-        }
+        Street = street;
+        ZipCode = zipCode;
+        City = city;
     }
-}
 
-public class TemperatureBelowAboluteZeroException : Exception
-{
-    public TemperatureBelowAboluteZeroException(double degrees)
-      : base($"Temperature cannot be below absolute zero. Current value: {degrees}") { }
-
-    public TemperatureBelowAboluteZeroException() { }
-    public TemperatureBelowAboluteZeroException(string message) : base(message) { }
-    public TemperatureBelowAboluteZeroException(string message, Exception innerException) : base(message, innerException) { }
+    protected override IEnumerable<object> GetEqualityComponents()
+    {
+        yield return Street;
+        yield return ZipCode;
+        yield return City;
+    }
 }
