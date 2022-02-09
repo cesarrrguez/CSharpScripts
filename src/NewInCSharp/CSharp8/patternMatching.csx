@@ -26,8 +26,8 @@ Animal animal = bird;
 
 string action = animal switch
 {
-    Bird bird1 => bird1.Fly(),
-    Fish fish1 => fish1.Swim(),
+    Bird b => b.Fly(),
+    Fish f when f.Name == "Fish Shark" => f.Swim(),
     _ => "Unknown"
 };
 WriteLine(action);

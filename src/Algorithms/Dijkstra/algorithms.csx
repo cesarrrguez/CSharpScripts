@@ -85,7 +85,6 @@ public static class Algorithms
             }
 
             node = minIndex;
-
         } while (node != -1);
     }
 

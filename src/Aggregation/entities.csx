@@ -35,7 +35,7 @@ public class Customer
 
 public class Order
 {
-    private Guid _id;
+    private readonly Guid _id;
     private readonly DateTime _date;
 
     public Order(Guid id, DateTime date)

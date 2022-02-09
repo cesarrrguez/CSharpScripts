@@ -19,26 +19,12 @@ public static class PersonUtil
         WriteLine();
     }
 
-    public static bool IsChild(Person person)
-    {
-        return person.Age < 18;
-    }
-
-    public static bool IsAdult(Person person)
-    {
-        return person.Age >= 18;
-    }
-
-    public static bool IsSenior(Person person)
-    {
-        return person.Age >= 65;
-    }
+    public static bool IsChild(Person person) => person.Age < 18;
+    public static bool IsAdult(Person person) => person.Age >= 18;
+    public static bool IsSenior(Person person) => person.Age >= 65;
 }
 
 // Extensions
 // ------------------------------------------------------------
 
-public static string ToYesNoString(this bool value)
-{
-    return value ? "Yes" : "No";
-}
+public static string ToYesNoString(this bool value) => value ? "Yes" : "No";

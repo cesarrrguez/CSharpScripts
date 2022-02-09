@@ -14,4 +14,3 @@ public class Celsius : ValueOf<double, Celsius>
         }
     }
 }
-

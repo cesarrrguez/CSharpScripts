@@ -15,4 +15,3 @@ WriteLine("The value of d is: {0:F2}", d);
 WriteLine("The value of hello is: " + hello);
 WriteLine("The value of flag is: " + flag.ToString());
 WriteLine("The value of date is: {0}", date.ToShortDateString());
-

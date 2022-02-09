@@ -5,14 +5,14 @@ WriteLine("{0} {1}!", obj.hello, obj.world);
 
 WriteLine();
 
-// Array of anonymous types
+// Array
 var users = new[] {
     new { Name = "James", Age = 47 },
     new { Name = "Olivia", Age = 29 }
 };
 
-// Anonymous types loop for
 foreach (var user in users)
 {
+    //user.Name = ""; // Error -> read only
     WriteLine($"Name: {user.Name}, Age: {user.Age}");
 }

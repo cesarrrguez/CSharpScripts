@@ -1,3 +1,6 @@
+
+using System.Globalization;
+
 // Default date
 WriteLine($"Default date: {new DateTime()}\n");
 
@@ -20,7 +23,7 @@ WriteLine($"Short date string: {DateTime.Now.ToShortDateString()}\n");
 WriteLine($"Long date string: {DateTime.Now.ToLongDateString()}\n");
 
 // Specific region
-var usCulture = new System.Globalization.CultureInfo("en-US");
+var usCulture = new CultureInfo("en-US");
 WriteLine($"Specific region: {DateTime.Now.ToString(usCulture.DateTimeFormat)}\n");
 
 // Standard formats
@@ -37,13 +40,13 @@ WriteLine(dt.ToString("MM'/'dd yyyy"));
 WriteLine(dt.ToString("dd.MM.yyyy"));
 WriteLine(dt.ToString("MM.dd.yyyy HH:mm"));
 WriteLine(dt.ToString("dddd, MMMM (yyyy): HH:mm:ss"));
-WriteLine(dt.ToString("dddd @ hh:mm tt\n", System.Globalization.CultureInfo.InvariantCulture));
+WriteLine(dt.ToString("dddd @ hh:mm tt\n", CultureInfo.InvariantCulture));
 
 // Building dates
 var dateString = "7/6/2020";
 DateTime userDate;
 WriteLine("Building dates");
-if (DateTime.TryParse(dateString, usCulture.DateTimeFormat, System.Globalization.DateTimeStyles.None, out userDate))
+if (DateTime.TryParse(dateString, usCulture.DateTimeFormat, DateTimeStyles.None, out userDate))
 {
     WriteLine("Valid date entered (long date format): " + userDate.ToLongDateString());
 }

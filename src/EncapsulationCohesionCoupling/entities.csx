@@ -1,6 +1,6 @@
 public class User
 {
-    private Guid _id;
+    private readonly Guid _id;
 
     public User()
     {

@@ -28,4 +28,3 @@ WriteLine($"Is person 4 an adult? {filterDelegate(person4).ToYesNoString()}");
 // Is person 2 a senior?
 filterDelegate = new PersonUtil.FilterDelegate(PersonUtil.IsSenior);
 WriteLine($"Is person 2 a senior? {filterDelegate(person2).ToYesNoString()}");
-

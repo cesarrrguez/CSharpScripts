@@ -3,7 +3,7 @@ using System.Threading;
 bool exit;
 int counter;
 
-var task = Task.Factory.StartNew(Increment);
+Task task = Task.Factory.StartNew(Increment);
 task.Wait(TimeSpan.FromMilliseconds(1000));
 
 public void Increment()

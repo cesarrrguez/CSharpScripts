@@ -19,4 +19,3 @@ for (var i = 0; i < loopNumber; i++)
 }
 stopwatch.Stop();
 WriteLine($"String Builder elapsed time: {stopwatch.ElapsedMilliseconds} ms");
-
