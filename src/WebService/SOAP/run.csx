@@ -5,27 +5,12 @@
 // Action:  http://www.dneonline.com/calculator.asmx?op=Add
 // --------------------------------------------------------
 
-#load "utils.csx"
+#load "services.csx"
 
 var value1 = 32;
 var value2 = 47;
 
-var separator = new string(Enumerable.Repeat('-', 67).ToArray());
+var calculatorService = new CalculatorService();
 
-var response = SoapClient.CallWebService(value1, value2);
-
-// Print SOAP envelope
-var soapEnvelope = response.Item1;
-WriteLine("SOAP envelope:");
-WriteLine(separator);
-soapEnvelope.Save(Out);
-
-// Print XML response
-var xmlResponse = response.Item2;
-WriteLine("\n\nXML response:");
-WriteLine(separator);
-xmlResponse.Save(Out);
-
-// Print result
-var result = xmlResponse.GetElementsByTagName("AddResult")?[0]?.InnerText;
-WriteLine($"\n\nResult: {result}");
+var result = calculatorService.Add(value1, value2);
+WriteLine($"{value1} + {value2} = {result.Result}");
