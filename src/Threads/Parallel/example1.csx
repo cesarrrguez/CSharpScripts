@@ -1,7 +1,6 @@
 using System.Threading;
 
 var iterations = 10;
-var stopwatch = new Stopwatch();
 
 // Sequential For Loop
 WriteLine("Sequential For Loop:");
@@ -13,6 +12,7 @@ ParallelLoop(iterations);
 
 public void SequentialLoop(int iterations)
 {
+    var stopwatch = new Stopwatch();
     stopwatch.Start();
 
     for (var i = 0; i < iterations; i++)
@@ -22,12 +22,13 @@ public void SequentialLoop(int iterations)
     }
 
     stopwatch.Stop();
-    WriteLine($"Time elapsed: {stopwatch.ElapsedMilliseconds} milliseconds\n");
+    WriteLine($"Elapsed time: {stopwatch.ElapsedMilliseconds} ms\n");
 }
 
 public void ParallelLoop(int iterations)
 {
-    stopwatch.Restart();
+    var stopwatch = new Stopwatch();
+    stopwatch.Start();
 
     Parallel.For(0, iterations, i =>
     {
@@ -36,5 +37,5 @@ public void ParallelLoop(int iterations)
     });
 
     stopwatch.Stop();
-    WriteLine($"Time elapsed: {stopwatch.ElapsedMilliseconds} milliseconds");
+    WriteLine($"Elapsed time: {stopwatch.ElapsedMilliseconds} ms");
 }
