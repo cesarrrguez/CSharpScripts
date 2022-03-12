@@ -54,3 +54,11 @@ else
 {
     WriteLine("Invalid date specified!");
 }
+
+// Parse exact
+WriteLine("\nParse exact");
+var date1 = DateTime.ParseExact("01-12-2021", "dd-MM-yyyy", CultureInfo.InvariantCulture);
+var date2 = DateTime.ParseExact("01-12-2021", "MM-dd-yyyy", CultureInfo.InvariantCulture);
+
+WriteLine($"{date1.Day}-{date1.Month}-{date1.Year}");
+WriteLine($"{date2.Day}-{date2.Month}-{date2.Year}");
