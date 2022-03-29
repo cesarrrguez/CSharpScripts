@@ -1,6 +1,15 @@
+// Is-expressions with patterns
+
+WriteLine("Is-expressions with patterns:");
+Animal b = new Bird("Eagle");
+if (b is Bird { Name: "Bird Eagle" })
+{
+    WriteLine("I am an eagle");
+}
+
 // Switch expressions
 
-WriteLine("Switch expressions:");
+WriteLine("\nSwitch expressions:");
 var value1 = 14;
 var value2 = 0;
 var operation = Operation.Divide;
