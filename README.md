@@ -59,6 +59,7 @@ This repository contains _C#_ scripts.
 - Atributes, Data Anotations
 - Parameters, in, out, ref, params
 - Culture, Globalization, Localization
+- State Machine
 - Other
 
 ## License
