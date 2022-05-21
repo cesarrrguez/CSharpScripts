@@ -55,8 +55,8 @@ This repository contains _C#_ scripts.
 - PDF, QR, itext7, iTextSharp
 - Zip, System.IO.Compression, SharpZipLib
 - USB, System.Management
-- New in C# 7, 8 and 9
 - Dump, ObjectDumper, YamlDotNet
+- New in C# 7, 8, 9 and 10
 - Atributes, Data Anotations
 - Parameters, in, out, ref, params
 - Culture, Globalization, Localization
