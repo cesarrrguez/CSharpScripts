@@ -1,7 +1,7 @@
 #load "entities.csx"
 #load "services.csx"
 
-#r "nuget: OneOf, 3.0.188"
+#r "nuget: OneOf, 3.0.216"
 
 var userToCreate = new User
 {
