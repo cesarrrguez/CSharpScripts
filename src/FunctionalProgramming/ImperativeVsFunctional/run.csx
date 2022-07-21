@@ -1,5 +1,4 @@
 #load "entities.csx"
-#load "utils.csx"
 
 var users = new List<User>()
 {
@@ -9,8 +8,8 @@ var users = new List<User>()
 };
 
 // Imperative
-WriteLine("Imperative:");
 var enabledUserNames = new List<string>();
+
 foreach (var user in users)
 {
     if (user.Enabled)
@@ -18,38 +17,14 @@ foreach (var user in users)
         enabledUserNames.Add(user.Name);
     }
 }
+
 foreach (var name in enabledUserNames)
 {
     WriteLine(name);
 }
 
+WriteLine();
+
 // Functional
-WriteLine("\nFunctional:");
 var enabledUserNames2 = users.Where(x => x.Enabled).Select(x => x.Name).ToList();
 enabledUserNames2.ForEach(x => WriteLine(x));
-
-WriteLine();
-
-var text = Utils.Concat("Hello", "World");
-WriteLine(text);
-
-var days = Utils.Days(new DateTime(2020, 08, 15), DateTime.Now);
-WriteLine($"{days} days");
-
-WriteLine();
-
-// Functional programming and tuples
-var counter = Utils.Counter();
-counter.Increment();
-counter.Increment();
-WriteLine(counter.Get());
-
-counter.Substract();
-WriteLine(counter.Get());
-
-WriteLine();
-
-var operationsDB = Utils.OperationsDB();
-operationsDB.Add();
-operationsDB.Update();
-operationsDB.Delete();

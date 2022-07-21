@@ -1,9 +1,9 @@
 var accumulator1 = Accumulator();
-WriteLine(accumulator1());
-WriteLine(accumulator1());
+WriteLine(accumulator1()); // 1
+WriteLine(accumulator1()); // 2
 
 var accumulator2 = Accumulator();
-WriteLine(accumulator2());
+WriteLine(accumulator2()); // 1
 
 Func<int> Accumulator()
 {
