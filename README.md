@@ -36,7 +36,8 @@ This repository contains _C#_ scripts.
 - Mapping, DTO, AutoMapper, Mapster
 - FluentValidation, Humanizer, GuardClauses
 - Polly, Ben.Demystifier, MediatR, SmartEnum
-- Web Scrapping, ScrapySharp, HtmlAgilityPack, Flurl.Http
+- Web Scrapping, ScrapySharp, PuppeteerSharp
+- HtmlAgilityPack, Flurl.Http
 - Web Service, SOAP, REST, GraphQL, RestSharp
 - Twilio
 - Telegram, Telegram.Bot
