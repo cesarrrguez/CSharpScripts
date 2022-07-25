@@ -53,7 +53,7 @@ This repository contains _C#_ scripts.
 - JSON, System.Text.Json, Newtonsoft.Json
 - Excel, ExcelDataReader, SpreadsheetLight
 - CSV, CsvHelper
-- PDF, QR, itext7, iTextSharp
+- PDF, QR, itext7, iTextSharp, QRCoder
 - Zip, System.IO.Compression, SharpZipLib
 - USB, System.Management
 - Dump, ObjectDumper, YamlDotNet
