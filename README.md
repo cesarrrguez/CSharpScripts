@@ -34,7 +34,7 @@ This repository contains _C#_ scripts.
 - Logging, Serilog
 - Configuration, Options
 - Mapping, DTO, AutoMapper, Mapster
-- FluentValidation, Humanizer, GuardClauses
+- FluentValidation, Humanizer, GuardClauses, Throw, CommunityToolkit
 - Polly, Ben.Demystifier, MediatR, SmartEnum
 - Web Scrapping, ScrapySharp, PuppeteerSharp
 - HtmlAgilityPack, Flurl.Http
