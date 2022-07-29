@@ -42,7 +42,7 @@ This repository contains _C#_ scripts.
 - Twilio
 - Telegram, Telegram.Bot
 - Python, IronPython
-- Encryption
+- Encryption, Hashids
 - Files, protobuf-net
 - Threads, Parallel Programming, Asynchronous Calls
 - Reflection, Fasterflect
