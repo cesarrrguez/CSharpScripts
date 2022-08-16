@@ -56,6 +56,7 @@ This repository contains _C#_ scripts.
 - PDF, QR, itext7, iTextSharp, QRCoder
 - Zip, System.IO.Compression, SharpZipLib
 - USB, System.Management
+- CliWrap
 - Dump, ObjectDumper, YamlDotNet
 - New in C# 7, 8, 9 and 10
 - Atributes, Data Anotations
