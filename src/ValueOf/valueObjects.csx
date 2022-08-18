@@ -4,13 +4,13 @@ using ValueOf;
 
 public class Celsius : ValueOf<double, Celsius>
 {
-    private const double AboluteZeroInCelsius = -273.15;
+    private const double AbsoluteZeroInCelsius = -273.15;
 
     protected override void Validate()
     {
-        if (Value < AboluteZeroInCelsius)
+        if (Value < AbsoluteZeroInCelsius)
         {
-            throw new TemperatureBelowAboluteZeroException(Value);
+            throw new TemperatureBelowAbsoluteZeroException(Value);
         }
     }
 }

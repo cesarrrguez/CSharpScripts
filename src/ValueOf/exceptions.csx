@@ -1,9 +1,9 @@
-public class TemperatureBelowAboluteZeroException : Exception
+public class TemperatureBelowAbsoluteZeroException : Exception
 {
-    public TemperatureBelowAboluteZeroException(double degrees)
+    public TemperatureBelowAbsoluteZeroException(double degrees)
       : base($"Temperature cannot be below absolute zero. Current value: {degrees}") { }
 
-    public TemperatureBelowAboluteZeroException() { }
-    public TemperatureBelowAboluteZeroException(string message) : base(message) { }
-    public TemperatureBelowAboluteZeroException(string message, Exception innerException) : base(message, innerException) { }
+    public TemperatureBelowAbsoluteZeroException() { }
+    public TemperatureBelowAbsoluteZeroException(string message) : base(message) { }
+    public TemperatureBelowAbsoluteZeroException(string message, Exception innerException) : base(message, innerException) { }
 }

@@ -8,7 +8,7 @@ var test2 = new Test2();
 var type = typeof(Test2);
 var customAttributes = type.GetCustomAttributes(false);
 
-foreach (DataAttribute item in customAttributes)
+foreach (DataAttribute item in customAttributes.Cast<DataAttribute>())
 {
     WriteLine("{0}", item.Data);
 }

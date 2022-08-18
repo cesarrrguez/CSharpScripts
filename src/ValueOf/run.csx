@@ -2,10 +2,10 @@
 
 #r "nuget: ValueOf, 1.0.17"
 
-var temp1  = Celsius.From(20);
+var temp1 = Celsius.From(20);
 WriteLine(temp1);
 
-//var temp2  = Celsius.From(-300); // Exception throwed
+//var temp2  = Celsius.From(-300); // Exception thrown
 
 var temp3 = Celsius.From(100);
 var temp4 = Celsius.From(20);

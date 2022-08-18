@@ -16,7 +16,7 @@ This repository contains _C#_ scripts.
 - Covariance, Contravariance
 - Anonymous Types, Anonymous Methods
 - Lambda Expressions, Regular Expressions, Method Changing
-- Currying, Closures, Boxing and Unboxing, Dynamics
+- Currying, Closures, Monades, Boxing and Unboxing, Dynamics
 - Copy Constructor, Static Constructor, Object Initializers
 - Explicit Operator Conversion, Implicit Operator Conversion, Operator Overload
 - Exceptions, GC, MemoryCache, Redis, Memoization
@@ -59,7 +59,7 @@ This repository contains _C#_ scripts.
 - CliWrap
 - Dump, ObjectDumper, YamlDotNet
 - New in C# 7, 8, 9 and 10
-- Atributes, Data Anotations
+- Attributes, Data Anotations
 - Parameters, in, out, ref, params
 - Culture, Globalization, Localization
 - State Machine
