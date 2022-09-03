@@ -36,7 +36,7 @@ public class UserRepository : IUserRepository
     {
         using var connection = _connectionFactory.GetConnection();
         const string query = "INSERT INTO Users (Name) VALUES (@Name); SELECT last_insert_rowid()";
-        var result = await connection.QueryAsync<int>(query, user).ConfigureAwait(false);
+        var result = await connection.QueryAsync<int>(query, user);
         return result.Single();
     }
 
@@ -44,27 +44,27 @@ public class UserRepository : IUserRepository
     {
         using var connection = _connectionFactory.GetConnection();
         const string query = "UPDATE Users SET Name = @Name WHERE Id = @Id";
-        return await connection.ExecuteAsync(query, user).ConfigureAwait(false);
+        return await connection.ExecuteAsync(query, user);
     }
 
     public async Task<int> DeleteAsync(int id)
     {
         using var connection = _connectionFactory.GetConnection();
         const string query = "DELETE FROM Users WHERE id = @Id";
-        return await connection.ExecuteAsync(query, new { Id = id }).ConfigureAwait(false);
+        return await connection.ExecuteAsync(query, new { Id = id });
     }
 
     public async Task<User> GetByIdAsync(int id)
     {
         using var connection = _connectionFactory.GetConnection();
         const string query = "SELECT * FROM Users WHERE id = @Id";
-        return await connection.QuerySingleOrDefaultAsync<User>(query, new { Id = id }).ConfigureAwait(false);
+        return await connection.QuerySingleOrDefaultAsync<User>(query, new { Id = id });
     }
 
     public async Task<IEnumerable<User>> GetAllAsync()
     {
         using var connection = _connectionFactory.GetConnection();
         const string query = "SELECT * FROM Users";
-        return await connection.QueryAsync<User>(query).ConfigureAwait(false);
+        return await connection.QueryAsync<User>(query);
     }
 }

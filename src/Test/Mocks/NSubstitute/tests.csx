@@ -37,7 +37,7 @@ public class CustomerServiceTests
         _customerRepositoryMock.GetByIdAsync(customerId).Returns(customerDto);
 
         // Act
-        var customer = await _sut.GetByIdAsync(customerId).ConfigureAwait(false);
+        var customer = await _sut.GetByIdAsync(customerId);
 
         // Assert
         Assert.AreEqual(customerId, customer.Id);
@@ -51,7 +51,7 @@ public class CustomerServiceTests
         _customerRepositoryMock.GetByIdAsync(Arg.Any<Guid>()).ReturnsNull();
 
         // Act
-        var customer = await _sut.GetByIdAsync(Guid.NewGuid()).ConfigureAwait(false);
+        var customer = await _sut.GetByIdAsync(Guid.NewGuid());
 
         // Assert
         Assert.IsNull(customer);
@@ -72,7 +72,7 @@ public class CustomerServiceTests
         _customerRepositoryMock.GetByIdAsync(customerId).Returns(customerDto);
 
         // Act
-        await _sut.GetByIdAsync(customerId).ConfigureAwait(false);
+        await _sut.GetByIdAsync(customerId);
 
         // Assert
         _loggerMock.Received(1).LogInformation($"Retrieved a customer with Id: {customerId}");

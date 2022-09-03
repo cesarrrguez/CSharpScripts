@@ -63,22 +63,22 @@ public static class App
         var userViewModel = CreateUserViewModel();
 
         // Create User
-        await _serviceProvider.GetService<IUserController>().CreateAsync(userViewModel).ConfigureAwait(false);
-        await _serviceProvider.GetService<IUserController>().IndexAsync().ConfigureAwait(false);
+        await _serviceProvider.GetService<IUserController>().CreateAsync(userViewModel);
+        await _serviceProvider.GetService<IUserController>().IndexAsync();
 
         // Update User
-        userViewModel = await _serviceProvider.GetService<IUserController>().GetAsync(1).ConfigureAwait(false);
+        userViewModel = await _serviceProvider.GetService<IUserController>().GetAsync(1);
         userViewModel.Age = 21;
         userViewModel.Emails.Add(new UserEmailViewModel { EmailAddress = "james.wilson_33.@hotmail.com" });
-        await _serviceProvider.GetService<IUserController>().EditAsync(userViewModel).ConfigureAwait(false);
-        await _serviceProvider.GetService<IUserController>().IndexAsync().ConfigureAwait(false);
+        await _serviceProvider.GetService<IUserController>().EditAsync(userViewModel);
+        await _serviceProvider.GetService<IUserController>().IndexAsync();
 
         // Details User
-        await _serviceProvider.GetService<IUserController>().DetailsAsync(userViewModel.Id).ConfigureAwait(false);
+        await _serviceProvider.GetService<IUserController>().DetailsAsync(userViewModel.Id);
 
         // Delete User
-        await _serviceProvider.GetService<IUserController>().DeleteAsync(userViewModel.Id).ConfigureAwait(false);
-        await _serviceProvider.GetService<IUserController>().IndexAsync().ConfigureAwait(false);
+        await _serviceProvider.GetService<IUserController>().DeleteAsync(userViewModel.Id);
+        await _serviceProvider.GetService<IUserController>().IndexAsync();
     }
 
     private static UserViewModel CreateUserViewModel()

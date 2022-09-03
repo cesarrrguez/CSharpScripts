@@ -18,26 +18,26 @@ public class UserService : IUserService
     {
         var user = _mapper.Map<User>(userViewModel);
 
-        await _userRepository.AddAsync(user).ConfigureAwait(false);
+        await _userRepository.AddAsync(user);
     }
 
     public async Task UpdateAsync(UserViewModel userViewModel)
     {
         var user = _mapper.Map<User>(userViewModel);
 
-        await _userRepository.UpdateAsync(user).ConfigureAwait(false);
+        await _userRepository.UpdateAsync(user);
     }
 
     public async Task DeleteAsync(int id)
     {
-        var user = await _userRepository.GetByIdAsync(id).ConfigureAwait(false);
+        var user = await _userRepository.GetByIdAsync(id);
 
-        await _userRepository.DeleteAsync(user).ConfigureAwait(false);
+        await _userRepository.DeleteAsync(user);
     }
 
     public async Task<UserViewModel> GetByIdAsync(int id)
     {
-        var user = await _userRepository.GetByIdAsync(id).ConfigureAwait(false);
+        var user = await _userRepository.GetByIdAsync(id);
 
         return _mapper.Map<UserViewModel>(user);
     }

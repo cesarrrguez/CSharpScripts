@@ -15,12 +15,12 @@ public class UserController : IUserController
         WriteLine("Create User:");
         WriteLine(_separator);
 
-        await _userService.RegisterAsync(userViewModel).ConfigureAwait(false);
+        await _userService.RegisterAsync(userViewModel);
     }
 
     public async Task<UserViewModel> GetAsync(int id)
     {
-        return await _userService.GetByIdAsync(id).ConfigureAwait(false);
+        return await _userService.GetByIdAsync(id);
     }
 
     public async Task EditAsync(UserViewModel userViewModel)
@@ -28,7 +28,7 @@ public class UserController : IUserController
         WriteLine("\nEdit User:");
         WriteLine(_separator);
 
-        await _userService.UpdateAsync(userViewModel).ConfigureAwait(false);
+        await _userService.UpdateAsync(userViewModel);
     }
 
     public async Task DeleteAsync(int id)
@@ -36,7 +36,7 @@ public class UserController : IUserController
         WriteLine("\nDelete User:");
         WriteLine(_separator);
 
-        await _userService.RemoveAsync(id).ConfigureAwait(false);
+        await _userService.RemoveAsync(id);
     }
 
     public async Task DetailsAsync(int id)
@@ -44,13 +44,13 @@ public class UserController : IUserController
         WriteLine("\nDetails User:");
         WriteLine(_separator);
 
-        var userViewModel = await _userService.GetByIdAsync(id).ConfigureAwait(false);
+        var userViewModel = await _userService.GetByIdAsync(id);
         PrintUser(userViewModel);
     }
 
     public async Task IndexAsync()
     {
-        var users = await _userService.GetAllAsync().ConfigureAwait(false);
+        var users = await _userService.GetAllAsync();
         PrintUsers(users);
     }
 

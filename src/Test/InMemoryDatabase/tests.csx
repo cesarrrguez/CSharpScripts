@@ -25,7 +25,7 @@ public class UserRepositoryTests
         const int userId = 1;
 
         // Act
-        var result = await _sut.GetByIdAsync(userId).ConfigureAwait(false);
+        var result = await _sut.GetByIdAsync(userId);
 
         // Assert
         result.Should().NotBeNull();
@@ -38,7 +38,7 @@ public class UserRepositoryTests
         const int userId = 2;
 
         // Act
-        var result = await _sut.GetByIdAsync(userId).ConfigureAwait(false);
+        var result = await _sut.GetByIdAsync(userId);
 
         // Assert
         result.Should().BeNull();

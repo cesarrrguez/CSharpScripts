@@ -32,14 +32,14 @@ public class TelegramBotService : ITelegramBotService
                 await _client.SendTextMessageAsync(
                     chatId: e.Message.Chat.Id,
                     text: "This is a message"
-                ).ConfigureAwait(false);
+                );
             }
             else if (e.Message.Text.Contains("sticker", StringComparison.OrdinalIgnoreCase))
             {
                 await _client.SendStickerAsync(
                      chatId: e.Message.Chat.Id,
                      sticker: "https://s.tcdn.co/8a1/9aa/8a19aab4-98c0-37cb-a3d4-491cb94d7e12/1.png"
-                ).ConfigureAwait(false);
+                );
             }
             else if (e.Message.Text.Contains("contact", StringComparison.OrdinalIgnoreCase))
             {
@@ -48,7 +48,7 @@ public class TelegramBotService : ITelegramBotService
                     phoneNumber: "+34123456789",
                     firstName: "John",
                     lastName: "Doe"
-                ).ConfigureAwait(false);
+                );
             }
         }
     }

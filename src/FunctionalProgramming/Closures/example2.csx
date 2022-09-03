@@ -19,6 +19,6 @@ Func<int> Accumulator(Action<int> function)
 async void Request(int i)
 {
     var client = new HttpClient();
-    var response = await client.GetAsync("https://google.com").ConfigureAwait(false);
+    var response = await client.GetAsync("https://google.com");
     WriteLine($"Request number {i} - {response.StatusCode}");
 }

@@ -25,7 +25,7 @@ public class CustomerServiceTests
         var customerId = Guid.NewGuid();
 
         // Act
-        var customer = await _sut.GetByIdAsync(customerId).ConfigureAwait(false);
+        var customer = await _sut.GetByIdAsync(customerId);
 
         // Assert
         Assert.IsNull(customer);

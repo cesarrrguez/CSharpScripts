@@ -10,8 +10,8 @@ for (var i = 0; i < 100; i++)
         async () =>
         {
             var client = new HttpClient();
-            var response = await client.GetAsync($"https://jsonplaceholder.typicode.com/todos/{item}").ConfigureAwait(false);
-            var result = await response.Content.ReadAsStringAsync().ConfigureAwait(false);
+            var response = await client.GetAsync($"https://jsonplaceholder.typicode.com/todos/{item}");
+            var result = await response.Content.ReadAsStringAsync();
             WriteLine(result);
         }
     ));

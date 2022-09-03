@@ -35,7 +35,7 @@ public async void AsyncMethod()
 
     Thread.Sleep(1000);
 
-    await Task.WhenAll(response1Task, response2Task, response3Task).ConfigureAwait(false);
+    await Task.WhenAll(response1Task, response2Task, response3Task);
 
     var response1 = response1Task.Result;
     var response2 = response2Task.Result;

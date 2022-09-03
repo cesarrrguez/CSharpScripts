@@ -152,8 +152,8 @@ public class UserRepository : IUserRepository
 
         try
         {
-            await session.SaveAsync(user).ConfigureAwait(false);
-            await transaction.CommitAsync().ConfigureAwait(false);
+            await session.SaveAsync(user);
+            await transaction.CommitAsync();
         }
         catch (Exception ex)
         {
@@ -172,8 +172,8 @@ public class UserRepository : IUserRepository
 
         try
         {
-            await session.UpdateAsync(user).ConfigureAwait(false);
-            await transaction.CommitAsync().ConfigureAwait(false);
+            await session.UpdateAsync(user);
+            await transaction.CommitAsync();
         }
         catch (Exception ex)
         {
@@ -192,8 +192,8 @@ public class UserRepository : IUserRepository
 
         try
         {
-            await session.DeleteAsync(user).ConfigureAwait(false);
-            await transaction.CommitAsync().ConfigureAwait(false);
+            await session.DeleteAsync(user);
+            await transaction.CommitAsync();
         }
         catch (Exception ex)
         {
@@ -209,7 +209,7 @@ public class UserRepository : IUserRepository
     {
         using ISession session = DataContext.OpenSession();
 
-        return await session.GetAsync<User>(id).ConfigureAwait(false);
+        return await session.GetAsync<User>(id);
     }
 
     public IList<User> GetAll()

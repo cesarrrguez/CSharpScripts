@@ -20,7 +20,7 @@ public static class TwilioService
                     body: "Hey there! I'm using Twilio",
                     from: new Twilio.Types.PhoneNumber(SANDBOX_PHONE_NUMBER),
                     to: new Twilio.Types.PhoneNumber(PHONE_NUMBER)
-                ).ConfigureAwait(false);
+                );
 
             WriteLine(message.Sid);
         }
@@ -42,7 +42,7 @@ public static class TwilioService
                     from: new Twilio.Types.PhoneNumber($"whatsapp:{SANDBOX_WHATSAPP_NUMBER}"),
                     to: new Twilio.Types.PhoneNumber($"whatsapp:{PHONE_NUMBER}"),
                     mediaUrl: new List<Uri> { new Uri("https://cesarrrguez.github.io/assets/img/photo.jpg") }
-                ).ConfigureAwait(false);
+                );
 
             WriteLine(message.Sid);
         }
@@ -63,7 +63,7 @@ public static class TwilioService
                 url: new Uri("http://demo.twilio.com/docs/voice.xml"),
                 from: new Twilio.Types.PhoneNumber(SANDBOX_PHONE_NUMBER),
                 to: new Twilio.Types.PhoneNumber(PHONE_NUMBER)
-            ).ConfigureAwait(false);
+            );
 
             WriteLine(call.Sid);
         }

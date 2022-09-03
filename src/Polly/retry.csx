@@ -22,9 +22,9 @@ public async Task Retry()
         .ExecuteAndCaptureAsync(async () =>
         {
             WriteLine("Calling API...");
-            await Task.Delay(TimeSpan.FromSeconds(1)).ConfigureAwait(false);
+            await Task.Delay(TimeSpan.FromSeconds(1));
             throw new Exception("API failed.");
-        }).ConfigureAwait(false);
+        });
 
     WriteLine($"Retry operation completed with {result.Outcome}");
 }

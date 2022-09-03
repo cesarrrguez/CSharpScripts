@@ -1,7 +1,7 @@
 using System.Threading;
 
 var cancellationTokenSource = new CancellationTokenSource();
-await ExampleWithLoop(cancellationTokenSource).ConfigureAwait(false);
+await ExampleWithLoop(cancellationTokenSource);
 
 public async Task ExampleWithLoop(CancellationTokenSource cancellationTokenSource)
 {
@@ -13,12 +13,12 @@ public async Task ExampleWithLoop(CancellationTokenSource cancellationTokenSourc
             cancellationTokenSource.Cancel();
             WriteLine("Cancelled the task");
         }
-    }).ConfigureAwait(false);
+    });
 
     while (!cancellationTokenSource.Token.IsCancellationRequested)
     {
         WriteLine("Doing some work for 3 seconds");
-        await Task.Delay(TimeSpan.FromSeconds(3)).ConfigureAwait(false);
+        await Task.Delay(TimeSpan.FromSeconds(3));
     }
 
     WriteLine("Token was cancelled and we exited the loop");

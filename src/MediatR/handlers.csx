@@ -25,9 +25,9 @@ public class CreateCustomerCommandHandler : IRequestHandler<CreateCustomerComman
     {
         Customer customer = _mapper.Map<Customer>(createCustomerCommand);
 
-        await _customerRepository.Create(customer).ConfigureAwait(false);
+        await _customerRepository.Create(customer);
 
-        await _mediator.Publish(new CustomerCreatedEvent(customer.FirstName, customer.LastName, customer.RegistrationDate), cancellationToken).ConfigureAwait(false);
+        await _mediator.Publish(new CustomerCreatedEvent(customer.FirstName, customer.LastName, customer.RegistrationDate), cancellationToken);
 
         return _mapper.Map<CustomerDto>(customer);
     }
@@ -63,7 +63,7 @@ public class GetCustomerByIdQueryHandler : IRequestHandler<GetCustomerByIdQuery,
 
     public async Task<CustomerDto> Handle(GetCustomerByIdQuery request, CancellationToken cancellationToken)
     {
-        Customer customer = await _customerRepository.GetById(request.CustomerId).ConfigureAwait(false);
+        Customer customer = await _customerRepository.GetById(request.CustomerId);
 
         if (customer == null)
         {
@@ -87,7 +87,7 @@ public class GetAllCustomersQueryHandler : IRequestHandler<GetAllCustomersQuery,
 
     public async Task<IEnumerable<CustomerDto>> Handle(GetAllCustomersQuery request, CancellationToken cancellationToken)
     {
-        IEnumerable<Customer> customers = await _customerRepository.GetAll().ConfigureAwait(false);
+        IEnumerable<Customer> customers = await _customerRepository.GetAll();
 
         var result = new List<CustomerDto>();
         customers.ToList().ForEach(customer => result.Add(_mapper.Map<CustomerDto>(customer)));

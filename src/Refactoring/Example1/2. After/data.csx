@@ -19,6 +19,6 @@ public class ActionRepository<T> : IRepository<T>
 
         using var stream = File.Create(path);
         byte[] buffer = new UTF8Encoding(true).GetBytes(data);
-        await stream.WriteAsync(buffer, 0, buffer.Length).ConfigureAwait(false);
+        await stream.WriteAsync(buffer, 0, buffer.Length);
     }
 }

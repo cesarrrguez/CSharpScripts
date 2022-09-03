@@ -50,7 +50,7 @@ public class MainViewModel : INotifyPropertyChanged
         try
         {
             var input = new RunInput { Value1 = 5, Value2 = 7 };
-            var output = await _processController.Specific.Run.ExecuteProcess(input).ConfigureAwait(false);
+            var output = await _processController.Specific.Run.ExecuteProcess(input);
 
             if (output != null)
             {

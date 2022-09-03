@@ -57,21 +57,21 @@ public static class App
         var userController = _serviceProvider.GetService<IUserController>();
 
         // Add
-        await userController.AddAsync(userViewModel).ConfigureAwait(false);
+        await userController.AddAsync(userViewModel);
         userController.Index();
 
         // Update
-        userViewModel = await userController.GetByIdAsync(1).ConfigureAwait(false);
+        userViewModel = await userController.GetByIdAsync(1);
         userViewModel.Age = 21;
         userViewModel.Emails.Add(new UserEmailViewModel { EmailAddress = "james.wilson_33.@hotmail.com" });
-        await userController.UpdateAsync(userViewModel).ConfigureAwait(false);
+        await userController.UpdateAsync(userViewModel);
         userController.Index();
 
         // Details
-        await userController.DetailsAsync(userViewModel.Id).ConfigureAwait(false);
+        await userController.DetailsAsync(userViewModel.Id);
 
         // Delete
-        await userController.DeleteAsync(userViewModel.Id).ConfigureAwait(false);
+        await userController.DeleteAsync(userViewModel.Id);
         userController.Index();
     }
 

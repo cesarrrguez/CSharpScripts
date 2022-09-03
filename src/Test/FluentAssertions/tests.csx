@@ -24,7 +24,7 @@ public class FactorialServiceTests
         // Assert
         result.Should().Be(1);
 
-        await Task.Delay(0).ConfigureAwait(false);
+        await Task.Delay(0);
     }
 
     [Fact]
@@ -39,7 +39,7 @@ public class FactorialServiceTests
         // Assert
         result.Should().Be(120);
 
-        await Task.Delay(0).ConfigureAwait(false);
+        await Task.Delay(0);
     }
 
     [Theory]
@@ -54,6 +54,6 @@ public class FactorialServiceTests
         // Assert
         result.Should().Be(expected);
 
-        await Task.Delay(0).ConfigureAwait(false);
+        await Task.Delay(0);
     }
 }

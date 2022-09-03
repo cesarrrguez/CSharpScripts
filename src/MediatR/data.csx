@@ -15,7 +15,7 @@ public class CustomerRepository : ICustomerRepository
 
     public async Task Create(Customer customer)
     {
-        await Task.Delay(TimeSpan.FromSeconds(0.5)).ConfigureAwait(false);
+        await Task.Delay(TimeSpan.FromSeconds(0.5));
 
         customer.Id = _customers.LastOrDefault()?.Id + 1 ?? 1;
 
@@ -24,14 +24,14 @@ public class CustomerRepository : ICustomerRepository
 
     public async Task<Customer> GetById(int customerId)
     {
-        await Task.Delay(TimeSpan.FromSeconds(0.5)).ConfigureAwait(false);
+        await Task.Delay(TimeSpan.FromSeconds(0.5));
 
         return _customers.SingleOrDefault(customer => customer.Id == customerId);
     }
 
     public async Task<IEnumerable<Customer>> GetAll()
     {
-        await Task.Delay(TimeSpan.FromSeconds(0.5)).ConfigureAwait(false);
+        await Task.Delay(TimeSpan.FromSeconds(0.5));
 
         return _customers;
     }

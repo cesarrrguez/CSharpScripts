@@ -18,16 +18,16 @@ public class CustomerService : ICustomerService
 
     public async Task Create(CreateCustomerCommand createCustomerCommand)
     {
-        await _mediator.Send(createCustomerCommand).ConfigureAwait(false);
+        await _mediator.Send(createCustomerCommand);
     }
 
     public async Task<CustomerDto> GetById(int customerId)
     {
-        return await _mediator.Send(new GetCustomerByIdQuery(customerId)).ConfigureAwait(false);
+        return await _mediator.Send(new GetCustomerByIdQuery(customerId));
     }
 
     public async Task<IEnumerable<CustomerDto>> GetAll()
     {
-        return await _mediator.Send(new GetAllCustomersQuery()).ConfigureAwait(false);
+        return await _mediator.Send(new GetAllCustomersQuery());
     }
 }

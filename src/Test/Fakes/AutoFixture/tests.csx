@@ -17,7 +17,7 @@ public class ProductTests
         // Assert
         Assert.Equal("Dummy Product", product.Name);
 
-        await Task.Delay(0).ConfigureAwait(false);
+        await Task.Delay(0);
     }
 
     [Fact]
@@ -33,7 +33,7 @@ public class ProductTests
         Assert.True(product.IsExpensive());
         Assert.Equal("Dummy Product", product.Name);
 
-        await Task.Delay(0).ConfigureAwait(false);
+        await Task.Delay(0);
     }
 }
 
@@ -52,7 +52,7 @@ public class UserTests
         // Assert
         Assert.NotNull(user);
 
-        await Task.Delay(0).ConfigureAwait(false);
+        await Task.Delay(0);
     }
 
     [Fact]
@@ -69,7 +69,7 @@ public class UserTests
         // Assert
         Assert.NotNull(user);
 
-        await Task.Delay(0).ConfigureAwait(false);
+        await Task.Delay(0);
     }
 
     [Fact]
@@ -84,7 +84,7 @@ public class UserTests
         // Assert
         Assert.NotNull(user);
 
-        await Task.Delay(0).ConfigureAwait(false);
+        await Task.Delay(0);
     }
 
     [Fact]
@@ -99,7 +99,7 @@ public class UserTests
         // Assert
         Assert.Equal("ES", user.Country.Name);
 
-        await Task.Delay(0).ConfigureAwait(false);
+        await Task.Delay(0);
     }
 
     [Fact]
@@ -115,7 +115,7 @@ public class UserTests
         Assert.True(user.IsAdult());
         Assert.Equal("ES", user.Country.Name);
 
-        await Task.Delay(0).ConfigureAwait(false);
+        await Task.Delay(0);
     }
 
     [Fact]
@@ -130,6 +130,6 @@ public class UserTests
         // Assert
         Assert.Equal("Dummy Product", user.Product.Name);
 
-        await Task.Delay(0).ConfigureAwait(false);
+        await Task.Delay(0);
     }
 }

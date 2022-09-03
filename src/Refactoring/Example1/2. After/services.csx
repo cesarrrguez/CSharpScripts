@@ -19,8 +19,8 @@ public class ActionService<T> : IService<T>
         var url = Url.Combine(EnvironmentUtil.URL, _action.ToString().ToLower(), id.ToString());
 
         var client = new HttpClient();
-        var response = await client.GetAsync(url).ConfigureAwait(false);
+        var response = await client.GetAsync(url);
 
-        return await response.Content.ReadAsAsync<T>().ConfigureAwait(false);
+        return await response.Content.ReadAsAsync<T>();
     }
 }

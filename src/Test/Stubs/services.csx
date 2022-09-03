@@ -16,13 +16,13 @@ public class CustomerService : ICustomerService
             FullName = customer.FullName
         };
 
-        var createdCustomer = await _customerRepository.CreateAsync(customerDto).ConfigureAwait(false);
+        var createdCustomer = await _customerRepository.CreateAsync(customerDto);
         return MapDtoToDomain(createdCustomer);
     }
 
     public async Task<Customer> GetByIdAsync(Guid customerId)
     {
-        var customer = await _customerRepository.GetByIdAsync(customerId).ConfigureAwait(false);
+        var customer = await _customerRepository.GetByIdAsync(customerId);
 
         if (customer == null)
         {
@@ -34,7 +34,7 @@ public class CustomerService : ICustomerService
 
     public async Task<List<Customer>> GetAllAsync()
     {
-        var customerDtos = (await _customerRepository.GetAllAsync().ConfigureAwait(false)).ToList();
+        var customerDtos = (await _customerRepository.GetAllAsync()).ToList();
         return customerDtos.ConvertAll(MapDtoToDomain);
     }
 

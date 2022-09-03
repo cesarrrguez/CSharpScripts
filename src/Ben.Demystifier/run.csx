@@ -5,7 +5,7 @@
 using System.Net.Http;
 using System.Text.Json;
 
-await Program.Run().ConfigureAwait(false);
+await Program.Run();
 
 public static class Program
 {
@@ -13,7 +13,7 @@ public static class Program
     {
         try
         {
-            await RunAsync().ConfigureAwait(false);
+            await RunAsync();
         }
         catch (Exception e)
         {
@@ -25,13 +25,13 @@ public static class Program
 
     private static async Task RunAsync()
     {
-        var GitHubUser = await GetGitHubUserAsync("cesarrrguez").ConfigureAwait(false);
+        var GitHubUser = await GetGitHubUserAsync("cesarrrguez");
         var GitHubUserSerialized = JsonSerializer.Serialize(GitHubUser);
         WriteLine(GitHubUserSerialized);
 
         static async Task<GitHubUser> GetGitHubUserAsync(string username)
         {
-            var GitHubUserText = await GetGitHubJsonAsync(username).ConfigureAwait(false);
+            var GitHubUserText = await GetGitHubJsonAsync(username);
             return JsonSerializer.Deserialize<GitHubUser>(GitHubUserText);
         }
     }
@@ -39,9 +39,9 @@ public static class Program
     private static async Task<string> GetGitHubJsonAsync(string username)
     {
         var httpClient = new HttpClient(new HttpClientHandler());
-        var response = await httpClient.GetAsync($"https://api.GitHub.com/users/{username}").ConfigureAwait(false);
+        var response = await httpClient.GetAsync($"https://api.GitHub.com/users/{username}");
         ValidateRequest(response);
-        return await response.Content.ReadAsStringAsync().ConfigureAwait(false);
+        return await response.Content.ReadAsStringAsync();
     }
 
     private static Action<HttpResponseMessage> ValidateRequest => message => message.EnsureSuccessStatusCode();
