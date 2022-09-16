@@ -10,24 +10,24 @@ public class OrderService : IOrderService
         _context = context ?? throw new ArgumentNullException(nameof(context));
     }
 
-    public void Add(OrderRequest orderRequest)
+    public async Task AddAsync(OrderRequest orderRequest)
     {
         using var transaction = _context.Database.BeginTransaction();
 
         try
         {
-            _context.Customers.Add(orderRequest.Customer);
-            _context.SaveChanges();
+            await _context.Customers.AddAsync(orderRequest.Customer);
+            await _context.SaveChangesAsync();
 
             orderRequest.Order.CustomerId = orderRequest.Customer.Id;
-            _context.Orders.Add(orderRequest.Order);
-            _context.SaveChanges();
+            await _context.Orders.AddAsync(orderRequest.Order);
+            await _context.SaveChangesAsync();
 
-            transaction.Commit();
+            await transaction.CommitAsync();
         }
         catch (Exception)
         {
-            transaction.Rollback();
+            await transaction.RollbackAsync();
             throw new Exception("Error adding order");
         }
     }

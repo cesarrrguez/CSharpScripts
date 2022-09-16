@@ -2,11 +2,11 @@
 
 using PuppeteerSharp;
 
-await Program.Run();
+await App.RunAsync();
 
-public static class Program
+public static class App
 {
-    public static async Task Run()
+    public static async Task RunAsync()
     {
         const string url = "https://listado.mercadolibre.com.mx/cervezas#D[A:cervezas]";
         const string edge = @"C:\Program Files (x86)\Microsoft\Edge\Application\msedge.exe";

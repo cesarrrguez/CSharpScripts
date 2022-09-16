@@ -3,7 +3,7 @@
 using Polly;
 using Polly.Timeout;
 
-Timeout().Wait();
+await Timeout();
 
 public async Task Timeout()
 {

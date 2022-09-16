@@ -12,14 +12,14 @@ using Serilog.Events;
 using Microsoft.Extensions.DependencyInjection;
 using System.Diagnostics.CodeAnalysis;
 
-App.Run();
+await App.RunAsync();
 
 public static class App
 {
     private static IServiceProvider _serviceProvider;
 
     [SuppressMessage("csharp", "RCS1118", Justification = "Intentional error")]
-    public static void Run()
+    public static async Task RunAsync()
     {
         ConfigureServices();
 
@@ -34,7 +34,7 @@ public static class App
         Log.Information("Application is starting");
 
         var homeController = _serviceProvider.GetRequiredService<IHomeController>();
-        homeController.Run();
+        await homeController.StartAsync();
 
         // Simple values
         const int count = 456;

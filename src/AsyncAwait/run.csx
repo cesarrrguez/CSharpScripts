@@ -3,8 +3,8 @@
 Task<bool> pizza = Chef.MakePizzaAsync();
 Chef.MakeDrink();
 
-pizza.Wait();
-//await pizza; // Alternative 1
-//Task.WaitAll(pizza); // Alternative 2
+await pizza;
+// Alternative 1: pizza.Wait();
+// Alternative 2: Task.WaitAll(pizza);
 
 WriteLine("Food finished");

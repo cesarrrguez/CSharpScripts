@@ -9,9 +9,9 @@ public class UserController : IUserController
         _userService = userService ?? throw new ArgumentNullException(nameof(userService));
     }
 
-    public void Get()
+    public async Task GetAsync()
     {
-        var name = _userService.GetName();
+        var name = await _userService.GetAsync();
         WriteLine(name);
     }
 }

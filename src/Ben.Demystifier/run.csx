@@ -5,34 +5,29 @@
 using System.Net.Http;
 using System.Text.Json;
 
-await Program.Run();
+await App.RunAsync();
 
-public static class Program
+public static class App
 {
-    public static async Task Run()
+    public static async Task RunAsync()
     {
         try
         {
-            await RunAsync();
+            var GitHubUser = await GetGitHubUserAsync("cesarrrguez");
+            var GitHubUserSerialized = JsonSerializer.Serialize(GitHubUser);
+            WriteLine(GitHubUserSerialized);
+
+            static async Task<GitHubUser> GetGitHubUserAsync(string username)
+            {
+                var GitHubUserText = await GetGitHubJsonAsync(username);
+                return JsonSerializer.Deserialize<GitHubUser>(GitHubUserText);
+            }
         }
         catch (Exception e)
         {
             WriteLine(e);
             WriteLine();
             WriteLine(e.Demystify());
-        }
-    }
-
-    private static async Task RunAsync()
-    {
-        var GitHubUser = await GetGitHubUserAsync("cesarrrguez");
-        var GitHubUserSerialized = JsonSerializer.Serialize(GitHubUser);
-        WriteLine(GitHubUserSerialized);
-
-        static async Task<GitHubUser> GetGitHubUserAsync(string username)
-        {
-            var GitHubUserText = await GetGitHubJsonAsync(username);
-            return JsonSerializer.Deserialize<GitHubUser>(GitHubUserText);
         }
     }
 

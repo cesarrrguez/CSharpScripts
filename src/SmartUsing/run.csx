@@ -8,13 +8,13 @@
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
 
-App.Run();
+await App.RunAsync();
 
 public static class App
 {
     private static IServiceProvider _serviceProvider;
 
-    public static void Run()
+    public static async Task RunAsync()
     {
         ConfigureServices();
 
@@ -22,8 +22,8 @@ public static class App
         var postService = _serviceProvider.GetService<IPostService>();
 
         // Get post
-        var post = postService.GetPostAsync(21);
-        WriteLine($"{post.Result}\n");
+        var post = await postService.GetPostAsync(21);
+        WriteLine($"{post}\n");
 
         DisposeServices();
     }

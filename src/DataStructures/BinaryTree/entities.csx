@@ -8,10 +8,7 @@ public class BinaryTree<T>
         {
             node = new Node<T>(value);
 
-            if (Root == null)
-            {
-                Root = node;
-            }
+            Root ??= node;
 
             return node;
         }
@@ -139,7 +136,7 @@ public class BinaryTree<T>
         }
         else
         {
-            // Node with only one child or no child  
+            // Node with only one child or no child
             if (node.Left == null)
             {
                 return node.Right;
@@ -149,10 +146,10 @@ public class BinaryTree<T>
                 return node.Left;
             }
 
-            // Node with two children: Get the InOrder successor (smallest in the right subtree)  
+            // Node with two children: Get the InOrder successor (smallest in the right subtree)
             node.Value = Min(node.Right).Value;
 
-            // Delete the InOrder successor  
+            // Delete the InOrder successor
             node.Right = Remove(node.Right, node.Value);
         }
 

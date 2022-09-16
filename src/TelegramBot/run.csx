@@ -11,18 +11,18 @@
 
 using Microsoft.Extensions.DependencyInjection;
 
-App.Run();
+await App.RunAsync();
 
 public static class App
 {
     private static IServiceProvider _serviceProvider;
 
-    public static void Run()
+    public static async Task RunAsync()
     {
         ConfigureServices();
 
         var telegramBotService = _serviceProvider.GetService<ITelegramBotService>();
-        telegramBotService.SayHello();
+        await telegramBotService.SayHelloAsync();
 
         do
         {

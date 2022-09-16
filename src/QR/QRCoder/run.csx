@@ -4,11 +4,11 @@
 
 using QRCoder;
 
-await Program.Run();
+await App.RunAsync();
 
-public static class Program
+public static class App
 {
-    public static async Task Run()
+    public static async Task RunAsync()
     {
         var path = Path.Combine(FolderUtil.GetCurrentDirectoryName(), "QR.jpg");
 

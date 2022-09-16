@@ -14,7 +14,7 @@ public class UserController : IUserController
         _logger = logger ?? throw new ArgumentNullException(nameof(logger));
     }
 
-    public string Get()
+    public async Task<string> GetAsync()
     {
         _logger.LogError("The server went down temporarily at {Time}", DateTime.UtcNow);
 
@@ -27,6 +27,6 @@ public class UserController : IUserController
             _logger.LogCritical(ex, "There was a bad exception at {Time}", DateTime.UtcNow);
         }
 
-        return _userService.GetName();
+        return await _userService.GetAsync();
     }
 }

@@ -2,5 +2,9 @@
 
 public class UserService : IUserService
 {
-    public string GetName() => "César Rodríguez";
+    public async Task<string> GetAsync()
+    {
+        await Task.Delay(TimeSpan.FromSeconds(1));
+        return "César Rodríguez";
+    }
 }

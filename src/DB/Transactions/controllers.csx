@@ -9,13 +9,13 @@ public class OrderController : IOrderController
         _orderService = orderService ?? throw new ArgumentNullException(nameof(orderService));
     }
 
-    public OrderResponse Add(OrderRequest orderRequest)
+    public async Task<OrderResponse> AddAsync(OrderRequest orderRequest)
     {
         var response = new OrderResponse();
 
         try
         {
-            _orderService.Add(orderRequest);
+            await _orderService.AddAsync(orderRequest);
             response.Success = true;
         }
         catch (Exception)

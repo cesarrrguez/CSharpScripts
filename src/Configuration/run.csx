@@ -9,20 +9,20 @@
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 
-App.Run();
+await App.RunAsync();
 
 public static class App
 {
     private static IServiceProvider _serviceProvider;
     private static IConfiguration _configuration;
 
-    public static void Run()
+    public static async Task RunAsync()
     {
         Configure();
         ConfigureServices();
 
         var emailService = _serviceProvider.GetService<IEmailService>();
-        emailService.SendEmailAsync("to@email.com", "my subject", "My body");
+        await emailService.SendEmailAsync("to@email.com", "my subject", "My body");
 
         DisposeServices();
     }

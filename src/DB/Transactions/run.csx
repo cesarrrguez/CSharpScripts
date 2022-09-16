@@ -9,13 +9,13 @@
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.DependencyInjection;
 
-App.Run();
+await App.RunAsync();
 
 public static class App
 {
     private static IServiceProvider _serviceProvider;
 
-    public static void Run()
+    public static async Task RunAsync()
     {
         ConfigureServices();
 
@@ -26,7 +26,7 @@ public static class App
         var customer = new Customer("James", "Brown");
         var request = new OrderRequest(order, customer);
 
-        var response = _serviceProvider.GetService<IOrderController>().Add(request);
+        var response = await _serviceProvider.GetService<IOrderController>().AddAsync(request);
         WriteLine(response.Success);
 
         DisposeServices();

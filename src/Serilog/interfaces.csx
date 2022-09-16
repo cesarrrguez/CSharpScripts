@@ -1,4 +1,4 @@
 public interface IHomeController
 {
-    void Run();
+    Task StartAsync();
 }

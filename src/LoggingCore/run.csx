@@ -8,13 +8,13 @@
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
 
-App.Run();
+await App.RunAsync();
 
 public class App
 {
     private static IServiceProvider _serviceProvider;
 
-    public static void Run()
+    public static async Task RunAsync()
     {
         ConfigureServices();
 
@@ -22,7 +22,7 @@ public class App
         logger.LogInformation("The application has started");
 
         var userController = _serviceProvider.GetRequiredService<IUserController>();
-        WriteLine(userController.Get());
+        WriteLine(await userController.GetAsync());
 
         DisposeServices();
     }

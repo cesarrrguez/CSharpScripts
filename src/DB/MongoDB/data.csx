@@ -26,19 +26,36 @@ public class UserRepository : IUserRepository
         _context = context ?? throw new ArgumentNullException(nameof(context));
     }
 
-    public List<User> Get() => _context.Users.Find(_ => true).ToList();
-
-    public User Get(string id) => _context.Users.Find(u => u.Id == id).FirstOrDefault();
-
-    public User Create(User user)
+    public async Task<List<User>> GetAllAsync()
     {
-        _context.Users.InsertOne(user);
+        var users = await _context.Users.FindAsync(_ => true);
+        return users.ToList();
+    }
+
+    public async Task<User> GetAsync(string id)
+    {
+        var user = await _context.Users.FindAsync(u => u.Id == id);
+        return user.FirstOrDefault();
+    }
+
+    public async Task<User> CreateAsync(User user)
+    {
+        await _context.Users.InsertOneAsync(user);
         return user;
     }
 
-    public void Update(string id, User user) => _context.Users.ReplaceOne(u => u.Id == id, user);
+    public async Task UpdateAsync(string id, User user)
+    {
+        await _context.Users.ReplaceOneAsync(u => u.Id == id, user);
+    }
 
-    public void Remove(User user) => _context.Users.DeleteOne(u => u.Id == user.Id);
+    public async Task RemoveAsync(User user)
+    {
+        await _context.Users.DeleteOneAsync(u => u.Id == user.Id);
+    }
 
-    public void Remove(string id) => _context.Users.DeleteOne(u => u.Id == id);
+    public async Task RemoveAsync(string id)
+    {
+        await _context.Users.DeleteOneAsync(u => u.Id == id);
+    }
 }

@@ -9,13 +9,13 @@
 
 using Microsoft.Extensions.DependencyInjection;
 
-App.Run();
+await App.RunAsync();
 
 public static class App
 {
     private static IServiceProvider _serviceProvider;
 
-    public static void Run()
+    public static async Task RunAsync()
     {
         ConfigureServices();
 
@@ -23,20 +23,21 @@ public static class App
 
         // Add User
         var user = new User { Name = "César" };
-        userService.AddAsync(user);
+        await userService.AddAsync(user);
 
         // Get User
-        WriteLine(userService.GetByIdAsync(user.Id).Result);
+        WriteLine(await userService.GetByIdAsync(user.Id));
 
         // Update User
         user.Name = "James";
-        userService.UpdateAsync(user);
+        await userService.UpdateAsync(user);
 
         // Get All Users
-        userService.GetAllAsync().Result.ToList().ForEach(user => WriteLine(user));
+        var users = await userService.GetAllAsync();
+        users.ToList().ForEach(user => WriteLine(user));
 
         // Delete
-        userService.DeleteAsync(user.Id);
+        await userService.DeleteAsync(user.Id);
 
         DisposeServices();
     }

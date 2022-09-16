@@ -9,29 +9,29 @@ public interface IDbSettings
 
 public interface IUserRepository
 {
-    List<User> Get();
-    User Get(string id);
-    User Create(User user);
-    void Update(string id, User user);
-    void Remove(User user);
-    void Remove(string id);
+    Task<List<User>> GetAllAsync();
+    Task<User> GetAsync(string id);
+    Task<User> CreateAsync(User user);
+    Task UpdateAsync(string id, User user);
+    Task RemoveAsync(User user);
+    Task RemoveAsync(string id);
 }
 
 public interface IUserService
 {
-    List<User> Get();
-    User Get(string id);
-    User Create(User user);
-    void Update(string id, User user);
-    void Remove(User user);
-    void Remove(string id);
+    Task<List<User>> GetAllAsync();
+    Task<User> GetAsync(string id);
+    Task<User> CreateAsync(User user);
+    Task UpdateAsync(string id, User user);
+    Task RemoveAsync(User user);
+    Task RemoveAsync(string id);
 }
 
 public interface IUserController
 {
-    void Get();
-    void Get(string id);
-    void Create(User user);
-    void Update(string id, User user);
-    void Delete(string id);
+    Task GetAllAsync();
+    Task GetAsync(string id);
+    Task CreateAsync(User user);
+    Task UpdateAsync(string id, User user);
+    Task DeleteAsync(string id);
 }

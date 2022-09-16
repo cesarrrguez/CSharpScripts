@@ -15,13 +15,13 @@
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
 
-App.Run();
+await App.RunAsync();
 
 public static class App
 {
     private static IServiceProvider _serviceProvider;
 
-    public static void Run()
+    public static async Task RunAsync()
     {
         ConfigureServices();
 
@@ -31,20 +31,20 @@ public static class App
         // Get all
         var pagination = new PostOptionsInputPagination() { Page = 1, Limit = 5 };
         var options = new PostOptionsInput { Paginate = pagination };
-        postController.GetAllPosts(options);
+        await postController.GetAllPostsAsync(options);
 
         // Get
-        postController.GetPost(21);
+        await postController.GetPostAsync(21);
 
         // Create
         var postInput = new PostInput() { Title = "Hello", Body = "World!" };
-        postController.CreatePost(postInput);
+        await postController.CreatePostAsync(postInput);
 
         // Update
-        postController.UpdatePost(21, postInput);
+        await postController.UpdatePostAsync(21, postInput);
 
         // Delete
-        postController.DeletePost(21);
+        await postController.DeletePostAsync(21);
 
         DisposeServices();
     }

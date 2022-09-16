@@ -11,8 +11,9 @@ public class HomeController : IHomeController
         _logger = logger ?? throw new ArgumentNullException(nameof(logger));
     }
 
-    public void Run()
+    public async Task StartAsync()
     {
-        _logger.LogInformation("Home controller is running");
+        _logger.LogInformation("Home controller is starting");
+        await Task.Delay(TimeSpan.FromSeconds(1));
     }
 }

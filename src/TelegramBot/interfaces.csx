@@ -5,5 +5,5 @@ public interface ITelegramBotSettings
 
 public interface ITelegramBotService : IDisposable
 {
-    void SayHello();
+    Task SayHelloAsync();
 }

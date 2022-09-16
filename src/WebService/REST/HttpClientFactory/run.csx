@@ -5,13 +5,13 @@
 
 using Microsoft.Extensions.DependencyInjection;
 
-App.Run();
+await App.RunAsync();
 
 public static class App
 {
     private static IServiceProvider _serviceProvider;
 
-    public static void Run()
+    public static async Task RunAsync()
     {
         ConfigureServices();
 
@@ -21,8 +21,8 @@ public static class App
         // Get posts
         for (int i = 1; i <= 100; i++)
         {
-            var post = postService.GetPostAsync(i);
-            WriteLine($"{post.Result}\n");
+            var post = await postService.GetPostAsync(i);
+            WriteLine($"{post}\n");
         }
 
         DisposeServices();

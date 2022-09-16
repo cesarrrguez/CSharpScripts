@@ -11,21 +11,20 @@
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.DependencyInjection;
 
-App.Run();
+await App.RunAsync();
 
 public static class App
 {
     private static IServiceProvider _serviceProvider;
 
-    public static void Run()
+    public static async Task RunAsync()
     {
         ConfigureServices();
 
         // Ensure the database is created
         _serviceProvider.GetService<DataContext>().Database.EnsureCreated();
 
-        var servicesTask = CallServicesAsync();
-        servicesTask.Wait();
+        await CallServicesAsync();
 
         DisposeServices();
     }

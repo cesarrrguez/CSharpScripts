@@ -23,29 +23,24 @@ using Microsoft.Extensions.DependencyInjection;
 using System.Threading;
 using FluentValidation;
 
-App.Run();
+await App.RunAsync();
 
 public static class App
 {
     private static IServiceProvider _serviceProvider;
 
-    public static void Run()
+    public static async Task RunAsync()
     {
         ConfigureServices();
 
         var customerService = _serviceProvider.GetService<ICustomerService>();
 
-        var createCustomerTask = customerService.Create(new CreateCustomerCommand("César", "Rodríguez"));
-        createCustomerTask.Wait();
+        await customerService.Create(new CreateCustomerCommand("César", "Rodríguez"));
 
-        var getCustomerTask = customerService.GetById(4);
-        getCustomerTask.Wait();
-        var customerDto = getCustomerTask.Result;
+        var customerDto = await customerService.GetById(4);
         WriteLine($"\nCustomer with given ID is found: {customerDto.FirstName} {customerDto.LastName} - {customerDto.RegistrationDate}\n");
 
-        var getAllCustomersTask = customerService.GetAll();
-        getAllCustomersTask.Wait();
-        var customers = getAllCustomersTask.Result;
+        var customers = await customerService.GetAll();
         customers.ToList().ForEach(customer => WriteLine($"{customer.Id}: {customer.FirstName} {customer.LastName} - {customer.RegistrationDate}"));
 
         DisposeServices();

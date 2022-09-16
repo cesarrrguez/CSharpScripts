@@ -12,7 +12,7 @@ public class UserService : IUserService
         _logger = logger ?? throw new ArgumentNullException(nameof(logger));
     }
 
-    public string GetName()
+    public async Task<string> GetAsync()
     {
         _logger.LogTrace("This is a trace log");
         _logger.LogDebug("This is a debug log");
@@ -21,7 +21,7 @@ public class UserService : IUserService
         _logger.LogError("This is an error log");
         _logger.LogCritical("This is a critical log");
 
-        Thread.Sleep(1000);
+        await Task.Delay(TimeSpan.FromSeconds(1));
 
         return "César Rodríguez";
     }

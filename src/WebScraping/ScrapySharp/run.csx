@@ -14,11 +14,8 @@ var endDate = DateOnly.FromDateTime(DateTime.Now);
 WriteLine("News\t\tImages");
 WriteLine("----\t\t------");
 
-var saveNewsTask = App.RunSaveNewsAsync(startDate, endDate);
-var saveImagesTask = App.RunSaveImagesAsync(startDate, endDate);
-
-saveNewsTask.Wait();
-saveImagesTask.Wait();
+await App.RunSaveNewsAsync(startDate, endDate);
+await App.RunSaveImagesAsync(startDate, endDate);
 
 WriteLine("\nScraping finished!");
 

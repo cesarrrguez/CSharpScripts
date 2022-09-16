@@ -2,10 +2,10 @@
 
 public interface IOrderService : IDisposable
 {
-    void Add(OrderRequest orderRequest);
+    Task AddAsync(OrderRequest orderRequest);
 }
 
 public interface IOrderController : IDisposable
 {
-    OrderResponse Add(OrderRequest orderRequest);
+    Task<OrderResponse> AddAsync(OrderRequest orderRequest);
 }

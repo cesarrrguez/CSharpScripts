@@ -5,18 +5,18 @@
 
 using Microsoft.Extensions.DependencyInjection;
 
-App.Run();
+await App.RunAsync();
 
 public static class App
 {
     private static IServiceProvider _serviceProvider;
 
-    public static void Run()
+    public static async Task RunAsync()
     {
         ConfigureServices();
 
         var userController = _serviceProvider.GetService<IUserController>();
-        userController.Get();
+        await userController.GetAsync();
 
         DisposeServices();
     }

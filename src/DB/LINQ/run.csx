@@ -29,8 +29,6 @@ public static class App
             .AddDbContext<AppDbContext>()
             .BuildServiceProvider();
 
-        AppDbContext appDbContext = services.GetRequiredService<AppDbContext>();
-
-        return appDbContext;
+        return services.GetRequiredService<AppDbContext>();
     }
 }

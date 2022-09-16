@@ -12,14 +12,14 @@ public class PostController : IPostController
         _postService = postService;
     }
 
-    public void GetAllPosts(PostOptionsInput postOptionsInput)
+    public async Task GetAllPostsAsync(PostOptionsInput postOptionsInput)
     {
         if (postOptionsInput == null) throw new ArgumentNullException(nameof(postOptionsInput));
 
         WriteLine("\nGet all Posts:");
         WriteLine(_separator);
 
-        var posts = _postService.GetAllPostsAsync(postOptionsInput).Result;
+        var posts = await _postService.GetAllPostsAsync(postOptionsInput);
 
         if (posts?.Count > 0)
         {
@@ -31,53 +31,53 @@ public class PostController : IPostController
         }
     }
 
-    public void GetPost(int id)
+    public async Task GetPostAsync(int id)
     {
         WriteLine("\nGet a Post:");
         WriteLine(_separator);
 
-        var post = _postService.GetPostAsync(id).Result;
+        var post = await _postService.GetPostAsync(id);
         if (post == null) throw new ArgumentException(nameof(id));
 
         WriteLine(post);
     }
 
-    public void CreatePost(PostInput postToCreate)
+    public async Task CreatePostAsync(PostInput postToCreate)
     {
         if (postToCreate == null) throw new ArgumentNullException(nameof(postToCreate));
 
         WriteLine("\nCreate a Post:");
         WriteLine(_separator);
 
-        var post = _postService.CreatePostAsync(postToCreate).Result;
+        var post = await _postService.CreatePostAsync(postToCreate);
 
         WriteLine(post);
     }
 
-    public void UpdatePost(int id, PostInput postToUpdate)
+    public async Task UpdatePostAsync(int id, PostInput postToUpdate)
     {
         if (postToUpdate == null) throw new ArgumentNullException(nameof(postToUpdate));
 
         WriteLine("\nUpdate a Post:");
         WriteLine(_separator);
 
-        var post = _postService.GetPostAsync(id).Result;
+        var post = await _postService.GetPostAsync(id);
         if (post == null) throw new ArgumentException(nameof(id));
 
-        post = _postService.UpdatePostAsync(id, postToUpdate).Result;
+        post = await _postService.UpdatePostAsync(id, postToUpdate);
 
         WriteLine(post);
     }
 
-    public void DeletePost(int id)
+    public async Task DeletePostAsync(int id)
     {
         WriteLine("\nDelete a Post:");
         WriteLine(_separator);
 
-        var post = _postService.GetPostAsync(id).Result;
+        var post = await _postService.GetPostAsync(id);
         if (post == null) throw new ArgumentException(nameof(id));
 
-        var response = _postService.DeletePostAsync(id).Result;
+        var response = await _postService.DeletePostAsync(id);
 
         WriteLine(response.ToYesNoString());
     }

@@ -14,9 +14,9 @@ public class TelegramBotService : ITelegramBotService
         _client.StartReceiving();
     }
 
-    public void SayHello()
+    public async Task SayHelloAsync()
     {
-        var me = _client.GetMeAsync().Result;
+        var me = await _client.GetMeAsync();
 
         WriteLine($"Hi, I am {me.Id} and my name is {me.FirstName}");
     }

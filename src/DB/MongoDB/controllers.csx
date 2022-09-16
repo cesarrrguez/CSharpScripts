@@ -11,12 +11,12 @@ public class UserController : IUserController
         _userService = userService ?? throw new ArgumentNullException(nameof(userService));
     }
 
-    public void Get()
+    public async Task GetAllAsync()
     {
         WriteLine("\nGet Users:");
         WriteLine(_separator);
 
-        var users = _userService.Get();
+        var users = await _userService.GetAllAsync();
 
         if (users?.Count > 0)
         {
@@ -28,49 +28,49 @@ public class UserController : IUserController
         }
     }
 
-    public void Get(string id)
+    public async Task GetAsync(string id)
     {
         WriteLine("\nGet User:");
         WriteLine(_separator);
 
-        var user = _userService.Get(id);
+        var user = await _userService.GetAsync(id);
         if (user == null) throw new ArgumentException(nameof(id));
 
         WriteLine(user);
     }
 
-    public void Create(User user)
+    public async Task CreateAsync(User user)
     {
         WriteLine("\nCreate User:");
         WriteLine(_separator);
 
-        _userService.Create(user);
+        await _userService.CreateAsync(user);
 
         WriteLine(user);
     }
 
-    public void Update(string id, User userIn)
+    public async Task UpdateAsync(string id, User userIn)
     {
         WriteLine("\nUpdate User:");
         WriteLine(_separator);
 
-        var user = _userService.Get(id);
+        var user = await _userService.GetAsync(id);
         if (user == null) throw new ArgumentException(nameof(id));
 
-        _userService.Update(id, userIn);
+        await _userService.UpdateAsync(id, userIn);
 
         WriteLine(userIn);
     }
 
-    public void Delete(string id)
+    public async Task DeleteAsync(string id)
     {
         WriteLine("\nDelete User:");
         WriteLine(_separator);
 
-        var user = _userService.Get(id);
+        var user = await _userService.GetAsync(id);
         if (user == null) throw new ArgumentException(nameof(id));
 
-        _userService.Remove(user.Id);
+        await _userService.RemoveAsync(user.Id);
 
         WriteLine(user);
     }

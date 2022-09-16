@@ -4,6 +4,6 @@ Task task = Task.Run(() =>
     WriteLine("Hello");
 });
 
-task.Wait();
+await task;
 
 WriteLine("World");

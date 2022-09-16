@@ -13,13 +13,13 @@
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 
-App.Run();
+await App.RunAsync();
 
 public static class App
 {
     private static IServiceProvider _serviceProvider;
 
-    public static void Run()
+    public static async Task RunAsync()
     {
         ConfigureServices();
 
@@ -28,28 +28,28 @@ public static class App
 
         // Create
         var user1 = new User() { Name = "James", Age = 21 };
-        userController.Create(user1);
+        await userController.CreateAsync(user1);
 
         // Get
-        userController.Get(user1.Id);
+        await userController.GetAsync(user1.Id);
 
         // Update
         user1.Age = 12;
-        userController.Update(user1.Id, user1);
+        await userController.UpdateAsync(user1.Id, user1);
 
         // Create
         var user2 = new User() { Name = "Olivia", Age = 36 };
-        userController.Create(user2);
+        await userController.CreateAsync(user2);
 
         // Get
-        userController.Get();
+        await userController.GetAllAsync();
 
         // Delete
-        userController.Delete(user1.Id);
-        userController.Delete(user2.Id);
+        await userController.DeleteAsync(user1.Id);
+        await userController.DeleteAsync(user2.Id);
 
         // Get
-        userController.Get();
+        await userController.GetAllAsync();
 
         DisposeServices();
     }

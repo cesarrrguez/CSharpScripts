@@ -8,13 +8,13 @@
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.DependencyInjection;
 
-App.Run();
+await App.RunAsync();
 
 public static class App
 {
     private static IServiceProvider _serviceProvider;
 
-    public static void Run()
+    public static async Task RunAsync()
     {
         ConfigureServices();
 
@@ -25,10 +25,10 @@ public static class App
         // Create Unit of Work
         using var unitOfWork = new UnitOfWork(dataContext);
         var order = new Order("Laptop", 3);
-        unitOfWork.OrderRepository.Add(order);
+        await unitOfWork.OrderRepository.AddAsync(order);
 
         var customer = new Customer("James", "Brown");
-        unitOfWork.CustomerRepository.Add(customer);
+        await unitOfWork.CustomerRepository.AddAsync(customer);
 
         unitOfWork.Commit();
 

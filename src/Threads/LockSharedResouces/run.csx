@@ -5,16 +5,16 @@ using System.Net.Http;
 var fileName = Path.Combine(FolderUtil.GetCurrentDirectoryName(), "data.txt");
 var fs = new FileStream(fileName, FileMode.Append, FileAccess.Write);
 
-Parallel.For(1, 100, new ParallelOptions { MaxDegreeOfParallelism = 4 },
-    (i) => Write(fs, i));
+var parallelOptions = new ParallelOptions { MaxDegreeOfParallelism = 4 };
+await Parallel.ForEachAsync(Enumerable.Range(1, 1000), parallelOptions, async (id, _) => await WriteAsync(fs, id));
 
 fs.Dispose();
 
-public void Write(FileStream fs, int id)
+public async Task WriteAsync(FileStream fs, int id)
 {
     var client = new HttpClient();
-    var response = client.GetAsync($"https://jsonplaceholder.typicode.com/todos/{id}").Result;
-    var content = response.Content.ReadAsStringAsync().Result + Environment.NewLine;
+    var response = await client.GetAsync($"https://jsonplaceholder.typicode.com/todos/{id}");
+    var content = await response.Content.ReadAsStringAsync() + Environment.NewLine;
 
     lock (fs)
     {

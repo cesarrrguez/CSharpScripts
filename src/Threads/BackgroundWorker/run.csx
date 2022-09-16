@@ -1,9 +1,9 @@
 using System.ComponentModel;
 using System.Threading;
 
-Program.Run();
+App.Run();
 
-public static class Program
+public static class App
 {
     public static BackgroundWorker Worker;
 

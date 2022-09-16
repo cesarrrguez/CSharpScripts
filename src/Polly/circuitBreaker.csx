@@ -6,7 +6,7 @@ using Polly.CircuitBreaker;
 
 using System.Threading;
 
-CircuitBreak().Wait();
+await CircuitBreak();
 
 public async Task CircuitBreak()
 {

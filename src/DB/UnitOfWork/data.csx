@@ -108,9 +108,9 @@ public class OrderRepository : IOrderRepository
         _context = context ?? throw new ArgumentNullException(nameof(context));
     }
 
-    public void Add(Order order)
+    public async Task AddAsync(Order order)
     {
-        _context.Orders.Add(order);
+        await _context.Orders.AddAsync(order);
     }
 
     public void Dispose()
@@ -129,9 +129,9 @@ public class CustomerRepository : ICustomerRepository
         _context = context ?? throw new ArgumentNullException(nameof(context));
     }
 
-    public void Add(Customer customer)
+    public async Task AddAsync(Customer customer)
     {
-        _context.Customers.Add(customer);
+        await _context.Customers.AddAsync(customer);
     }
 
     public void Dispose()

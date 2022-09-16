@@ -10,15 +10,15 @@ public class UserService : IUserService
         _userRepository = userRepository ?? throw new ArgumentNullException(nameof(userRepository));
     }
 
-    public List<User> Get() => _userRepository.Get();
+    public async Task<List<User>> GetAllAsync() => await _userRepository.GetAllAsync();
 
-    public User Get(string id) => _userRepository.Get(id);
+    public async Task<User> GetAsync(string id) => await _userRepository.GetAsync(id);
 
-    public User Create(User user) => _userRepository.Create(user);
+    public async Task<User> CreateAsync(User user) => await _userRepository.CreateAsync(user);
 
-    public void Update(string id, User user) => _userRepository.Update(id, user);
+    public async Task UpdateAsync(string id, User user) => await _userRepository.UpdateAsync(id, user);
 
-    public void Remove(User user) => _userRepository.Remove(user);
+    public async Task RemoveAsync(User user) => await _userRepository.RemoveAsync(user);
 
-    public void Remove(string id) => _userRepository.Remove(id);
+    public async Task RemoveAsync(string id) => await _userRepository.RemoveAsync(id);
 }

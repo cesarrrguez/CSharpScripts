@@ -6,7 +6,7 @@ using System.Xml.Linq;
 
 public class CalculatorService
 {
-    public async Task<int> Add(int value1, int value2)
+    public async Task<int> AddAsync(int value1, int value2)
     {
         const string url = "http://www.dneonline.com/calculator.asmx";
         const string action = "http://tempuri.org/Add";

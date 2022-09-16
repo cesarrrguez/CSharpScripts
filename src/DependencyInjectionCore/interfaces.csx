@@ -1,9 +1,9 @@
 public interface IUserController
 {
-    void Get();
+    Task GetAsync();
 }
 
 public interface IUserService
 {
-    string GetName();
+    Task<string> GetAsync();
 }

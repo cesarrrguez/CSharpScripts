@@ -2,7 +2,7 @@
 
 using Polly;
 
-Retry().Wait();
+await Retry();
 
 public async Task Retry()
 {
