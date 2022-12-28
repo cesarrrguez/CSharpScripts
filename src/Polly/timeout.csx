@@ -17,8 +17,7 @@ public async Task Timeout()
                 await Task.Delay(TimeSpan.FromSeconds(1));
             }
         )
-        .ExecuteAndCaptureAsync(async () => await Task.Delay(TimeSpan.FromSeconds(2)))
-        ;
+        .ExecuteAndCaptureAsync(async () => await Task.Delay(TimeSpan.FromSeconds(2)));
 
     WriteLine("Finish");
 }

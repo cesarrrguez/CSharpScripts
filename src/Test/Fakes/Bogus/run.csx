@@ -43,5 +43,5 @@ foreach (var order in orders)
     WriteLine();
     WriteLine(text);
 
-    await Task.Delay(TimeSpan.FromSeconds(1));
+    await Task.FromResult(0);
 }

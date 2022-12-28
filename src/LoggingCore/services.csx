@@ -21,7 +21,7 @@ public class UserService : IUserService
         _logger.LogError("This is an error log");
         _logger.LogCritical("This is a critical log");
 
-        await Task.Delay(TimeSpan.FromSeconds(1));
+        await Task.FromResult(0);
 
         return "César Rodríguez";
     }

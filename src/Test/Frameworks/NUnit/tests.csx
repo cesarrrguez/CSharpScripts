@@ -25,7 +25,7 @@ public class FactorialServiceTests
         // Assert
         Assert.AreEqual(1, result);
 
-        await Task.Delay(0);
+        await Task.FromResult(0);
     }
 
     [Test]
@@ -40,7 +40,7 @@ public class FactorialServiceTests
         // Assert
         Assert.AreEqual(120, result);
 
-        await Task.Delay(0);
+        await Task.FromResult(0);
     }
 
     [TestCase(0, 1)]
@@ -54,6 +54,6 @@ public class FactorialServiceTests
         // Assert
         Assert.AreEqual(expected, result);
 
-        await Task.Delay(0);
+        await Task.FromResult(0);
     }
 }

@@ -14,6 +14,6 @@ public class HomeController : IHomeController
     public async Task StartAsync()
     {
         _logger.LogInformation("Home controller is starting");
-        await Task.Delay(TimeSpan.FromSeconds(1));
+        await Task.FromResult(0);
     }
 }

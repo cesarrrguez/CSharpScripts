@@ -20,7 +20,7 @@ public class UserServiceTests
         // Assert
         repositoryMoq.Verify(r => r.GetAll(), Times.AtLeastOnce);
 
-        await Task.Delay(0);
+        await Task.FromResult(0);
     }
 
     [Fact]
@@ -37,7 +37,7 @@ public class UserServiceTests
         // Assert
         repositoryMoq.Verify(r => r.GetAll(), Times.AtLeastOnce);
 
-        await Task.Delay(0);
+        await Task.FromResult(0);
     }
 
     [Fact]
@@ -53,6 +53,6 @@ public class UserServiceTests
         // Assert
         mocker.Verify<IRepository<User>>(r => r.GetAll(), Times.AtLeastOnce);
 
-        await Task.Delay(0);
+        await Task.FromResult(0);
     }
 }

@@ -21,24 +21,24 @@ async Task IsValid(string name)
 
 public async Task Validation1(string name)
 {
-    await Task.Delay(TimeSpan.FromSeconds(1));
+    await Task.FromResult(0);
     WriteLine($"{nameof(Validation1)} - {name}");
 }
 
 public async Task Validation2(string name)
 {
-    await Task.Delay(TimeSpan.FromSeconds(1));
+    await Task.FromResult(0);
     WriteLine($"{nameof(Validation2)} - {name}");
 }
 
 public async Task Validation3(string name)
 {
-    await Task.Delay(TimeSpan.FromSeconds(1));
+    await Task.FromResult(0);
     WriteLine($"{nameof(Validation3)} - {name}");
 }
 
 public async Task Validation4(string name)
 {
-    await Task.Delay(TimeSpan.FromSeconds(1));
+    await Task.FromResult(0);
     WriteLine($"{nameof(Validation4)} - {name}");
 }
