@@ -23,7 +23,7 @@ public class User
     public string Password { get; }
     public string Email { get; }
     public Country Country { get; set; }
-    public DateTime BornDate { get; set; }
+    public DateOnly BornDate { get; set; }
 
     public Product Product { get; set; }
 

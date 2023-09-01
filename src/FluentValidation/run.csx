@@ -10,7 +10,7 @@ var user = new User
     FirstName = "César",
     LastName = "Rodríguez",
     AccountBalance = 30,
-    DateOfBirth = new DateTime(2001, 01, 21),
+    DateOfBirth = new DateOnly(2001, 01, 21),
     Addresses = new List<Address>()
     {
         new Address { City = "New York", Street = "1st Avenue" },

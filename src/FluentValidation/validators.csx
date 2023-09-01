@@ -20,7 +20,7 @@ public class UserValidator : AbstractValidator<User>
 
         RuleFor(x => x.AccountBalance)
             .Cascade(CascadeMode.Stop)
-            .NotEqual(30).When(u => DateTime.Now <= u.DateOfBirth.AddYears(18)).WithMessage("{PropertyName} can´t be 30 if less than 18 years")
+            .NotEqual(30).When(u => DateOnly.FromDateTime(DateTime.Now) <= u.DateOfBirth.AddYears(18)).WithMessage("{PropertyName} can´t be 30 if less than 18 years")
             .LessThanOrEqualTo(50).WithMessage("{PropertyName} must be less or equal to 50")
             .GreaterThan(20).WithMessage("{PropertyName} must be greater than 20");
 
@@ -42,7 +42,7 @@ public class UserValidator : AbstractValidator<User>
         return name.All(char.IsLetter);
     }
 
-    protected bool BeAValidAge(DateTime date)
+    protected bool BeAValidAge(DateOnly date)
     {
         var currentYear = DateTime.Now.Year;
         var year = date.Year;

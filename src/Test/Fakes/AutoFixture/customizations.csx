@@ -45,7 +45,7 @@ public class AdultUserCustomization : ICustomization
     {
         fixture.Customize(new SpanishUserCustomization());
         fixture.Customize<User>(comp => comp.With(p => p.BornDate,
-                                DateTime.Now.AddYears(-25)));
+                                DateOnly.FromDateTime(DateTime.Now.AddYears(-25))));
     }
 }
 

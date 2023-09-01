@@ -1,9 +1,9 @@
 public class Person
 {
     public string FullName { get; init; } = default!;
-    public DateTime DateOfBirth { get; init; }
+    public DateOnly DateOfBirth { get; init; }
 
-    public void Deconstruct(out string fullName, out DateTime dateOfBirth)
+    public void Deconstruct(out string fullName, out DateOnly dateOfBirth)
     {
         fullName = FullName;
         dateOfBirth = DateOfBirth;

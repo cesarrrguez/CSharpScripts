@@ -4,11 +4,11 @@
 var person = new Person
 {
     FullName = "John Doe",
-    DateOfBirth = new DateTime(1990, 1, 21)
+    DateOfBirth = new DateOnly(1990, 1, 21)
 };
 
 var (fullName, dateOfBirth) = person;
-WriteLine($"The name is: {fullName}, born in {dateOfBirth:Mdd}");
+WriteLine($"The name is: {fullName}, born in {dateOfBirth}");
 
 // Deconstructing a dictionary
 var dictionary = new Dictionary<string, int>
