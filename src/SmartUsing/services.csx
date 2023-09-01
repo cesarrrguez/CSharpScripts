@@ -18,7 +18,7 @@ public class PostService : IPostService
         _logger = logger;
     }
 
-    public async Task<Post> GetPostAsync(int number)
+    public async Task<Post> GetAsync(int number)
     {
         var url = $"/posts/{number}";
         var client = _httpClientFactory.CreateClient("API");

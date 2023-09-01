@@ -14,7 +14,7 @@ public class PostService : IPostService
         _memoryCache = memoryCache;
     }
 
-    public async Task<Post> GetPostAsync(int id)
+    public async Task<Post> GetAsync(int id)
     {
         // Check if exists
         if (!_memoryCache.TryGetValue(id, out Post post))

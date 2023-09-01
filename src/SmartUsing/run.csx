@@ -22,7 +22,7 @@ public static class App
         var postService = _serviceProvider.GetService<IPostService>();
 
         // Get post
-        var post = await postService.GetPostAsync(21);
+        var post = await postService.GetAsync(21);
         WriteLine($"{post}\n");
 
         DisposeServices();
