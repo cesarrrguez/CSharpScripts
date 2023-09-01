@@ -8,7 +8,7 @@ public abstract class AbstractAccount
 
     protected AbstractAccount(ILogger logger, int balance)
     {
-        Logger = logger ?? throw new ArgumentNullException(nameof(logger));
+        Logger = logger;
         Balance = balance;
     }
 

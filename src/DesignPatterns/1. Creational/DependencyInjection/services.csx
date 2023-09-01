@@ -7,7 +7,7 @@ public class Service : IDataService
 
     public Service(IDatabase database)
     {
-        _database = database ?? throw new ArgumentNullException(nameof(database));
+        _database = database;
     }
 
     public void RegisterData(string data) => _database.Add(data);

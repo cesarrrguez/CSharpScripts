@@ -8,7 +8,7 @@ public class CustomerService : ICustomerService
 
     public CustomerService(ICustomerRepository customerRepository)
     {
-        _customerRepository = customerRepository ?? throw new ArgumentNullException(nameof(customerRepository));
+        _customerRepository = customerRepository;
     }
 
     public void Create(Customer customer)

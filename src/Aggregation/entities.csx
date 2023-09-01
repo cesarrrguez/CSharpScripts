@@ -5,7 +5,7 @@ public class Customer
 
     public Customer(string name)
     {
-        _name = name ?? throw new ArgumentNullException(nameof(name));
+        _name = name;
     }
 
     public void AddOrder(Order order)

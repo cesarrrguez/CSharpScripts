@@ -6,7 +6,7 @@ public class CustomerService : ICustomerService
 
     public CustomerService(ICustomerRepository customerRepository)
     {
-        _customerRepository = customerRepository ?? throw new ArgumentNullException(nameof(customerRepository));
+        _customerRepository = customerRepository;
     }
 
     public async Task<Customer> CreateAsync(Customer customer)

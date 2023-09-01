@@ -5,7 +5,7 @@ public class User
 
     public User(string name, int age)
     {
-        Name = name ?? throw new ArgumentNullException(nameof(name));
+        Name = name;
         Age = age;
     }
 

@@ -8,7 +8,7 @@ public class UserService
 
     public UserService(IUserRepository userRepository)
     {
-        _userRepository = userRepository ?? throw new ArgumentNullException(nameof(userRepository));
+        _userRepository = userRepository;
     }
 
     public void RegisterNewUser(string email, string password)

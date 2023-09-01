@@ -49,7 +49,7 @@ public class UserRepository : IUserRepository
 
     public UserRepository(DataContext context)
     {
-        _context = context ?? throw new ArgumentNullException(nameof(context));
+        _context = context;
     }
 
     public async Task<User> GetByIdAsync(int userId)

@@ -7,7 +7,7 @@ public class OrderService : IOrderService
 
     public OrderService(DataContext context)
     {
-        _context = context ?? throw new ArgumentNullException(nameof(context));
+        _context = context;
     }
 
     public async Task AddAsync(OrderRequest orderRequest)

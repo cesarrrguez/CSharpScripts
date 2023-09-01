@@ -34,8 +34,8 @@ public class Sum : Expression
 
     public Sum(Expression left, Expression right)
     {
-        Left = left ?? throw new ArgumentNullException(nameof(left));
-        Right = right ?? throw new ArgumentNullException(nameof(right));
+        Left = left;
+        Right = right;
     }
 
     public override void Accept(IVisitor visitor) => visitor.VisitSum(this);

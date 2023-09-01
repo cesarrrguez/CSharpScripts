@@ -7,7 +7,7 @@ public class SportsCarBuildDirector
 
     public SportsCarBuildDirector(ICarBuilder builder)
     {
-        _builder = builder ?? throw new ArgumentNullException(nameof(builder));
+        _builder = builder;
     }
 
     public void Build()

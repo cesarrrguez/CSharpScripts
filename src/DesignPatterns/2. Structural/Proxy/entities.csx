@@ -20,7 +20,7 @@ public class ProxyCar : ICar
 
     public ProxyCar(Driver driver)
     {
-        _driver = driver ?? throw new ArgumentNullException(nameof(driver));
+        _driver = driver;
         _realCar = new Car();
     }
 

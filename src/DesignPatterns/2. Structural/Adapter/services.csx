@@ -19,7 +19,7 @@ public class EncryptLibraryToEncryptSystem : IEncryptSystem
 
     public EncryptLibraryToEncryptSystem(IEncryptLibrary encryptLibrary)
     {
-        _encryptLibrary = encryptLibrary ?? throw new ArgumentNullException(nameof(encryptLibrary));
+        _encryptLibrary = encryptLibrary;
     }
     public void Encrypt()
     {

@@ -12,7 +12,7 @@ public class ServerService : IServerService
 
     public void SetServerState(IServerState state)
     {
-        _state = state ?? throw new ArgumentNullException(nameof(state));
+        _state = state;
     }
 
     public void HandleRequest()

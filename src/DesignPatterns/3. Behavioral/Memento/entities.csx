@@ -5,7 +5,7 @@ public class ProductMemento
 
     public ProductMemento(string name)
     {
-        Name = name ?? throw new ArgumentNullException(nameof(name));
+        Name = name;
     }
 }
 

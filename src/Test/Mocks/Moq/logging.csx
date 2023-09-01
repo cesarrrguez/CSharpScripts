@@ -8,7 +8,7 @@ public class Logger : ILoggingService
 
     public Logger(ILogger<Logger> logger)
     {
-        _logger = logger ?? throw new ArgumentNullException(nameof(logger));
+        _logger = logger;
     }
 
     public void LogInformation(string message, params object[] parameters)

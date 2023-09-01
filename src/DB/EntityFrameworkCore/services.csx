@@ -10,8 +10,8 @@ public class UserService : IUserService
 
     public UserService(IMapper mapper, IUserRepository userRepository)
     {
-        _mapper = mapper ?? throw new ArgumentNullException(nameof(mapper));
-        _userRepository = userRepository ?? throw new ArgumentNullException(nameof(userRepository));
+        _mapper = mapper;
+        _userRepository = userRepository;
     }
 
     public async Task RegisterAsync(UserViewModel userViewModel)

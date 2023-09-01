@@ -5,7 +5,7 @@ public class SubjectEvent
 
     public SubjectEvent(string eventType, DateTime eventDate)
     {
-        EventType = eventType ?? throw new ArgumentNullException(nameof(eventType));
+        EventType = eventType;
         EventDate = eventDate;
     }
 }

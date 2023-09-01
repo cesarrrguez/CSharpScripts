@@ -11,7 +11,7 @@ public class ProductCommand : ICommand
 
     public ProductCommand(Product product, PriceAction priceAction, int amount)
     {
-        _product = product ?? throw new ArgumentNullException(nameof(product));
+        _product = product;
         _priceAction = priceAction;
         _amount = amount;
     }

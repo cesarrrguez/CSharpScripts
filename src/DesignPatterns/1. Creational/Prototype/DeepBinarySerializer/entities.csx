@@ -16,7 +16,7 @@ public class User
 
     public User(string name, int age)
     {
-        Name = name ?? throw new ArgumentNullException(nameof(name));
+        Name = name;
         Age = age;
     }
 
@@ -37,8 +37,8 @@ public class Address
 
     public Address(string street, string city)
     {
-        Street = street ?? throw new ArgumentNullException(nameof(street));
-        City = city ?? throw new ArgumentNullException(nameof(city));
+        Street = street;
+        City = city;
     }
 
     public override string ToString() => $"Street: {Street}, City: {City}";

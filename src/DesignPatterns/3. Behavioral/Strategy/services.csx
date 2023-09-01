@@ -8,7 +8,7 @@ public class SortedList<T>
 
     public void SetSortStrategy(ISortStrategy<T> strategy)
     {
-        _strategy = strategy ?? throw new ArgumentNullException(nameof(strategy));
+        _strategy = strategy);
     }
 
     public void Add(T element)

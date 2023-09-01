@@ -8,7 +8,7 @@ public class HomeController : IHomeController
 
     public HomeController(ILogger<HomeController> logger)
     {
-        _logger = logger ?? throw new ArgumentNullException(nameof(logger));
+        _logger = logger;
     }
 
     public async Task StartAsync()

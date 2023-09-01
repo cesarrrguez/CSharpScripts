@@ -7,8 +7,8 @@ public class CustomerService : ICustomerService
 
     public CustomerService(ICustomerRepository customerRepository, ILoggingService logger)
     {
-        _customerRepository = customerRepository ?? throw new ArgumentNullException(nameof(customerRepository));
-        _logger = logger ?? throw new ArgumentNullException(nameof(logger));
+        _customerRepository = customerRepository;
+        _logger = logger;
     }
 
     public async Task<Customer> CreateAsync(Customer customer)

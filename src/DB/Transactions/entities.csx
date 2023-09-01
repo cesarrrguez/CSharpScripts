@@ -10,7 +10,7 @@ public class Order
     {
         if (units < 1) throw new ArgumentException(nameof(units));
 
-        Product = product ?? throw new ArgumentNullException(nameof(product));
+        Product = product;
         Units = units;
     }
 }
@@ -23,8 +23,8 @@ public class Customer
 
     public Customer(string firstName, string lastName)
     {
-        FirstName = firstName ?? throw new ArgumentNullException(nameof(firstName));
-        LastName = lastName ?? throw new ArgumentNullException(nameof(lastName));
+        FirstName = firstName;
+        LastName = lastName;
     }
 }
 
@@ -35,8 +35,8 @@ public class OrderRequest
 
     public OrderRequest(Order order, Customer customer)
     {
-        Order = order ?? throw new ArgumentNullException(nameof(order));
-        Customer = customer ?? throw new ArgumentNullException(nameof(customer));
+        Order = order;
+        Customer = customer;
     }
 }
 

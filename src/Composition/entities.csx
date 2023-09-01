@@ -5,7 +5,7 @@ public class Car
 
     public Car(string name)
     {
-        _name = name ?? throw new ArgumentNullException(nameof(name));
+        _name = name;
         _engine = new Engine("Electric", 100);
     }
 
@@ -29,7 +29,7 @@ public class Engine
 
     public Engine(string type, int power)
     {
-        _type = type ?? throw new ArgumentNullException(nameof(type));
+        _type = type;
         _power = power;
     }
 

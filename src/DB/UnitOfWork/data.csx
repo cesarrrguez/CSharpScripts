@@ -81,7 +81,7 @@ public class UnitOfWork : IUnitOfWork
 
     public UnitOfWork(DataContext context)
     {
-        _context = context ?? throw new ArgumentNullException(nameof(context));
+        _context = context;
     }
 
     public bool Commit()
@@ -105,7 +105,7 @@ public class OrderRepository : IOrderRepository
 
     public OrderRepository(DataContext context)
     {
-        _context = context ?? throw new ArgumentNullException(nameof(context));
+        _context = context;
     }
 
     public async Task AddAsync(Order order)
@@ -126,7 +126,7 @@ public class CustomerRepository : ICustomerRepository
 
     public CustomerRepository(DataContext context)
     {
-        _context = context ?? throw new ArgumentNullException(nameof(context));
+        _context = context;
     }
 
     public async Task AddAsync(Customer customer)

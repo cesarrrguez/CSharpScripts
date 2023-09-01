@@ -11,7 +11,7 @@ public abstract class Person
 
     protected Person(IMediator mediator)
     {
-        _mediator = mediator ?? throw new ArgumentNullException(nameof(mediator));
+        _mediator = mediator;
     }
 
     public void Send(string message) => _mediator.Send(message, this);

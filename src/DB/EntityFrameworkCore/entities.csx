@@ -74,7 +74,7 @@ public class UserAddress : Entity
         if (string.IsNullOrWhiteSpace(state)) throw new ArgumentNullException(nameof(state));
         if (string.IsNullOrWhiteSpace(zipCode)) throw new ArgumentNullException(nameof(zipCode));
 
-        User = user ?? throw new ArgumentNullException(nameof(user));
+        User = user;
         Id = id;
         Street = street;
         City = city;
@@ -95,7 +95,7 @@ public class UserEmail : Entity
     {
         if (string.IsNullOrWhiteSpace(emailAddress)) throw new ArgumentNullException(nameof(emailAddress));
 
-        User = user ?? throw new ArgumentNullException(nameof(user));
+        User = user;
         Id = id;
         EmailAddress = emailAddress;
     }

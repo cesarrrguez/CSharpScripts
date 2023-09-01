@@ -100,18 +100,18 @@ public class Customer
 
     public Customer(CustomerName name, Email email)
     {
-        Name = name ?? throw new ArgumentNullException(nameof(name));
-        Email = email ?? throw new ArgumentNullException(nameof(email));
+        Name = name;
+        Email = email;
     }
 
     public void ChangeName(CustomerName name)
     {
-        Name = name ?? throw new ArgumentNullException(nameof(name));
+        Name = name;
     }
 
     public void ChangeEmail(Email email)
     {
-        Email = email ?? throw new ArgumentNullException(nameof(email));
+        Email = email;
     }
 
     public override string ToString()

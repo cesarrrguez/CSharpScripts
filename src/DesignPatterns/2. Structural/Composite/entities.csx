@@ -6,7 +6,7 @@ public abstract class Food
 
     protected Food(string name, decimal price)
     {
-        Name = name ?? throw new ArgumentNullException(nameof(name));
+        Name = name;
         Price = price;
     }
 

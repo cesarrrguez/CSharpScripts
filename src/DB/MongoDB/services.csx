@@ -7,7 +7,7 @@ public class UserService : IUserService
 
     public UserService(IUserRepository userRepository)
     {
-        _userRepository = userRepository ?? throw new ArgumentNullException(nameof(userRepository));
+        _userRepository = userRepository;
     }
 
     public async Task<List<User>> GetAllAsync() => await _userRepository.GetAllAsync();

@@ -8,9 +8,9 @@ public class Car
 
     public Car(string brand, string model, string colour, int numDoors)
     {
-        Brand = brand ?? throw new ArgumentNullException(nameof(brand));
-        Model = model ?? throw new ArgumentNullException(nameof(model));
-        Colour = colour ?? throw new ArgumentNullException(nameof(colour));
+        Brand = brand;
+        Model = model;
+        Colour = colour;
         NumDoors = numDoors;
 
         if (numDoors == 0) throw new ArgumentException(nameof(numDoors));

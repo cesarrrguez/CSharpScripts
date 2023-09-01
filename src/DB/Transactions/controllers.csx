@@ -6,7 +6,7 @@ public class OrderController : IOrderController
 
     public OrderController(IOrderService orderService)
     {
-        _orderService = orderService ?? throw new ArgumentNullException(nameof(orderService));
+        _orderService = orderService;
     }
 
     public async Task<OrderResponse> AddAsync(OrderRequest orderRequest)

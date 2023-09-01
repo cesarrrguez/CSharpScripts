@@ -6,7 +6,7 @@ public class Product
 
     public Product(string name, int price)
     {
-        Name = name ?? throw new ArgumentNullException(nameof(name));
+        Name = name;
         Price = price;
     }
 

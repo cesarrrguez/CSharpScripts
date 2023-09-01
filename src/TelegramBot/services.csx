@@ -8,7 +8,7 @@ public class TelegramBotService : ITelegramBotService
 
     public TelegramBotService(ITelegramBotClient client)
     {
-        _client = client ?? throw new ArgumentNullException(nameof(client));
+        _client = client;
 
         _client.OnMessage += OnMessage;
         _client.StartReceiving();

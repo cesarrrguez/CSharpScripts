@@ -7,7 +7,7 @@ public class User
     public User(int id, string fullName, int courseId)
     {
         Id = id;
-        FullName = fullName ?? throw new ArgumentNullException(nameof(fullName));
+        FullName = fullName;
         CourseId = courseId;
     }
 

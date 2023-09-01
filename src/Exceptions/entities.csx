@@ -10,7 +10,7 @@ public class Heating
 
     public Heating(string name, int temperature)
     {
-        Name = name ?? throw new ArgumentNullException(name);
+        Name = name;
         Temperature = temperature;
         Works = true;
     }

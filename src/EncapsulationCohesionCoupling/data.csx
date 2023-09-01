@@ -33,7 +33,7 @@ public class UserRepository : IRepository<User>
 
     public UserRepository(IDataContext dataContext)
     {
-        _dataContext = dataContext ?? throw new ArgumentNullException(nameof(dataContext));
+        _dataContext = dataContext;
     }
 
     public void Add(User user)

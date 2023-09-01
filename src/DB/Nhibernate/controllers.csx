@@ -7,7 +7,7 @@ public class UserController : IUserController
 
     public UserController(IUserService userService)
     {
-        _userService = userService ?? throw new ArgumentNullException(nameof(userService));
+        _userService = userService;
     }
 
     public async Task AddAsync(UserViewModel userViewModel)

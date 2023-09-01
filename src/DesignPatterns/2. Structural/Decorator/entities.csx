@@ -21,7 +21,7 @@ public abstract class CarAccessory : ICar
 
     protected CarAccessory(ICar car)
     {
-        _car = car ?? throw new ArgumentNullException(nameof(car));
+        _car = car;
     }
 
     public virtual double GetPrice() => _car.GetPrice();
