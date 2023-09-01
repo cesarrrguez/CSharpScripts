@@ -21,7 +21,7 @@ public static class App
         // Get posts
         for (int i = 1; i <= 100; i++)
         {
-            var post = await postService.GetPostAsync(i);
+            var post = await postService.GetAsync(i);
             WriteLine($"{post}\n");
         }
 

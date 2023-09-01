@@ -16,7 +16,7 @@ public class PostService : IPostService
         _logger = logger;
     }
 
-    public async Task<List<Post>> GetAllPostsAsync(PostOptionsInput postOptionsInput)
+    public async Task<List<Post>> GetAllAsync(PostOptionsInput postOptionsInput)
     {
         var query = new GraphQLRequest
         {
@@ -44,7 +44,7 @@ public class PostService : IPostService
         return response.Data.Posts.Data.ToList();
     }
 
-    public async Task<Post> GetPostAsync(int id)
+    public async Task<Post> GetAsync(int id)
     {
         var request = new GraphQLRequest
         {
@@ -67,7 +67,7 @@ public class PostService : IPostService
         return response.Data.Post;
     }
 
-    public async Task<Post> CreatePostAsync(PostInput postToCreate)
+    public async Task<Post> CreateAsync(PostInput postToCreate)
     {
         var query = new GraphQLRequest
         {
@@ -90,7 +90,7 @@ public class PostService : IPostService
         return response.Data.CreatePost;
     }
 
-    public async Task<Post> UpdatePostAsync(int id, PostInput postToUpdate)
+    public async Task<Post> UpdateAsync(int id, PostInput postToUpdate)
     {
         var query = new GraphQLRequest
         {
@@ -113,7 +113,7 @@ public class PostService : IPostService
         return response.Data.UpdatePost;
     }
 
-    public async Task<bool> DeletePostAsync(int id)
+    public async Task<bool> DeleteAsync(int id)
     {
         var query = new GraphQLRequest
         {

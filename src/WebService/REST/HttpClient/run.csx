@@ -36,5 +36,5 @@ WriteLine($"{post}");
 // DELETE
 WriteLine("\nDELETE:");
 WriteLine(separator);
-var deleted = await postService.DeletePostAsync(99);
+var deleted = await postService.DeleteAsync(99);
 WriteLine($"Deleted: {deleted.ToYesNoString()}");

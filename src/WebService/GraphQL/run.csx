@@ -31,20 +31,20 @@ public static class App
         // Get all
         var pagination = new PostOptionsInputPagination() { Page = 1, Limit = 5 };
         var options = new PostOptionsInput { Paginate = pagination };
-        await postController.GetAllPostsAsync(options);
+        await postController.GetAllAsync(options);
 
         // Get
-        await postController.GetPostAsync(21);
+        await postController.GetAsync(21);
 
         // Create
         var postInput = new PostInput() { Title = "Hello", Body = "World!" };
-        await postController.CreatePostAsync(postInput);
+        await postController.CreateAsync(postInput);
 
         // Update
-        await postController.UpdatePostAsync(21, postInput);
+        await postController.UpdateAsync(21, postInput);
 
         // Delete
-        await postController.DeletePostAsync(21);
+        await postController.DeleteAsync(21);
 
         DisposeServices();
     }

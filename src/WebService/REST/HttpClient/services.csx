@@ -61,7 +61,7 @@ public class PostService
     }
 
     // DELETE
-    public async Task<bool> DeletePostAsync(int postId)
+    public async Task<bool> DeleteAsync(int postId)
     {
         var url = $"https://jsonplaceholder.typicode.com/posts/{postId}";
         using var client = new HttpClient();

@@ -7,18 +7,18 @@ public interface IGraphQLSettings
 
 public interface IPostService : IDisposable
 {
-    Task<List<Post>> GetAllPostsAsync(PostOptionsInput postOptionsInput);
-    Task<Post> GetPostAsync(int id);
-    Task<Post> CreatePostAsync(PostInput postToCreate);
-    Task<Post> UpdatePostAsync(int id, PostInput postToUpdate);
-    Task<bool> DeletePostAsync(int id);
+    Task<List<Post>> GetAllAsync(PostOptionsInput postOptionsInput);
+    Task<Post> GetAsync(int id);
+    Task<Post> CreateAsync(PostInput postToCreate);
+    Task<Post> UpdateAsync(int id, PostInput postToUpdate);
+    Task<bool> DeleteAsync(int id);
 }
 
 public interface IPostController : IDisposable
 {
-    Task GetAllPostsAsync(PostOptionsInput postOptionsInput);
-    Task GetPostAsync(int id);
-    Task CreatePostAsync(PostInput postToCreate);
-    Task UpdatePostAsync(int id, PostInput postToUpdate);
-    Task DeletePostAsync(int id);
+    Task GetAllAsync(PostOptionsInput postOptionsInput);
+    Task GetAsync(int id);
+    Task CreateAsync(PostInput postToCreate);
+    Task UpdateAsync(int id, PostInput postToUpdate);
+    Task DeleteAsync(int id);
 }

@@ -12,7 +12,7 @@ public class PostService : IPostService
         _clientFactory = clientFactory;
     }
 
-    public async Task<Post> GetPostAsync(int number)
+    public async Task<Post> GetAsync(int number)
     {
         var url = $"/posts/{number}";
         var client = _clientFactory.CreateClient("API");
