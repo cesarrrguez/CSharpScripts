@@ -1,7 +1,7 @@
 #load "interfaces.csx"
 
 // Strategy A
-public class QuickSort<T> : ISortStrategy<T>
+public class QuickSortStrategy<T> : ISortStrategy<T>
 {
     public void Sort(List<T> list)
     {
@@ -11,7 +11,7 @@ public class QuickSort<T> : ISortStrategy<T>
 }
 
 // Strategy B
-public class BubbleSort<T> : ISortStrategy<T>
+public class BubbleSortStrategy<T> : ISortStrategy<T>
 {
     public void Sort(List<T> list)
     {
@@ -21,7 +21,7 @@ public class BubbleSort<T> : ISortStrategy<T>
 }
 
 // Strategy C
-public class MergeSort<T> : ISortStrategy<T>
+public class MergeSortStrategy<T> : ISortStrategy<T>
 {
     public void Sort(List<T> list)
     {
