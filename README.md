@@ -63,6 +63,7 @@ This repository contains _C#_ scripts.
 - Parameters, in, out, ref, params
 - Culture, Globalization, Localization
 - State Machine
+- Stopwatch, MethodTimer
 - Other
 
 ## License
