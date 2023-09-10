@@ -8,3 +8,9 @@ public class Order
     public OrderStatus Status { get; set; } = OrderStatus.Pending;
     public List<LineItem> Items { get; set; } = new();
 }
+
+public class LineItem
+{
+    public long Id { get; set; }
+    public string Name { get; set; } = string.Empty;
+}

@@ -7,7 +7,7 @@ public static class PasswordEncrypter
     public static string Encrypt(string password)
     {
         var bytes = Encoding.Unicode.GetBytes(password);
-        var inArray = HashAlgorithm.Create("SHA1").ComputeHash(bytes);
+        var inArray = SHA1.Create().ComputeHash(bytes);
 
         return Convert.ToBase64String(inArray);
     }

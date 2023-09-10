@@ -14,7 +14,7 @@ public class UserService
     public void RegisterNewUser(string email, string password)
     {
         var bytes = Encoding.Unicode.GetBytes(password);
-        var inArray = HashAlgorithm.Create("SHA1").ComputeHash(bytes);
+        var inArray = SHA1.Create().ComputeHash(bytes);
         var encriptedPassword = Convert.ToBase64String(inArray);
 
         var user = new User

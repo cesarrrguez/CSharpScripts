@@ -56,7 +56,7 @@ public class Application
     }
 }
 
-public struct DateStruct
+public readonly struct DateStruct
 {
     public int Day { get; init; }
     public int Month { get; init; }

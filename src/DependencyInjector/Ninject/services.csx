@@ -6,7 +6,7 @@ public class ProductService : IProductService
 
     public ProductService(IProductRepository productRepository)
     {
-        _productRepository = productRepository);
+        _productRepository = productRepository;
     }
 
     public void RegisterNewProduct(Product product)

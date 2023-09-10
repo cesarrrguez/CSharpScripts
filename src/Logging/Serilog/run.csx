@@ -1,11 +1,11 @@
 #load "controllers.csx"
 #load "utils.csx"
 
-#r "nuget: Microsoft.Extensions.DependencyInjection, 5.0.0"
-#r "nuget: Microsoft.Extensions.Logging, 3.1.0"
-#r "nuget: Serilog.Extensions.Logging, 3.0.1"
-#r "nuget: Serilog.Sinks.Console, 3.1.1"
-#r "nuget: Serilog.Sinks.File, 4.1.0"
+#r "nuget: Microsoft.Extensions.DependencyInjection, 7.0.0"
+#r "nuget: Microsoft.Extensions.Logging, 7.0.0"
+#r "nuget: Serilog.Extensions.Logging, 7.0.0"
+#r "nuget: Serilog.Sinks.Console, 4.1.0"
+#r "nuget: Serilog.Sinks.File, 5.0.0"
 
 using Serilog;
 using Serilog.Events;
@@ -28,7 +28,7 @@ public static class App
         Log.Logger = new LoggerConfiguration()
              .MinimumLevel.Debug()
              .WriteTo.Console()
-             .WriteTo.File(path, rollingInterval: RollingInterval.Day, restrictedToMinimumLevel: LogEventLevel.Information)
+             .WriteTo.File(path, restrictedToMinimumLevel: LogEventLevel.Information, rollingInterval: RollingInterval.Day)
              .CreateLogger();
 
         Log.Information("Application is starting");

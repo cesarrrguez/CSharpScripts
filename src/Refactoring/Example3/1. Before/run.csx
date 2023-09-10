@@ -1,6 +1,6 @@
 public class OrderProcessor
 {
-    public void Process(Order? order)
+    public void Process(Order order)
     {
         if (order != null)
         {
@@ -32,4 +32,10 @@ public class Order
     public bool IsProcessed { get; set; }
     public string Status { get; set; } = string.Empty;
     public List<LineItem> Items { get; set; } = new();
+}
+
+public class LineItem
+{
+    public long Id { get; set; }
+    public string Name { get; set; } = string.Empty;
 }

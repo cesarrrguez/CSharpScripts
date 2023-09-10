@@ -10,7 +10,7 @@ public record ProcessOrderResult
     public string Message { get; init; }
 
     public static ProcessOrderResult NotProcessable() =>
-        new(default, $"The order {orderId} is not processable");
+        new(default, "The order is not processable");
 
     public static ProcessOrderResult NotReadyForProcessing(long orderId) =>
         new(orderId, $"The order {orderId} has too many items");

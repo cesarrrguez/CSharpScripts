@@ -1,12 +1,11 @@
 #load "entities.csx"
-#load "exception.csx"
 #load "records.csx"
 
 public class OrderProcessor
 {
     private const int ProcessableNumberOfLineItems = 15;
 
-    public ProcessOrderResult Process(Order? order)
+    public ProcessOrderResult Process(Order order)
     {
         if (!IsOrderProcessable(order))
         {
@@ -27,10 +26,8 @@ public class OrderProcessor
         return ProcessOrderResult.Successful(order.Id);
     }
 
-    public static bool IsOrderProcessable(Order? order)
+    public static bool IsOrderProcessable(Order order)
     {
-        return order is not null &&
-               order.IsVerified &&
-               order.Items.Any();
+        return order?.IsVerified == true && order.Items.Any();
     }
 }

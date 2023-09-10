@@ -63,12 +63,8 @@ public class GetCustomerByIdQueryHandler : IRequestHandler<GetCustomerByIdQuery,
 
     public async Task<CustomerDto> Handle(GetCustomerByIdQuery request, CancellationToken cancellationToken)
     {
-        Customer customer = await _customerRepository.GetById(request.CustomerId);
-
-        if (customer == null)
-        {
-            throw new Exception("Customer with given ID is not found");
-        }
+        Customer customer = await _customerRepository.GetById(request.CustomerId)
+            ?? throw new Exception("Customer with given ID is not found");
 
         return _mapper.Map<CustomerDto>(customer);
     }
