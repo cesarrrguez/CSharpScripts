@@ -1,4 +1,4 @@
-#r "nuget: Ardalis.SmartEnum, 2.0.1"
+#load "../../../packages.csx"
 
 #load "enums.csx"
 

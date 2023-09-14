@@ -1,8 +1,6 @@
-#load "tests.csx"
+#load "../../../../packages.csx"
 
-#r "nuget: xunit, 2.4.1"
-#r "nuget: Moq, 4.16.1"
-#r "nuget: Moq.AutoMock, 3.0.0"
+#load "tests.csx"
 
 var testService = new UserServiceTests();
 

@@ -1,12 +1,9 @@
+#load "../../../packages.csx"
+
 #load "viewModels.csx"
 #load "controllers.csx"
 #load "configurations.csx"
 #load "utils.csx"
-
-#r "nuget: AutoMapper, 10.0.0"
-#r "nuget: Microsoft.EntityFrameworkCore.Sqlite, 3.1.0"
-//#r "nuget: Microsoft.EntityFrameworkCore.SqlServer, 3.1.0"
-#r "nuget: AutoMapper.Extensions.Microsoft.DependencyInjection, 8.0.1"
 
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.DependencyInjection;

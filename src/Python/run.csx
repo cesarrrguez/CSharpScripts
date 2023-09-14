@@ -1,7 +1,6 @@
-#load "utils.csx"
+#load "../../packages.csx"
 
-#r "nuget: DynamicLanguageRuntime, 1.3.0"
-#r "nuget: IronPython, 2.7.11"
+#load "utils.csx"
 
 using Microsoft.Scripting.Hosting;
 using IronPython.Hosting;

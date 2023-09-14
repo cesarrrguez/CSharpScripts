@@ -81,10 +81,4 @@ public class PostController : IPostController
 
         WriteLine(response.ToYesNoString());
     }
-
-    public void Dispose()
-    {
-        _postService.Dispose();
-        GC.SuppressFinalize(this);
-    }
 }

@@ -1,13 +1,7 @@
+#load "../../packages.csx"
+
 #load "services.csx"
 #load "configurations.csx"
-
-#r "nuget: Telegram.Bot, 15.7.1"
-#r "nuget: Microsoft.Extensions.DependencyInjection, 3.1.0"
-#r "nuget: Microsoft.Extensions.Configuration, 3.1.0"
-#r "nuget: Microsoft.Extensions.Configuration.Json, 3.1.0"
-#r "nuget: Microsoft.Extensions.Configuration.Binder, 3.1.0"
-#r "nuget: Microsoft.Extensions.Options, 3.1.0"
-#r "nuget: Microsoft.Extensions.Options.ConfigurationExtensions, 3.1.0"
 
 using Microsoft.Extensions.DependencyInjection;
 

@@ -1,7 +1,6 @@
-#load "services.csx"
+#load "../../packages.csx"
 
-#r "nuget: Microsoft.Extensions.Caching.Memory, 3.1.0"
-#r "nuget: Microsoft.Extensions.DependencyInjection, 3.1.0"
+#load "services.csx"
 
 using Microsoft.Extensions.DependencyInjection;
 

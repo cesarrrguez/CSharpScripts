@@ -1,6 +1,6 @@
-#load "utils.csx"
+#load "../../packages.csx"
 
-#r "nuget: itext7, 7.1.13"
+#load "utils.csx"
 
 using iText.Kernel.Pdf;
 using iText.Kernel.Pdf.Canvas.Parser;

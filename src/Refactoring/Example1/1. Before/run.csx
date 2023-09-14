@@ -1,6 +1,6 @@
-#load "utils.csx"
+#load "../../../../packages.csx"
 
-#r "nuget: Microsoft.AspNet.WebApi.Client, 5.2.7"
+#load "utils.csx"
 
 using System.Net.Http;
 using System.Net.Http.Formatting;

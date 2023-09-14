@@ -1,6 +1,6 @@
-#load "utils.csx"
+#load "../../../packages.csx"
 
-#r "nuget: iTextSharp, 5.5.13.1"
+#load "utils.csx"
 
 using iTextSharp.text;
 using iTextSharp.text.pdf;

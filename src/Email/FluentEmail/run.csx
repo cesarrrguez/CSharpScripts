@@ -1,7 +1,6 @@
-#load "services.csx"
+#load "../../../packages.csx"
 
-#r "nuget: FluentEmail.Core, 3.0.0"
-#r "nuget: FluentEmail.Smtp, 3.0.0"
+#load "services.csx"
 
 var mailService = new MailService();
 

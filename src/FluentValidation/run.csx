@@ -1,6 +1,6 @@
-#load "validators.csx"
+#load "../../packages.csx"
 
-#r "nuget: FluentValidation, 9.3.0"
+#load "validators.csx"
 
 using FluentValidation;
 

@@ -1,7 +1,7 @@
+#load "../../../packages.csx"
+
 #load "entities.csx"
 #load "dtos.csx"
-
-#r "nuget: Mapster, 7.2.0"
 
 using Mapster;
 

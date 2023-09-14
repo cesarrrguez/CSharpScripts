@@ -1,7 +1,6 @@
-#load "data.csx"
+#load "../../../packages.csx"
 
-#r "nuget: Microsoft.EntityFrameworkCore.Sqlite, 3.1.0"
-#r "nuget: Z.EntityFramework.Extensions.EFCore, 3.2.0"
+#load "data.csx"
 
 var dbUtil = new DbUtil();
 

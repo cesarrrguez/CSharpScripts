@@ -1,4 +1,4 @@
-#r "nuget: Polly, 7.2.2"
+#load "../../packages.csx"
 
 using Polly;
 using Polly.Timeout;

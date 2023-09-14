@@ -1,6 +1,6 @@
-#load "services.csx"
+#load "../../../packages.csx"
 
-#r "nuget: OpenPop.NET, 2.0.6.1120"
+#load "services.csx"
 
 var pop3Service = new Pop3Service();
 var messages = pop3Service.GetMessages();

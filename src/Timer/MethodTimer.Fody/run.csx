@@ -1,4 +1,4 @@
-#r "nuget: MethodTimer.Fody, 3.2.2"
+#load "../../../packages.csx"
 
 using MethodTimer;
 

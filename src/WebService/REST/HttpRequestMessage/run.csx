@@ -1,6 +1,6 @@
-#load "services.csx"
+#load "../../../../packages.csx"
 
-#r "nuget: System.Net.Http.Json, 3.2.0"
+#load "services.csx"
 
 var weatherService = new WeatherService();
 await weatherService.FetchDataAsync();

@@ -1,7 +1,7 @@
+#load "../../../packages.csx"
+
 #load "entities.csx"
 #load "dtos.csx"
-
-#r "nuget: CSharpFunctionalExtensions, 2.16.0"
 
 using CSharpFunctionalExtensions;
 

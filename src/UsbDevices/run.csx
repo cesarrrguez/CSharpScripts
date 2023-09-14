@@ -1,6 +1,6 @@
-#load "entities.csx"
+#load "../../packages.csx"
 
-#r "nuget: System.Management, 4.7.0"
+#load "entities.csx"
 
 using System.Management;
 

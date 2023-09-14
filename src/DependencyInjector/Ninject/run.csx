@@ -1,12 +1,12 @@
-#load "ioc.csx"
+#load "../../../packages.csx"
 
-#r "nuget: Ninject, 3.3.4"
+#load "ioc.csx"
 
 using Ninject;
 
 var kernel = new StandardKernel();
 //kernel.Load(Assembly.GetExecutingAssembly());
-kernel.Load(new [] { new IoC() });
+kernel.Load(new[] { new IoC() });
 
 var productService = kernel.Get<IProductService>();
 

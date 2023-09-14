@@ -5,7 +5,7 @@ public interface IGraphQLSettings
     string EndPointUrl { get; set; }
 }
 
-public interface IPostService : IDisposable
+public interface IPostService
 {
     Task<List<Post>> GetAllAsync(PostOptionsInput postOptionsInput);
     Task<Post> GetAsync(int id);
@@ -14,7 +14,7 @@ public interface IPostService : IDisposable
     Task<bool> DeleteAsync(int id);
 }
 
-public interface IPostController : IDisposable
+public interface IPostController
 {
     Task GetAllAsync(PostOptionsInput postOptionsInput);
     Task GetAsync(int id);

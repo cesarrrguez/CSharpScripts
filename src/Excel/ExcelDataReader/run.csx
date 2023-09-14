@@ -1,9 +1,8 @@
+#load "../../../packages.csx"
+
 #load "entities.csx"
 #load "services.csx"
 #load "utils.csx"
-
-#r "nuget: ExcelDataReader, 3.6.0"
-#r "nuget: ExcelDataReader.DataSet, 3.6.0"
 
 // .NET Core fix
 Encoding.RegisterProvider(CodePagesEncodingProvider.Instance);

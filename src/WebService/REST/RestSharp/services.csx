@@ -11,7 +11,7 @@ public class PostService
     public void GetPosts()
     {
         var client = new RestClient("https://jsonplaceholder.typicode.com");
-        var request = new RestRequest("posts", Method.GET);
+        var request = new RestRequest("posts", Method.Get);
         var response = client.Execute(request);
         WriteLine(response.Content);
     }
@@ -20,11 +20,10 @@ public class PostService
     public void AddPost(Post post)
     {
         var client = new RestClient("https://jsonplaceholder.typicode.com");
-        var request = new RestRequest("posts", Method.POST);
+        var request = new RestRequest("posts", Method.Post);
 
         var data = JsonSerializer.Serialize(post);
-        var content = new StringContent(data, Encoding.UTF8, "application/json");
-        request.AddParameter("data", content);
+        request.AddParameter("data", data);
 
         var response = client.Execute(request);
         WriteLine(response.Content);
@@ -34,11 +33,10 @@ public class PostService
     public void EditPost(Post post)
     {
         var client = new RestClient("https://jsonplaceholder.typicode.com");
-        var request = new RestRequest($"posts/{post.Id}", Method.PUT);
+        var request = new RestRequest($"posts/{post.Id}", Method.Put);
 
         var data = JsonSerializer.Serialize(post);
-        var content = new StringContent(data, Encoding.UTF8, "application/json");
-        request.AddParameter("data", content);
+        request.AddParameter("data", data);
 
         var response = client.Execute(request);
         WriteLine(response.Content);
@@ -48,7 +46,7 @@ public class PostService
     public void DeletePost(int postId)
     {
         var client = new RestClient("https://jsonplaceholder.typicode.com");
-        var request = new RestRequest($"posts/{postId}", Method.DELETE);
+        var request = new RestRequest($"posts/{postId}", Method.Delete);
         var response = client.Execute(request);
         WriteLine(response.Content);
     }

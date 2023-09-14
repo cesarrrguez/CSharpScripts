@@ -1,20 +1,10 @@
+#load "../../packages.csx"
+
 #load "services.csx"
 #load "data.csx"
 #load "mappers.csx"
 #load "commands.csx"
 #load "behaviors.csx"
-
-#r "nuget: MediatR, 9.0.0"
-#r "nuget: MediatR.Extensions.Microsoft.DependencyInjection, 9.0.0"
-
-#r "nuget: AutoMapper 10.1.1"
-#r "nuget: AutoMapper.Extensions.Microsoft.DependencyInjection, 8.1.1"
-
-#r "nuget: FluentValidation, 10.3.3"
-
-#r "nuget: Microsoft.Extensions.Logging, 3.1.0"
-#r "nuget: Microsoft.Extensions.Logging.Console, 3.1.0"
-#r "nuget: Microsoft.Extensions.DependencyInjection, 5.0.0"
 
 using MediatR;
 using AutoMapper;

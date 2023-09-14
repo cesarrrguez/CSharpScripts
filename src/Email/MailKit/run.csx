@@ -1,6 +1,6 @@
-#load "services.csx"
+#load "../../../packages.csx"
 
-#r "nuget: MailKit, 2.13.0"
+#load "services.csx"
 
 var mailService = new MailService();
 

@@ -1,6 +1,6 @@
-#load "data.csx"
+#load "../../packages.csx"
 
-#r "nuget: StackExchange.Redis, 2.2.4"
+#load "data.csx"
 
 var redisBD = RedisDB.Connection.GetDatabase();
 redisBD.StringSet("1", "César");

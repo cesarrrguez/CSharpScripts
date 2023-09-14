@@ -1,4 +1,4 @@
-#r "nuget: CommunityToolkit.Diagnostics, 8.0.0-preview4"
+#load "../../../packages.csx"
 
 using CommunityToolkit.Diagnostics;
 

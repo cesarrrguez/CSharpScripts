@@ -1,9 +1,7 @@
+#load "../../../packages.csx"
+
 #load "services.csx"
 #load "controllers.csx"
-
-#r "nuget: Microsoft.Extensions.Logging, 3.1.0"
-#r "nuget: Microsoft.Extensions.Logging.Console, 3.1.0"
-#r "nuget: Microsoft.Extensions.DependencyInjection, 5.0.0"
 
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;

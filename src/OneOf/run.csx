@@ -1,7 +1,7 @@
+#load "../../packages.csx"
+
 #load "entities.csx"
 #load "services.csx"
-
-#r "nuget: OneOf, 3.0.216"
 
 var userToCreate = new User
 {

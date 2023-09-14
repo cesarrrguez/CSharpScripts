@@ -1,7 +1,7 @@
+#load "../../../packages.csx"
+
 #load "entities.csx"
 #load "dtos.csx"
-
-#r "nuget: AutoMapper, 10.0.0"
 
 using AutoMapper;
 

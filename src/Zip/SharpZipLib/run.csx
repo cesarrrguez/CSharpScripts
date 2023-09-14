@@ -1,6 +1,6 @@
-#load "utils.csx"
+#load "../../../packages.csx"
 
-#r "nuget: SharpZipLib, 1.3.3"
+#load "utils.csx"
 
 var folderPath = Path.Combine(FolderUtil.GetCurrentDirectoryName(), "files");
 var zipPath = Path.Combine(FolderUtil.GetCurrentDirectoryName(), "files.zip");

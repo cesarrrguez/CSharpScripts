@@ -1,6 +1,6 @@
-#load "ioc.csx"
+#load "../../../packages.csx"
 
-#r "nuget: SimpleInjector, 5.2.1"
+#load "ioc.csx"
 
 var productService = IoC.Container.GetInstance<IProductService>();
 

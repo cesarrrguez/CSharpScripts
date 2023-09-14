@@ -1,7 +1,7 @@
+#load "../../../../packages.csx"
+
 #load "services.csx"
 #load "utils.csx"
-
-#r "nuget: RestSharp, 106.12.0"
 
 var separator = new string(Enumerable.Repeat('-', 30).ToArray());
 

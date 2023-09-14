@@ -1,14 +1,8 @@
+#load "../../../packages.csx"
+
 #load "configurations.csx"
 #load "controllers.csx"
 #load "entities.csx"
-
-#r "nuget: MongoDB.Driver, 2.11.2"
-#r "nuget: Microsoft.Extensions.DependencyInjection, 3.1.0"
-#r "nuget: Microsoft.Extensions.Configuration, 3.1.0"
-#r "nuget: Microsoft.Extensions.Configuration.Json, 3.1.0"
-#r "nuget: Microsoft.Extensions.Configuration.Binder, 3.1.0"
-#r "nuget: Microsoft.Extensions.Options, 3.1.0"
-#r "nuget: Microsoft.Extensions.Options.ConfigurationExtensions, 3.1.0"
 
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;

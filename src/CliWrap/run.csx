@@ -1,4 +1,4 @@
-#r "nuget: CliWrap, 3.4.4"
+#load "../../packages.csx"
 
 using CliWrap;
 using CliWrap.Buffered;

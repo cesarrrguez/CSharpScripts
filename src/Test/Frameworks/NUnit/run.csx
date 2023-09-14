@@ -1,6 +1,6 @@
-#load "tests.csx"
+#load "../../../../packages.csx"
 
-#r "nuget: NUnit, 3.13.2"
+#load "tests.csx"
 
 var testService = new FactorialServiceTests();
 testService.SetUp();

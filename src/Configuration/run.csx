@@ -1,10 +1,7 @@
+#load "../../packages.csx"
+
 #load "services.csx"
 #load "utils.csx"
-
-#r "nuget: Microsoft.Extensions.Configuration, 5.0.0"
-#r "nuget: Microsoft.Extensions.Configuration.Json, 5.0.0"
-#r "nuget: Microsoft.Extensions.Configuration.Binder, 5.0.0"
-#r "nuget: Microsoft.Extensions.DependencyInjection, 5.0.0"
 
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;

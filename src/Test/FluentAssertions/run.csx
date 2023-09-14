@@ -1,7 +1,6 @@
-#load "tests.csx"
+#load "../../../packages.csx"
 
-#r "nuget: xunit, 2.4.1"
-#r "nuget: FluentAssertions, 5.10.3"
+#load "tests.csx"
 
 var testService = new FactorialServiceTests();
 

@@ -1,4 +1,4 @@
-#r "nuget: Ardalis.GuardClauses, 3.2.0"
+#load "../../../packages.csx"
 
 using Ardalis.GuardClauses;
 

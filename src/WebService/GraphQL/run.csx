@@ -1,16 +1,7 @@
+#load "../../../packages.csx"
+
 #load "controllers.csx"
 #load "configurations.csx"
-
-#r "nuget: GraphQL.Client, 3.1.9"
-#r "nuget: GraphQL.Client.Serializer.Newtonsoft, 3.1.9"
-#r "nuget: Microsoft.Extensions.Logging, 3.1.0"
-#r "nuget: Microsoft.Extensions.Logging.Console, 3.1.0"
-#r "nuget: Microsoft.Extensions.DependencyInjection, 5.0.0"
-#r "nuget: Microsoft.Extensions.Configuration, 3.1.0"
-#r "nuget: Microsoft.Extensions.Configuration.Json, 3.1.0"
-#r "nuget: Microsoft.Extensions.Configuration.Binder, 3.1.0"
-#r "nuget: Microsoft.Extensions.Options, 3.1.0"
-#r "nuget: Microsoft.Extensions.Options.ConfigurationExtensions, 3.1.0"
 
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;

@@ -1,6 +1,6 @@
-#load "entities.csx"
+#load "../../../packages.csx"
 
-#r "nuget: ObjectDumper.NET, 3.3.13"
+#load "entities.csx"
 
 using ObjectDumping;
 

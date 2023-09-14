@@ -1,7 +1,7 @@
+#load "../../packages.csx"
+
 #load "data.csx"
 #load "services.csx"
-
-#r "nuget: LanguageExt.Core, 3.5.27-beta"
 
 using System.Text.Encodings.Web;
 using System.Text.Unicode;

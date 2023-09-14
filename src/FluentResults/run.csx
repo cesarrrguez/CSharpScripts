@@ -1,4 +1,4 @@
-#r "nuget: FluentResults, 3.5.0"
+#load "../../packages.csx"
 
 using FluentResults;
 

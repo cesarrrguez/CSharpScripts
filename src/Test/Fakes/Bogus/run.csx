@@ -1,6 +1,6 @@
-#load "entities.csx"
+#load "../../../../packages.csx"
 
-#r "nuget: Bogus, 33.0.2"
+#load "entities.csx"
 
 using System.Text.Encodings.Web;
 using System.Text.Json;

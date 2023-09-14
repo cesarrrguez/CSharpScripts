@@ -1,7 +1,6 @@
-#load "enums.csx"
+#load "../../packages.csx"
 
-#r "nuget: Humanizer, 2.10.1"
-#r "nuget: Humanizer.Core.es, 2.10.1"
+#load "enums.csx"
 
 using System.Globalization;
 

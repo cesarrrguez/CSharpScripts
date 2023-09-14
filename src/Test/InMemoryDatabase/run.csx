@@ -1,9 +1,6 @@
-#load "tests.csx"
+#load "../../../packages.csx"
 
-#r "nuget: FluentAssertions, 5.10.3"
-#r "nuget: MSTest.TestFramework, 2.1.2"
-#r "nuget: Microsoft.EntityFrameworkCore.Sqlite, 3.1.0"
-#r "nuget: Microsoft.EntityFrameworkCore.InMemory, 3.1.0"
+#load "tests.csx"
 
 InitRepositoryTests.Setup();
 

@@ -1,12 +1,10 @@
-// HAPPY SCRAPING! :)
+#load "../../../packages.csx"
 
 #load "services.csx"
 #load "utils.csx"
 #load "records.csx"
 
-#r "nuget: Flurl.Http, 2.4.2"
-#r "nuget: ScrapySharp, 3.0.0"
-#r "nuget: HtmlAgilityPack, 1.11.24"
+// HAPPY SCRAPING! :)
 
 var startDate = new DateOnly(2022, 01, 21);
 var endDate = DateOnly.FromDateTime(DateTime.Now);

@@ -1,4 +1,4 @@
-#r "nuget: System.Reactive, 5.0.0"
+#load "../../packages.csx"
 
 using System.Reactive.Linq;
 

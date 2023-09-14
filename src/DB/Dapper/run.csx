@@ -1,11 +1,9 @@
+#load "../../../packages.csx"
+
 #load "entities.csx"
 #load "configurations.csx"
 #load "data.csx"
 #load "utils.csx"
-
-#r "nuget: Dapper, 2.0.90"
-#r "nuget: Microsoft.Data.Sqlite, 5.0.7"
-#r "nuget: Microsoft.Extensions.DependencyInjection, 3.1.0"
 
 using Microsoft.Extensions.DependencyInjection;
 

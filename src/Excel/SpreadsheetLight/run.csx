@@ -1,8 +1,8 @@
+#load "../../../packages.csx"
+
 #load "entities.csx"
 #load "services.csx"
 #load "utils.csx"
-
-#r "nuget: SpreadsheetLight, 3.5.0"
 
 var excelService = new ExcelService();
 

@@ -1,6 +1,6 @@
-#load "entities.csx"
+#load "../../packages.csx"
 
-#r "nuget: fasterflect, 3.0.0"
+#load "entities.csx"
 
 using Fasterflect;
 

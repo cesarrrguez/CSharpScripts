@@ -1,6 +1,6 @@
-#load "utils.csx"
+#load "../../../packages.csx"
 
-#r "nuget: QRCoder, 1.4.3"
+#load "utils.csx"
 
 using QRCoder;
 

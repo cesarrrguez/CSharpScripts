@@ -1,6 +1,6 @@
-#load "entities.csx"
+#load "../../../packages.csx"
 
-#r "nuget: YamlDotNet, 11.2.1"
+#load "entities.csx"
 
 using YamlDotNet.Serialization;
 using YamlDotNet.Serialization.NamingConventions;

@@ -1,16 +1,9 @@
+#load "../../../packages.csx"
+
 #load "viewModels.csx"
 #load "controllers.csx"
 #load "configurations.csx"
 #load "utils.csx"
-
-#r "nuget: NHibernate, 5.3.9"
-#r "nuget: FluentNHibernate, 3.1.0"
-#r "nuget: System.Data.SQLite, 1.0.114.4"
-#r "nuget: System.Data.SQLite.Core, 1.0.114.3"
-#r "nuget: System.Data.SQLite.Linq, 1.0.114"
-#r "nuget: AutoMapper, 10.0.0"
-#r "nuget: Microsoft.Extensions.DependencyInjection, 3.1.0"
-#r "nuget: AutoMapper.Extensions.Microsoft.DependencyInjection, 8.0.1"
 
 using Microsoft.Extensions.DependencyInjection;
 

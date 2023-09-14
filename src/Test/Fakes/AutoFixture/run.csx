@@ -1,9 +1,7 @@
+#load "../../../../packages.csx"
+
 #load "entities.csx"
 #load "tests.csx"
-
-#r "nuget: xunit, 2.4.1"
-#r "nuget: AutoFixture, 4.17.0"
-#r "nuget: AutoFixture.Xunit2, 4.17.0"
 
 using System.Text.Json;
 

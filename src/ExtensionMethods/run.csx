@@ -1,7 +1,7 @@
+#load "../../packages.csx"
+
 #load "utils.csx"
 #load "entities.csx"
-
-#r "nuget: protobuf-net, 3.0.73"
 
 var array1 = new double[10];
 var array2 = new double[10];

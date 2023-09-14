@@ -1,6 +1,6 @@
-#load "tests.csx"
+#load "../../../packages.csx"
 
-#r "nuget: MSTest.TestFramework, 2.1.2"
+#load "tests.csx"
 
 var testService = new CustomerServiceTests();
 CustomerServiceTests.Setup();

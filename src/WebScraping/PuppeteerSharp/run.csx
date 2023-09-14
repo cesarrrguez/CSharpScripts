@@ -1,4 +1,4 @@
-#r "nuget: PuppeteerSharp, 7.0.0"
+#load "../../../packages.csx"
 
 using PuppeteerSharp;
 

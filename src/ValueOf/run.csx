@@ -1,6 +1,6 @@
-#load "valueObjects.csx"
+#load "../../packages.csx"
 
-#r "nuget: ValueOf, 1.0.17"
+#load "valueObjects.csx"
 
 var temp1 = Celsius.From(20);
 WriteLine(temp1);

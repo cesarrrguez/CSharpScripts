@@ -1,7 +1,7 @@
+#load "../../../packages.csx"
+
 #load "configurations.csx"
 #load "controllers.csx"
-
-#r "nuget: Microsoft.Extensions.DependencyInjection, 3.1.0"
 
 using Microsoft.Extensions.DependencyInjection;
 

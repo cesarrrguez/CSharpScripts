@@ -1,4 +1,4 @@
-#r "nuget: Hashids.net, 1.6.1"
+#load "../../packages.csx"
 
 using HashidsNet;
 

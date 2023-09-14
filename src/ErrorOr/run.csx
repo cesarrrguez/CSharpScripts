@@ -1,6 +1,7 @@
+#load "../../packages.csx"
+
 #load "entities.csx"
 
-#r "nuget: ErrorOr, 0.1.0"
 using System.Security.AccessControl;
 
 using ErrorOr;

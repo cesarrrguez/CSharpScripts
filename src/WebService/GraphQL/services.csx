@@ -131,10 +131,4 @@ public class PostService : IPostService
 
         return response.Data.DeletePost;
     }
-
-    public void Dispose()
-    {
-        _client.Dispose();
-        GC.SuppressFinalize(this);
-    }
 }

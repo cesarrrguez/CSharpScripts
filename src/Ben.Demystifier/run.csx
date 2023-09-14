@@ -1,6 +1,6 @@
-#load "records.csx"
+#load "../../packages.csx"
 
-#r "nuget: Ben.Demystifier, 0.4.1"
+#load "records.csx"
 
 using System.Net.Http;
 using System.Text.Json;

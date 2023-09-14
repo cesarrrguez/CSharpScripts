@@ -1,7 +1,7 @@
+#load "../../../../../packages.csx"
+
 #load "entities.csx"
 #load "utils.csx"
-
-#r "nuget: protobuf-net, 3.0.73"
 
 // User
 var user = new User("James", 30);

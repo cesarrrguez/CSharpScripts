@@ -1,6 +1,6 @@
-#load "services.csx"
+#load "../../packages.csx"
 
-#r "nuget: Twilio, 5.47.0"
+#load "services.csx"
 
 //await TwilioService.SendSmsAsync();
 //await TwilioService.SendWhatsAppAsync();

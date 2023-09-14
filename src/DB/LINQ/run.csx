@@ -1,6 +1,6 @@
-#load "data.csx"
+#load "../../../packages.csx"
 
-#r "nuget: Microsoft.EntityFrameworkCore.Sqlite, 3.1.0"
+#load "data.csx"
 
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.DependencyInjection;

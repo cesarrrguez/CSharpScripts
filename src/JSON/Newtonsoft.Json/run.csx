@@ -1,7 +1,7 @@
+#load "../../../packages.csx"
+
 #load "entities.csx"
 #load "utils.csx"
-
-#r "nuget: Newtonsoft.Json, 12.0.3"
 
 using Newtonsoft.Json;
 

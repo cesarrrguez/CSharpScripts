@@ -1,4 +1,4 @@
-#r "nuget: Throw, 1.2.0"
+#load "../../../packages.csx"
 
 using Throw;
 
