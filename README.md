@@ -31,7 +31,7 @@ This repository contains _C#_ scripts.
 - SqlServer, Sqlite, MongoDB
 - Test, MSTest, xUnit, NUnit, FluentAssertions, Moq, NSubstitute, InMemoryDatabase, Bogus, Autofixture, AutoMocker
 - Dependency Injection, IoC, Simple Injector, Ninject
-- Logging, Serilog
+- Logging, NLong, Serilog
 - Configuration, Options
 - Mapping, DTO, AutoMapper, Mapster
 - FluentValidation, Humanizer, GuardClauses, Throw, CommunityToolkit

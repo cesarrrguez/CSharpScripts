@@ -59,6 +59,7 @@
 #r "nuget: Newtonsoft.Json, 13.0.3"
 #r "nuget: NHibernate, 5.4.6"
 #r "nuget: Ninject, 3.3.6"
+#r "nuget: NLog, 5.2.4"
 #r "nuget: NSubstitute, 5.0.0"
 #r "nuget: NUnit, 3.13.3"
 #r "nuget: ObjectDumper.NET, 4.1.3"
