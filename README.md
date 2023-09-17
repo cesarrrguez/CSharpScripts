@@ -58,7 +58,7 @@ This repository contains _C#_ scripts.
 - USB, System.Management
 - CliWrap
 - Dump, ObjectDumper, YamlDotNet
-- New in C# 7, 8, 9 and 10
+- New in C# 7, 8, 9, 10 and 11
 - Attributes, Data Anotations
 - Parameters, in, out, ref, params
 - Culture, Globalization, Localization
