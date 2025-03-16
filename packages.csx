@@ -68,6 +68,7 @@
 #r "nuget: Polly, 7.2.4"
 #r "nuget: protobuf-net, 3.2.26"
 #r "nuget: PuppeteerSharp, 11.0.5"
+#r "nuget: QuestPDF, 2025.1.6"
 #r "nuget: QRCoder, 1.4.3"
 #r "nuget: RestSharp, 110.2.0"
 #r "nuget: ScrapySharp, 3.0.0"

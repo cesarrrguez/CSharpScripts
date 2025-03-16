@@ -1,4 +1,4 @@
-#load "../../packages.csx"
+#load "../../../packages.csx"
 
 #load "utils.csx"
 
