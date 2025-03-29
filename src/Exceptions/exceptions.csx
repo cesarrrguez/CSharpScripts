@@ -9,7 +9,6 @@ public class HeatingException : ApplicationException
     public HeatingException() { }
     public HeatingException(string message) : base(message) { }
     public HeatingException(string message, Exception inner) : base(message, inner) { }
-    protected HeatingException(SerializationInfo info, StreamingContext context) : base(info, context) { }
 
     public HeatingException(string message, string reason, DateTime time) : base(message)
     {

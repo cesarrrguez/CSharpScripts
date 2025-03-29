@@ -1,3 +1,4 @@
+using System.Reflection;
 using System.Runtime.Serialization;
 using ProtoBuf;
 
@@ -78,7 +79,10 @@ public static List<T> CloneList<T>(this List<T> list) where T : ICloneable
 
 public static T DeepClone<T>(this T obj)
 {
-    if (!typeof(T).IsSerializable) throw new ArgumentException("The class " + typeof(T).ToString() + " is not serializable");
+    if (typeof(T).GetCustomAttribute<SerializableAttribute>() == null)
+    {
+        throw new ArgumentException($"The class {typeof(T)} is not serializable");
+    }
 
     if (obj == null) return default;
 
@@ -93,10 +97,6 @@ public static T DeepClone<T>(this T obj)
     catch (SerializationException ex)
     {
         throw new SerializationException(ex.Message, ex);
-    }
-    catch
-    {
-        throw;
     }
 }
 
